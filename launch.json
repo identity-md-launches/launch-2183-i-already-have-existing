@@ -1,0 +1,12 @@
+{
+  "kind": "evm_contracts",
+  "contracts": [
+    {
+      "contract": "IMDPot",
+      "constructorArgs": [
+        "$owner"
+      ]
+    }
+  ],
+  "notes": "Deploy a fresh, non-upgradeable IMDPot from src/IMDPot.sol. The explicit launch owner controls administration and is the fixed treasury beneficiary. The accepted implementation supports Privy wallets, a 900-second round starting on the first purchase, future-blockhash draws without Chainlink, loyalty points, and a 70% prizes / 10% burn / 5% treasury / 15% permanent lock distribution. Finalization is permissionless: commit after the deadline, then settle after the target block within its 256-block window. The token starts unset; gameplay requires the owner's one-time token configuration through the existing owner panel. After confirmed deployment, the existing website release tooling must consume the new contract address and deployment block, verify the runtime, and publish the release to https://imdpot-the-imd-jackpot-room.sites.imd.fun/. Deployment and website publication are subsequent launch stages; this manifest records no completed deployment or publication."
+}
