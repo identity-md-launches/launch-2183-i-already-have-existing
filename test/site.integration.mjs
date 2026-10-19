@@ -59,7 +59,13 @@ try {
     const tx = { from, data, gas: '0x989680' };
     if (to) tx.to = to;
     const hash = await rpc('eth_sendTransaction', [tx]);
-    const receipt = await rpc('eth_getTransactionReceipt', [hash]);
+    let receipt;
+    for (let attempt = 0; attempt < 100; ++attempt) {
+      receipt = await rpc('eth_getTransactionReceipt', [hash]);
+      if (receipt) break;
+      await new Promise((resolve) => setTimeout(resolve, 20));
+    }
+    assert.ok(receipt, `transaction ${hash} was not mined`);
     assert.equal(receipt.status, '0x1', `transaction ${hash} reverted`);
     return receipt;
   }

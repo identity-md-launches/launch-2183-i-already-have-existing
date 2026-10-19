@@ -1,0 +1,47 @@
+{
+  "method": "WCAG 2 relative luminance from declared solid sRGB source pairs; not a claim about every composited/hover surface. Rendered entry checked separately by taste and axe-core.",
+  "pairs": [
+    {
+      "pair": "Primary/page",
+      "foreground": "#f1f4eb",
+      "background": "#111612",
+      "ratio": 16.46,
+      "passesNormalText4_5": true
+    },
+    {
+      "pair": "Secondary/surface",
+      "foreground": "#a8b5a7",
+      "background": "#18201a",
+      "ratio": 7.8,
+      "passesNormalText4_5": true
+    },
+    {
+      "pair": "Muted/surface",
+      "foreground": "#8e9d8d",
+      "background": "#18201a",
+      "ratio": 5.84,
+      "passesNormalText4_5": true
+    },
+    {
+      "pair": "Primary action",
+      "foreground": "#172015",
+      "background": "#d3f36a",
+      "ratio": 13.4,
+      "passesNormalText4_5": true
+    },
+    {
+      "pair": "Focus/table",
+      "foreground": "#f1f4eb",
+      "background": "#1b281e",
+      "ratio": 13.79,
+      "passesNormalText4_5": true
+    },
+    {
+      "pair": "Error/surface",
+      "foreground": "#ffb3ad",
+      "background": "#18201a",
+      "ratio": 9.76,
+      "passesNormalText4_5": true
+    }
+  ]
+}

@@ -1,0 +1,431 @@
+{
+  "checks": [
+    "390px first screen contains the game and Buy tickets; unconfigured chain state is honest",
+    "Quantity validation, presets, named EIP-6963 discovery, Escape and focus return",
+    "Rejected connection recovers; owner panel configures the pinned token through a confirmed local transaction",
+    "Wrong-network state switches the wallet back to Ethereum",
+    "Review, exact ERC20 approval, buyTicketsForRound and receipt confirmation purchase three real local tickets",
+    "Rejected transaction is recoverable and does not add tickets",
+    "Chain deadline closes entries; commit, target-block settlement and claim work through the production UI",
+    "Owner pause and resume confirmations change the actual local contract and entry availability",
+    "Expired draw cancellation, refund lookup and full refund work; cancelled tickets earn no loyalty points",
+    "Stale chain data disables transactions after 60 seconds (clock advanced in test)",
+    "Unavailable RPC shows a recovery action; retry restores actual contract data",
+    "Phone without injection offers four current-page wallet links and Coinbase Smart Wallet in a bottom sheet",
+    "No horizontal overflow at 320, 390, 768 and 1440px with a connected owner and real local data",
+    "No browser exceptions or failed local asset requests at the /preview/ hosting subpath",
+    "axe-core WCAG A/AA audit has no violations in initial game, purchase review and phone wallet sheet"
+  ],
+  "errors": [],
+  "failedLocalResources": [],
+  "browserConsole": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://ethereum-rpc.publicnode.com/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": "https://eth.drpc.org/",
+      "intentionalRpcOutage": true
+    }
+  ],
+  "accessibility": [
+    {
+      "state": "390px initial game",
+      "violations": [],
+      "incomplete": [],
+      "passes": 29
+    },
+    {
+      "state": "390px purchase review",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "passes": 16
+    },
+    {
+      "state": "390px phone wallet sheet",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "passes": 15
+    }
+  ]
+}

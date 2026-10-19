@@ -1,3 +1,4 @@
+/** @param {import('./types.js').Round | undefined} round @param {number} chainTime */
 export function roundClock(round, chainTime) {
   if (!round) return { text: '--:--', seconds: 0, label: 'Reading the round' };
   if (round.status === 0) return { text: '15:00', seconds: 900, label: 'Starts with the first ticket' };
@@ -10,6 +11,7 @@ export function roundClock(round, chainTime) {
   };
 }
 
+/** @param {string} input @returns {{error: string, count?: never} | {count: bigint, error?: never}} */
 export function parseTicketCount(input) {
   const value = input.trim();
   if (!/^\d+$/.test(value)) return { error: 'Enter a whole number of tickets.' };
@@ -20,8 +22,10 @@ export function parseTicketCount(input) {
     : { count };
 }
 
+/** @param {import('./types.js').Round} round @param {bigint} head */
 export function drawState(round, head) {
   const target = round.drawBlock;
+  /** @param {bigint} number */
   const format = (number) => number.toLocaleString('en-US');
   if (round.status !== 2 || target === undefined) return {
     ready: false, expired: false, label: 'Finalize round',

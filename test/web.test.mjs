@@ -133,13 +133,14 @@ test('the shipped ABI matches the pinned contract build, including the round tup
 });
 
 test('all static imports and preload chunks of the preserved website are vendored', () => {
-  const root = resolve('web');
+  const root = resolve(import.meta.dirname, '../web');
   function walk(path) {
     for (const entry of readdirSync(path, { withFileTypes: true })) {
       const file = resolve(path, entry.name);
       if (entry.isDirectory()) { walk(file); continue; }
       if (!/\.(js|mjs)$/.test(file)) continue;
-      const text = readFileSync(file, 'utf8');
+      // JSDoc type imports are erased by the browser, so they are not runtime assets.
+      const text = readFileSync(file, 'utf8').replace(/\/\*\*[\s\S]*?\*\//g, '');
       const imports = [...text.matchAll(/(?:\bfrom\s*|\bimport\s*\(\s*)["'`]([^"'`]+)["'`]/g)].map((match) => match[1]);
       const preload = text.match(/m\.f=\[(.*?)\]/)?.[1] || '';
       imports.push(...[...preload.matchAll(/["'](\.\/[^"']+)["']/g)].map((match) => match[1]));

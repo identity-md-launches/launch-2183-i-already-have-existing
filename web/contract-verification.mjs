@@ -1,3 +1,8 @@
+/**
+ * @param {{getChainId: () => Promise<number>, getCode: (args: {address: import('./types.js').Hex}) => Promise<import('./types.js').Hex | undefined>}} client
+ * @param {import('./types.js').Deployment} deployment
+ * @param {(code: import('./types.js').Hex) => string} keccak256
+ */
 export async function verifyGame(client, deployment, keccak256) {
   const [chainId, code] = await Promise.all([
     client.getChainId(),

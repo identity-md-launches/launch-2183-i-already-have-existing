@@ -1,0 +1,16 @@
+{
+  "name": "imdpot-existing-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "python3 ../tools/export_site.py",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --test ../test/web.test.mjs ../test/deployment.test.mjs",
+    "preview": "python3 -m http.server 4173 --directory ../dist",
+    "verify:deployment": "node ../tools/verify_deployment.mjs"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}

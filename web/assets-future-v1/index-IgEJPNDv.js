@@ -1,3 +1,5 @@
+// Existing IMDPot application capture; deployment integration updated for the confirmed launch.
+import {network} from "../network.mjs";
 import {buyReviewedTickets} from "../purchase.mjs";
 import {verifyGame} from "../contract-verification.mjs";
 import {roundClock,parseTicketCount,drawState} from "../game-rules.mjs";
@@ -13,12 +15,3191 @@ import{o as e,t}from"./rolldown-runtime-DLMaRju-.js";import{n,t as r}from"./jsx-
 Error generating stack: `+e.message+`
 `+e.stack}}var Ge=Object.prototype.hasOwnProperty,Ke=t.unstable_scheduleCallback,qe=t.unstable_cancelCallback,Je=t.unstable_shouldYield,Ye=t.unstable_requestPaint,Xe=t.unstable_now,Ze=t.unstable_getCurrentPriorityLevel,Qe=t.unstable_ImmediatePriority,$e=t.unstable_UserBlockingPriority,et=t.unstable_NormalPriority,tt=t.unstable_LowPriority,nt=t.unstable_IdlePriority,rt=t.log,it=t.unstable_setDisableYieldValue,at=null,ot=null;function st(e){if(typeof rt==`function`&&it(e),ot&&typeof ot.setStrictMode==`function`)try{ot.setStrictMode(at,e)}catch{}}var ct=Math.clz32?Math.clz32:dt,lt=Math.log,ut=Math.LN2;function dt(e){return e>>>=0,e===0?32:31-(lt(e)/ut|0)|0}var ft=256,pt=262144,mt=4194304;function ht(e){var t=e&42;if(t!==0)return t;switch(e&-e){case 1:return 1;case 2:return 2;case 4:return 4;case 8:return 8;case 16:return 16;case 32:return 32;case 64:return 64;case 128:return 128;case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:return e&-e;case 262144:case 524288:case 1048576:case 2097152:return e&3932160;case 4194304:case 8388608:case 16777216:case 33554432:return e&62914560;case 67108864:return 67108864;case 134217728:return 134217728;case 268435456:return 268435456;case 536870912:return 536870912;case 1073741824:return 0;default:return e}}function gt(e,t,n){var r=e.pendingLanes;if(r===0)return 0;var i=0,a=e.suspendedLanes,o=e.pingedLanes;e=e.warmLanes;var s=r&134217727;return s===0?(s=r&~a,s===0?o===0?n||(n=r&~e,n!==0&&(i=ht(n))):i=ht(o):i=ht(s)):(r=s&~a,r===0?(o&=s,o===0?n||(n=s&~e,n!==0&&(i=ht(n))):i=ht(o)):i=ht(r)),i===0?0:t!==0&&t!==i&&(t&a)===0&&(a=i&-i,n=t&-t,a>=n||a===32&&n&4194048)?t:i}function _t(e,t){return(e.pendingLanes&~(e.suspendedLanes&~e.pingedLanes)&t)===0}function vt(e,t){t&8&&(t|=t&32);var n=e.entangledLanes;if(n!==0)for(e=e.entanglements,n&=t;0<n;){var r=31-ct(n),i=1<<r;t|=e[r],n&=~i}return t}function yt(e,t){switch(e){case 1:case 2:case 4:case 8:case 64:return t+250;case 16:case 32:case 128:case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:case 262144:case 524288:case 1048576:case 2097152:return t+5e3;case 4194304:case 8388608:case 16777216:case 33554432:return-1;case 67108864:case 134217728:case 268435456:case 536870912:case 1073741824:return-1;default:return-1}}function bt(){var e=mt;return mt<<=1,!(mt&62914560)&&(mt=4194304),e}function xt(e){for(var t=[],n=0;31>n;n++)t.push(e);return t}function St(e,t){e.pendingLanes|=t,t!==268435456&&(e.suspendedLanes=0,e.pingedLanes=0,e.warmLanes=0)}function Ct(e,t,n,r,i,a){var o=e.pendingLanes;e.pendingLanes=n,e.suspendedLanes=0,e.pingedLanes=0,e.warmLanes=0,e.expiredLanes&=n,e.entangledLanes&=n,e.errorRecoveryDisabledLanes&=n,e.shellSuspendCounter=0;var s=e.entanglements,c=e.expirationTimes,l=e.hiddenUpdates;for(n=o&~n;0<n;){var u=31-ct(n),d=1<<u;s[u]=0,c[u]=-1;var f=l[u];if(f!==null)for(l[u]=null,u=0;u<f.length;u++){var p=f[u];p!==null&&(p.lane&=-536870913)}n&=~d}r!==0&&wt(e,r,0),a!==0&&i===0&&e.tag!==0&&(e.suspendedLanes|=a&~(o&~t))}function wt(e,t,n){e.pendingLanes|=t,e.suspendedLanes&=~t;var r=31-ct(t);e.entangledLanes|=t,e.entanglements[r]=e.entanglements[r]|1073741824|n&261930}function Tt(e,t){var n=e.entangledLanes|=t;for(e=e.entanglements;n;){var r=31-ct(n),i=1<<r;i&t|e[r]&t&&(e[r]|=t),n&=~i}}function Et(e,t){var n=t&-t;return n=n&42?1:Dt(n),(n&(e.suspendedLanes|t))===0?n:0}function Dt(e){switch(e){case 2:e=1;break;case 8:e=4;break;case 32:e=16;break;case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:case 262144:case 524288:case 1048576:case 2097152:case 4194304:case 8388608:case 16777216:case 33554432:e=128;break;case 268435456:e=134217728;break;default:e=0}return e}function Ot(e){return e&=-e,2<e?8<e?e&134217727?32:268435456:8:2}function kt(){var e=E.p;return e===0?(e=window.event,e===void 0?32:Ch(e.type)):e}function At(e,t){var n=E.p;try{return E.p=e,t()}finally{E.p=n}}var jt=Math.random().toString(36).slice(2),k=`__reactFiber$`+jt,Mt=`__reactProps$`+jt,Nt=`__reactContainer$`+jt,Pt=`__reactEvents$`+jt,Ft=`__reactListeners$`+jt,It=`__reactHandles$`+jt,Lt=`__reactResources$`+jt,Rt=`__reactMarker$`+jt,zt=`__reactLoad$`+jt;function Bt(e){delete e[k],delete e[Mt],delete e[Ft],delete e[It]}function Vt(e){var t;if(t=e[k])return t;for(var n=e.parentNode;n;){if(t=n[Nt]||n[k]){if(n=t.alternate,t.child!==null||n!==null&&n.child!==null)for(e=fm(e);e!==null;){if(n=e[k])return n;e=fm(e)}return t}e=n,n=e.parentNode}return null}function Ht(e){if(e=e[k]||e[Nt]){var t=e.tag;if(t===5||t===6||t===13||t===31||t===26||t===27||t===3)return e}return null}function Ut(e){var t=e.tag;if(t===5||t===26||t===27||t===6)return e.stateNode;throw Error(o(33))}function Wt(e){var t=e[Lt];return t||=e[Lt]={hoistableStyles:new Map,hoistableScripts:new Map},t}function Gt(e){e[Rt]=!0}function Kt(e){e[zt]=void 0}var qt=new Set,Jt={};function Yt(e,t){Xt(e,t),Xt(e+`Capture`,t)}function Xt(e,t){for(Jt[e]=t,e=0;e<t.length;e++)qt.add(t[e])}var Zt=RegExp(`^[:A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD][:A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD\\-.0-9\\u00B7\\u0300-\\u036F\\u203F-\\u2040]*$`),Qt={},$t={};function en(e){return Ge.call($t,e)?!0:Ge.call(Qt,e)?!1:Zt.test(e)?$t[e]=!0:(Qt[e]=!0,!1)}var A=!1;function tn(){var e=A;return A=!1,e}function nn(e,t,n){if(en(t)){if(n===null)e.removeAttribute(t);else{switch(typeof n){case`undefined`:case`function`:case`symbol`:e.removeAttribute(t);return;case`boolean`:var r=t.toLowerCase().slice(0,5);if(r!==`data-`&&r!==`aria-`){e.removeAttribute(t);return}}e.setAttribute(t,n)}}}function rn(e,t,n){if(n===null)e.removeAttribute(t);else{switch(typeof n){case`undefined`:case`function`:case`symbol`:case`boolean`:e.removeAttribute(t);return}e.setAttribute(t,n)}}function an(e,t,n,r){if(r===null)e.removeAttribute(n);else{switch(typeof r){case`undefined`:case`function`:case`symbol`:case`boolean`:e.removeAttribute(n);return}e.setAttributeNS(t,n,r)}}function on(e){switch(typeof e){case`bigint`:case`boolean`:case`number`:case`string`:case`undefined`:return e;case`object`:return e;default:return``}}function sn(e){var t=e.type;return(e=e.nodeName)&&e.toLowerCase()===`input`&&(t===`checkbox`||t===`radio`)}function cn(e,t,n){var r=Object.getOwnPropertyDescriptor(e.constructor.prototype,t);if(!e.hasOwnProperty(t)&&r!==void 0&&typeof r.get==`function`&&typeof r.set==`function`){var i=r.get,a=r.set;return Object.defineProperty(e,t,{configurable:!0,get:function(){return i.call(this)},set:function(e){n=``+e,a.call(this,e)}}),Object.defineProperty(e,t,{enumerable:r.enumerable}),{getValue:function(){return n},setValue:function(e){n=``+e},stopTracking:function(){e._valueTracker=null,delete e[t]}}}}function ln(e){if(!e._valueTracker){var t=sn(e)?`checked`:`value`;e._valueTracker=cn(e,t,``+e[t])}}function un(e){if(!e)return!1;var t=e._valueTracker;if(!t)return!0;var n=t.getValue(),r=``;return e&&(r=sn(e)?e.checked?`true`:`false`:e.value),e=r,e!==n&&(t.setValue(e),!0)}var dn=/[\n"\\]/g;function fn(e){return e.replace(dn,function(e){return`\\`+e.charCodeAt(0).toString(16)+` `})}function pn(e,t,n,r,i,a,o,s){e.name=``,o!=null&&typeof o!=`function`&&typeof o!=`symbol`&&typeof o!=`boolean`?e.type=o:e.removeAttribute(`type`),t==null?o!==`submit`&&o!==`reset`||e.removeAttribute(`value`):o===`number`?(t===0&&e.value===``||e.value!=t)&&(e.value=``+on(t)):e.value!==``+on(t)&&(e.value=``+on(t)),t==null?n==null?r!=null&&e.removeAttribute(`value`):hn(e,on(n)):o===`number`&&e.value==t?hn(e,on(e.value)):hn(e,on(t)),i==null&&a!=null&&(e.defaultChecked=!!a),i!=null&&(e.checked=i&&typeof i!=`function`&&typeof i!=`symbol`),s!=null&&typeof s!=`function`&&typeof s!=`symbol`&&typeof s!=`boolean`?e.name=``+on(s):e.removeAttribute(`name`)}function mn(e,t,n,r,i,a,o,s){if(a!=null&&typeof a!=`function`&&typeof a!=`symbol`&&typeof a!=`boolean`&&(e.type=a),t!=null||n!=null){if(!(a!==`submit`&&a!==`reset`||t!=null)){ln(e);return}n=n==null?``:``+on(n),t=t==null?n:``+on(t),s||t===e.value||(e.value=t),e.defaultValue=t}r??=i,r=typeof r!=`function`&&typeof r!=`symbol`&&!!r,e.checked=s?e.checked:!!r,e.defaultChecked=!!r,o!=null&&typeof o!=`function`&&typeof o!=`symbol`&&typeof o!=`boolean`&&(e.name=o),ln(e)}function hn(e,t){e.defaultValue!==``+t&&(e.defaultValue=``+t)}function gn(e,t,n,r){if(e=e.options,t){t={};for(var i=0;i<n.length;i++)t[`$`+n[i]]=!0;for(n=0;n<e.length;n++)i=t.hasOwnProperty(`$`+e[n].value),e[n].selected!==i&&(e[n].selected=i),i&&r&&(e[n].defaultSelected=!0)}else{for(n=``+on(n),t=null,i=0;i<e.length;i++){if(e[i].value===n){e[i].selected=!0,r&&(e[i].defaultSelected=!0);return}t!==null||e[i].disabled||(t=e[i])}t!==null&&(t.selected=!0)}}function _n(e,t,n){t!=null&&(t=``+on(t),t!==e.value&&(e.value=t),n==null)?e.defaultValue!==t&&(e.defaultValue=t):e.defaultValue=n==null?``:``+on(n)}function vn(e,t,n,r){if(t==null){if(r!=null){if(n!=null)throw Error(o(92));if(Te(r)){if(1<r.length)throw Error(o(93));r=r[0]}n=r}n??=``,t=n}n=on(t),e.defaultValue=n,r=e.textContent,r===n&&r!==``&&r!==null&&(e.value=r),ln(e)}function yn(e,t){if(t){var n=e.firstChild;if(n&&n===e.lastChild&&n.nodeType===3){n.nodeValue=t;return}}e.textContent=t}var bn=new Set(`animationIterationCount aspectRatio borderImageOutset borderImageSlice borderImageWidth boxFlex boxFlexGroup boxOrdinalGroup columnCount columns flex flexGrow flexPositive flexShrink flexNegative flexOrder gridArea gridRow gridRowEnd gridRowSpan gridRowStart gridColumn gridColumnEnd gridColumnSpan gridColumnStart fontWeight lineClamp lineHeight opacity order orphans scale tabSize widows zIndex zoom fillOpacity floodOpacity stopOpacity strokeDasharray strokeDashoffset strokeMiterlimit strokeOpacity strokeWidth MozAnimationIterationCount MozBoxFlex MozBoxFlexGroup MozLineClamp msAnimationIterationCount msFlex msZoom msFlexGrow msFlexNegative msFlexOrder msFlexPositive msFlexShrink msGridColumn msGridColumnSpan msGridRow msGridRowSpan WebkitAnimationIterationCount WebkitBoxFlex WebKitBoxFlexGroup WebkitBoxOrdinalGroup WebkitColumnCount WebkitColumns WebkitFlex WebkitFlexGrow WebkitFlexPositive WebkitFlexShrink WebkitLineClamp`.split(` `));function xn(e,t,n){var r=t.indexOf(`--`)===0;n==null||typeof n==`boolean`||n===``?r?e.setProperty(t,``):t===`float`?e.cssFloat=``:e[t]=``:r?e.setProperty(t,n):typeof n!=`number`||n===0||bn.has(t)?t===`float`?e.cssFloat=n:e[t]=(``+n).trim():e[t]=n+`px`}function Sn(e,t,n){if(t!=null&&typeof t!=`object`)throw Error(o(62));if(e=e.style,n!=null){for(var r in n)!n.hasOwnProperty(r)||t!=null&&t.hasOwnProperty(r)||(r.indexOf(`--`)===0?e.setProperty(r,``):r===`float`?e.cssFloat=``:e[r]=``,A=!0);for(var i in t)r=t[i],t.hasOwnProperty(i)&&n[i]!==r&&(xn(e,i,r),A=!0)}else for(var a in t)t.hasOwnProperty(a)&&xn(e,a,t[a])}function Cn(e){if(e.indexOf(`-`)===-1)return!1;switch(e){case`annotation-xml`:case`color-profile`:case`font-face`:case`font-face-src`:case`font-face-uri`:case`font-face-format`:case`font-face-name`:case`missing-glyph`:return!1;default:return!0}}var wn=new Map([[`acceptCharset`,`accept-charset`],[`htmlFor`,`for`],[`httpEquiv`,`http-equiv`],[`crossOrigin`,`crossorigin`],[`accentHeight`,`accent-height`],[`alignmentBaseline`,`alignment-baseline`],[`arabicForm`,`arabic-form`],[`baselineShift`,`baseline-shift`],[`capHeight`,`cap-height`],[`clipPath`,`clip-path`],[`clipRule`,`clip-rule`],[`colorInterpolation`,`color-interpolation`],[`colorInterpolationFilters`,`color-interpolation-filters`],[`colorProfile`,`color-profile`],[`colorRendering`,`color-rendering`],[`dominantBaseline`,`dominant-baseline`],[`enableBackground`,`enable-background`],[`fillOpacity`,`fill-opacity`],[`fillRule`,`fill-rule`],[`floodColor`,`flood-color`],[`floodOpacity`,`flood-opacity`],[`fontFamily`,`font-family`],[`fontSize`,`font-size`],[`fontSizeAdjust`,`font-size-adjust`],[`fontStretch`,`font-stretch`],[`fontStyle`,`font-style`],[`fontVariant`,`font-variant`],[`fontWeight`,`font-weight`],[`glyphName`,`glyph-name`],[`glyphOrientationHorizontal`,`glyph-orientation-horizontal`],[`glyphOrientationVertical`,`glyph-orientation-vertical`],[`horizAdvX`,`horiz-adv-x`],[`horizOriginX`,`horiz-origin-x`],[`imageRendering`,`image-rendering`],[`letterSpacing`,`letter-spacing`],[`lightingColor`,`lighting-color`],[`markerEnd`,`marker-end`],[`markerMid`,`marker-mid`],[`markerStart`,`marker-start`],[`maskType`,`mask-type`],[`overlinePosition`,`overline-position`],[`overlineThickness`,`overline-thickness`],[`paintOrder`,`paint-order`],[`panose-1`,`panose-1`],[`pointerEvents`,`pointer-events`],[`renderingIntent`,`rendering-intent`],[`shapeRendering`,`shape-rendering`],[`stopColor`,`stop-color`],[`stopOpacity`,`stop-opacity`],[`strikethroughPosition`,`strikethrough-position`],[`strikethroughThickness`,`strikethrough-thickness`],[`strokeDasharray`,`stroke-dasharray`],[`strokeDashoffset`,`stroke-dashoffset`],[`strokeLinecap`,`stroke-linecap`],[`strokeLinejoin`,`stroke-linejoin`],[`strokeMiterlimit`,`stroke-miterlimit`],[`strokeOpacity`,`stroke-opacity`],[`strokeWidth`,`stroke-width`],[`textAnchor`,`text-anchor`],[`textDecoration`,`text-decoration`],[`textRendering`,`text-rendering`],[`transformOrigin`,`transform-origin`],[`underlinePosition`,`underline-position`],[`underlineThickness`,`underline-thickness`],[`unicodeBidi`,`unicode-bidi`],[`unicodeRange`,`unicode-range`],[`unitsPerEm`,`units-per-em`],[`vAlphabetic`,`v-alphabetic`],[`vHanging`,`v-hanging`],[`vIdeographic`,`v-ideographic`],[`vMathematical`,`v-mathematical`],[`vectorEffect`,`vector-effect`],[`vertAdvY`,`vert-adv-y`],[`vertOriginX`,`vert-origin-x`],[`vertOriginY`,`vert-origin-y`],[`wordSpacing`,`word-spacing`],[`writingMode`,`writing-mode`],[`xmlnsXlink`,`xmlns:xlink`],[`xHeight`,`x-height`]]),Tn=/^[\u0000-\u001F ]*j[\r\n\t]*a[\r\n\t]*v[\r\n\t]*a[\r\n\t]*s[\r\n\t]*c[\r\n\t]*r[\r\n\t]*i[\r\n\t]*p[\r\n\t]*t[\r\n\t]*:/i;function En(e){return Tn.test(``+e)?`javascript:throw new Error('React has blocked a javascript: URL as a security precaution.')`:e}function Dn(){}var On=null;function kn(e){return e=e.target||e.srcElement||window,e.correspondingUseElement&&(e=e.correspondingUseElement),e.nodeType===3?e.parentNode:e}var An=null,jn=null;function Mn(e){var t=Ht(e);if(t&&(e=t.stateNode)){var n=e[Mt]||null;a:switch(e=t.stateNode,t.type){case`input`:if(pn(e,n.value,n.defaultValue,n.defaultValue,n.checked,n.defaultChecked,n.type,n.name),t=n.name,n.type===`radio`&&t!=null){for(n=e;n.parentNode;)n=n.parentNode;for(n=n.querySelectorAll(`input[name="`+fn(``+t)+`"][type="radio"]`),t=0;t<n.length;t++){var r=n[t];if(r!==e&&r.form===e.form){var i=r[Mt]||null;if(!i)throw Error(o(90));pn(r,i.value,i.defaultValue,i.defaultValue,i.checked,i.defaultChecked,i.type,i.name)}}for(t=0;t<n.length;t++)r=n[t],r.form===e.form&&un(r)}break a;case`textarea`:_n(e,n.value,n.defaultValue);break a;case`select`:t=n.value,t!=null&&gn(e,!!n.multiple,t,!1)}}}var Nn=!1;function Pn(e,t,n){if(Nn)return e(t,n);Nn=!0;try{return e(t)}finally{if(Nn=!1,(An!==null||jn!==null)&&(zd(),An&&(t=An,e=jn,jn=An=null,Mn(t),e)))for(t=0;t<e.length;t++)Mn(e[t])}}function Fn(e,t){var n=e.stateNode;if(n===null)return null;var r=n[Mt]||null;if(r===null)return null;n=r[t];a:switch(t){case`onClick`:case`onClickCapture`:case`onDoubleClick`:case`onDoubleClickCapture`:case`onMouseDown`:case`onMouseDownCapture`:case`onMouseMove`:case`onMouseMoveCapture`:case`onMouseUp`:case`onMouseUpCapture`:case`onMouseEnter`:(r=!r.disabled)||(e=e.type,r=e!==`button`&&e!==`input`&&e!==`select`&&e!==`textarea`),e=!r;break a;default:e=!1}if(e)return null;if(n&&typeof n!=`function`)throw Error(o(231,t,typeof n));return n}var In=typeof window<`u`&&window.document!==void 0&&window.document.createElement!==void 0,Ln=!1;if(In)try{var Rn={};Object.defineProperty(Rn,"passive",{get:function(){Ln=!0}}),window.addEventListener(`test`,Rn,Rn),window.removeEventListener(`test`,Rn,Rn)}catch{Ln=!1}var zn=null,Bn=null,Vn=null;function Hn(){if(Vn)return Vn;var e,t=Bn,n=t.length,r,i=`value`in zn?zn.value:zn.textContent,a=i.length;for(e=0;e<n&&t[e]===i[e];e++);var o=n-e;for(r=1;r<=o&&t[n-r]===i[a-r];r++);return Vn=i.slice(e,1<r?1-r:void 0)}function Un(e){var t=e.keyCode;return`charCode`in e?(e=e.charCode,e===0&&t===13&&(e=13)):e=t,e===10&&(e=13),32<=e||e===13?e:0}function Wn(){return!0}function Gn(){return!1}function Kn(e){function t(t,n,r,i,a){for(var o in this._reactName=t,this._targetInst=r,this.type=n,this.nativeEvent=i,this.target=a,this.currentTarget=null,e)e.hasOwnProperty(o)&&(t=e[o],this[o]=t?t(i):i[o]);return this.isDefaultPrevented=(i.defaultPrevented==null?!1===i.returnValue:i.defaultPrevented)?Wn:Gn,this.isPropagationStopped=Gn,this}return x(t.prototype,{preventDefault:function(){this.defaultPrevented=!0;var e=this.nativeEvent;e&&(e.preventDefault?e.preventDefault():typeof e.returnValue!=`unknown`&&(e.returnValue=!1),this.isDefaultPrevented=Wn)},stopPropagation:function(){var e=this.nativeEvent;e&&(e.stopPropagation?e.stopPropagation():typeof e.cancelBubble!=`unknown`&&(e.cancelBubble=!0),this.isPropagationStopped=Wn)},persist:function(){},isPersistent:Wn}),t}var qn={eventPhase:0,bubbles:0,cancelable:0,timeStamp:function(e){return e.timeStamp||Date.now()},defaultPrevented:0,isTrusted:0},Jn=Kn(qn),Yn=x({},qn,{view:0,detail:0}),Xn=Kn(Yn),Zn,Qn,$n,er=x({},Yn,{screenX:0,screenY:0,clientX:0,clientY:0,pageX:0,pageY:0,ctrlKey:0,shiftKey:0,altKey:0,metaKey:0,getModifierState:ur,button:0,buttons:0,relatedTarget:function(e){return e.relatedTarget===void 0?e.fromElement===e.srcElement?e.toElement:e.fromElement:e.relatedTarget},movementX:function(e){return`movementX`in e?e.movementX:(e!==$n&&($n&&e.type===`mousemove`?(Zn=e.screenX-$n.screenX,Qn=e.screenY-$n.screenY):Qn=Zn=0,$n=e),Zn)},movementY:function(e){return`movementY`in e?e.movementY:Qn}}),tr=Kn(er),nr=Kn(x({},er,{dataTransfer:0})),rr=Kn(x({},Yn,{relatedTarget:0})),ir=Kn(x({},qn,{animationName:0,elapsedTime:0,pseudoElement:0})),ar=Kn(x({},qn,{clipboardData:function(e){return`clipboardData`in e?e.clipboardData:window.clipboardData}})),or=Kn(x({},qn,{data:0})),sr={Esc:`Escape`,Spacebar:` `,Left:`ArrowLeft`,Up:`ArrowUp`,Right:`ArrowRight`,Down:`ArrowDown`,Del:`Delete`,Win:`OS`,Menu:`ContextMenu`,Apps:`ContextMenu`,Scroll:`ScrollLock`,MozPrintableKey:`Unidentified`},cr={8:`Backspace`,9:`Tab`,12:`Clear`,13:`Enter`,16:`Shift`,17:`Control`,18:`Alt`,19:`Pause`,20:`CapsLock`,27:`Escape`,32:` `,33:`PageUp`,34:`PageDown`,35:`End`,36:`Home`,37:`ArrowLeft`,38:`ArrowUp`,39:`ArrowRight`,40:`ArrowDown`,45:`Insert`,46:`Delete`,112:`F1`,113:`F2`,114:`F3`,115:`F4`,116:`F5`,117:`F6`,118:`F7`,119:`F8`,120:`F9`,121:`F10`,122:`F11`,123:`F12`,144:`NumLock`,145:`ScrollLock`,224:`Meta`},j={Alt:`altKey`,Control:`ctrlKey`,Meta:`metaKey`,Shift:`shiftKey`};function lr(e){var t=this.nativeEvent;return t.getModifierState?t.getModifierState(e):(e=j[e])?!!t[e]:!1}function ur(){return lr}var dr=Kn(x({},Yn,{key:function(e){if(e.key){var t=sr[e.key]||e.key;if(t!==`Unidentified`)return t}return e.type===`keypress`?(e=Un(e),e===13?`Enter`:String.fromCharCode(e)):e.type===`keydown`||e.type===`keyup`?cr[e.keyCode]||`Unidentified`:``},code:0,location:0,ctrlKey:0,shiftKey:0,altKey:0,metaKey:0,repeat:0,locale:0,getModifierState:ur,charCode:function(e){return e.type===`keypress`?Un(e):0},keyCode:function(e){return e.type===`keydown`||e.type===`keyup`?e.keyCode:0},which:function(e){return e.type===`keypress`?Un(e):e.type===`keydown`||e.type===`keyup`?e.keyCode:0}})),fr=Kn(x({},er,{pointerId:0,width:0,height:0,pressure:0,tangentialPressure:0,tiltX:0,tiltY:0,twist:0,pointerType:0,isPrimary:0})),pr=Kn(x({},qn,{submitter:0})),mr=Kn(x({},Yn,{touches:0,targetTouches:0,changedTouches:0,altKey:0,metaKey:0,ctrlKey:0,shiftKey:0,getModifierState:ur})),M=Kn(x({},qn,{propertyName:0,elapsedTime:0,pseudoElement:0})),hr=Kn(x({},er,{deltaX:function(e){return`deltaX`in e?e.deltaX:`wheelDeltaX`in e?-e.wheelDeltaX:0},deltaY:function(e){return`deltaY`in e?e.deltaY:`wheelDeltaY`in e?-e.wheelDeltaY:`wheelDelta`in e?-e.wheelDelta:0},deltaZ:0,deltaMode:0})),gr=Kn(x({},qn,{newState:0,oldState:0,source:0})),_r=[9,13,27,32],vr=In&&`CompositionEvent`in window,yr=null;In&&`documentMode`in document&&(yr=document.documentMode);var br=In&&`TextEvent`in window&&!yr,xr=In&&(!vr||yr&&8<yr&&11>=yr),Sr=` `,Cr=!1;function wr(e,t){switch(e){case`keyup`:return _r.indexOf(t.keyCode)!==-1;case`keydown`:return t.keyCode!==229;case`keypress`:case`mousedown`:case`focusout`:return!0;default:return!1}}function N(e){return e=e.detail,typeof e==`object`&&`data`in e?e.data:null}var Tr=!1;function Er(e,t){switch(e){case`compositionend`:return N(t);case`keypress`:return t.which===32?(Cr=!0,Sr):null;case`textInput`:return e=t.data,e===Sr&&Cr?null:e;default:return null}}function Dr(e,t){if(Tr)return e===`compositionend`||!vr&&wr(e,t)?(e=Hn(),Vn=Bn=zn=null,Tr=!1,e):null;switch(e){case`paste`:return null;case`keypress`:if(!(t.ctrlKey||t.altKey||t.metaKey)||t.ctrlKey&&t.altKey){if(t.char&&1<t.char.length)return t.char;if(t.which)return String.fromCharCode(t.which)}return null;case`compositionend`:return xr&&t.locale!==`ko`?null:t.data;default:return null}}var P={color:!0,date:!0,datetime:!0,"datetime-local":!0,email:!0,month:!0,number:!0,password:!0,range:!0,search:!0,tel:!0,text:!0,time:!0,url:!0,week:!0};function Or(e){var t=e&&e.nodeName&&e.nodeName.toLowerCase();return t===`input`?!!P[e.type]:t===`textarea`}function kr(e,t,n,r){An?jn?jn.push(r):jn=[r]:An=r,t=Jf(t,`onChange`),0<t.length&&(n=new Jn(`onChange`,`change`,null,n,r),e.push({event:n,listeners:t}))}var Ar=null,jr=null;function Mr(e){Vf(e,0)}function Nr(e){if(un(Ut(e)))return e}function Pr(e,t){if(e===`change`)return t}var Fr=!1;if(In){var Ir;if(In){var Lr=`oninput`in document;if(!Lr){var Rr=document.createElement(`div`);Rr.setAttribute(`oninput`,`return;`),Lr=typeof Rr.oninput==`function`}Ir=Lr}else Ir=!1;Fr=Ir&&(!document.documentMode||9<document.documentMode)}function zr(){Ar&&(Ar.detachEvent(`onpropertychange`,Br),jr=Ar=null)}function Br(e){if(e.propertyName===`value`&&Nr(jr)){var t=[];kr(t,jr,e,kn(e)),Pn(Mr,t)}}function Vr(e,t,n){e===`focusin`?(zr(),Ar=t,jr=n,Ar.attachEvent(`onpropertychange`,Br)):e===`focusout`&&zr()}function Hr(e){if(e===`selectionchange`||e===`keyup`||e===`keydown`)return Nr(jr)}function Ur(e,t){if(e===`click`)return Nr(t)}function Wr(e,t){if(e===`input`||e===`change`)return Nr(t)}function Gr(e,t){return e===t&&(e!==0||1/e==1/t)||e!==e&&t!==t}var Kr=typeof Object.is==`function`?Object.is:Gr;function qr(e,t){if(Kr(e,t))return!0;if(typeof e!=`object`||!e||typeof t!=`object`||!t)return!1;var n=Object.keys(e),r=Object.keys(t);if(n.length!==r.length)return!1;for(r=0;r<n.length;r++){var i=n[r];if(!Ge.call(t,i)||!Kr(e[i],t[i]))return!1}return!0}function Jr(e){if(e||=typeof document<`u`?document:void 0,e===void 0)return null;try{return e.activeElement||e.body}catch{return e.body}}function Yr(e){for(;e&&e.firstChild;)e=e.firstChild;return e}function Xr(e,t){var n=Yr(e);e=0;for(var r;n;){if(n.nodeType===3){if(r=e+n.textContent.length,e<=t&&r>=t)return{node:n,offset:t-e};e=r}a:{for(;n;){if(n.nextSibling){n=n.nextSibling;break a}n=n.parentNode}n=void 0}n=Yr(n)}}function Zr(e,t){return e&&t?e===t?!0:e&&e.nodeType===3?!1:t&&t.nodeType===3?Zr(e,t.parentNode):`contains`in e?e.contains(t):e.compareDocumentPosition?!!(e.compareDocumentPosition(t)&16):!1:!1}function Qr(e){e=e!=null&&e.ownerDocument!=null&&e.ownerDocument.defaultView!=null?e.ownerDocument.defaultView:window;for(var t=Jr(e.document);t instanceof e.HTMLIFrameElement;){try{var n=typeof t.contentWindow.location.href==`string`}catch{n=!1}if(n)e=t.contentWindow;else break;t=Jr(e.document)}return t}function $r(e){var t=e&&e.nodeName&&e.nodeName.toLowerCase();return t&&(t===`input`&&(e.type===`text`||e.type===`search`||e.type===`tel`||e.type===`url`||e.type===`password`)||t===`textarea`||e.contentEditable===`true`)}var ei=In&&`documentMode`in document&&11>=document.documentMode,ti=null,ni=null,ri=null,ii=!1;function ai(e,t,n){var r=n.window===n?n.document:n.nodeType===9?n:n.ownerDocument;ii||ti==null||ti!==Jr(r)||(r=ti,`selectionStart`in r&&$r(r)?r={start:r.selectionStart,end:r.selectionEnd}:(r=(r.ownerDocument&&r.ownerDocument.defaultView||window).getSelection(),r={anchorNode:r.anchorNode,anchorOffset:r.anchorOffset,focusNode:r.focusNode,focusOffset:r.focusOffset}),ri&&qr(ri,r)||(ri=r,r=Jf(ni,`onSelect`),0<r.length&&(t=new Jn(`onSelect`,`select`,null,t,n),e.push({event:t,listeners:r}),t.target=ti)))}function oi(e,t){var n={};return n[e.toLowerCase()]=t.toLowerCase(),n[`Webkit`+e]=`webkit`+t,n[`Moz`+e]=`moz`+t,n}var si={animationend:oi(`Animation`,`AnimationEnd`),animationiteration:oi(`Animation`,`AnimationIteration`),animationstart:oi(`Animation`,`AnimationStart`),transitionrun:oi(`Transition`,`TransitionRun`),transitionstart:oi(`Transition`,`TransitionStart`),transitioncancel:oi(`Transition`,`TransitionCancel`),transitionend:oi(`Transition`,`TransitionEnd`)},ci={},li={};In&&(li=document.createElement(`div`).style,`AnimationEvent`in window||(delete si.animationend.animation,delete si.animationiteration.animation,delete si.animationstart.animation),`TransitionEvent`in window||delete si.transitionend.transition);function ui(e){if(ci[e])return ci[e];if(!si[e])return e;var t=si[e],n;for(n in t)if(t.hasOwnProperty(n)&&n in li)return ci[e]=t[n];return e}var di=ui(`animationend`),fi=ui(`animationiteration`),pi=ui(`animationstart`),mi=ui(`transitionrun`),hi=ui(`transitionstart`),gi=ui(`transitioncancel`),_i=ui(`transitionend`),vi=new Map,yi=`abort auxClick beforeToggle cancel canPlay canPlayThrough click close contextMenu copy cut drag dragEnd dragEnter dragExit dragLeave dragOver dragStart drop durationChange emptied encrypted ended error fullscreenChange fullscreenError gotPointerCapture input invalid keyDown keyPress keyUp load loadedData loadedMetadata loadStart lostPointerCapture mouseDown mouseMove mouseOut mouseOver mouseUp paste pause play playing pointerCancel pointerDown pointerMove pointerOut pointerOver pointerUp progress rateChange reset resize seeked seeking stalled submit suspend timeUpdate touchCancel touchEnd touchStart volumeChange scroll toggle touchMove waiting wheel`.split(` `);yi.push(`scrollEnd`);function bi(e,t){vi.set(e,t),Yt(t,[e])}var xi=0;function Si(e,t){if(e.name!=null&&e.name!==`auto`)return e.name;if(t.autoName!==null)return t.autoName;e=bd.identifierPrefix;var n=xi++;return e=`_`+e+`t_`+n.toString(32)+`_`,t.autoName=e}function Ci(e){if(e==null||typeof e==`string`)return e;var t=null,n=Od;if(n!==null)for(var r=0;r<n.length;r++){var i=e[n[r]];if(i!=null){if(i===`none`)return`none`;t=t==null?i:t+(` `+i)}}return t??e.default}function wi(e,t){return e=Ci(e),t=Ci(t),t==null?e===`auto`?null:e:t===`auto`?null:t}var Ti=typeof reportError==`function`?reportError:function(e){if(typeof window==`object`&&typeof window.ErrorEvent==`function`){var t=new window.ErrorEvent(`error`,{bubbles:!0,cancelable:!0,message:typeof e==`object`&&e&&typeof e.message==`string`?String(e.message):String(e),error:e});if(!window.dispatchEvent(t))return}else if(typeof process==`object`&&typeof process.emit==`function`){process.emit(`uncaughtException`,e);return}console.error(e)},Ei=[],Di=0,Oi=0;function ki(){for(var e=Di,t=Oi=Di=0;t<e;){var n=Ei[t];Ei[t++]=null;var r=Ei[t];Ei[t++]=null;var i=Ei[t];Ei[t++]=null;var a=Ei[t];if(Ei[t++]=null,r!==null&&i!==null){var o=r.pending;o===null?i.next=i:(i.next=o.next,o.next=i),r.pending=i}a!==0&&Ni(n,i,a)}}function Ai(e,t,n,r){Ei[Di++]=e,Ei[Di++]=t,Ei[Di++]=n,Ei[Di++]=r,Oi|=r,e.lanes|=r,e=e.alternate,e!==null&&(e.lanes|=r)}function ji(e,t,n,r){return Ai(e,t,n,r),Pi(e)}function Mi(e,t){return Ai(e,null,null,t),Pi(e)}function Ni(e,t,n){e.lanes|=n;var r=e.alternate;r!==null&&(r.lanes|=n);for(var i=!1,a=e.return;a!==null;)a.childLanes|=n,r=a.alternate,r!==null&&(r.childLanes|=n),a.tag===22&&(e=a.stateNode,e===null||e._visibility&1||(i=!0)),e=a,a=a.return;return e.tag===3?(a=e.stateNode,i&&t!==null&&(i=31-ct(n),e=a.hiddenUpdates,r=e[i],r===null?e[i]=[t]:r.push(t),t.lane=n|536870912),a):null}function Pi(e){if(50<kd)throw kd=0,Ad=null,Error(o(185));for(var t=e.return;t!==null;)e=t,t=e.return;return e.tag===3?e.stateNode:null}var Fi={};function Ii(e,t,n,r){this.tag=e,this.key=n,this.sibling=this.child=this.return=this.stateNode=this.type=this.elementType=null,this.index=0,this.refCleanup=this.ref=null,this.pendingProps=t,this.dependencies=this.memoizedState=this.updateQueue=this.memoizedProps=null,this.mode=r,this.subtreeFlags=this.flags=0,this.deletions=null,this.childLanes=this.lanes=0,this.alternate=null}function Li(e,t,n,r){return new Ii(e,t,n,r)}function Ri(e){return e=e.prototype,!(!e||!e.isReactComponent)}function zi(e,t){var n=e.alternate;return n===null?(n=Li(e.tag,t,e.key,e.mode),n.elementType=e.elementType,n.type=e.type,n.stateNode=e.stateNode,n.alternate=e,e.alternate=n):(n.pendingProps=t,n.type=e.type,n.flags=0,n.subtreeFlags=0,n.deletions=null),n.flags=e.flags&1206910976,n.childLanes=e.childLanes,n.lanes=e.lanes,n.child=e.child,n.memoizedProps=e.memoizedProps,n.memoizedState=e.memoizedState,n.updateQueue=e.updateQueue,t=e.dependencies,n.dependencies=t===null?null:{lanes:t.lanes,firstContext:t.firstContext},n.sibling=e.sibling,n.index=e.index,n.ref=e.ref,n.refCleanup=e.refCleanup,n}function Bi(e,t){e.flags&=1206910978;var n=e.alternate;return n===null?(e.childLanes=0,e.lanes=t,e.child=null,e.subtreeFlags=0,e.memoizedProps=null,e.memoizedState=null,e.updateQueue=null,e.dependencies=null,e.stateNode=null):(e.childLanes=n.childLanes,e.lanes=n.lanes,e.child=n.child,e.subtreeFlags=0,e.deletions=null,e.memoizedProps=n.memoizedProps,e.memoizedState=n.memoizedState,e.updateQueue=n.updateQueue,e.type=n.type,t=n.dependencies,e.dependencies=t===null?null:{lanes:t.lanes,firstContext:t.firstContext}),e}function Vi(e,t,n,r,i,a){var s=0;if(r=e,typeof r==`function`)Ri(r)&&(s=1);else if(typeof r==`string`)s=qm(e,n,je.current)?26:e===`html`||e===`head`||e===`body`?27:5;else a:switch(r){case _e:return e=Li(31,n,t,i),e.elementType=_e,e.lanes=a,e;case le:return Hi(n.children,i,a,t);case S:s=8,i|=24;break;case C:return e=Li(12,n,t,i|2),e.elementType=C,e.lanes=a,e;case pe:return e=Li(13,n,t,i),e.elementType=pe,e.lanes=a,e;case me:return e=Li(19,n,t,i),e.elementType=me,e.lanes=a,e;case ve:case be:return e=i|32,e=Li(30,n,t,e),e.elementType=be,e.lanes=a,e.stateNode={autoName:null,paired:null,clones:null,ref:null},e;default:if(typeof r==`object`&&r)switch(r.$$typeof){case de:s=10;break a;case ue:s=9;break a;case fe:s=11;break a;case he:s=14;break a;case ge:s=16,r=null;break a}s=29,n=Error(o(130,e===null?`null`:typeof e,``)),r=null}return t=Li(s,n,t,i),t.elementType=e,t.type=r,t.lanes=a,t}function Hi(e,t,n,r){return e=Li(7,e,r,t),e.lanes=n,e}function Ui(e,t,n){return e=Li(6,e,null,t),e.lanes=n,e}function Wi(e){var t=Li(18,null,null,0);return t.stateNode=e,t}function Gi(e,t,n){return t=Li(4,e.children===null?[]:e.children,e.key,t),t.lanes=n,t.stateNode={containerInfo:e.containerInfo,pendingChildren:null,implementation:e.implementation},t}var Ki=new WeakMap;function qi(e,t){if(typeof e==`object`&&e){var n=Ki.get(e);return n===void 0?(t={value:e,source:t,stack:We(t)},Ki.set(e,t),t):n}return{value:e,source:t,stack:We(t)}}var Ji=[],Yi=0,Xi=null,Zi=0,Qi=[],$i=0,ea=null,ta=1,na=``;function ra(e,t){Ji[Yi++]=Zi,Ji[Yi++]=Xi,Xi=e,Zi=t}function ia(e,t,n){Qi[$i++]=ta,Qi[$i++]=na,Qi[$i++]=ea,ea=e;var r=ta;e=na;var i=32-ct(r)-1;r&=~(1<<i),n+=1;var a=32-ct(t)+i;if(30<a){var o=i-i%5;a=(r&(1<<o)-1).toString(32),r>>=o,i-=o,ta=1<<32-ct(t)+i|n<<i|r,na=a+e}else ta=1<<a|n<<i|r,na=e}function aa(e){e.return!==null&&(ra(e,1),ia(e,1,0))}function oa(e){for(;e===Xi;)Xi=Ji[--Yi],Ji[Yi]=null,Zi=Ji[--Yi],Ji[Yi]=null;for(;e===ea;)ea=Qi[--$i],Qi[$i]=null,na=Qi[--$i],Qi[$i]=null,ta=Qi[--$i],Qi[$i]=null}function sa(e,t){Qi[$i++]=ta,Qi[$i++]=na,Qi[$i++]=ea,ta=t.id,na=t.overflow,ea=e}var ca=null,F=null,I=!1,la=null,ua=!1,da=Error(o(519));function fa(e){throw va(qi(Error(o(418,1<arguments.length&&arguments[1]!==void 0&&arguments[1]?`text`:`HTML`,``)),e)),da}function pa(e){var t=e.stateNode,n=e.type,r=e.memoizedProps;switch(t[k]=e,t[Mt]=r,n){case`dialog`:Q(`cancel`,t),Q(`close`,t);break;case`iframe`:case`object`:case`embed`:Q(`load`,t);break;case`video`:case`audio`:for(n=0;n<zf.length;n++)Q(zf[n],t);break;case`source`:Q(`error`,t);break;case`img`:case`image`:case`link`:Q(`error`,t),Q(`load`,t);break;case`details`:Q(`toggle`,t);break;case`input`:Q(`invalid`,t),mn(t,r.value,r.defaultValue,r.checked,r.defaultChecked,r.type,r.name,!0);break;case`select`:Q(`invalid`,t);break;case`textarea`:Q(`invalid`,t),vn(t,r.value,r.defaultValue,r.children)}n=r.children,typeof n!=`string`&&typeof n!=`number`&&typeof n!=`bigint`||t.textContent===``+n||!0===r.suppressHydrationWarning||ep(t.textContent,n)?(r.popover!=null&&(Q(`beforetoggle`,t),Q(`toggle`,t)),r.onScroll!=null&&Q(`scroll`,t),r.onScrollEnd!=null&&Q(`scrollend`,t),r.onClick!=null&&(t.onclick=Dn),t=!0):t=!1,t||fa(e,!0)}function ma(e){for(ca=e.return;ca;)switch(ca.tag){case 5:case 31:case 13:ua=!1;return;case 27:case 3:ua=!0;return;default:ca=ca.return}}function ha(e){if(e!==ca)return!1;if(!I)return ma(e),I=!0,!1;var t=e.tag,n;if((n=t!==3&&t!==27)&&((n=t===5)&&(n=e.type,n=n===`form`||n===`button`||pp(e.type,e.memoizedProps)),n=!n),n&&F&&fa(e),ma(e),t===13){if(e=e.memoizedState,e=e===null?null:e.dehydrated,!e)throw Error(o(317));F=dm(e)}else if(t===31){if(e=e.memoizedState,e=e===null?null:e.dehydrated,!e)throw Error(o(317));F=dm(e)}else t===27?(t=F,Sp(e.type)?(e=um,um=null,F=e):F=t):F=ca?lm(e.stateNode.nextSibling):null;return!0}function ga(){F=ca=null,I=!1}function _a(){var e=la;return e!==null&&(pd===null?pd=e:pd.push.apply(pd,e),la=null),e}function va(e){la===null?la=[e]:la.push(e)}var ya=ke(null),ba=null,xa=null;function Sa(e,t,n){D(ya,t._currentValue),t._currentValue=n}function Ca(e){e._currentValue=ya.current,Ae(ya)}function wa(e,t,n){for(;e!==null;){var r=e.alternate;if((e.childLanes&t)===t?r!==null&&(r.childLanes&t)!==t&&(r.childLanes|=t):(e.childLanes|=t,r!==null&&(r.childLanes|=t)),e===n)break;e=e.return}}function Ta(e,t,n,r){var i=e.child;for(i!==null&&(i.return=e);i!==null;){var a=i.dependencies;if(a!==null){var s=i.child;a=a.firstContext;a:for(;a!==null;){var c=a;a=i;for(var l=0;l<t.length;l++)if(c.context===t[l]){a.lanes|=n,c=a.alternate,c!==null&&(c.lanes|=n),wa(a.return,n,e),r||(s=null);break a}a=c.next}}else if(i.tag===18){if(s=i.return,s===null)throw Error(o(341));s.lanes|=n,a=s.alternate,a!==null&&(a.lanes|=n),wa(s,n,e),s=null}else i.tag===13&&i.memoizedState!==null&&i.memoizedState.dehydrated===null?(i.lanes|=n,s=i.alternate,s!==null&&(s.lanes|=n),wa(i.return,n,e),s=i.child,s=s===null?null:s.sibling):s=i.child;if(s!==null)s.return=i;else for(s=i;s!==null;){if(s===e){s=null;break}if(i=s.sibling,i!==null){i.return=s.return,s=i;break}s=s.return}i=s}}function Ea(e,t,n,r){e=null;for(var i=t,a=!1;i!==null;){if(!a){if(i.flags&524288)a=!0;else if(i.flags&262144)break}if(i.tag===10){var s=i.alternate;if(s===null)throw Error(o(387));if(s=s.memoizedProps,s!==null){var c=i.type;Kr(i.pendingProps.value,s.value)||(e===null?e=[c]:e.push(c))}}else if(i===Pe.current){if(s=i.alternate,s===null)throw Error(o(387));s.memoizedState.memoizedState!==i.memoizedState.memoizedState&&(e===null?e=[sh]:e.push(sh))}i=i.return}return e!==null&&Ta(t,e,n,r),t.flags|=262144,e!==null}function Da(e){for(e=e.firstContext;e!==null;){if(!Kr(e.context._currentValue,e.memoizedValue))return!0;e=e.next}return!1}function Oa(e){ba=e,xa=null,e=e.dependencies,e!==null&&(e.firstContext=null)}function ka(e){return ja(ba,e)}function Aa(e,t){return ba===null&&Oa(e),ja(e,t)}function ja(e,t){var n=t._currentValue;if(t={context:t,memoizedValue:n,next:null},xa===null){if(e===null)throw Error(o(308));xa=t,e.dependencies={lanes:0,firstContext:t},e.flags|=524288}else xa=xa.next=t;return n}var Ma=typeof AbortController<`u`?AbortController:function(){var e=[],t=this.signal={aborted:!1,addEventListener:function(t,n){e.push(n)}};this.abort=function(){t.aborted=!0,e.forEach(function(e){return e()})}},Na=t.unstable_scheduleCallback,Pa=t.unstable_NormalPriority,Fa={$$typeof:de,Consumer:null,Provider:null,_currentValue:null,_currentValue2:null,_threadCount:0};function Ia(){return{controller:new Ma,data:new Map,refCount:0}}function La(e){e.refCount--,e.refCount===0&&Na(Pa,function(){e.controller.abort()})}function Ra(e,t){if(e.pendingLanes&4194048){var n=e.transitionTypes;for(n===null&&(n=e.transitionTypes=[]),e=0;e<t.length;e++){var r=t[e];n.indexOf(r)===-1&&n.push(r)}}}var za=null;function Ba(e){var t=e.transitionTypes;return e.transitionTypes=null,t}var Va=null,Ha=0,Ua=0,Wa=null;function Ga(e,t){if(Va===null){var n=Va=[];Ha=0,Ua=Pf(),Wa={status:`pending`,value:void 0,then:function(e){n.push(e)}}}return Ha++,t.then(Ka,Ka),t}function Ka(){if(--Ha===0&&(za=null,Va!==null)){Wa!==null&&(Wa.status=`fulfilled`);var e=Va;Va=null,Ua=0,Wa=null;for(var t=0;t<e.length;t++)(0,e[t])()}}function qa(e,t){var n=[],r={status:`pending`,value:null,reason:null,then:function(e){n.push(e)}};return e.then(function(){r.status=`fulfilled`,r.value=t;for(var e=0;e<n.length;e++)(0,n[e])(t)},function(e){for(r.status=`rejected`,r.reason=e,e=0;e<n.length;e++)(0,n[e])(void 0)}),r}var Ja=T.S;T.S=function(e,t){if(gd=Xe(),typeof t==`object`&&t&&typeof t.then==`function`&&Ga(e,t),za!==null)for(var n=bf;n!==null;)Ra(n,za),n=n.next;if(n=e.types,n!==null){for(var r=bf;r!==null;)Ra(r,n),r=r.next;if(Ua!==0){r=za,r===null&&(r=za=[]);for(var i=0;i<n.length;i++){var a=n[i];r.indexOf(a)===-1&&r.push(a)}}}Ja!==null&&Ja(e,t)};var Ya=ke(null);function Xa(){var e=Ya.current;return e===null?G.pooledCache:e}function Za(e,t){t===null?D(Ya,Ya.current):D(Ya,t.pool)}function Qa(){var e=Xa();return e===null?null:{parent:Fa._currentValue,pool:e}}var $a=Error(o(460)),eo=Error(o(474)),to=Error(o(542)),no={then:function(){}};function ro(e){return e=e.status,e===`fulfilled`||e===`rejected`}function io(e,t,n){switch(n=e[n],n===void 0?e.push(t):n!==t&&(t.then(Dn,Dn),t=n),t.status){case`fulfilled`:return t.value;case`rejected`:throw e=t.reason,co(e),e===void 0&&!(`reason`in t)?Error(o(600)):e;default:if(typeof t.status==`string`)t.then(Dn,Dn);else{if(e=G,e!==null&&100<e.shellSuspendCounter)throw Error(o(482));e=t,e.status=`pending`,e.then(function(e){if(t.status===`pending`){var n=t;n.status=`fulfilled`,n.value=e}},function(e){if(t.status===`pending`){var n=t;n.status=`rejected`,n.reason=e}})}switch(t.status){case`fulfilled`:return t.value;case`rejected`:throw e=t.reason,co(e),e}throw oo=t,$a}}function ao(e){try{var t=e._init;return t(e._payload)}catch(e){throw typeof e==`object`&&e&&typeof e.then==`function`?(oo=e,$a):e}}var oo=null;function so(){if(oo===null)throw Error(o(459));var e=oo;return oo=null,e}function co(e){if(e===$a||e===to)throw Error(o(483))}var lo=null,uo=0;function fo(e){var t=uo;return uo+=1,lo===null&&(lo=[]),io(lo,e,t)}function po(e,t){t=t.props.ref,e.ref=t===void 0?null:t}function mo(e,t){throw t.$$typeof===ae?Error(o(525)):(e=Object.prototype.toString.call(t),Error(o(31,e===`[object Object]`?`object with keys {`+Object.keys(t).join(`, `)+`}`:e)))}function ho(e){function t(t,n){if(e){var r=t.deletions;r===null?(t.deletions=[n],t.flags|=16):r.push(n)}}function n(n,r){if(!e)return null;for(;r!==null;)t(n,r),r=r.sibling;return null}function r(e){for(var t=new Map;e!==null;)e.key===null?t.set(e.index,e):t.set(e.key,e),e=e.sibling;return t}function i(e,t){return e=zi(e,t),e.index=0,e.sibling=null,e}function a(t,n,r){return t.index=r,e?(r=t.alternate,r===null?(t.flags|=134217730,n):(r=r.index,r<n?(t.flags|=2,n):r)):(t.flags|=1048576,n)}function s(t){return e&&t.alternate===null&&(t.flags|=134217730),t}function c(e,t,n,r){return t===null||t.tag!==6?(t=Ui(n,e.mode,r),t.return=e,t):(t=i(t,n),t.return=e,t)}function l(e,t,n,r){var a=n.type;return a===le?(e=d(e,t,n.props.children,r,n.key),po(e,n),e):t!==null&&(t.elementType===a||typeof a==`object`&&a&&a.$$typeof===ge&&ao(a)===t.type)?(t=i(t,n.props),po(t,n),t.return=e,t):(t=Vi(n.type,n.key,n.props,null,e.mode,r),po(t,n),t.return=e,t)}function u(e,t,n,r){return t===null||t.tag!==4||t.stateNode.containerInfo!==n.containerInfo||t.stateNode.implementation!==n.implementation?(t=Gi(n,e.mode,r),t.return=e,t):(t=i(t,n.children||[]),t.return=e,t)}function d(e,t,n,r,a){return t===null||t.tag!==7?(t=Hi(n,e.mode,r,a),t.return=e,t):(t=i(t,n),t.return=e,t)}function f(e,t,n){if(typeof t==`string`&&t!==``||typeof t==`number`||typeof t==`bigint`)return t=Ui(``+t,e.mode,n),t.return=e,t;if(typeof t==`object`&&t){switch(t.$$typeof){case oe:return n=Vi(t.type,t.key,t.props,null,e.mode,n),po(n,t),n.return=e,n;case ce:return t=Gi(t,e.mode,n),t.return=e,t;case ge:return t=ao(t),f(e,t,n)}if(Te(t)||Se(t))return t=Hi(t,e.mode,n,null),t.return=e,t;if(typeof t.then==`function`)return f(e,fo(t),n);if(t.$$typeof===de)return f(e,Aa(e,t),n);mo(e,t)}return null}function p(e,t,n,r){var i=t===null?null:t.key;if(typeof n==`string`&&n!==``||typeof n==`number`||typeof n==`bigint`)return i===null?c(e,t,``+n,r):null;if(typeof n==`object`&&n){switch(n.$$typeof){case oe:return n.key===i?l(e,t,n,r):null;case ce:return n.key===i?u(e,t,n,r):null;case ge:return n=ao(n),p(e,t,n,r)}if(Te(n)||Se(n))return i===null?d(e,t,n,r,null):null;if(typeof n.then==`function`)return p(e,t,fo(n),r);if(n.$$typeof===de)return p(e,t,Aa(e,n),r);mo(e,n)}return null}function m(e,t,n,r,i){if(typeof r==`string`&&r!==``||typeof r==`number`||typeof r==`bigint`)return e=e.get(n)||null,c(t,e,``+r,i);if(typeof r==`object`&&r){switch(r.$$typeof){case oe:return e=e.get(r.key===null?n:r.key)||null,l(t,e,r,i);case ce:return e=e.get(r.key===null?n:r.key)||null,u(t,e,r,i);case ge:return r=ao(r),m(e,t,n,r,i)}if(Te(r)||Se(r))return e=e.get(n)||null,d(t,e,r,i,null);if(typeof r.then==`function`)return m(e,t,n,fo(r),i);if(r.$$typeof===de)return m(e,t,n,Aa(t,r),i);mo(t,r)}return null}function h(i,o,s,c){for(var l=null,u=null,d=o,h=o=0,g=null;d!==null&&h<s.length;h++){d.index>h?(g=d,d=null):g=d.sibling;var _=p(i,d,s[h],c);if(_===null){d===null&&(d=g);break}e&&d&&_.alternate===null&&t(i,d),o=a(_,o,h),u===null?l=_:u.sibling=_,u=_,d=g}if(h===s.length)return n(i,d),I&&ra(i,h),l;if(d===null){for(;h<s.length;h++)d=f(i,s[h],c),d!==null&&(o=a(d,o,h),u===null?l=d:u.sibling=d,u=d);return I&&ra(i,h),l}for(d=r(d);h<s.length;h++)g=m(d,i,h,s[h],c),g!==null&&(e&&(_=g.alternate,_!==null&&d.delete(_.key===null?h:_.key)),o=a(g,o,h),u===null?l=g:u.sibling=g,u=g);return e&&d.forEach(function(e){return t(i,e)}),I&&ra(i,h),l}function g(i,s,c,l){if(c==null)throw Error(o(151));for(var u=null,d=null,h=s,g=s=0,_=null,v=c.next();h!==null&&!v.done;g++,v=c.next()){h.index>g?(_=h,h=null):_=h.sibling;var y=p(i,h,v.value,l);if(y===null){h===null&&(h=_);break}e&&h&&y.alternate===null&&t(i,h),s=a(y,s,g),d===null?u=y:d.sibling=y,d=y,h=_}if(v.done)return n(i,h),I&&ra(i,g),u;if(h===null){for(;!v.done;g++,v=c.next())v=f(i,v.value,l),v!==null&&(s=a(v,s,g),d===null?u=v:d.sibling=v,d=v);return I&&ra(i,g),u}for(h=r(h);!v.done;g++,v=c.next())v=m(h,i,g,v.value,l),v!==null&&(e&&(_=v.alternate,_!==null&&h.delete(_.key===null?g:_.key)),s=a(v,s,g),d===null?u=v:d.sibling=v,d=v);return e&&h.forEach(function(e){return t(i,e)}),I&&ra(i,g),u}function _(e,r,a,c){if(typeof a==`object`&&a&&a.type===le&&a.key===null&&a.props.ref===void 0&&(a=a.props.children),typeof a==`object`&&a){switch(a.$$typeof){case oe:a:{for(var l=a.key;r!==null;){if(r.key===l){if(l=a.type,l===le){if(r.tag===7){n(e,r.sibling),c=i(r,a.props.children),po(c,a),c.return=e,e=c;break a}}else if(r.elementType===l||typeof l==`object`&&l&&l.$$typeof===ge&&ao(l)===r.type){n(e,r.sibling),c=i(r,a.props),po(c,a),c.return=e,e=c;break a}n(e,r);break}t(e,r),r=r.sibling}a.type===le?(c=Hi(a.props.children,e.mode,c,a.key),po(c,a),c.return=e,e=c):(c=Vi(a.type,a.key,a.props,null,e.mode,c),po(c,a),c.return=e,e=c)}return s(e);case ce:a:{for(l=a.key;r!==null;){if(r.key===l){if(r.tag===4&&r.stateNode.containerInfo===a.containerInfo&&r.stateNode.implementation===a.implementation){n(e,r.sibling),c=i(r,a.children||[]),c.return=e,e=c;break a}n(e,r);break}t(e,r),r=r.sibling}c=Gi(a,e.mode,c),c.return=e,e=c}return s(e);case ge:return a=ao(a),_(e,r,a,c)}if(Te(a))return h(e,r,a,c);if(Se(a)){if(l=Se(a),typeof l!=`function`)throw Error(o(150));return a=l.call(a),g(e,r,a,c)}if(typeof a.then==`function`)return _(e,r,fo(a),c);if(a.$$typeof===de)return _(e,r,Aa(e,a),c);mo(e,a)}return typeof a==`string`&&a!==``||typeof a==`number`||typeof a==`bigint`?(a=``+a,r!==null&&r.tag===6?(n(e,r.sibling),c=i(r,a),c.return=e,e=c):(n(e,r),c=Ui(a,e.mode,c),c.return=e,e=c),s(e)):n(e,r)}return function(e,t,n,r){try{uo=0;var i=_(e,t,n,r);return lo=null,i}catch(t){if(t===$a||t===to)throw t;var a=Li(29,t,null,e.mode);return a.lanes=r,a.return=e,a}}}var go=ho(!0),_o=ho(!1),vo=!1;function yo(e){e.updateQueue={baseState:e.memoizedState,firstBaseUpdate:null,lastBaseUpdate:null,shared:{pending:null,lanes:0,hiddenCallbacks:null},callbacks:null}}function bo(e,t){e=e.updateQueue,t.updateQueue===e&&(t.updateQueue={baseState:e.baseState,firstBaseUpdate:e.firstBaseUpdate,lastBaseUpdate:e.lastBaseUpdate,shared:e.shared,callbacks:null})}function xo(e){return{lane:e,tag:0,payload:null,callback:null,next:null}}function So(e,t,n){var r=e.updateQueue;if(r===null)return null;if(r=r.shared,W&2){var i=r.pending;return i===null?t.next=t:(t.next=i.next,i.next=t),r.pending=t,t=Pi(e),Ni(e,null,n),t}return Ai(e,r,t,n),Pi(e)}function Co(e,t,n){if(t=t.updateQueue,t!==null&&(t=t.shared,n&4194048)){var r=t.lanes;r&=e.pendingLanes,n|=r,t.lanes=n,Tt(e,n)}}function wo(e,t){var n=e.updateQueue,r=e.alternate;if(r!==null&&(r=r.updateQueue,n===r)){var i=null,a=null;if(n=n.firstBaseUpdate,n!==null){do{var o={lane:n.lane,tag:n.tag,payload:n.payload,callback:null,next:null};a===null?i=a=o:a=a.next=o,n=n.next}while(n!==null);a===null?i=a=t:a=a.next=t}else i=a=t;n={baseState:r.baseState,firstBaseUpdate:i,lastBaseUpdate:a,shared:r.shared,callbacks:r.callbacks},e.updateQueue=n}else e=n.lastBaseUpdate,e===null?n.firstBaseUpdate=t:e.next=t,n.lastBaseUpdate=t}var To=!1;function Eo(){if(To){var e=Wa;if(e!==null)throw e}}function Do(e,t,n,r){To=!1;var i=e.updateQueue;vo=!1;var a=i.firstBaseUpdate,o=i.lastBaseUpdate,s=i.shared.pending;if(s!==null){i.shared.pending=null;var c=s,l=c.next;c.next=null,o===null?a=l:o.next=l,o=c;var u=e.alternate;u!==null&&(u=u.updateQueue,s=u.lastBaseUpdate,s!==o&&(s===null?u.firstBaseUpdate=l:s.next=l,u.lastBaseUpdate=c))}if(a!==null){var d=i.baseState;o=0,u=l=c=null,s=a;do{var f=s.lane&-536870913,p=f!==s.lane;if(p?(q&f)===f:(r&f)===f){f!==0&&f===Ua&&(To=!0),u!==null&&(u=u.next={lane:0,tag:s.tag,payload:s.payload,callback:null,next:null});a:{var m=e,h=s;f=t;var g=n;switch(h.tag){case 1:if(m=h.payload,typeof m==`function`){d=m.call(g,d,f);break a}d=m;break a;case 3:m.flags=m.flags&-65537|128;case 0:if(m=h.payload,f=typeof m==`function`?m.call(g,d,f):m,f==null)break a;d=x({},d,f);break a;case 2:vo=!0}}f=s.callback,f!==null&&(e.flags|=64,p&&(e.flags|=8192),p=i.callbacks,p===null?i.callbacks=[f]:p.push(f))}else p={lane:f,tag:s.tag,payload:s.payload,callback:s.callback,next:null},u===null?(l=u=p,c=d):u=u.next=p,o|=f;if(s=s.next,s===null){if(s=i.shared.pending,s===null)break;p=s,s=p.next,p.next=null,i.lastBaseUpdate=p,i.shared.pending=null}}while(1);u===null&&(c=d),i.baseState=c,i.firstBaseUpdate=l,i.lastBaseUpdate=u,a===null&&(i.shared.lanes=0),sd|=o,e.lanes=o,e.memoizedState=d}}function Oo(e,t){if(typeof e!=`function`)throw Error(o(191,e));e.call(t)}function ko(e,t){var n=e.callbacks;if(n!==null)for(e.callbacks=null,e=0;e<n.length;e++)Oo(n[e],t)}var Ao=ke(null),jo=ke(0);function Mo(e,t){e=od,D(jo,e),D(Ao,t),od=e|t.baseLanes}function No(){D(jo,od),D(Ao,Ao.current)}function Po(){od=jo.current,Ae(Ao),Ae(jo)}var Fo=ke(null),Io=null;function Lo(e){var t=e.alternate;D(Ho,Ho.current&1),D(Fo,e),Io===null&&(t===null||Ao.current!==null||t.memoizedState!==null)&&(Io=e)}function Ro(e){D(Ho,Ho.current),D(Fo,e),Io===null&&(Io=e)}function zo(e){e.tag===22?(D(Ho,Ho.current),D(Fo,e),Io===null&&(Io=e)):Bo()}function Bo(){D(Ho,Ho.current),D(Fo,Fo.current)}function Vo(e){Ae(Fo),Io===e&&(Io=null),Ae(Ho)}var Ho=ke(0);function Uo(e,t){D(Fo,Fo.current),D(Ho,t)}function Wo(e){Ae(Ho),Ae(Fo),Io===e&&(Io=null)}function Go(e){for(var t=e;t!==null;){if(t.tag===13){var n=t.memoizedState;if(n!==null&&(n=n.dehydrated,n===null||om(n)||sm(n)))return t}else if(t.tag===19&&t.memoizedProps.revealOrder!==`independent`){if(t.flags&128)return t}else if(t.child!==null){t.child.return=t,t=t.child;continue}if(t===e)break;for(;t.sibling===null;){if(t.return===null||t.return===e)return null;t=t.return}t.sibling.return=t.return,t=t.sibling}return null}var Ko=0,L=null,R=null,qo=null,Jo=!1,Yo=!1,Xo=!1,Zo=0,Qo=0,$o=null,es=0;function z(){throw Error(o(321))}function ts(e,t){if(t===null)return!1;for(var n=0;n<t.length&&n<e.length;n++)if(!Kr(e[n],t[n]))return!1;return!0}function ns(e,t,n,r,i,a){return Ko=a,L=t,t.memoizedState=null,t.updateQueue=null,t.lanes=0,T.H=e===null||e.memoizedState===null?vc:yc,Xo=!1,a=n(r,i),Xo=!1,Yo&&(a=is(t,n,r,i)),rs(e),a}function rs(e){T.H=_c;var t=R!==null&&R.next!==null;if(Ko=0,qo=R=L=null,Jo=!1,Qo=0,$o=null,t)throw Error(o(300));e===null||Ic||(e=e.dependencies,e!==null&&Da(e)&&(Ic=!0))}function is(e,t,n,r){L=e;var i=0;do{if(Yo&&($o=null),Qo=0,Yo=!1,25<=i)throw Error(o(301));if(i+=1,qo=R=null,e.updateQueue!=null){var a=e.updateQueue;a.lastEffect=null,a.events=null,a.stores=null,a.memoCache!=null&&(a.memoCache.index=0)}T.H=bc,a=t(n,r)}while(Yo);return a}function as(){var e=T.H,t=e.useState()[0];return t=typeof t.then==`function`?ds(t):t,e=e.useState()[0],(R===null?null:R.memoizedState)!==e&&(L.flags|=1024),t}function os(){var e=Zo!==0;return Zo=0,e}function ss(e,t,n){t.updateQueue=e.updateQueue,t.flags&=-2053,e.lanes&=~n}function cs(e){if(Jo){for(e=e.memoizedState;e!==null;){var t=e.queue;t!==null&&(t.pending=null),e=e.next}Jo=!1}Ko=0,qo=R=L=null,Yo=!1,Qo=Zo=0,$o=null}function ls(){var e={memoizedState:null,baseState:null,baseQueue:null,queue:null,next:null};return qo===null?L.memoizedState=qo=e:qo=qo.next=e,qo}function B(){if(R===null){var e=L.alternate;e=e===null?null:e.memoizedState}else e=R.next;var t=qo===null?L.memoizedState:qo.next;if(t!==null)qo=t,R=e;else{if(e===null)throw L.alternate===null?Error(o(467)):Error(o(310));R=e,e={memoizedState:R.memoizedState,baseState:R.baseState,baseQueue:R.baseQueue,queue:R.queue,next:null},qo===null?L.memoizedState=qo=e:qo=qo.next=e}return qo}function us(){return{lastEffect:null,events:null,stores:null,memoCache:null}}function ds(e){var t=Qo;return Qo+=1,$o===null&&($o=[]),e=io($o,e,t),t=L,(qo===null?t.memoizedState:qo.next)===null&&(t=t.alternate,T.H=t===null||t.memoizedState===null?vc:yc),e}function fs(e){if(typeof e==`object`&&e){if(typeof e.then==`function`)return ds(e);if(e.$$typeof===w)return;if(e.$$typeof===de)return ka(e)}throw Error(o(438,String(e)))}function ps(e){var t=null,n=L.updateQueue;if(n!==null&&(t=n.memoCache),t==null){var r=L.alternate;r!==null&&(r=r.updateQueue,r!==null&&(r=r.memoCache,r!=null&&(t={data:r.data.map(function(e){return e.slice()}),index:0})))}if(t??={data:[],index:0},n===null&&(n=us(),L.updateQueue=n),n.memoCache=t,n=t.data[t.index],n===void 0)for(n=t.data[t.index]=Array(e),r=0;r<e;r++)n[r]=ye;return t.index++,n}function ms(e,t){return typeof t==`function`?t(e):t}function hs(e){return gs(B(),R,e)}function gs(e,t,n){var r=e.queue;if(r===null)throw Error(o(311));r.lastRenderedReducer=n;var i=e.baseQueue,a=r.pending;if(a!==null){if(i!==null){var s=i.next;i.next=a.next,a.next=s}t.baseQueue=i=a,r.pending=null}if(a=e.baseState,i===null)e.memoizedState=a;else{t=i.next;var c=s=null,l=null,u=t,d=!1;do{var f=u.lane&-536870913;if(f===u.lane?(Ko&f)===f:(q&f)===f){var p=u.revertLane;if(p===0)l!==null&&(l=l.next={lane:0,revertLane:0,gesture:null,action:u.action,hasEagerState:u.hasEagerState,eagerState:u.eagerState,next:null}),f===Ua&&(d=!0);else if((Ko&p)===p){u=u.next,p===Ua&&(d=!0);continue}else f={lane:0,revertLane:u.revertLane,gesture:null,action:u.action,hasEagerState:u.hasEagerState,eagerState:u.eagerState,next:null},l===null?(c=l=f,s=a):l=l.next=f,L.lanes|=p,sd|=p;f=u.action,Xo&&n(a,f),a=u.hasEagerState?u.eagerState:n(a,f)}else p={lane:f,revertLane:u.revertLane,gesture:u.gesture,action:u.action,hasEagerState:u.hasEagerState,eagerState:u.eagerState,next:null},l===null?(c=l=p,s=a):l=l.next=p,L.lanes|=f,sd|=f;u=u.next}while(u!==null&&u!==t);if(l===null?s=a:l.next=c,!Kr(a,e.memoizedState)&&(Ic=!0,d&&(n=Wa,n!==null)))throw n;e.memoizedState=a,e.baseState=s,e.baseQueue=l,r.lastRenderedState=a}return i===null&&(r.lanes=0),[e.memoizedState,r.dispatch]}function _s(e){var t=B(),n=t.queue;if(n===null)throw Error(o(311));n.lastRenderedReducer=e;var r=n.dispatch,i=n.pending,a=t.memoizedState;if(i!==null){n.pending=null;var s=i=i.next;do a=e(a,s.action),s=s.next;while(s!==i);Kr(a,t.memoizedState)||(Ic=!0),t.memoizedState=a,t.baseQueue===null&&(t.baseState=a),n.lastRenderedState=a}return[a,r]}function vs(e,t,n){var r=L,i=B(),a=I;if(a){if(n===void 0)throw Error(o(407));n=n()}else n=t();var s=!Kr((R||i).memoizedState,n);if(s&&(i.memoizedState=n,Ic=!0),i=i.queue,Us(xs.bind(null,r,i,e),[e]),e=i.getSnapshot!==t||s||qo!==null&&!!(qo.memoizedState.tag&1),Rs(e?9:8,{destroy:void 0},bs.bind(null,r,i,n,t),null),e){if(r.flags|=2048,G===null)throw Error(o(349));a||Ko&127||ys(r,t,n)}return n}function ys(e,t,n){e.flags|=16384,e={getSnapshot:t,value:n},t=L.updateQueue,t===null?(t=us(),L.updateQueue=t,t.stores=[e]):(n=t.stores,n===null?t.stores=[e]:n.push(e))}function bs(e,t,n,r){t.value=n,t.getSnapshot=r,Ss(t)&&Cs(e)}function xs(e,t,n){return n(function(){Ss(t)&&Cs(e)})}function Ss(e){var t=e.getSnapshot;e=e.value;try{var n=t();return!Kr(e,n)}catch{return!0}}function Cs(e){var t=Mi(e,2);t!==null&&Pd(t,e,2)}function ws(e){var t=ls();if(typeof e==`function`){var n=e;if(e=n(),Xo){st(!0);try{n()}finally{st(!1)}}}return t.memoizedState=t.baseState=e,t.queue={pending:null,lanes:0,dispatch:null,lastRenderedReducer:ms,lastRenderedState:e},t}function Ts(e,t,n,r){return e.baseState=n,gs(e,R,typeof r==`function`?r:ms)}function Es(e,t,n,r,i){if(mc(e))throw Error(o(485));if(e=t.action,e!==null){var a={payload:i,action:e,next:null,isTransition:!0,status:`pending`,value:null,reason:null,listeners:[],then:function(e){a.listeners.push(e)}};T.T===null?a.isTransition=!1:n(!0),r(a),n=t.pending,n===null?(a.next=t.pending=a,Ds(t,a)):(a.next=n.next,t.pending=n.next=a)}}function Ds(e,t){var n=t.action,r=t.payload,i=e.state;if(t.isTransition){var a=T.T,o={};o.types=a===null?null:a.types,T.T=o;try{var s=n(i,r),c=T.S;c!==null&&c(o,s),Os(e,t,s)}catch(n){As(e,t,n)}finally{a!==null&&o.types!==null&&(a.types=o.types),T.T=a}}else try{a=n(i,r),Os(e,t,a)}catch(n){As(e,t,n)}}function Os(e,t,n){typeof n==`object`&&n&&typeof n.then==`function`?n.then(function(n){ks(e,t,n)},function(n){return As(e,t,n)}):ks(e,t,n)}function ks(e,t,n){t.status=`fulfilled`,t.value=n,js(t),e.state=n,t=e.pending,t!==null&&(n=t.next,n===t?e.pending=null:(n=n.next,t.next=n,Ds(e,n)))}function As(e,t,n){var r=e.pending;if(e.pending=null,r!==null){r=r.next;do t.status=`rejected`,t.reason=n,js(t),t=t.next;while(t!==r)}e.action=null}function js(e){e=e.listeners;for(var t=0;t<e.length;t++)(0,e[t])()}function Ms(e,t){return t}function Ns(e,t){if(I){var n=G.formState;if(n!==null){a:{var r=L;if(I){if(F){b:{for(var i=F,a=ua;i.nodeType!==8;)if(!a||(i=lm(i.nextSibling),i===null)){i=null;break b}a=i.data,i=a===`F!`||a===`F`?i:null}if(i){F=lm(i.nextSibling),r=i.data===`F!`;break a}}fa(r)}r=!1}r&&(t=n[0])}}return n=ls(),n.memoizedState=n.baseState=t,r={pending:null,lanes:0,dispatch:null,lastRenderedReducer:Ms,lastRenderedState:t},n.queue=r,n=dc.bind(null,L,r),r.dispatch=n,r=ws(!1),a=pc.bind(null,L,!1,r.queue),r=ls(),i={state:t,dispatch:null,action:e,pending:null},r.queue=i,n=Es.bind(null,L,i,a,n),i.dispatch=n,r.memoizedState=e,[t,n,!1]}function Ps(e){return Fs(B(),R,e)}function Fs(e,t,n){if(t=gs(e,t,Ms)[0],e=hs(ms)[0],typeof t==`object`&&t&&typeof t.then==`function`)try{var r=ds(t)}catch(e){throw e===$a?to:e}else r=t;t=B();var i=t.queue,a=i.dispatch;return n!==t.memoizedState&&(L.flags|=2048,Rs(9,{destroy:void 0},Is.bind(null,i,n),null)),[r,a,e]}function Is(e,t){e.action=t}function Ls(e){var t=B(),n=R;if(n!==null)return Fs(t,n,e);B(),t=t.memoizedState,n=B();var r=n.queue.dispatch;return n.memoizedState=e,[t,r,!1]}function Rs(e,t,n,r){return e={tag:e,create:n,deps:r,inst:t,next:null},t=L.updateQueue,t===null&&(t=us(),L.updateQueue=t),n=t.lastEffect,n===null?t.lastEffect=e.next=e:(r=n.next,n.next=e,e.next=r,t.lastEffect=e),e}function zs(){return B().memoizedState}function Bs(e,t,n,r){var i=ls();L.flags|=e,i.memoizedState=Rs(1|t,{destroy:void 0},n,r===void 0?null:r)}function Vs(e,t,n,r){var i=B();r=r===void 0?null:r;var a=i.memoizedState.inst;R!==null&&r!==null&&ts(r,R.memoizedState.deps)?i.memoizedState=Rs(t,a,n,r):(L.flags|=e,i.memoizedState=Rs(1|t,a,n,r))}function Hs(e,t){Bs(8390656,8,e,t)}function Us(e,t){Vs(2048,8,e,t)}function Ws(e){L.flags|=4;var t=L.updateQueue;if(t===null)t=us(),L.updateQueue=t,t.events=[e];else{var n=t.events;n===null?t.events=[e]:n.push(e)}}function Gs(e){var t=B().memoizedState;return Ws({ref:t,nextImpl:e}),function(){if(W&2)throw Error(o(440));return t.impl.apply(void 0,arguments)}}function Ks(e,t){return Vs(4,2,e,t)}function qs(e,t){return Vs(4,4,e,t)}function Js(e,t){if(typeof t==`function`){e=e();var n=t(e);return function(){typeof n==`function`?n():t(null)}}if(t!=null)return e=e(),t.current=e,function(){t.current=null}}function Ys(e,t,n){n=n==null?null:n.concat([e]),Vs(4,4,Js.bind(null,t,e),n)}function Xs(){}function Zs(e,t){var n=B();t=t===void 0?null:t;var r=n.memoizedState;return t!==null&&ts(t,r[1])?r[0]:(n.memoizedState=[e,t],e)}function Qs(e,t){var n=B();t=t===void 0?null:t;var r=n.memoizedState;if(t!==null&&ts(t,r[1]))return r[0];if(r=e(),Xo){st(!0);try{e()}finally{st(!1)}}return n.memoizedState=[r,t],r}function $s(e,t,n){return n===void 0||Ko&1073741824&&!(q&261930)?e.memoizedState=t:(e.memoizedState=n,e=Md(),L.lanes|=e,sd|=e,n)}function ec(e,t,n,r){return Kr(n,t)?n:Ao.current===null?!(Ko&106)||Ko&1073741824&&!(q&261930)?(Ic=!0,e.memoizedState=n):(e=Md(),L.lanes|=e,sd|=e,t):(e=$s(e,n,r),Kr(e,t)||(Ic=!0),e)}function tc(e,t,n,r,i){var a=E.p;E.p=a!==0&&8>a?a:8;var o=T.T,s={};s.types=o===null?null:o.types,T.T=s,pc(e,!1,t,n);try{var c=i(),l=T.S;l!==null&&l(s,c),typeof c==`object`&&c&&typeof c.then==`function`?fc(e,t,qa(c,r),jd(e)):fc(e,t,r,jd(e))}catch(n){fc(e,t,{then:function(){},status:`rejected`,reason:n},jd())}finally{E.p=a,o!==null&&s.types!==null&&(o.types=s.types),T.T=o}}function nc(){}function rc(e,t,n,r){if(e.tag!==5)throw Error(o(476));var i=ic(e).queue;tc(e,i,t,Ee,n===null?nc:function(){return ac(e),n(r)})}function ic(e){var t=e.memoizedState;if(t!==null)return t;t={memoizedState:Ee,baseState:Ee,baseQueue:null,queue:{pending:null,lanes:0,dispatch:null,lastRenderedReducer:ms,lastRenderedState:Ee},next:null};var n={};return t.next={memoizedState:n,baseState:n,baseQueue:null,queue:{pending:null,lanes:0,dispatch:null,lastRenderedReducer:ms,lastRenderedState:n},next:null},e.memoizedState=t,e=e.alternate,e!==null&&(e.memoizedState=t),t}function ac(e){var t=ic(e);t.next===null&&(t=e.alternate.memoizedState),fc(e,t.next.queue,{},jd())}function oc(){return ka(sh)}function sc(){return B().memoizedState}function cc(){return B().memoizedState}function lc(e){for(var t=e.return;t!==null;){switch(t.tag){case 24:case 3:var n=jd();e=xo(n);var r=So(t,e,n);r!==null&&(Pd(r,t,n),Co(r,t,n)),t={cache:Ia()},e.payload=t;return}t=t.return}}function uc(e,t,n){var r=jd();n={lane:r,revertLane:0,gesture:null,action:n,hasEagerState:!1,eagerState:null,next:null},mc(e)?hc(t,n):(n=ji(e,t,n,r),n!==null&&(Pd(n,e,r),gc(n,t,r)))}function dc(e,t,n){fc(e,t,n,jd())}function fc(e,t,n,r){var i={lane:r,revertLane:0,gesture:null,action:n,hasEagerState:!1,eagerState:null,next:null};if(mc(e))hc(t,i);else{var a=e.alternate;if(e.lanes===0&&(a===null||a.lanes===0)&&(a=t.lastRenderedReducer,a!==null))try{var o=t.lastRenderedState,s=a(o,n);if(i.hasEagerState=!0,i.eagerState=s,Kr(s,o))return Ai(e,t,i,0),G===null&&ki(),!1}catch{}if(n=ji(e,t,i,r),n!==null)return Pd(n,e,r),gc(n,t,r),!0}return!1}function pc(e,t,n,r){if(r={lane:2,revertLane:Pf(),gesture:null,action:r,hasEagerState:!1,eagerState:null,next:null},mc(e)){if(t)throw Error(o(479))}else t=ji(e,n,r,2),t!==null&&Pd(t,e,2)}function mc(e){var t=e.alternate;return e===L||t!==null&&t===L}function hc(e,t){Yo=Jo=!0;var n=e.pending;n===null?t.next=t:(t.next=n.next,n.next=t),e.pending=t}function gc(e,t,n){if(n&4194048){var r=t.lanes;r&=e.pendingLanes,n|=r,t.lanes=n,Tt(e,n)}}var _c={readContext:ka,use:fs,useCallback:z,useContext:z,useEffect:z,useImperativeHandle:z,useLayoutEffect:z,useInsertionEffect:z,useMemo:z,useReducer:z,useRef:z,useState:z,useDebugValue:z,useDeferredValue:z,useTransition:z,useSyncExternalStore:z,useId:z,useHostTransitionStatus:z,useFormState:z,useActionState:z,useOptimistic:z,useMemoCache:z,useCacheRefresh:z,useEffectEvent:z},vc={readContext:ka,use:fs,useCallback:function(e,t){return ls().memoizedState=[e,t===void 0?null:t],e},useContext:ka,useEffect:Hs,useImperativeHandle:function(e,t,n){n=n==null?null:n.concat([e]),Bs(4194308,4,Js.bind(null,t,e),n)},useLayoutEffect:function(e,t){return Bs(4194308,4,e,t)},useInsertionEffect:function(e,t){Bs(4,2,e,t)},useMemo:function(e,t){var n=ls();t=t===void 0?null:t;var r=e();if(Xo){st(!0);try{e()}finally{st(!1)}}return n.memoizedState=[r,t],r},useReducer:function(e,t,n){var r=ls();if(n!==void 0){var i=n(t);if(Xo){st(!0);try{n(t)}finally{st(!1)}}}else i=t;return r.memoizedState=r.baseState=i,e={pending:null,lanes:0,dispatch:null,lastRenderedReducer:e,lastRenderedState:i},r.queue=e,e=e.dispatch=uc.bind(null,L,e),[r.memoizedState,e]},useRef:function(e){var t=ls();return e={current:e},t.memoizedState=e},useState:function(e){e=ws(e);var t=e.queue,n=dc.bind(null,L,t);return t.dispatch=n,[e.memoizedState,n]},useDebugValue:Xs,useDeferredValue:function(e,t){return $s(ls(),e,t)},useTransition:function(){var e=ws(!1);return e=tc.bind(null,L,e.queue,!0,!1),ls().memoizedState=e,[!1,e]},useSyncExternalStore:function(e,t,n){var r=L,i=ls();if(I){if(n===void 0)throw Error(o(407));n=n()}else{if(n=t(),G===null)throw Error(o(349));q&127||ys(r,t,n)}i.memoizedState=n;var a={value:n,getSnapshot:t};return i.queue=a,Hs(xs.bind(null,r,a,e),[e]),r.flags|=2048,Rs(9,{destroy:void 0},bs.bind(null,r,a,n,t),null),n},useId:function(){var e=ls(),t=G.identifierPrefix;if(I){var n=na,r=ta;n=(r&~(1<<32-ct(r)-1)).toString(32)+n,t=`_`+t+`R_`+n,n=Zo++,0<n&&(t+=`H`+n.toString(32)),t+=`_`}else n=es++,t=`_`+t+`r_`+n.toString(32)+`_`;return e.memoizedState=t},useHostTransitionStatus:oc,useFormState:Ns,useActionState:Ns,useOptimistic:function(e){var t=ls();t.memoizedState=t.baseState=e;var n={pending:null,lanes:0,dispatch:null,lastRenderedReducer:null,lastRenderedState:null};return t.queue=n,t=pc.bind(null,L,!0,n),n.dispatch=t,[e,t]},useMemoCache:ps,useCacheRefresh:function(){return ls().memoizedState=lc.bind(null,L)},useEffectEvent:function(e){var t=ls(),n={impl:e};return t.memoizedState=n,function(){if(W&2)throw Error(o(440));return n.impl.apply(void 0,arguments)}}},yc={readContext:ka,use:fs,useCallback:Zs,useContext:ka,useEffect:Us,useImperativeHandle:Ys,useInsertionEffect:Ks,useLayoutEffect:qs,useMemo:Qs,useReducer:hs,useRef:zs,useState:function(){return hs(ms)},useDebugValue:Xs,useDeferredValue:function(e,t){return ec(B(),R.memoizedState,e,t)},useTransition:function(){var e=hs(ms)[0],t=B().memoizedState;return[typeof e==`boolean`?e:ds(e),t]},useSyncExternalStore:vs,useId:sc,useHostTransitionStatus:oc,useFormState:Ps,useActionState:Ps,useOptimistic:function(e,t){return Ts(B(),R,e,t)},useMemoCache:ps,useCacheRefresh:cc,useEffectEvent:Gs},bc={readContext:ka,use:fs,useCallback:Zs,useContext:ka,useEffect:Us,useImperativeHandle:Ys,useInsertionEffect:Ks,useLayoutEffect:qs,useMemo:Qs,useReducer:_s,useRef:zs,useState:function(){return _s(ms)},useDebugValue:Xs,useDeferredValue:function(e,t){var n=B();return R===null?$s(n,e,t):ec(n,R.memoizedState,e,t)},useTransition:function(){var e=_s(ms)[0],t=B().memoizedState;return[typeof e==`boolean`?e:ds(e),t]},useSyncExternalStore:vs,useId:sc,useHostTransitionStatus:oc,useFormState:Ls,useActionState:Ls,useOptimistic:function(e,t){var n=B();return R===null?(n.baseState=e,[e,n.queue.dispatch]):Ts(n,R,e,t)},useMemoCache:ps,useCacheRefresh:cc,useEffectEvent:Gs};function xc(e,t,n,r){t=e.memoizedState,n=n(r,t),n=n==null?t:x({},t,n),e.memoizedState=n,e.lanes===0&&(e.updateQueue.baseState=n)}var Sc={enqueueSetState:function(e,t,n){e=e._reactInternals;var r=jd(),i=xo(r);i.payload=t,n!=null&&(i.callback=n),t=So(e,i,r),t!==null&&(Pd(t,e,r),Co(t,e,r))},enqueueReplaceState:function(e,t,n){e=e._reactInternals;var r=jd(),i=xo(r);i.tag=1,i.payload=t,n!=null&&(i.callback=n),t=So(e,i,r),t!==null&&(Pd(t,e,r),Co(t,e,r))},enqueueForceUpdate:function(e,t){e=e._reactInternals;var n=jd(),r=xo(n);r.tag=2,t!=null&&(r.callback=t),t=So(e,r,n),t!==null&&(Pd(t,e,n),Co(t,e,n))}};function Cc(e,t,n,r,i,a,o){return e=e.stateNode,typeof e.shouldComponentUpdate==`function`?e.shouldComponentUpdate(r,a,o):t.prototype&&t.prototype.isPureReactComponent?!qr(n,r)||!qr(i,a):!0}function wc(e,t,n,r){e=t.state,typeof t.componentWillReceiveProps==`function`&&t.componentWillReceiveProps(n,r),typeof t.UNSAFE_componentWillReceiveProps==`function`&&t.UNSAFE_componentWillReceiveProps(n,r),t.state!==e&&Sc.enqueueReplaceState(t,t.state,null)}function Tc(e,t){var n=t;if(`ref`in t)for(var r in n={},t)r!==`ref`&&(n[r]=t[r]);if(e=e.defaultProps)for(var i in n===t&&(n=x({},n)),e)n[i]===void 0&&(n[i]=e[i]);return n}function Ec(e){Ti(e)}function Dc(e){console.error(e)}function Oc(e){Ti(e)}function kc(e,t){try{var n=e.onUncaughtError;n(t.value,{componentStack:t.stack})}catch(e){setTimeout(function(){throw e})}}function Ac(e,t,n){try{var r=e.onCaughtError;r(n.value,{componentStack:n.stack,errorBoundary:t.tag===1?t.stateNode:null})}catch(e){setTimeout(function(){throw e})}}function jc(e,t,n){return n=xo(n),n.tag=3,n.payload={element:null},n.callback=function(){kc(e,t)},n}function Mc(e){return e=xo(e),e.tag=3,e}function Nc(e,t,n,r){var i=n.type.getDerivedStateFromError;if(typeof i==`function`){var a=r.value;e.payload=function(){return i(a)},e.callback=function(){Ac(t,n,r)}}var o=n.stateNode;o!==null&&typeof o.componentDidCatch==`function`&&(e.callback=function(){Ac(t,n,r),typeof i!=`function`&&(yd===null?yd=new Set([this]):yd.add(this));var e=r.stack;this.componentDidCatch(r.value,{componentStack:e===null?``:e})})}function Pc(e,t,n,r,i){if(n.flags|=32768,typeof r==`object`&&r&&typeof r.then==`function`){if(t=n.alternate,t!==null&&Ea(t,n,i,!0),n=Fo.current,n!==null){switch(n.tag){case 31:case 13:case 19:return Io===null?Kd():n.alternate===null&&Y===0&&(Y=3),n.flags&=-257,n.flags|=65536,n.lanes=i,r===no?n.flags|=16384:(t=n.updateQueue,t===null?n.updateQueue=new Set([r]):t.add(r),mf(e,r,i)),!1;case 22:return n.flags|=65536,r===no?n.flags|=16384:(t=n.updateQueue,t===null?(t={transitions:null,markerInstances:null,retryQueue:new Set([r])},n.updateQueue=t):(n=t.retryQueue,n===null?t.retryQueue=new Set([r]):n.add(r)),mf(e,r,i)),!1}throw Error(o(435,n.tag))}return mf(e,r,i),Kd(),!1}if(I)return t=Fo.current,t===null?(r!==da&&(t=Error(o(423),{cause:r}),va(qi(t,n))),e=e.current.alternate,e.flags|=65536,i&=-i,e.lanes|=i,r=qi(r,n),i=jc(e.stateNode,r,i),wo(e,i),Y!==4&&(Y=2)):(!(t.flags&65536)&&(t.flags|=256),t.flags|=65536,t.lanes=i,r!==da&&(e=Error(o(422),{cause:r}),va(qi(e,n)))),!1;var a=Error(o(520),{cause:r});if(a=qi(a,n),fd===null?fd=[a]:fd.push(a),Y!==4&&(Y=2),t===null)return!0;r=qi(r,n),n=t;do{switch(n.tag){case 3:return n.flags|=65536,e=i&-i,n.lanes|=e,e=jc(n.stateNode,r,e),wo(n,e),!1;case 1:if(t=n.type,a=n.stateNode,!(n.flags&128)&&(typeof t.getDerivedStateFromError==`function`||a!==null&&typeof a.componentDidCatch==`function`&&(yd===null||!yd.has(a))))return n.flags|=65536,i&=-i,n.lanes|=i,i=Mc(i),Nc(i,e,n,r),wo(n,i),!1;break;case 22:if(n.memoizedState!==null)return n.flags|=65536,!1}n=n.return}while(n!==null);return!1}var Fc=Error(o(461)),Ic=!1;function Lc(e,t,n,r){t.child=e===null?_o(t,null,n,r):go(t,e.child,n,r)}function Rc(e,t,n,r,i){n=n.render;var a=t.ref;if(`ref`in r){var o={};for(var s in r)s!==`ref`&&(o[s]=r[s])}else o=r;return Oa(t),r=ns(e,t,n,o,a,i),s=os(),e!==null&&!Ic?(ss(e,t,i),fl(e,t,i)):(I&&s&&aa(t),t.flags|=1,Lc(e,t,r,i),t.child)}function zc(e,t,n,r,i){if(e===null){var a=n.type;return typeof a==`function`&&!Ri(a)&&a.defaultProps===void 0&&n.compare===null?(t.tag=15,t.type=a,Bc(e,t,a,r,i)):(e=Vi(n.type,null,r,t,t.mode,i),e.ref=t.ref,e.return=t,t.child=e)}if(a=e.child,!pl(e,i)){var o=a.memoizedProps;if(n=n.compare,n=n===null?qr:n,n(o,r)&&e.ref===t.ref)return fl(e,t,i)}return t.flags|=1,e=zi(a,r),e.ref=t.ref,e.return=t,t.child=e}function Bc(e,t,n,r,i){if(e!==null){var a=e.memoizedProps;if(qr(a,r)&&e.ref===t.ref){if(Ic=!1,t.pendingProps=r=a,pl(e,i))e.flags&131072&&(Ic=!0);else return t.lanes=e.lanes,fl(e,t,i)}}return Jc(e,t,n,r,i)}function Vc(e,t,n,r){var i=r.children,a=e===null?null:e.memoizedState;if(e===null&&t.stateNode===null&&(t.stateNode={_visibility:1,_pendingMarkers:null,_retryCache:null,_transitions:null}),r.mode===`hidden`){if(t.flags&128){if(a=a===null?n:a.baseLanes|n,e!==null){for(r=t.child=e.child,i=0;r!==null;)i=i|r.lanes|r.childLanes,r=r.sibling;r=i&~a}else r=0,t.child=null;return Uc(e,t,a,n,r)}if(n&536870912)t.memoizedState={baseLanes:0,cachePool:null},e!==null&&Za(t,a===null?null:a.cachePool),a===null?No():Mo(t,a),zo(t);else return r=t.lanes=536870912,Uc(e,t,a===null?n:a.baseLanes|n,n,r)}else a===null?(e!==null&&Za(t,null),No(),Bo()):(Za(t,a.cachePool),Mo(t,a),Bo(),t.memoizedState=null);return Lc(e,t,i,n),t.child}function Hc(e,t){return e!==null&&e.tag===22||t.stateNode!==null||(t.stateNode={_visibility:1,_pendingMarkers:null,_retryCache:null,_transitions:null}),t.sibling}function Uc(e,t,n,r,i){var a=Xa();return a=a===null?null:{parent:Fa._currentValue,pool:a},t.memoizedState={baseLanes:n,cachePool:a},e!==null&&Za(t,null),No(),zo(t),e!==null&&Ea(e,t,r,!0),t.childLanes=i,null}function Wc(e,t){return t=rl({mode:t.mode,children:t.children},e.mode),t.ref=e.ref,e.child=t,t.return=e,t}function Gc(e,t,n){return go(t,e.child,null,n),e=Wc(t,t.pendingProps),e.flags|=2,Vo(t),t.memoizedState=null,e}function Kc(e,t,n){var r=t.pendingProps,i=!!(t.flags&128);if(t.flags&=-129,e===null){if(I){if(r.mode===`hidden`)return e=Wc(t,r),t.lanes=536870912,e.memoizedState={baseLanes:0,cachePool:null},Hc(null,e);if(Ro(t),(e=F)?(e=am(e,ua),e=e!==null&&e.data===`&`?e:null,e!==null&&(t.memoizedState={dehydrated:e,treeContext:ea===null?null:{id:ta,overflow:na},retryLane:536870912,hydrationErrors:null},n=Wi(e),n.return=t,t.child=n,ca=t,F=null)):e=null,e===null)throw fa(t);return t.lanes=536870912,null}return Wc(t,r)}var a=e.memoizedState;if(a!==null){var s=a.dehydrated;if(Ro(t),i){if(t.flags&256)t.flags&=-257,t=Gc(e,t,n);else if(t.memoizedState!==null)t.child=e.child,t.flags|=128,t=null;else throw Error(o(558))}else if(Ic||Ea(e,t,n,!1),i=(n&e.childLanes)!==0,Ic||i){if(Ao.current===null){if(r=G,r!==null&&(s=Et(r,n),s!==0&&s!==a.retryLane))throw a.retryLane=s,Mi(e,s),Pd(r,e,s),Fc;Kd()}t=Gc(e,t,n)}else e=a.treeContext,F=lm(s.nextSibling),ca=t,I=!0,la=null,ua=!1,e!==null&&sa(t,e),t=Wc(t,r),t.flags|=134221824;return t}return e=zi(e.child,{mode:r.mode,children:r.children}),e.ref=t.ref,t.child=e,e.return=t,e}function qc(e,t){var n=t.ref;if(n===null)e!==null&&e.ref!==null&&(t.flags|=4194816);else{if(typeof n!=`function`&&typeof n!=`object`)throw Error(o(284));(e===null||e.ref!==n)&&(t.flags|=4194816)}}function Jc(e,t,n,r,i){return Oa(t),n=ns(e,t,n,r,void 0,i),r=os(),e!==null&&!Ic?(ss(e,t,i),fl(e,t,i)):(I&&r&&aa(t),t.flags|=1,Lc(e,t,n,i),t.child)}function Yc(e,t,n,r,i,a){return Oa(t),t.updateQueue=null,n=is(t,r,n,i),rs(e),r=os(),e!==null&&!Ic?(ss(e,t,a),fl(e,t,a)):(I&&r&&aa(t),t.flags|=1,Lc(e,t,n,a),t.child)}function Xc(e,t,n,r,i){if(Oa(t),t.stateNode===null){var a=Fi,o=n.contextType;typeof o==`object`&&o&&(a=ka(o)),a=new n(r,a),t.memoizedState=a.state!==null&&a.state!==void 0?a.state:null,a.updater=Sc,t.stateNode=a,a._reactInternals=t,a=t.stateNode,a.props=r,a.state=t.memoizedState,a.refs={},yo(t),o=n.contextType,a.context=typeof o==`object`&&o?ka(o):Fi,a.state=t.memoizedState,o=n.getDerivedStateFromProps,typeof o==`function`&&(xc(t,n,o,r),a.state=t.memoizedState),typeof n.getDerivedStateFromProps==`function`||typeof a.getSnapshotBeforeUpdate==`function`||typeof a.UNSAFE_componentWillMount!=`function`&&typeof a.componentWillMount!=`function`||(o=a.state,typeof a.componentWillMount==`function`&&a.componentWillMount(),typeof a.UNSAFE_componentWillMount==`function`&&a.UNSAFE_componentWillMount(),o!==a.state&&Sc.enqueueReplaceState(a,a.state,null),Do(t,r,a,i),Eo(),a.state=t.memoizedState),typeof a.componentDidMount==`function`&&(t.flags|=4194308),r=!0}else if(e===null){a=t.stateNode;var s=t.memoizedProps,c=Tc(n,s);a.props=c;var l=a.context,u=n.contextType;o=Fi,typeof u==`object`&&u&&(o=ka(u));var d=n.getDerivedStateFromProps;u=typeof d==`function`||typeof a.getSnapshotBeforeUpdate==`function`,s=t.pendingProps!==s,u||typeof a.UNSAFE_componentWillReceiveProps!=`function`&&typeof a.componentWillReceiveProps!=`function`||(s||l!==o)&&wc(t,a,r,o),vo=!1;var f=t.memoizedState;a.state=f,Do(t,r,a,i),Eo(),l=t.memoizedState,s||f!==l||vo?(typeof d==`function`&&(xc(t,n,d,r),l=t.memoizedState),(c=vo||Cc(t,n,c,r,f,l,o))?(u||typeof a.UNSAFE_componentWillMount!=`function`&&typeof a.componentWillMount!=`function`||(typeof a.componentWillMount==`function`&&a.componentWillMount(),typeof a.UNSAFE_componentWillMount==`function`&&a.UNSAFE_componentWillMount()),typeof a.componentDidMount==`function`&&(t.flags|=4194308)):(typeof a.componentDidMount==`function`&&(t.flags|=4194308),t.memoizedProps=r,t.memoizedState=l),a.props=r,a.state=l,a.context=o,r=c):(typeof a.componentDidMount==`function`&&(t.flags|=4194308),r=!1)}else{a=t.stateNode,bo(e,t),o=t.memoizedProps,u=Tc(n,o),a.props=u,d=t.pendingProps,f=a.context,l=n.contextType,c=Fi,typeof l==`object`&&l&&(c=ka(l)),s=n.getDerivedStateFromProps,(l=typeof s==`function`||typeof a.getSnapshotBeforeUpdate==`function`)||typeof a.UNSAFE_componentWillReceiveProps!=`function`&&typeof a.componentWillReceiveProps!=`function`||(o!==d||f!==c)&&wc(t,a,r,c),vo=!1,f=t.memoizedState,a.state=f,Do(t,r,a,i),Eo();var p=t.memoizedState;o!==d||f!==p||vo||e!==null&&e.dependencies!==null&&Da(e.dependencies)?(typeof s==`function`&&(xc(t,n,s,r),p=t.memoizedState),(u=vo||Cc(t,n,u,r,f,p,c)||e!==null&&e.dependencies!==null&&Da(e.dependencies))?(l||typeof a.UNSAFE_componentWillUpdate!=`function`&&typeof a.componentWillUpdate!=`function`||(typeof a.componentWillUpdate==`function`&&a.componentWillUpdate(r,p,c),typeof a.UNSAFE_componentWillUpdate==`function`&&a.UNSAFE_componentWillUpdate(r,p,c)),typeof a.componentDidUpdate==`function`&&(t.flags|=4),typeof a.getSnapshotBeforeUpdate==`function`&&(t.flags|=1024)):(typeof a.componentDidUpdate!=`function`||o===e.memoizedProps&&f===e.memoizedState||(t.flags|=4),typeof a.getSnapshotBeforeUpdate!=`function`||o===e.memoizedProps&&f===e.memoizedState||(t.flags|=1024),t.memoizedProps=r,t.memoizedState=p),a.props=r,a.state=p,a.context=c,r=u):(typeof a.componentDidUpdate!=`function`||o===e.memoizedProps&&f===e.memoizedState||(t.flags|=4),typeof a.getSnapshotBeforeUpdate!=`function`||o===e.memoizedProps&&f===e.memoizedState||(t.flags|=1024),r=!1)}return a=r,qc(e,t),r=!!(t.flags&128),a||r?(a=t.stateNode,n=r&&typeof n.getDerivedStateFromError!=`function`?null:a.render(),t.flags|=1,e!==null&&r?(t.child=go(t,e.child,null,i),t.child=go(t,null,n,i)):Lc(e,t,n,i),t.memoizedState=a.state,e=t.child):e=fl(e,t,i),e}function Zc(e,t,n,r){return ga(),t.flags|=256,Lc(e,t,n,r),t.child}var Qc={dehydrated:null,treeContext:null,retryLane:0,hydrationErrors:null};function $c(e){return{baseLanes:e,cachePool:Qa()}}function el(e,t,n){return e=e===null?0:e.childLanes&~n,t&&(e|=ud),e}function tl(e,t,n){var r=t.pendingProps,i=!1,a=!!(t.flags&128),o;if((o=a)||(o=e!==null&&e.memoizedState===null?!1:!!(Ho.current&2)),o&&(i=!0,t.flags&=-129),o=!!(t.flags&32),t.flags&=-33,e===null){if(I){if(i?Lo(t):Bo(),(e=F)?(e=am(e,ua),e=e!==null&&e.data!==`&`?e:null,e!==null&&(t.memoizedState={dehydrated:e,treeContext:ea===null?null:{id:ta,overflow:na},retryLane:536870912,hydrationErrors:null},n=Wi(e),n.return=t,t.child=n,ca=t,F=null)):e=null,e===null)throw fa(t);return t.lanes=sm(e)?32:536870912,null}return a=r.children,r=r.fallback,i?(Bo(),i=t.mode,a=rl({mode:`hidden`,children:a},i),r=Hi(r,i,n,null),a.return=t,r.return=t,a.sibling=r,t.child=a,r=t.child,r.memoizedState=$c(n),r.childLanes=el(e,o,n),t.memoizedState=Qc,Hc(null,r)):(Lo(t),nl(t,a))}var s=e.memoizedState;if(s!==null){var c=s.dehydrated;if(c!==null)return al(e,t,a,o,r,c,s,n)}return i?(Bo(),i=r.fallback,a=t.mode,s=e.child,c=s.sibling,r=zi(s,{mode:`hidden`,children:r.children}),r.subtreeFlags=s.subtreeFlags&1206910976,c===null?(i=Hi(i,a,n,null),i.flags|=2):i=zi(c,i),i.return=t,r.return=t,r.sibling=i,t.child=r,Hc(null,r),r=t.child,i=e.child.memoizedState,i===null?i=$c(n):(a=i.cachePool,a===null?a=Qa():(s=Fa._currentValue,a=a.parent===s?a:{parent:s,pool:s}),i={baseLanes:i.baseLanes|n,cachePool:a}),r.memoizedState=i,r.childLanes=el(e,o,n),t.memoizedState=Qc,Hc(e.child,r)):(Lo(t),n=e.child,e=n.sibling,n=zi(n,{mode:`visible`,children:r.children}),n.return=t,n.sibling=null,e!==null&&(o=t.deletions,o===null?(t.deletions=[e],t.flags|=16):o.push(e)),t.child=n,t.memoizedState=null,n)}function nl(e,t){return t=rl({mode:`visible`,children:t},e.mode),t.return=e,e.child=t}function rl(e,t){return e=Li(22,e,null,t),e.lanes=0,e}function il(e,t,n){return go(t,e.child,null,n),e=nl(t,t.pendingProps.children),e.flags|=2,t.memoizedState=null,e}function al(e,t,n,r,i,a,s,c){if(n)return t.flags&256?(Lo(t),t.flags&=-257,il(e,t,c)):t.memoizedState===null?(Bo(),a=i.fallback,s=t.mode,i=rl({mode:`visible`,children:i.children},s),a=Hi(a,s,c,null),a.flags|=2,i.return=t,a.return=t,i.sibling=a,t.child=i,go(t,e.child,null,c),i=t.child,i.memoizedState=$c(c),i.childLanes=el(e,r,c),t.memoizedState=Qc,Hc(null,i)):(Bo(),t.child=e.child,t.flags|=128,null);if(Lo(t),sm(a)){if(r=a.nextSibling&&a.nextSibling.dataset,r)var l=r.dgst;return r=l,r!==``&&(i=Error(o(419)),i.stack=``,i.digest=r,va({value:i,source:null,stack:null})),il(e,t,c)}if(Ic||Ea(e,t,c,!1),r=(c&e.childLanes)!==0,Ic||r){if(Ao.current!==null)return il(e,t,c);if(r=G,r!==null&&(i=Et(r,c),i!==0&&i!==s.retryLane))throw s.retryLane=i,Mi(e,i),Pd(r,e,i),Fc;return om(a)||Kd(),il(e,t,c)}return om(a)?(t.flags|=192,t.child=e.child,null):(e=s.treeContext,F=lm(a.nextSibling),ca=t,I=!0,la=null,ua=!1,e!==null&&sa(t,e),t=nl(t,i.children),t.flags|=134221824,t)}function ol(e,t,n){e.lanes|=t;var r=e.alternate;r!==null&&(r.lanes|=t),wa(e.return,t,n)}function sl(e){for(var t=null;e!==null;){var n=e.alternate;n!==null&&Go(n)===null&&(t=e),e=e.sibling}return t}function cl(e,t,n,r,i,a){var o=e.memoizedState;o===null?e.memoizedState={isBackwards:t,rendering:null,renderingStartTime:0,last:r,tail:n,tailMode:i,treeForkCount:a}:(o.isBackwards=t,o.rendering=null,o.renderingStartTime=0,o.last=r,o.tail=n,o.tailMode=i,o.treeForkCount=a)}function ll(e){var t=e.child;for(e.child=null;t!==null;){var n=t.sibling;t.sibling=e.child,e.child=t,t=n}}function ul(e,t,n){var r=t.pendingProps,i=r.revealOrder,a=r.tail;r=r.children;var o=Ho.current;if(t.flags&128)return Uo(t,o),null;var s=!!(o&2);if(s?(o=o&1|2,t.flags|=128):o&=1,Uo(t,o),i===`backwards`&&e!==null?(ll(e),Lc(e,t,r,n),ll(e)):Lc(e,t,r,n),r=I?Zi:0,!s&&e!==null&&e.flags&128)a:for(e=t.child;e!==null;){if(e.tag===13)e.memoizedState!==null&&ol(e,n,t);else if(e.tag===19)ol(e,n,t);else if(e.child!==null){e.child.return=e,e=e.child;continue}if(e===t)break a;for(;e.sibling===null;){if(e.return===null||e.return===t)break a;e=e.return}e.sibling.return=e.return,e=e.sibling}switch(i){case`backwards`:n=sl(t.child),n===null?(i=t.child,t.child=null):(i=n.sibling,n.sibling=null,ll(t)),cl(t,!0,i,null,a,r);break;case`unstable_legacy-backwards`:for(n=null,i=t.child,t.child=null;i!==null;){if(e=i.alternate,e!==null&&Go(e)===null){t.child=i;break}e=i.sibling,i.sibling=n,n=i,i=e}cl(t,!0,n,null,a,r);break;case`together`:cl(t,!1,null,null,void 0,r);break;case`independent`:t.memoizedState=null;break;default:n=sl(t.child),n===null?(i=t.child,t.child=null):(i=n.sibling,n.sibling=null),cl(t,!1,i,n,a,r)}return t.child}function dl(e,t,n){var r=t.pendingProps;return Sa(t,t.type,r.value),Lc(e,t,r.children,n),t.child}function fl(e,t,n){if(e!==null&&(t.dependencies=e.dependencies),sd|=t.lanes,(n&t.childLanes)===0){if(e!==null){if(Ea(e,t,n,!1),(n&t.childLanes)===0)return null}else return null}if(e!==null&&t.child!==e.child)throw Error(o(153));if(t.child!==null){for(e=t.child,n=zi(e,e.pendingProps),t.child=n,n.return=t;e.sibling!==null;)e=e.sibling,n=n.sibling=zi(e,e.pendingProps),n.return=t;n.sibling=null}return t.child}function pl(e,t){return(e.lanes&t)!==0||(e=e.dependencies,!!(e!==null&&Da(e)))}function ml(e,t,n){switch(t.tag){case 3:Fe(t,t.stateNode.containerInfo),Sa(t,Fa,e.memoizedState.cache),ga();break;case 27:case 5:Le(t);break;case 4:Fe(t,t.stateNode.containerInfo);break;case 10:Sa(t,t.type,t.memoizedProps.value);break;case 31:if(t.memoizedState!==null)return t.flags|=128,Ro(t),null;break;case 13:var r=t.memoizedState;if(r!==null){if(r.dehydrated!==null)return Lo(t),t.flags|=128,null;r=Ea(e,t,n,!1);var i=t.child.childLanes;return r||(n&i)!==0?tl(e,t,n):(Lo(t),e=fl(e,t,n),e===null?null:e.sibling)}Lo(t);break;case 19:if(t.flags&128)return ul(e,t,n);if(i=!!(e.flags&128),r=(n&t.childLanes)!==0,r||=(Ea(e,t,n,!1),(n&t.childLanes)!==0),i){if(r)return ul(e,t,n);t.flags|=128}if(i=t.memoizedState,i!==null&&(i.rendering=null,i.tail=null,i.lastEffect=null),Uo(t,Ho.current),r)break;return null;case 22:return t.lanes=0,Vc(e,t,n,t.pendingProps);case 24:Sa(t,Fa,e.memoizedState.cache)}return fl(e,t,n)}function hl(e,t,n){if(e!==null){if(e.memoizedProps!==t.pendingProps)Ic=!0;else{if(!pl(e,n)&&!(t.flags&128))return Ic=!1,ml(e,t,n);Ic=!!(e.flags&131072)}}else Ic=!1,I&&t.flags&1048576&&ia(t,Zi,t.index);switch(t.lanes=0,t.tag){case 16:a:{var r=t.pendingProps;if(e=ao(t.elementType),t.type=e,typeof e==`function`)Ri(e)?(r=Tc(e,r),t.tag=1,t=Xc(null,t,e,r,n)):(t.tag=0,t=Jc(null,t,e,r,n));else{if(e!=null){var i=e.$$typeof;if(i===fe){t.tag=11,t=Rc(null,t,e,r,n);break a}if(i===he){t.tag=14,t=zc(null,t,e,r,n);break a}if(i===de){t.tag=10,t.type=e,t=dl(null,t,n);break a}}throw t=we(e)||e,Error(o(306,t,``))}}return t;case 0:return Jc(e,t,t.type,t.pendingProps,n);case 1:return r=t.type,i=Tc(r,t.pendingProps),Xc(e,t,r,i,n);case 3:a:{if(Fe(t,t.stateNode.containerInfo),e===null)throw Error(o(387));r=t.pendingProps;var a=t.memoizedState;i=a.element,bo(e,t),Do(t,r,null,n);var s=t.memoizedState;if(r=s.cache,Sa(t,Fa,r),r!==a.cache&&Ta(t,[Fa],n,!0),Eo(),r=s.element,a.isDehydrated){if(a={element:r,isDehydrated:!1,cache:s.cache},t.updateQueue.baseState=a,t.memoizedState=a,t.flags&256){t=Zc(e,t,r,n);break a}if(r!==i){i=qi(Error(o(424)),t),va(i),t=Zc(e,t,r,n);break a}switch(e=t.stateNode.containerInfo,e.nodeType){case 9:e=e.body;break;default:e=e.nodeName===`HTML`?e.ownerDocument.body:e}for(F=lm(e.firstChild),ca=t,I=!0,la=null,ua=!0,n=_o(t,null,r,n),t.child=n;n;)n.flags=n.flags&-3|134221824,n=n.sibling}else{if(ga(),r===i){t=fl(e,t,n);break a}Lc(e,t,r,n)}t=t.child}return t;case 26:return qc(e,t),e===null?(n=Nm(t.type,null,t.pendingProps,null))?t.memoizedState=n:I||(t.stateNode=fp(t.type,t.pendingProps,Ne.current,t)):t.memoizedState=Nm(t.type,e.memoizedProps,t.pendingProps,e.memoizedState),null;case 27:return Le(t),e===null&&I&&(r=t.stateNode=hm(t.type,t.pendingProps,Ne.current),ca=t,ua=!0,i=F,Sp(t.type)?(um=i,F=lm(r.firstChild)):F=i),Lc(e,t,t.pendingProps.children,n),qc(e,t),e===null&&(t.flags|=4194304),t.child;case 5:return e===null&&I&&((i=r=F)&&(r=rm(r,t.type,t.pendingProps,ua),r===null?i=!1:(t.stateNode=r,ca=t,F=lm(r.firstChild),ua=!1,i=!0)),i||fa(t)),Le(t),i=t.type,a=t.pendingProps,s=e===null?null:e.memoizedProps,r=a.children,pp(i,a)?r=null:s!==null&&pp(i,s)&&(t.flags|=32),t.memoizedState!==null&&(i=ns(e,t,as,null,null,n),sh._currentValue=i),qc(e,t),Lc(e,t,r,n),t.child;case 6:return e===null&&I&&((e=n=F)&&(n=im(n,t.pendingProps,ua),n===null?e=!1:(t.stateNode=n,ca=t,F=null,e=!0)),e||fa(t)),null;case 13:return tl(e,t,n);case 4:return Fe(t,t.stateNode.containerInfo),r=t.pendingProps,e===null?t.child=go(t,null,r,n):Lc(e,t,r,n),t.child;case 11:return Rc(e,t,t.type,t.pendingProps,n);case 7:return r=t.pendingProps,qc(e,t),Lc(e,t,r,n),t.child;case 8:return Lc(e,t,t.pendingProps.children,n),t.child;case 12:return Lc(e,t,t.pendingProps.children,n),t.child;case 10:return dl(e,t,n);case 9:return i=t.type._context,r=t.pendingProps.children,Oa(t),i=ka(i),r=r(i),t.flags|=1,Lc(e,t,r,n),t.child;case 14:return zc(e,t,t.type,t.pendingProps,n);case 15:return Bc(e,t,t.type,t.pendingProps,n);case 19:return ul(e,t,n);case 31:return Kc(e,t,n);case 22:return Vc(e,t,n,t.pendingProps);case 24:return Oa(t),r=ka(Fa),e===null?(i=Xa(),i===null&&(i=G,a=Ia(),i.pooledCache=a,a.refCount++,a!==null&&(i.pooledCacheLanes|=n),i=a),t.memoizedState={parent:r,cache:i},yo(t),Sa(t,Fa,i)):((e.lanes&n)!==0&&(bo(e,t),Do(t,null,null,n),Eo()),i=e.memoizedState,a=t.memoizedState,i.parent===r?(r=a.cache,Sa(t,Fa,r),r!==i.cache&&Ta(t,[Fa],n,!0)):(i={parent:r,cache:r},t.memoizedState=i,t.lanes===0&&(t.memoizedState=t.updateQueue.baseState=i),Sa(t,Fa,r))),Lc(e,t,t.pendingProps.children,n),t.child;case 30:return t.stateNode===null&&(t.stateNode={autoName:null,paired:null,clones:null,ref:null}),r=t.pendingProps,r.name!=null&&r.name!==`auto`?t.flags|=e===null?18882560:18874368:I&&aa(t),e!==null&&e.memoizedProps.name!==r.name?t.flags|=4194816:qc(e,t),Lc(e,t,r.children,n),t.child;case 29:throw t.pendingProps}throw Error(o(156,t.tag))}function gl(e){e.flags|=4}function _l(e,t,n,r,i){var a;if((a=!!(e.mode&32))&&(a=n===null?Jm(t,r):Jm(t,r)&&(r.src!==n.src||r.srcSet!==n.srcSet)),a){if(e.flags|=16777216,(i&335544128)===i){if(e.stateNode.complete)e.flags|=8192;else if(Ud())e.flags|=8192;else throw oo=no,eo}}else e.flags&=-16777217}function vl(e,t){if(t.type!==`stylesheet`||t.state.loading&4)e.flags&=-16777217;else if(e.flags|=16777216,!Ym(t)){if(Ud())e.flags|=8192;else throw oo=no,eo}}function yl(e,t){t!==null&&(e.flags|=4),e.flags&16384&&(t=e.tag===22?536870912:bt(),e.lanes|=t,dd|=t)}function bl(e,t){if(!I)switch(e.tailMode){case`visible`:break;case`collapsed`:for(var n=e.tail,r=null;n!==null;)n.alternate!==null&&(r=n),n=n.sibling;r===null?t||e.tail===null?e.tail=null:e.tail.sibling=null:r.sibling=null;break;default:for(t=e.tail,n=null;t!==null;)t.alternate!==null&&(n=t),t=t.sibling;n===null?e.tail=null:n.sibling=null}}function V(e){var t=e.alternate!==null&&e.alternate.child===e.child,n=0,r=0;if(t)for(var i=e.child;i!==null;)n|=i.lanes|i.childLanes,r|=i.subtreeFlags&1206910976,r|=i.flags&1206910976,i.return=e,i=i.sibling;else for(i=e.child;i!==null;)n|=i.lanes|i.childLanes,r|=i.subtreeFlags,r|=i.flags,i.return=e,i=i.sibling;return e.subtreeFlags|=r,e.childLanes=n,t}function xl(e,t,n){var r=t.pendingProps;switch(oa(t),t.tag){case 16:case 15:case 0:case 11:case 7:case 8:case 12:case 9:case 14:return V(t),null;case 1:return V(t),null;case 3:return n=t.stateNode,r=null,e!==null&&(r=e.memoizedState.cache),t.memoizedState.cache!==r&&(t.flags|=2048),Ca(Fa),Ie(),n.pendingContext&&(n.context=n.pendingContext,n.pendingContext=null),(e===null||e.child===null)&&(ha(t)?gl(t):e===null||e.memoizedState.isDehydrated&&!(t.flags&256)||(t.flags|=1024,_a())),V(t),null;case 26:var i=t.type,a=t.memoizedState;return e===null?(gl(t),a===null?(V(t),_l(t,i,null,r,n)):(V(t),vl(t,a))):a?a===e.memoizedState?(V(t),t.flags&=-16777217):(gl(t),V(t),vl(t,a)):(e=e.memoizedProps,e!==r&&gl(t),V(t),_l(t,i,e,r,n)),null;case 27:if(Re(t),n=Ne.current,i=t.type,e!==null&&t.stateNode!=null)e.memoizedProps!==r&&gl(t);else{if(!r){if(t.stateNode===null)throw Error(o(166));return V(t),t.subtreeFlags&=-33554433,null}e=je.current,ha(t)?pa(t,e):(e=hm(i,r,n),t.stateNode=e,gl(t))}return V(t),t.subtreeFlags&=-33554433,null;case 5:if(Re(t),i=t.type,e!==null&&t.stateNode!=null)e.memoizedProps!==r&&gl(t);else{if(!r){if(t.stateNode===null)throw Error(o(166));return V(t),t.subtreeFlags&=-33554433,null}if(a=je.current,ha(t))pa(t,a);else{var s=lp(Ne.current);switch(a){case 1:a=s.createElementNS(`http://www.w3.org/2000/svg`,i);break;case 2:a=s.createElementNS(`http://www.w3.org/1998/Math/MathML`,i);break;default:switch(i){case`svg`:a=s.createElementNS(`http://www.w3.org/2000/svg`,i);break;case`math`:a=s.createElementNS(`http://www.w3.org/1998/Math/MathML`,i);break;case`script`:a=s.createElement(`div`),a.innerHTML=`<script><\/script>`,a=a.removeChild(a.firstChild);break;case`select`:a=typeof r.is==`string`?s.createElement(`select`,{is:r.is}):s.createElement(`select`),r.multiple?a.multiple=!0:r.size&&(a.size=r.size);break;default:a=typeof r.is==`string`?s.createElement(i,{is:r.is}):s.createElement(i)}}a[k]=t,a[Mt]=r;a:for(s=t.child;s!==null;){if(s.tag===5||s.tag===6)a.appendChild(s.stateNode);else if(s.tag!==4&&s.tag!==27&&s.child!==null){s.child.return=s,s=s.child;continue}if(s===t)break a;for(;s.sibling===null;){if(s.return===null||s.return===t)break a;s=s.return}s.sibling.return=s.return,s=s.sibling}t.stateNode=a;a:switch(np(a,i,r),i){case`button`:case`input`:case`select`:case`textarea`:r=!!r.autoFocus;break a;case`img`:r=!0;break a;default:r=!1}r&&gl(t)}}return V(t),t.subtreeFlags&=-33554433,_l(t,t.type,e===null?null:e.memoizedProps,t.pendingProps,n),null;case 6:if(e&&t.stateNode!=null)e.memoizedProps!==r&&gl(t);else{if(typeof r!=`string`&&t.stateNode===null)throw Error(o(166));if(e=Ne.current,ha(t)){if(e=t.stateNode,n=t.memoizedProps,r=null,i=ca,i!==null)switch(i.tag){case 27:case 5:r=i.memoizedProps}e[k]=t,e=!!(e.nodeValue===n||r!==null&&!0===r.suppressHydrationWarning||ep(e.nodeValue,n)),e||fa(t,!0)}else e=lp(e).createTextNode(r),e[k]=t,t.stateNode=e}return V(t),null;case 31:if(n=t.memoizedState,e===null||e.memoizedState!==null){if(r=ha(t),n!==null){if(e===null){if(!r)throw Error(o(318));if(e=t.memoizedState,e=e===null?null:e.dehydrated,!e)throw Error(o(557));e[k]=t}else ga(),!(t.flags&128)&&(t.memoizedState=null),t.flags|=4;V(t),e=!1}else n=_a(),e!==null&&e.memoizedState!==null&&(e.memoizedState.hydrationErrors=n),e=!0;if(!e)return t.flags&256?(Vo(t),t):(Vo(t),null);if(t.flags&128)throw Error(o(558))}return V(t),null;case 13:if(r=t.memoizedState,e===null||e.memoizedState!==null&&e.memoizedState.dehydrated!==null){if(i=ha(t),r!==null&&r.dehydrated!==null){if(e===null){if(!i)throw Error(o(318));if(i=t.memoizedState,i=i===null?null:i.dehydrated,!i)throw Error(o(317));i[k]=t}else ga(),!(t.flags&128)&&(t.memoizedState=null),t.flags|=4;V(t),i=!1}else i=_a(),e!==null&&e.memoizedState!==null&&(e.memoizedState.hydrationErrors=i),i=!0;if(!i)return t.flags&256?(Vo(t),t):(Vo(t),null)}return Vo(t),t.flags&128?(t.lanes=n,t):(n=r!==null,e=e!==null&&e.memoizedState!==null,n&&(r=t.child,i=null,r.alternate!==null&&r.alternate.memoizedState!==null&&r.alternate.memoizedState.cachePool!==null&&(i=r.alternate.memoizedState.cachePool.pool),a=null,r.memoizedState!==null&&r.memoizedState.cachePool!==null&&(a=r.memoizedState.cachePool.pool),a!==i&&(r.flags|=2048)),n!==e&&n&&(t.child.flags|=8192),yl(t,t.updateQueue),V(t),null);case 4:return Ie(),e===null&&Wf(t.stateNode.containerInfo),t.flags|=67108864,V(t),null;case 10:return Ca(t.type),V(t),null;case 19:if(Wo(t),r=t.memoizedState,r===null)return V(t),null;if(i=!!(t.flags&128),a=r.rendering,a===null){if(i)bl(r,!1);else{if(Y!==0||e!==null&&e.flags&128)for(e=t.child;e!==null;){if(a=Go(e),a!==null){for(t.flags|=128,bl(r,!1),e=a.updateQueue,t.updateQueue=e,yl(t,e),t.subtreeFlags=0,e=n,n=t.child;n!==null;)Bi(n,e),n=n.sibling;return Uo(t,Ho.current&1|2),I&&ra(t,r.treeForkCount),t.child}e=e.sibling}r.tail!==null&&Xe()>_d&&(t.flags|=128,i=!0,bl(r,!1),t.lanes=4194304)}}else{if(!i){if(e=Go(a),e!==null){if(t.flags|=128,i=!0,e=e.updateQueue,t.updateQueue=e,yl(t,e),bl(r,!0),r.tail===null&&r.tailMode!==`collapsed`&&r.tailMode!==`visible`&&!a.alternate&&!I)return V(t),null}else 2*Xe()-r.renderingStartTime>_d&&n!==536870912&&(t.flags|=128,i=!0,bl(r,!1),t.lanes=4194304)}r.isBackwards?(a.sibling=t.child,t.child=a):(e=r.last,e===null?t.child=a:e.sibling=a,r.last=a)}if(r.tail!==null){e=r.tail;a:{for(n=e;n!==null;){if(n.alternate!==null){n=!1;break a}n=n.sibling}n=!0}return r.rendering=e,r.tail=e.sibling,r.renderingStartTime=Xe(),e.sibling=null,a=Ho.current,a=i?a&1|2:a&1,r.tailMode===`visible`||r.tailMode===`collapsed`||!n||I?Uo(t,a):(n=a,D(Fo,t),D(Ho,n),Io===null&&(Io=t)),I&&ra(t,r.treeForkCount),e}return V(t),null;case 22:case 23:return Vo(t),Po(),r=t.memoizedState!==null,e===null?r&&(t.flags|=8192):e.memoizedState!==null!==r&&(t.flags|=8192),r?n&536870912&&!(t.flags&128)&&(V(t),t.subtreeFlags&6&&(t.flags|=8192)):V(t),n=t.updateQueue,n!==null&&yl(t,n.retryQueue),n=null,e!==null&&e.memoizedState!==null&&e.memoizedState.cachePool!==null&&(n=e.memoizedState.cachePool.pool),r=null,t.memoizedState!==null&&t.memoizedState.cachePool!==null&&(r=t.memoizedState.cachePool.pool),r!==n&&(t.flags|=2048),e!==null&&Ae(Ya),null;case 24:return n=null,e!==null&&(n=e.memoizedState.cache),t.memoizedState.cache!==n&&(t.flags|=2048),Ca(Fa),V(t),null;case 25:return null;case 30:return t.flags|=33554432,V(t),null}throw Error(o(156,t.tag))}function Sl(e,t){switch(oa(t),t.tag){case 1:return e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 3:return Ca(Fa),Ie(),e=t.flags,e&65536&&!(e&128)?(t.flags=e&-65537|128,t):null;case 26:case 27:case 5:return Re(t),null;case 31:if(t.memoizedState!==null){if(Vo(t),t.alternate===null)throw Error(o(340));ga()}return e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 13:if(Vo(t),e=t.memoizedState,e!==null&&e.dehydrated!==null){if(t.alternate===null)throw Error(o(340));ga()}return e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 19:return Wo(t),e=t.flags,e&65536?(t.flags=e&-65537|128,e=t.memoizedState,e!==null&&(e.rendering=null,e.tail=null),t.flags|=4,t):null;case 4:return Ie(),null;case 10:return Ca(t.type),null;case 22:case 23:return Vo(t),Po(),e!==null&&Ae(Ya),e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 24:return Ca(Fa),null;case 25:return null;default:return null}}function Cl(e,t){switch(oa(t),t.tag){case 3:Ca(Fa),Ie();break;case 26:case 27:case 5:Re(t);break;case 4:Ie();break;case 31:t.memoizedState!==null&&Vo(t);break;case 13:Vo(t);break;case 19:Wo(t);break;case 10:Ca(t.type);break;case 22:case 23:Vo(t),Po(),e!==null&&Ae(Ya);break;case 24:Ca(Fa)}}function wl(e,t){try{var n=t.updateQueue,r=n===null?null:n.lastEffect;if(r!==null){var i=r.next;n=i;do{if((n.tag&e)===e){r=void 0;var a=n.create,o=n.inst;r=a(),o.destroy=r}n=n.next}while(n!==i)}}catch(e){Z(t,t.return,e)}}function Tl(e,t,n){try{var r=t.updateQueue,i=r===null?null:r.lastEffect;if(i!==null){var a=i.next;r=a;do{if((r.tag&e)===e){var o=r.inst,s=o.destroy;if(s!==void 0){o.destroy=void 0,i=t;var c=n,l=s;try{l()}catch(e){Z(i,c,e)}}}r=r.next}while(r!==a)}}catch(e){Z(t,t.return,e)}}function El(e){var t=e.updateQueue;if(t!==null){var n=e.stateNode;try{ko(t,n)}catch(t){Z(e,e.return,t)}}}function Dl(e,t,n){n.props=Tc(e.type,e.memoizedProps),n.state=e.memoizedState;try{n.componentWillUnmount()}catch(n){Z(e,t,n)}}function Ol(e,t){try{var n=e.ref;if(n!==null){switch(e.tag){case 26:case 27:case 5:var r=e.stateNode;break;case 30:var i=e.stateNode,a=Si(e.memoizedProps,i);(i.ref===null||i.ref.name!==a)&&(i.ref=Pp(a)),r=i.ref;break;case 7:if(e.stateNode===null){var o=new Fp(e);m(e.child,!1,Qp,o,void 0,void 0),e.stateNode=o}r=e.stateNode;break;default:r=e.stateNode}typeof n==`function`?e.refCleanup=n(r):n.current=r}}catch(n){Z(e,t,n)}}function kl(e,t){var n=e.ref,r=e.refCleanup;if(n!==null){if(typeof r==`function`)try{r()}catch(n){Z(e,t,n)}finally{e.refCleanup=null,e=e.alternate,e!=null&&(e.refCleanup=null)}else if(typeof n==`function`)try{n(null)}catch(n){Z(e,t,n)}else n.current=null}}function Al(e,t){if((e.tag===5||e.tag===27||e.tag===6)&&e.alternate===null&&t!==null)for(var n=0;n<t.length;n++)em(e.stateNode,t[n])}function jl(e){for(var t=e.return;t!==null&&(Pl(t)&&em(e.stateNode,t.stateNode),!Nl(t));)t=t.return}function Ml(e){for(var t=e.return;t!==null&&(Pl(t)&&tm(e.stateNode,t.stateNode),!Nl(t));)t=t.return}function Nl(e){return e.tag===5||e.tag===3||e.tag===27}function Pl(e){return e&&e.tag===7&&e.stateNode!==null}function Fl(e){var t=e.type,n=e.memoizedProps,r=e.stateNode;try{a:switch(t){case`button`:case`input`:case`select`:case`textarea`:n.autoFocus&&r.focus();break a;case`img`:n.src?r.src=n.src:n.srcSet&&(r.srcset=n.srcSet)}}catch(t){Z(e,e.return,t)}}function Il(e,t,n){try{var r=e.stateNode;ip(r,e.type,n,t),r[Mt]=t}catch(t){Z(e,e.return,t)}}function Ll(e){return e.tag===5||e.tag===3||e.tag===26||e.tag===27&&Sp(e.type)||e.tag===4}function Rl(e){a:for(;;){for(;e.sibling===null;){if(e.return===null||Ll(e.return))return null;e=e.return}for(e.sibling.return=e.return,e=e.sibling;e.tag!==5&&e.tag!==6&&e.tag!==18;){if(e.tag===27&&Sp(e.type)||e.flags&2||e.child===null||e.tag===4)continue a;e.child.return=e,e=e.child}if(!(e.flags&2))return e.stateNode}}function zl(e,t,n,r){var i=e.tag;if(i===5||i===6)i=e.stateNode,t?(n.nodeType===9?n.body:n.nodeName===`HTML`?n.ownerDocument.body:n).insertBefore(i,t):(t=n.nodeType===9?n.body:n.nodeName===`HTML`?n.ownerDocument.body:n,t.appendChild(i),n=n._reactRootContainer,n!=null||t.onclick!==null||(t.onclick=Dn)),Al(e,r),A=!0;else if(i!==4&&(i===27&&(Al(e,r),r=null,Sp(e.type)&&(n=e.stateNode,t=null)),e=e.child,e!==null))for(zl(e,t,n,r),e=e.sibling;e!==null;)zl(e,t,n,r),e=e.sibling}function Bl(e,t,n,r){var i=e.tag;if(i===5||i===6)i=e.stateNode,t?n.insertBefore(i,t):n.appendChild(i),Al(e,r),A=!0;else if(i!==4&&(i===27&&(Al(e,r),r=null,Sp(e.type)&&(n=e.stateNode)),e=e.child,e!==null))for(Bl(e,t,n,r),e=e.sibling;e!==null;)Bl(e,t,n,r),e=e.sibling}function Vl(e){var t=e.stateNode,n=e.memoizedProps;try{for(var r=e.type,i=t.attributes;i.length;)t.removeAttributeNode(i[0]);np(t,r,n),t[k]=e,t[Mt]=n}catch(t){Z(e,e.return,t)}}var Hl=!1,Ul=null;function Wl(e){(e.tag===30||e.subtreeFlags&33554432)&&(Hl=!0)}var Gl=null;function Kl(){var e=Gl;return Gl=null,e}var ql=0;function Jl(e,t,n,r,i){return ql=0,Yl(e.child,t,n,r,i)}function Yl(e,t,n,r,i){for(var a=!1;e!==null;){if(e.tag===5){var o=e.stateNode;if(r!==null){var s=Op(o);r.push(s),s.view&&(a=!0)}else a||Op(o).view&&(a=!0);Hl=!0,Tp(o,ql===0?t:t+`_`+ql,n),ql++}else(e.tag!==22||e.memoizedState===null)&&(e.tag===30&&i||Yl(e.child,t,n,r,i)&&(a=!0));e=e.sibling}return a}function Xl(e,t){for(;e!==null;)e.tag===5?Ep(e.stateNode,e.memoizedProps):(e.tag!==22||e.memoizedState===null)&&(e.tag===30&&t||Xl(e.child,t)),e=e.sibling}function Zl(e){if(e.subtreeFlags&18874368)for(e=e.child;e!==null;){if((e.tag!==22||e.memoizedState===null)&&(Zl(e),e.tag===30&&e.flags&18874368&&e.stateNode.paired)){var t=e.memoizedProps;if(t.name==null||t.name===`auto`)throw Error(o(544));var n=t.name;t=wi(t.default,t.share),t!==`none`&&(Jl(e,n,t,null,!1)||Xl(e.child,!1))}e=e.sibling}}function Ql(e,t){if(e.tag===30){var n=e.stateNode,r=e.memoizedProps,i=Si(r,n),a=wi(r.default,n.paired?r.share:r.enter);a===`none`?Zl(e):Jl(e,i,a,null,!1)?(Zl(e),n.paired||t||Nd(e,r.onEnter)):Xl(e.child,!1)}else if(e.subtreeFlags&33554432)for(e=e.child;e!==null;)Ql(e,t),e=e.sibling;else Zl(e)}function $l(e){if(Ul!==null&&Ul.size!==0){var t=Ul;if(e.subtreeFlags&18874368)for(e=e.child;e!==null;){if(e.tag!==22||e.memoizedState===null){if(e.tag===30&&e.flags&18874368){var n=e.memoizedProps,r=n.name;if(r!=null&&r!==`auto`){var i=t.get(r);if(i!==void 0){var a=wi(n.default,n.share);if(a!==`none`&&(Jl(e,r,a,null,!1)?(a=e.stateNode,i.paired=a,a.paired=i,Nd(e,n.onShare)):Xl(e.child,!1)),t.delete(r),t.size===0)break}}}$l(e)}e=e.sibling}}}function eu(e){if(e.tag===30){var t=e.memoizedProps,n=Si(t,e.stateNode),r=Ul===null?void 0:Ul.get(n),i=wi(t.default,r===void 0?t.exit:t.share);i!==`none`&&(Jl(e,n,i,null,!1)?r===void 0?Nd(e,t.onExit):(i=e.stateNode,r.paired=i,i.paired=r,Ul.delete(n),Nd(e,t.onShare)):Xl(e.child,!1)),Ul!==null&&$l(e)}else if(e.subtreeFlags&33554432)for(e=e.child;e!==null;)eu(e),e=e.sibling;else Ul!==null&&$l(e)}function tu(e){for(e=e.child;e!==null;){if(e.tag===30){var t=e.memoizedProps,n=Si(t,e.stateNode);t=wi(t.default,t.update),e.flags&=-5,t!==`none`&&Jl(e,n,t,e.memoizedState=[],!1)}else e.subtreeFlags&33554432&&tu(e);e=e.sibling}}function nu(e){if(e.subtreeFlags&18874368)for(e=e.child;e!==null;){if(e.tag!==22||e.memoizedState===null){if(e.tag===30&&e.flags&18874368){var t=e.stateNode;t.paired!==null&&(t.paired=null,Xl(e.child,!1))}nu(e)}e=e.sibling}}function ru(e){if(e.tag===30)e.stateNode.paired=null,Xl(e.child,!1),nu(e);else if(e.subtreeFlags&33554432)for(e=e.child;e!==null;)ru(e),e=e.sibling;else nu(e)}function iu(e){for(e=e.child;e!==null;)e.tag===30?Xl(e.child,!1):e.subtreeFlags&33554432&&iu(e),e=e.sibling}function au(e,t,n,r,i,a,o){for(var s=!1;t!==null;){if(t.tag===5){var c=t.stateNode;if(a!==null&&ql<a.length){var l=a[ql],u=Op(c);(l.view||u.view)&&(s=!0);var d;if(d=!(e.flags&4)){if(u.clip)d=!0;else{d=l.rect;var f=u.rect;d=d.y!==f.y||d.x!==f.x||d.height!==f.height||d.width!==f.width}}d&&(e.flags|=4),u.abs?u=!l.abs:(l=l.rect,u=u.rect,u=l.height!==u.height||l.width!==u.width),u&&(e.flags|=32)}else e.flags|=32;e.flags&4&&Tp(c,ql===0?n:n+`_`+ql,i),s&&e.flags&4||(Gl===null&&(Gl=[]),Gl.push(c,ql===0?r:r+`_`+ql,t.memoizedProps)),ql++}else(t.tag!==22||t.memoizedState===null)&&(t.tag===30&&o?e.flags|=t.flags&32:au(e,t.child,n,r,i,a,o)&&(s=!0));t=t.sibling}return s}function ou(e,t){for(e=e.child;e!==null;){if(e.tag===30){var n=e.memoizedProps,r=e.stateNode,i=Si(n,r),a=wi(n.default,n.update);if(t){r=r.clones;var o=r===null?null:r.map(kp)}else o=e.memoizedState,e.memoizedState=null;r=e;var s=e.child;ql=0,i=au(r,s,i,i,a,o,!1),e.flags&4&&i&&(t||Nd(e,n.onUpdate))}else e.subtreeFlags&33554432&&ou(e,t);e=e.sibling}}var su=!1,H=!1,cu=!1,lu=!1,uu=typeof WeakSet==`function`?WeakSet:Set,du=null,fu=!1,pu=!1,mu=!1,hu=!1;function gu(e,t,n){if(e=e.containerInfo,sp=gh,e=Qr(e),$r(e)){if(`selectionStart`in e)var r={start:e.selectionStart,end:e.selectionEnd};else a:{r=(r=e.ownerDocument)&&r.defaultView||window;var i=r.getSelection&&r.getSelection();if(i&&i.rangeCount!==0){r=i.anchorNode;var a=i.anchorOffset,o=i.focusNode;i=i.focusOffset;try{r.nodeType,o.nodeType}catch{r=null;break a}var s=0,c=-1,l=-1,u=0,d=0,f=e,p=null;b:for(;;){for(var m;f!==r||a!==0&&f.nodeType!==3||(c=s+a),f!==o||i!==0&&f.nodeType!==3||(l=s+i),f.nodeType===3&&(s+=f.nodeValue.length),(m=f.firstChild)!==null;)p=f,f=m;for(;;){if(f===e)break b;if(p===r&&++u===a&&(c=s),p===o&&++d===i&&(l=s),(m=f.nextSibling)!==null)break;f=p,p=f.parentNode}f=m}r=c===-1||l===-1?null:{start:c,end:l}}else r=null}r||={start:0,end:0}}else r=null;for(cp={focusedElem:e,selectionRange:r},gh=!1,n=(n&335544064)===n,du=t,t=n?9270:1024;du!==null;){if(e=du,n&&(r=e.deletions,r!==null))for(a=0;a<r.length;a++)n&&eu(r[a]);if(e.alternate===null&&e.flags&2)n&&Wl(e),_u(n);else{if(e.tag===22){if(r=e.alternate,e.memoizedState!==null){r!==null&&r.memoizedState===null&&n&&eu(r),_u(n);continue}if(r!==null&&r.memoizedState!==null){n&&Wl(e),_u(n);continue}}r=e.child,(e.subtreeFlags&t)!==0&&r!==null?(r.return=e,du=r):(n&&tu(e),_u(n))}}Ul=null}function _u(e){for(;du!==null;){var t=du,n=e,r=t.alternate,i=t.flags;switch(t.tag){case 0:case 11:case 15:break;case 1:if(i&1024&&r!==null){n=void 0,i=r.memoizedProps,r=r.memoizedState;var a=t.stateNode;try{var s=Tc(t.type,i);n=a.getSnapshotBeforeUpdate(s,r),a.__reactInternalSnapshotBeforeUpdate=n}catch(e){Z(t,t.return,e)}}break;case 3:if(i&1024){if(r=t.stateNode.containerInfo,n=r.nodeType,n===9)nm(r);else if(n===1)switch(r.nodeName){case`HEAD`:case`HTML`:case`BODY`:nm(r);break;default:r.textContent=``}}break;case 5:case 26:case 27:case 6:case 4:case 17:break;case 30:n&&r!==null&&(n=Si(r.memoizedProps,r.stateNode),i=t.memoizedProps,i=wi(i.default,i.update),i!==`none`&&Jl(r,n,i,r.memoizedState=[],!0));break;default:if(i&1024)throw Error(o(163))}if(r=t.sibling,r!==null){r.return=t.return,du=r;break}du=t.return}}function vu(e,t,n){var r=n.flags;switch(n.tag){case 0:case 11:case 15:Lu(e,n),r&4&&wl(5,n);break;case 1:if(Lu(e,n),r&4){if(e=n.stateNode,t===null)try{e.componentDidMount()}catch(e){Z(n,n.return,e)}else{var i=Tc(n.type,t.memoizedProps);t=t.memoizedState;try{e.componentDidUpdate(i,t,e.__reactInternalSnapshotBeforeUpdate)}catch(e){Z(n,n.return,e)}}}r&64&&El(n),r&512&&Ol(n,n.return);break;case 3:if(Lu(e,n),r&64&&(e=n.updateQueue,e!==null)){if(t=null,n.child!==null)switch(n.child.tag){case 27:case 5:t=n.child.stateNode;break;case 1:t=n.child.stateNode}try{ko(e,t)}catch(e){Z(n,n.return,e)}}break;case 27:t===null&&r&4&&Vl(n);case 26:case 5:Lu(e,n),t===null&&r&4&&Fl(n),r&512&&Ol(n,n.return);break;case 12:Lu(e,n);break;case 31:Lu(e,n),r&4&&Eu(e,n);break;case 13:Lu(e,n),r&4&&Du(e,n),r&64&&(e=n.memoizedState,e!==null&&(e=e.dehydrated,e!==null&&(n=_f.bind(null,n),cm(e,n))));break;case 22:if(r=n.memoizedState!==null||su,!r){var a=t!==null&&t.memoizedState!==null||H;t=su,i=H,su=r,(H=a)&&!i?(r=2,n.subtreeFlags&8772&&(r|=1),zu(e,n,r)):Lu(e,n),su=t,H=i}break;case 30:Lu(e,n),r&512&&Ol(n,n.return);break;case 7:r&512&&Ol(n,n.return);default:Lu(e,n)}}function yu(e,t){for(e=e.child;e!==null;)bu(e,t),e=e.sibling}function bu(e,t){switch(e.tag){case 5:case 26:try{var n=e.stateNode;if(t){var r=n.style;typeof r.setProperty==`function`?r.setProperty(`display`,`none`,`important`):r.display=`none`}else{var i=e.stateNode,a=e.memoizedProps.style,o=a!=null&&a.hasOwnProperty(`display`)?a.display:null;i.style.display=o==null||typeof o==`boolean`?``:(``+o).trim()}}catch(t){Z(e,e.return,t)}xu(e,t);break;case 6:try{e.stateNode.nodeValue=t?``:e.memoizedProps,A=!0}catch(t){Z(e,e.return,t)}break;case 18:try{var s=e.stateNode;t?wp(s,!0):wp(e.stateNode,!1)}catch(t){Z(e,e.return,t)}break;case 22:case 23:e.memoizedState===null&&yu(e,t);break;default:yu(e,t)}}function xu(e,t){if(e.subtreeFlags&67108864)for(e=e.child;e!==null;){a:{var n=e,r=t;switch(n.tag){case 4:bu(n,r);break a;case 22:n.memoizedState===null&&xu(n,r);break a;default:xu(n,r)}}e=e.sibling}}function Su(e){var t=e.alternate;t!==null&&(e.alternate=null,Su(t)),e.child=null,e.deletions=null,e.sibling=null,e.tag===5&&(t=e.stateNode,t!==null&&Bt(t)),e.stateNode=null,e.return=null,e.dependencies=null,e.memoizedProps=null,e.memoizedState=null,e.pendingProps=null,e.stateNode=null,e.updateQueue=null}var U=null,Cu=!1;function wu(e,t,n){for(n=n.child;n!==null;)Tu(e,t,n),n=n.sibling}function Tu(e,t,n){if(ot&&typeof ot.onCommitFiberUnmount==`function`)try{ot.onCommitFiberUnmount(at,n)}catch{}switch(n.tag){case 26:H||kl(n,t),wu(e,t,n),n.memoizedState?n.memoizedState.count--:n.stateNode&&!H&&(n=n.stateNode,n.parentNode.removeChild(n));break;case 27:H||kl(n,t),Ml(n);var r=U,i=Cu;Sp(n.type)&&(U=n.stateNode,Cu=!1),wu(e,t,n),gm(n.stateNode,n.type,n.memoizedProps),U=r,Cu=i;break;case 5:H||kl(n,t),Ml(n);case 6:if(n.tag===6&&Ml(n),r=U,i=Cu,U=null,wu(e,t,n),U=r,Cu=i,U!==null){if(Cu)try{(U.nodeType===9?U.body:U.nodeName===`HTML`?U.ownerDocument.body:U).removeChild(n.stateNode),A=!0}catch(e){Z(n,t,e)}else try{U.removeChild(n.stateNode),A=!0}catch(e){Z(n,t,e)}}break;case 18:U!==null&&(Cu?(e=U,Cp(e.nodeType===9?e.body:e.nodeName===`HTML`?e.ownerDocument.body:e,n.stateNode),Hh(e)):Cp(U,n.stateNode));break;case 4:r=U,i=Cu,U=n.stateNode.containerInfo,Cu=!0,wu(e,t,n),U=r,Cu=i;break;case 0:case 11:case 14:case 15:Tl(2,n,t),H||Tl(4,n,t),wu(e,t,n);break;case 1:H||(kl(n,t),r=n.stateNode,typeof r.componentWillUnmount==`function`&&Dl(n,t,r)),wu(e,t,n);break;case 21:wu(e,t,n);break;case 22:H=(r=H)||n.memoizedState!==null,wu(e,t,n),H=r;break;case 30:kl(n,t),wu(e,t,n);break;case 7:H||kl(n,t),wu(e,t,n);break;default:wu(e,t,n)}}function Eu(e,t){if(t.memoizedState===null&&(e=t.alternate,e!==null&&(e=e.memoizedState,e!==null))){e=e.dehydrated;try{Hh(e)}catch(e){Z(t,t.return,e)}}}function Du(e,t){if(t.memoizedState===null&&(e=t.alternate,e!==null&&(e=e.memoizedState,e!==null&&(e=e.dehydrated,e!==null))))try{Hh(e)}catch(e){Z(t,t.return,e)}}function Ou(e){switch(e.tag){case 31:case 13:case 19:var t=e.stateNode;return t===null&&(t=e.stateNode=new uu),t;case 22:return e=e.stateNode,t=e._retryCache,t===null&&(t=e._retryCache=new uu),t;default:throw Error(o(435,e.tag))}}function ku(e,t){var n=Ou(e);t.forEach(function(t){if(!n.has(t)){n.add(t);var r=vf.bind(null,e,t);t.then(r,r)}})}function Au(e,t,n){var r=t.deletions;if(r!==null)for(var i=0;i<r.length;i++){var a=r[i],s=e,c=t,l=c;a:for(;l!==null;){switch(l.tag){case 27:if(Sp(l.type)){U=l.stateNode,Cu=!1;break a}break;case 5:U=l.stateNode,Cu=!1;break a;case 3:case 4:U=l.stateNode.containerInfo,Cu=!0;break a}l=l.return}if(U===null)throw Error(o(160));Tu(s,c,a),U=null,Cu=!1,s=a.alternate,s!==null&&(s.return=null),a.return=null}if(t.subtreeFlags&13886)for(t=t.child;t!==null;)Mu(t,e,n),t=t.sibling}var ju=null;function Mu(e,t,n){var r=e.alternate,i=e.flags;switch(e.tag){case 0:case 11:case 14:case 15:if(i&4&&(r=e.updateQueue,r=r===null?null:r.events,r!==null))for(var a=0;a<r.length;a++){var s=r[a];s.ref.impl=s.nextImpl}Au(t,e,n),Nu(e),i&4&&(Tl(3,e,e.return),wl(3,e),Tl(5,e,e.return));break;case 1:Au(t,e,n),Nu(e),i&512&&(H||r===null||kl(r,r.return)),i&64&&su&&(e=e.updateQueue,e!==null&&(t=e.callbacks,t!==null&&(n=e.shared.hiddenCallbacks,e.shared.hiddenCallbacks=n===null?t:n.concat(t))));break;case 26:if(a=ju,Au(t,e,n),Nu(e),i&512&&(H||r===null||kl(r,r.return)),i&4){if(i=r===null?null:r.memoizedState,n=e.memoizedState,r===null){if(n===null){if(e.stateNode===null){if(su)e.stateNode=fp(e.type,e.memoizedProps,t.containerInfo,e);else{a:{t=e.type,n=e.memoizedProps,i=a.ownerDocument||a;b:switch(t){case`title`:r=i.getElementsByTagName(`title`)[0],(!r||r[Rt]||r[k]||r.namespaceURI===`http://www.w3.org/2000/svg`||r.hasAttribute(`itemprop`))&&(r=i.createElement(t),i.head.insertBefore(r,i.querySelector(`head > title`))),np(r,t,n),r[k]=e,Gt(r),t=r;break a;case`link`:if(a=Gm(`link`,`href`,i).get(t+(n.href||``))){for(s=0;s<a.length;s++)if(r=a[s],r.getAttribute(`href`)===(n.href==null||n.href===``?null:n.href)&&r.getAttribute(`rel`)===(n.rel==null?null:n.rel)&&r.getAttribute(`title`)===(n.title==null?null:n.title)&&r.getAttribute(`crossorigin`)===(n.crossOrigin==null?null:n.crossOrigin)){a.splice(s,1);break b}}r=i.createElement(t),np(r,t,n),i.head.appendChild(r);break;case`meta`:if(a=Gm(`meta`,`content`,i).get(t+(n.content||``))){for(s=0;s<a.length;s++)if(r=a[s],r.getAttribute(`content`)===(n.content==null?null:``+n.content)&&r.getAttribute(`name`)===(n.name==null?null:n.name)&&r.getAttribute(`property`)===(n.property==null?null:n.property)&&r.getAttribute(`http-equiv`)===(n.httpEquiv==null?null:n.httpEquiv)&&r.getAttribute(`charset`)===(n.charSet==null?null:n.charSet)){a.splice(s,1);break b}}r=i.createElement(t),np(r,t,n),i.head.appendChild(r);break;default:throw Error(o(468,t))}r[k]=e,Gt(r),t=r}e.stateNode=t}}else su||Km(a,e.type,e.stateNode)}else e.stateNode=Bm(a,n,e.memoizedProps)}else i===n?n===null&&e.stateNode!==null&&Il(e,e.memoizedProps,r.memoizedProps):(i===null?(t=r.stateNode,t===null||H||t.parentNode.removeChild(t)):i.count--,n===null?su||Km(a,e.type,e.stateNode):Bm(a,n,e.memoizedProps))}break;case 27:Au(t,e,n),Nu(e),i&512&&(H||r===null||kl(r,r.return)),r!==null&&i&4&&Il(e,e.memoizedProps,r.memoizedProps);break;case 5:if(a=cu,cu=!1,Au(t,e,n),cu=a,Nu(e),i&512&&(H||r===null||kl(r,r.return)),e.flags&32){t=e.stateNode;try{yn(t,``),A=!0}catch(t){Z(e,e.return,t)}}i&4&&e.stateNode!=null&&(t=e.memoizedProps,Il(e,t,r===null?t:r.memoizedProps)),i&1024&&(lu=!0);break;case 6:if(Au(t,e,n),Nu(e),i&4){if(e.stateNode===null)throw Error(o(162));t=e.memoizedProps,n=e.stateNode;try{n.nodeValue=t,A=!0}catch(t){Z(e,e.return,t)}}break;case 3:if(A=!1,Wm=null,a=ju,ju=bm(t.containerInfo),Au(t,e,n),ju=a,Nu(e),i&4&&r!==null&&r.memoizedState.isDehydrated)try{Hh(t.containerInfo)}catch(t){Z(e,e.return,t)}lu&&(lu=!1,Pu(e)),A=!1;break;case 4:i=cu,cu=su,r=tn(),a=ju,ju=bm(e.stateNode.containerInfo),Au(t,e,n),Nu(e),ju=a,A&&pu&&(mu=!0),A=r,cu=i;break;case 12:Au(t,e,n),Nu(e);break;case 31:Au(t,e,n),Nu(e),i&4&&(t=e.updateQueue,t!==null&&(e.updateQueue=null,ku(e,t)));break;case 13:Au(t,e,n),Nu(e),e.child.flags&8192&&e.memoizedState!==null!=(r!==null&&r.memoizedState!==null)&&(hd=Xe()),i&4&&(t=e.updateQueue,t!==null&&(e.updateQueue=null,ku(e,t)));break;case 22:a=e.memoizedState!==null,s=r!==null&&r.memoizedState!==null;var c=su,l=H,u=cu;su=c||a,cu=u||a,H=l||s,Au(t,e,n),H=l,cu=u,su=c,Nu(e),i&8192&&(t=e.stateNode,t._visibility=a?t._visibility&-2:t._visibility|1,!a||r===null||s||su||H||(t=s||H,n=su,r=H,su=a||su,H=t,Ru(e,2),su=n,H=r),!a&&cu||yu(e,a)),i&4&&(t=e.updateQueue,t!==null&&(n=t.retryQueue,n!==null&&(t.retryQueue=null,ku(e,n))));break;case 19:Au(t,e,n),Nu(e),i&4&&(t=e.updateQueue,t!==null&&(e.updateQueue=null,ku(e,t)));break;case 30:i&512&&(H||r===null||kl(r,r.return)),i=tn(),a=pu,s=(n&335544064)===n,c=e.memoizedProps,pu=s&&wi(c.default,c.update)!==`none`,Au(t,e,n),Nu(e),s&&r!==null&&A&&(e.flags|=4),pu=a,A=i;break;case 21:break;case 7:i&512&&(H||r===null||kl(r,r.return)),r&&r.stateNode!==null&&(r.stateNode._fragmentFiber=e);default:Au(t,e,n),Nu(e)}}function Nu(e){var t=e.flags;if(t&2){try{for(var n,r=e.return;r!==null;){if(Ll(r)){n=r;break}r=r.return}r=null;for(var i=e.return;i!==null;){if(Pl(i)){var a=i.stateNode;r===null?r=[a]:r.push(a)}if(Nl(i))break;i=i.return}var s=r;if(n==null)throw Error(o(160));switch(n.tag){case 27:var c=n.stateNode;Bl(e,Rl(e),c,s);break;case 5:var l=n.stateNode;n.flags&32&&(yn(l,``),n.flags&=-33),Bl(e,Rl(e),l,s);break;case 3:case 4:var u=n.stateNode.containerInfo;zl(e,Rl(e),u,s);break;default:throw Error(o(161))}}catch(t){Z(e,e.return,t)}e.flags&=-3}t&4096&&(e.flags&=-4097)}function Pu(e){if(e.subtreeFlags&1024)for(e=e.child;e!==null;){var t=e;Pu(t),t.tag===5&&t.flags&1024&&(t=t.stateNode,gh=!0,t.reset(),gh=!1),e=e.sibling}}function Fu(e,t){if(t.subtreeFlags&9270)for(t=t.child;t!==null;)Iu(t,e),t=t.sibling;else ou(t,!1)}function Iu(e,t){var n=e.alternate;if(n===null)Ql(e,!1);else switch(e.tag){case 3:if(hu=fu=!1,Kl(),Fu(t,e),!fu&&!mu){if(e=Gl,e!==null)for(var r=0;r<e.length;r+=3){n=e[r];var i=e[r+1];Ep(n,e[r+2]),n=n.ownerDocument.documentElement,n!==null&&n.animate({opacity:[0,0],pointerEvents:[`none`,`none`]},{duration:0,fill:`forwards`,pseudoElement:`::view-transition-group(`+i+`)`})}e=t.containerInfo,e=e.nodeType===9?e.documentElement:e.ownerDocument.documentElement,e!==null&&e.style.viewTransitionName===``&&(e.style.viewTransitionName=`none`,e.animate({opacity:[0,0],pointerEvents:[`none`,`none`]},{duration:0,fill:`forwards`,pseudoElement:`::view-transition-group(root)`}),e.animate({width:[0,0],height:[0,0]},{duration:0,fill:`forwards`,pseudoElement:`::view-transition`})),hu=!0}Gl=null;break;case 5:Fu(t,e);break;case 4:r=fu,fu=!1,Fu(t,e),fu&&(mu=!0),fu=r;break;case 22:e.memoizedState===null&&(n.memoizedState===null?Fu(t,e):Ql(e,!1));break;case 30:r=fu,i=Kl(),fu=!1,Fu(t,e),fu&&(e.flags|=4);var a=e.memoizedProps,o=e.stateNode;t=Si(a,o),o=Si(n.memoizedProps,o);var s=wi(a.default,a.update);s===`none`?t=!1:(a=n.memoizedState,n.memoizedState=null,n=e.child,ql=0,t=au(e,n,t,o,s,a,!0),ql!==(a===null?0:a.length)&&(e.flags|=32)),e.flags&4&&t?(Nd(e,e.memoizedProps.onUpdate),Gl=i):i!==null&&(i.push.apply(i,Gl),Gl=i),fu=e.flags&32?!0:r;break;default:Fu(t,e)}}function Lu(e,t){if(t.subtreeFlags&8772)for(t=t.child;t!==null;)vu(e,t.alternate,t),t=t.sibling}function Ru(e,t){for(e=e.child;e!==null;){var n=e,r=t;switch(n.tag){case 0:case 11:case 14:case 15:Tl(4,n,n.return),Ru(n,r);break;case 1:kl(n,n.return);var i=n.stateNode;typeof i.componentWillUnmount==`function`&&Dl(n,n.return,i),Ru(n,r);break;case 27:r&2&&gm(n.stateNode,n.type,n.memoizedProps);case 5:kl(n,n.return),n.tag!==5&&n.tag!==27||Ml(n),Ru(n,r);break;case 6:Ml(n);break;case 26:kl(n,n.return),i=n.stateNode,n.memoizedState!==null||i===null||H||i.parentNode.removeChild(i),Ru(n,r);break;case 22:n.memoizedState===null&&Ru(n,r);break;case 30:kl(n,n.return),Ru(n,r);break;case 7:kl(n,n.return);default:Ru(n,r)}e=e.sibling}}function zu(e,t,n){for(n=t.subtreeFlags&8772?n:n&-2,t=t.child;t!==null;){var r=t.alternate,i=e,a=t,o=a.flags,s=!!(n&1);switch(a.tag){case 0:case 11:case 15:zu(i,a,n),wl(4,a);break;case 1:if(zu(i,a,n),r=a,i=r.stateNode,typeof i.componentDidMount==`function`)try{i.componentDidMount()}catch(e){Z(r,r.return,e)}if(r=a,i=r.updateQueue,i!==null){var c=r.stateNode;try{var l=i.shared.hiddenCallbacks;if(l!==null)for(i.shared.hiddenCallbacks=null,i=0;i<l.length;i++)Oo(l[i],c)}catch(e){Z(r,r.return,e)}}s&&o&64&&El(a),Ol(a,a.return);break;case 27:n&2&&Vl(a);case 5:a.tag!==5&&a.tag!==27||jl(a),zu(i,a,n),s&&r===null&&o&4&&Fl(a),Ol(a,a.return);break;case 6:jl(a);break;case 26:c=a.stateNode,a.memoizedState!==null||c===null||su||Km(bm(c.ownerDocument),a.type,c),zu(i,a,n),s&&r===null&&o&4&&Fl(a),Ol(a,a.return);break;case 12:zu(i,a,n);break;case 31:zu(i,a,n),s&&o&4&&Eu(i,a);break;case 13:zu(i,a,n),s&&o&4&&Du(i,a);break;case 22:a.memoizedState===null&&zu(i,a,n),Ol(a,a.return);break;case 30:zu(i,a,n),Ol(a,a.return);break;case 7:Ol(a,a.return);default:zu(i,a,n)}t=t.sibling}}function Bu(e,t){var n=null;e!==null&&e.memoizedState!==null&&e.memoizedState.cachePool!==null&&(n=e.memoizedState.cachePool.pool),e=null,t.memoizedState!==null&&t.memoizedState.cachePool!==null&&(e=t.memoizedState.cachePool.pool),e!==n&&(e!=null&&e.refCount++,n!=null&&La(n))}function Vu(e,t){e=null,t.alternate!==null&&(e=t.alternate.memoizedState.cache),t=t.memoizedState.cache,t!==e&&(t.refCount++,e!=null&&La(e))}function Hu(e,t,n,r){var i=(n&335544064)===n;if(t.subtreeFlags&(i?10262:10256))for(t=t.child;t!==null;)Uu(e,t,n,r),t=t.sibling;else i&&iu(t)}function Uu(e,t,n,r){var i=(n&335544064)===n;i&&t.alternate===null&&t.return!==null&&t.return.alternate!==null&&ru(t);var a=t.flags;switch(t.tag){case 0:case 11:case 15:Hu(e,t,n,r),a&2048&&wl(9,t);break;case 1:Hu(e,t,n,r);break;case 3:Hu(e,t,n,r),i&&hu&&(e=e.containerInfo,e=e.nodeType===9?e.body:e.nodeName===`HTML`?e.ownerDocument.body:e,e.style.viewTransitionName===`root`&&(e.style.viewTransitionName=``),e=e.ownerDocument.documentElement,e!==null&&e.style.viewTransitionName===`none`&&(e.style.viewTransitionName=``)),a&2048&&(a=null,t.alternate!==null&&(a=t.alternate.memoizedState.cache),t=t.memoizedState.cache,t!==a&&(t.refCount++,a!=null&&La(a)));break;case 12:if(a&2048){Hu(e,t,n,r),a=t.stateNode;try{var o=t.memoizedProps,s=o.id,c=o.onPostCommit;typeof c==`function`&&c(s,t.alternate===null?`mount`:`update`,a.passiveEffectDuration,-0)}catch(e){Z(t,t.return,e)}}else Hu(e,t,n,r);break;case 31:Hu(e,t,n,r);break;case 13:Hu(e,t,n,r);break;case 23:break;case 22:o=t.stateNode,s=t.alternate,t.memoizedState===null?(i&&s!==null&&s.memoizedState!==null&&ru(t),o._visibility&2?Hu(e,t,n,r):(o._visibility|=2,Wu(e,t,n,r,!!(t.subtreeFlags&10256)||!1))):(i&&s!==null&&s.memoizedState===null&&ru(s),o._visibility&2?Hu(e,t,n,r):Gu(e,t)),a&2048&&Bu(s,t);break;case 24:Hu(e,t,n,r),a&2048&&Vu(t.alternate,t);break;case 30:i&&(a=t.alternate,a!==null&&(Xl(a.child,!0),Xl(t.child,!0))),Hu(e,t,n,r);break;default:Hu(e,t,n,r)}}function Wu(e,t,n,r,i){for(i&&=!!(t.subtreeFlags&10256)||!1,t=t.child;t!==null;){var a=e,o=t,s=n,c=r,l=o.flags;switch(o.tag){case 0:case 11:case 15:Wu(a,o,s,c,i),wl(8,o);break;case 23:break;case 22:var u=o.stateNode;o.memoizedState===null?(u._visibility|=2,Wu(a,o,s,c,i)):u._visibility&2?Wu(a,o,s,c,i):Gu(a,o),i&&l&2048&&Bu(o.alternate,o);break;case 24:Wu(a,o,s,c,i),i&&l&2048&&Vu(o.alternate,o);break;default:Wu(a,o,s,c,i)}t=t.sibling}}function Gu(e,t){if(t.subtreeFlags&10256)for(t=t.child;t!==null;){var n=e,r=t,i=r.flags;switch(r.tag){case 22:Gu(n,r),i&2048&&Bu(r.alternate,r);break;case 24:Gu(n,r),i&2048&&Vu(r.alternate,r);break;default:Gu(n,r)}t=t.sibling}}var Ku=8192;function qu(e,t,n){if(e.subtreeFlags&Ku)for(e=e.child;e!==null;)Ju(e,t,n),e=e.sibling}function Ju(e,t,n){switch(e.tag){case 26:qu(e,t,n),e.flags&Ku&&(e.memoizedState===null?(e=e.stateNode,(t&335544128)===t&&Zm(n,e)):Qm(n,ju,e.memoizedState,e.memoizedProps));break;case 5:qu(e,t,n),e.flags&Ku&&(e=e.stateNode,(t&335544128)===t&&Zm(n,e));break;case 3:case 4:var r=ju;ju=bm(e.stateNode.containerInfo),qu(e,t,n),ju=r;break;case 22:e.memoizedState===null&&(r=e.alternate,r!==null&&r.memoizedState!==null?(r=Ku,Ku=16777216,qu(e,t,n),Ku=r):qu(e,t,n));break;case 30:if((e.flags&Ku)!==0&&(r=e.memoizedProps.name,r!=null&&r!==`auto`)){var i=e.stateNode;i.paired=null,Ul===null&&(Ul=new Map),Ul.set(r,i)}qu(e,t,n);break;default:qu(e,t,n)}}function Yu(e){var t=e.alternate;if(t!==null&&(e=t.child,e!==null)){t.child=null;do t=e.sibling,e.sibling=null,e=t;while(e!==null)}}function Xu(e){var t=e.deletions;if(e.flags&16){if(t!==null)for(var n=0;n<t.length;n++){var r=t[n];du=r,$u(r,e)}Yu(e)}if(e.subtreeFlags&10256)for(e=e.child;e!==null;)Zu(e),e=e.sibling}function Zu(e){switch(e.tag){case 0:case 11:case 15:Xu(e),e.flags&2048&&Tl(9,e,e.return);break;case 3:Xu(e);break;case 12:Xu(e);break;case 22:var t=e.stateNode;e.memoizedState!==null&&t._visibility&2&&(e.return===null||e.return.tag!==13)?(t._visibility&=-3,Qu(e)):Xu(e);break;default:Xu(e)}}function Qu(e){var t=e.deletions;if(e.flags&16){if(t!==null)for(var n=0;n<t.length;n++){var r=t[n];du=r,$u(r,e)}Yu(e)}for(e=e.child;e!==null;){switch(t=e,t.tag){case 0:case 11:case 15:Tl(8,t,t.return),Qu(t);break;case 22:n=t.stateNode,n._visibility&2&&(n._visibility&=-3,Qu(t));break;default:Qu(t)}e=e.sibling}}function $u(e,t){for(;du!==null;){var n=du;switch(n.tag){case 0:case 11:case 15:Tl(8,n,t);break;case 23:case 22:if(n.memoizedState!==null&&n.memoizedState.cachePool!==null){var r=n.memoizedState.cachePool.pool;r!=null&&r.refCount++}break;case 24:La(n.memoizedState.cache)}if(r=n.child,r!==null)r.return=n,du=r;else a:for(n=e;du!==null;){r=du;var i=r.sibling,a=r.return;if(Su(r),r===n){du=null;break a}if(i!==null){i.return=a,du=i;break a}du=a}}}var ed={getCacheForType:function(e){var t=ka(Fa),n=t.data.get(e);return n===void 0&&(n=e(),t.data.set(e,n)),n},cacheSignal:function(){return ka(Fa).controller.signal}},td=typeof WeakMap==`function`?WeakMap:Map,W=0,G=null,K=null,q=0,J=0,nd=null,rd=!1,id=!1,ad=!1,od=0,Y=0,sd=0,cd=0,ld=0,ud=0,dd=0,fd=null,pd=null,md=!1,hd=0,gd=0,_d=1/0,vd=null,yd=null,X=0,bd=null,xd=null,Sd=0,Cd=0,wd=null,Td=null,Ed=null,Dd=null,Od=null,kd=0,Ad=null;function jd(){return W&2&&q!==0?q&-q:T.T===null?kt():Pf()}function Md(){if(ud===0){if(!(q&536870912)||I){var e=pt;pt<<=1,!(pt&3932160)&&(pt=262144),ud=e}else ud=536870912}return e=Fo.current,e!==null&&(e.flags|=32),ud}function Nd(e,t){if(t!=null){var n=e.stateNode,r=n.ref;r===null&&(r=n.ref=Pp(Si(e.memoizedProps,n))),Dd===null&&(Dd=[]),Dd.push(t.bind(null,r))}}function Pd(e,t,n){(e===G&&(J===2||J===9)||e.cancelPendingCommit!==null)&&(Vd(e,0),Rd(e,q,ud,!1)),St(e,n),(!(W&2)||e!==G)&&(e===G&&(!(W&2)&&(cd|=n),Y===4&&Rd(e,q,ud,!1)),Ef(e))}function Fd(e,t,n){if(W&6)throw Error(o(327));var r=!n&&!(t&127)&&(t&e.expiredLanes)===0||_t(e,t),i=r?Yd(e,t):qd(e,t,!0),a=r;do{if(i===0){id&&!r&&Rd(e,t,0,!1);break}if(n=e.current.alternate,a&&!Ld(n))i=qd(e,t,!1),a=!1;else{if(i===2){if(a=t,e.errorRecoveryDisabledLanes&a)var s=0;else s=e.pendingLanes&-536870913,s=s===0?s&536870912?536870912:0:s;if(s!==0){t=s;a:{var c=e;i=fd;var l=c.current.memoizedState.isDehydrated;if(l&&(Vd(c,s).flags|=256),s=qd(c,s,!1),s!==2&&s!==6){if(ad&&!l){c.errorRecoveryDisabledLanes|=a,cd|=a,i=4;break a}a=pd,pd=i,a!==null&&(pd===null?pd=a:pd.push.apply(pd,a))}i=s}if(a=!1,i!==2)continue}}if(i===1){Vd(e,0),Rd(e,t,0,!0);break}a:{switch(r=e,a=i,a){case 0:case 1:throw Error(o(345));case 4:if((t&4194048)!==t&&(t&62914560)!==t)break;case 6:Rd(r,t,ud,!rd);break a;case 2:pd=null;break;case 3:case 5:break;default:throw Error(o(329))}if((t&62914560)===t&&(i=hd+300-Xe(),10<i)){if(Rd(r,t,ud,!rd),gt(r,0,!0)!==0)break a;Sd=t,r.timeoutHandle=gp(Id.bind(null,r,n,pd,vd,md,t,ud,cd,dd,rd,a,`Throttled`,-0,0),i);break a}Id(r,n,pd,vd,md,t,ud,cd,dd,rd,a,null,-0,0)}break}}while(1);Ef(e)}function Id(e,t,n,r,i,a,o,s,c,l,u,d,f,p){e.timeoutHandle=-1;var m=t.subtreeFlags,h=(a&335544064)===a;d=null,(h||m&8192||(m&16785408)==16785408)&&(d={stylesheets:null,count:0,imgCount:0,imgBytes:0,suspenseyImages:[],waitingForImages:!0,waitingForViewTransition:!1,unsuspend:Dn},Ul=null,Ju(t,a,d),h&&(m=d,h=e.containerInfo,h=(h.nodeType===9?h:h.ownerDocument).__reactViewTransition,h!=null&&(m.count++,m.waitingForViewTransition=!0,m=nh.bind(m),h.finished.then(m,m))),m=(a&62914560)===a?hd-Xe():(a&4194048)===a?gd-Xe():0,m=eh(d,m),m!==null)?(Sd=a,e.cancelPendingCommit=m(nf.bind(null,e,t,a,n,r,i,o,s,c,l,u,d,null,f,p)),Rd(e,a,o,!l)):nf(e,t,a,n,r,i,o,s,c,l,u,d)}function Ld(e){for(var t=e;;){var n=t.tag;if((n===0||n===11||n===15)&&t.flags&16384&&(n=t.updateQueue,n!==null&&(n=n.stores,n!==null)))for(var r=0;r<n.length;r++){var i=n[r],a=i.getSnapshot;i=i.value;try{if(!Kr(a(),i))return!1}catch{return!1}}if(n=t.child,t.subtreeFlags&16384&&n!==null)n.return=t,t=n;else{if(t===e)break;for(;t.sibling===null;){if(t.return===null||t.return===e)return!0;t=t.return}t.sibling.return=t.return,t=t.sibling}}return!0}function Rd(e,t,n,r){t=vt(e,t),t&=~ld,t&=~cd,e.suspendedLanes|=t,e.pingedLanes&=~t,r&&(e.warmLanes|=t),r=e.expirationTimes;for(var i=t;0<i;){var a=31-ct(i),o=1<<a;r[a]=-1,i&=~o}n!==0&&wt(e,n,t)}function zd(){return W&6?!0:(Df(0,!1),!1)}function Bd(){if(K!==null){if(J===0)var e=K.return;else e=K,xa=ba=null,cs(e),lo=null,uo=0,e=K;for(;e!==null;)Cl(e.alternate,e),e=e.return;K=null}}function Vd(e,t){var n=e.timeoutHandle;return n!==-1&&(e.timeoutHandle=-1,_p(n)),n=e.cancelPendingCommit,n!==null&&(e.cancelPendingCommit=null,n()),Sd=0,Bd(),G=e,K=n=zi(e.current,null),q=t,J=0,nd=null,rd=!1,id=_t(e,t),ad=!1,dd=ud=ld=cd=sd=Y=0,pd=fd=null,md=!1,od=vt(e,t),ki(),n}function Hd(e,t){L=null,T.H=_c,t===$a||t===to?(t=so(),J=3):t===eo?(t=so(),J=4):J=t===Fc?8:typeof t==`object`&&t&&typeof t.then==`function`?6:1,nd=t,K===null&&(Y=1,kc(e,qi(t,e.current)))}function Ud(){var e=Fo.current;return e===null?!0:(q&4194048)===q?Io===null:(q&62914560)===q||q&536870912?e===Io:!1}function Wd(){var e=T.H;return T.H=_c,e===null?_c:e}function Gd(){var e=T.A;return T.A=ed,e}function Kd(){Y=4,rd||(q&4194048)!==q&&Fo.current!==null||(id=!0),!(sd&134217727)&&!(cd&134217727)||G===null||Rd(G,q,ud,!1)}function qd(e,t,n){var r=W;W|=2;var i=Wd(),a=Gd();(G!==e||q!==t)&&(vd=null,Vd(e,t)),t=!1;var o=Y;a:do try{if(J!==0&&K!==null){var s=K,c=nd;switch(J){case 8:Bd(),o=6;break a;case 3:case 2:case 9:case 6:Fo.current===null&&(t=!0);var l=J;if(J=0,nd=null,$d(e,s,c,l),n&&id){o=0;break a}break;default:l=J,J=0,nd=null,$d(e,s,c,l)}}Jd(),o=Y;break}catch(t){Hd(e,t)}while(1);return t&&e.shellSuspendCounter++,xa=ba=null,W=r,T.H=i,T.A=a,K===null&&(G=null,q=0,ki()),o}function Jd(){for(;K!==null;)Zd(K)}function Yd(e,t){var n=W;W|=2;var r=Wd(),i=Gd();G!==e||q!==t?(vd=null,_d=Xe()+500,Vd(e,t)):id=_t(e,t);a:do try{if(J!==0&&K!==null){t=K;var a=nd;b:switch(J){case 1:J=0,nd=null,$d(e,t,a,1);break;case 2:case 9:if(ro(a)){J=0,nd=null,Qd(t);break}t=function(){J!==2&&J!==9||G!==e||(J=7),Ef(e)},a.then(t,t);break a;case 3:J=7;break a;case 4:J=5;break a;case 7:ro(a)?(J=0,nd=null,Qd(t)):(J=0,nd=null,$d(e,t,a,7));break;case 5:var s=null;switch(K.tag){case 26:s=K.memoizedState;case 5:case 27:var c=K;if(s?Ym(s):c.stateNode.complete){J=0,nd=null;var l=c.sibling;if(l!==null)K=l;else{var u=c.return;u===null?K=null:(K=u,ef(u))}break b}}J=0,nd=null,$d(e,t,a,5);break;case 6:J=0,nd=null,$d(e,t,a,6);break;case 8:Bd(),Y=6;break a;default:throw Error(o(462))}}Xd();break}catch(t){Hd(e,t)}while(1);return xa=ba=null,T.H=r,T.A=i,W=n,K===null?(G=null,q=0,ki(),Y):0}function Xd(){for(;K!==null&&!Je();)Zd(K)}function Zd(e){var t=hl(e.alternate,e,od);e.memoizedProps=e.pendingProps,t===null?ef(e):K=t}function Qd(e){var t=e,n=t.alternate;switch(t.tag){case 15:case 0:t=Yc(n,t,t.pendingProps,t.type,void 0,q);break;case 11:t=Yc(n,t,t.pendingProps,t.type.render,t.ref,q);break;case 5:cs(t);var r=t;r===ca&&(I?(ma(r),r.tag===5&&r.stateNode!=null&&(F=r.stateNode)):(ma(r),I=!0));default:Cl(n,t),t=K=Bi(t,od),t=hl(n,t,od)}e.memoizedProps=e.pendingProps,t===null?ef(e):K=t}function $d(e,t,n,r){xa=ba=null,cs(t),lo=null,uo=0;var i=t.return;try{if(Pc(e,i,t,n,q)){Y=1,kc(e,qi(n,e.current)),K=null;return}}catch(t){if(i!==null)throw K=i,t;Y=1,kc(e,qi(n,e.current)),K=null;return}t.flags&32768?(I||r===1?e=!0:id||q&536870912?e=!1:(rd=e=!0,(r===2||r===9||r===3||r===6)&&(r=Fo.current,r!==null&&r.tag===13&&(r.flags|=16384))),tf(t,e)):ef(t)}function ef(e){var t=e;do{if(t.flags&32768){tf(t,rd);return}e=t.return;var n=xl(t.alternate,t,od);if(n!==null){K=n;return}if(t=t.sibling,t!==null){K=t;return}K=t=e}while(t!==null);Y===0&&(Y=5)}function tf(e,t){do{var n=Sl(e.alternate,e);if(n!==null){n.flags&=32767,K=n;return}if(n=e.return,n!==null&&(n.flags|=32768,n.subtreeFlags=0,n.deletions=null),!t&&(e=e.sibling,e!==null)){K=e;return}K=e=n}while(e!==null);Y=6,K=null}function nf(e,t,n,r,i,a,s,c,l,u,d,f){e.cancelPendingCommit=null;do df();while(X!==0);if(W&6)throw Error(o(327));if(t!==null){if(t===e.current)throw Error(o(177));e===G&&(K=G=null,q=0),xd=t,bd=e,Sd=n,wd=i,Td=r,rf(e,t,n,s,c,l,f)}}function rf(e,t,n,r,i,a,o){var s=t.lanes|t.childLanes;if(Cd=s,s|=Oi,Ct(e,n,s,r,i,a),Dd=null,(n&335544064)===n?(Od=Ba(e),r=10262):(Od=null,r=10256),(t.subtreeFlags&r)!==0||(t.flags&r)!==0?(e.callbackNode=null,e.callbackPriority=0,yf(et,function(){return ff(),null})):(e.callbackNode=null,e.callbackPriority=0),Hl=!1,r=!!(t.flags&13878),t.subtreeFlags&13878||r){r=T.T,T.T=null,i=E.p,E.p=2,a=W,W|=4;try{gu(e,t,n)}finally{W=a,E.p=i,T.T=r}}X=1,Hl?Ed=Mp(o,e.containerInfo,Od,sf,cf,of,lf,ff,af,null,null):(sf(),cf(),lf())}function af(e){if(X!==0){var t=bd.onRecoverableError;t(e,{componentStack:null})}}function of(){X===3&&(X=0,Iu(xd,bd),X=4)}function sf(){if(X===1){X=0;var e=bd,t=xd,n=Sd,r=!!(t.flags&13878);if(t.subtreeFlags&13878||r){r=T.T,T.T=null;var i=E.p;E.p=2;var a=W;W|=4;try{pu=mu=!1,Mu(t,e,n),n=cp;var o=Qr(e.containerInfo),s=n.focusedElem,c=n.selectionRange;if(o!==s&&s&&s.ownerDocument&&Zr(s.ownerDocument.documentElement,s)){if(c!==null&&$r(s)){var l=c.start,u=c.end;if(u===void 0&&(u=l),`selectionStart`in s)s.selectionStart=l,s.selectionEnd=Math.min(u,s.value.length);else{var d=s.ownerDocument||document,f=d&&d.defaultView||window;if(f.getSelection){var p=f.getSelection(),m=s.textContent.length,h=Math.min(c.start,m),g=c.end===void 0?h:Math.min(c.end,m);!p.extend&&h>g&&(o=g,g=h,h=o);var _=Xr(s,h),v=Xr(s,g);if(_&&v&&(p.rangeCount!==1||p.anchorNode!==_.node||p.anchorOffset!==_.offset||p.focusNode!==v.node||p.focusOffset!==v.offset)){var y=d.createRange();y.setStart(_.node,_.offset),p.removeAllRanges(),h>g?(p.addRange(y),p.extend(v.node,v.offset)):(y.setEnd(v.node,v.offset),p.addRange(y))}}}}for(d=[],p=s;p=p.parentNode;)p.nodeType===1&&d.push({element:p,left:p.scrollLeft,top:p.scrollTop});for(typeof s.focus==`function`&&s.focus(),s=0;s<d.length;s++){var b=d[s];b.element.scrollLeft=b.left,b.element.scrollTop=b.top}}gh=!!sp,cp=sp=null}finally{W=a,E.p=i,T.T=r}}e.current=t,X=2}}function cf(){if(X===2){X=0;var e=bd,t=xd,n=!!(t.flags&8772);if(t.subtreeFlags&8772||n){n=T.T,T.T=null;var r=E.p;E.p=2;var i=W;W|=4;try{vu(e,t.alternate,t)}finally{W=i,E.p=r,T.T=n}}X=3}}function lf(){if(X===4||X===3){X=0;var e=Ed;Ed=null,Ye();var t=bd,n=xd,r=Sd,i=Td,a=(r&335544064)===r?10262:10256;if((n.subtreeFlags&a)!==0||(n.flags&a)!==0?X=5:(X=0,xd=bd=null,uf(t,t.pendingLanes)),a=t.pendingLanes,a===0&&(yd=null),Ot(r),n=n.stateNode,ot&&typeof ot.onCommitFiberRoot==`function`)try{ot.onCommitFiberRoot(at,n,void 0,(n.current.flags&128)==128)}catch{}if(i!==null){n=T.T,a=E.p,E.p=2,T.T=null;try{for(var o=t.onRecoverableError,s=0;s<i.length;s++){var c=i[s];o(c.value,{componentStack:c.stack})}}finally{T.T=n,E.p=a}}if(i=Dd,o=Od,Od=null,i!==null&&(Dd=null,o===null&&(o=[]),e!==null))for(c=0;c<i.length;c++)n=(0,i[c])(o),n!==void 0&&e.finished.finally(n);Sd&3&&df(),Ef(t),a=t.pendingLanes,r&261930&&a&42?t===Ad?kd++:(kd=0,Ad=t):(kd=0,Ad=null),Df(0,!1)}}function uf(e,t){(e.pooledCacheLanes&=t)===0&&(t=e.pooledCache,t!=null&&(e.pooledCache=null,La(t)))}function df(){return Ed!==null&&(Ed.skipTransition(),Ed=null),sf(),cf(),lf(),ff()}function ff(){if(X!==5)return!1;var e=bd,t=Cd;Cd=0;var n=Ot(Sd),r=T.T,i=E.p;try{E.p=32>n?32:n,T.T=null,n=wd,wd=null;var a=bd,s=Sd;if(X=0,xd=bd=null,Sd=0,W&6)throw Error(o(331));var c=W;if(W|=4,Zu(a.current),Uu(a,a.current,s,n),W=c,Df(0,!1),ot&&typeof ot.onPostCommitFiberRoot==`function`)try{ot.onPostCommitFiberRoot(at,a)}catch{}return!0}finally{E.p=i,T.T=r,uf(e,t)}}function pf(e,t,n){t=qi(n,t),t=jc(e.stateNode,t,2),e=So(e,t,2),e!==null&&(St(e,2),Ef(e))}function Z(e,t,n){if(e.tag===3)pf(e,e,n);else for(;t!==null;){if(t.tag===3){pf(t,e,n);break}if(t.tag===1){var r=t.stateNode;if(typeof t.type.getDerivedStateFromError==`function`||typeof r.componentDidCatch==`function`&&(yd===null||!yd.has(r))){e=qi(n,e),n=Mc(2),r=So(t,n,2),r!==null&&(Nc(n,r,t,e),St(r,2),Ef(r));break}}t=t.return}}function mf(e,t,n){var r=e.pingCache;if(r===null){r=e.pingCache=new td;var i=new Set;r.set(t,i)}else i=r.get(t),i===void 0&&(i=new Set,r.set(t,i));i.has(n)||(ad=!0,i.add(n),e=hf.bind(null,e,t,n),t.then(e,e))}function hf(e,t,n){var r=e.pingCache;r!==null&&r.delete(t),e.pingedLanes|=e.suspendedLanes&n,e.warmLanes&=~n,G===e&&(q&n)===n&&(Y===4||Y===3&&(q&62914560)===q&&300>Xe()-hd?W&2?ld|=n:Vd(e,0):ld|=n,dd===q&&(dd=0)),Ef(e)}function gf(e,t){t===0&&(t=bt()),e=Mi(e,t),e!==null&&(St(e,t),Ef(e))}function _f(e){var t=e.memoizedState,n=0;t!==null&&(n=t.retryLane),gf(e,n)}function vf(e,t){var n=0;switch(e.tag){case 31:case 13:var r=e.stateNode,i=e.memoizedState;i!==null&&(n=i.retryLane);break;case 19:r=e.stateNode;break;case 22:r=e.stateNode._retryCache;break;default:throw Error(o(314))}r!==null&&r.delete(t),gf(e,n)}function yf(e,t){return Ke(e,t)}var bf=null,xf=null,Sf=!1,Cf=!1,wf=!1,Tf=0;function Ef(e){e!==xf&&e.next===null&&(xf===null?bf=xf=e:xf=xf.next=e),Cf=!0,Sf||(Sf=!0,Nf())}function Df(e,t){if(!wf&&Cf){wf=!0;do for(var n=!1,r=bf;r!==null;){if(!t){if(e!==0){var i=r.pendingLanes;if(i===0)var a=0;else{var o=r.suspendedLanes,s=r.pingedLanes;a=(1<<31-ct(42|e)+1)-1,a&=i&~(o&~s),a=a&201326741?a&201326741|1:a?a|2:0}a!==0&&(n=!0,Mf(r,a))}else a=q,a=gt(r,r===G?a:0,r.cancelPendingCommit!==null||r.timeoutHandle!==-1),!(a&3)||_t(r,a)||(n=!0,Mf(r,a))}r=r.next}while(n);wf=!1}}function Of(){kf()}function kf(){Cf=Sf=!1;var e=0;Tf!==0&&hp()&&(e=Tf);for(var t=Xe(),n=null,r=bf;r!==null;){var i=r.next,a=Af(r,t);a===0?(r.next=null,n===null?bf=i:n.next=i,i===null&&(xf=n)):(n=r,(e!==0||a&3)&&(Cf=!0)),r=i}X!==0&&X!==5||Df(e,!1),Tf!==0&&(Tf=0)}function Af(e,t){for(var n=e.suspendedLanes,r=e.pingedLanes,i=e.expirationTimes,a=e.pendingLanes&-62914561;0<a;){var o=31-ct(a),s=1<<o,c=i[o];c===-1?((s&n)===0||(s&r)!==0)&&(i[o]=yt(s,t)):c<=t&&(e.expiredLanes|=s),a&=~s}if(t=G,n=q,n=gt(e,e===t?n:0,e.cancelPendingCommit!==null||e.timeoutHandle!==-1),r=e.callbackNode,n===0||e===t&&(J===2||J===9)||e.cancelPendingCommit!==null)return r!==null&&r!==null&&qe(r),e.callbackNode=null,e.callbackPriority=0;if(!(n&3)||_t(e,n)){if(t=n&-n,t===e.callbackPriority)return t;switch(r!==null&&qe(r),Ot(n)){case 2:case 8:n=$e;break;case 32:n=et;break;case 268435456:n=nt;break;default:n=et}return r=jf.bind(null,e),n=Ke(n,r),e.callbackPriority=t,e.callbackNode=n,t}return r!==null&&r!==null&&qe(r),e.callbackPriority=2,e.callbackNode=null,2}function jf(e,t){if(X!==0&&X!==5)return e.callbackNode=null,e.callbackPriority=0,null;var n=e.callbackNode;if(df()&&e.callbackNode!==n)return null;var r=q;return r=gt(e,e===G?r:0,e.cancelPendingCommit!==null||e.timeoutHandle!==-1),r===0?null:(Fd(e,r,t),Af(e,Xe()),e.callbackNode!=null&&e.callbackNode===n?jf.bind(null,e):null)}function Mf(e,t){if(df())return null;Fd(e,t,!0)}function Nf(){bp(function(){W&6?Ke(Qe,Of):kf()})}function Pf(){if(Tf===0){var e=Ua;e===0&&(e=ft,ft<<=1,!(ft&261888)&&(ft=256)),Tf=e}return Tf}function Ff(e){return e==null||typeof e==`symbol`||typeof e==`boolean`?null:typeof e==`function`?e:En(e)}function If(e,t,n,r,i){if(t===`submit`&&n&&n.stateNode===i){var a=Ff((i[Mt]||null).action),o=r.submitter;o&&(t=(t=o[Mt]||null)?Ff(t.formAction):o.getAttribute(`formAction`),t!==null&&(a=t,o=null));var s=new Jn(`action`,`action`,null,r,i);e.push({event:s,listeners:[{instance:null,listener:function(){if(r.defaultPrevented){if(Tf!==0){var e=new FormData(i,o);rc(n,{pending:!0,data:e,method:i.method,action:a},null,e)}}else typeof a==`function`&&(s.preventDefault(),e=new FormData(i,o),rc(n,{pending:!0,data:e,method:i.method,action:a},a,e))},currentTarget:i}]})}}for(var Lf=0;Lf<yi.length;Lf++){var Rf=yi[Lf];bi(Rf.toLowerCase(),`on`+(Rf[0].toUpperCase()+Rf.slice(1)))}bi(di,`onAnimationEnd`),bi(fi,`onAnimationIteration`),bi(pi,`onAnimationStart`),bi(`dblclick`,`onDoubleClick`),bi(`focusin`,`onFocus`),bi(`focusout`,`onBlur`),bi(mi,`onTransitionRun`),bi(hi,`onTransitionStart`),bi(gi,`onTransitionCancel`),bi(_i,`onTransitionEnd`),Xt(`onMouseEnter`,[`mouseout`,`mouseover`]),Xt(`onMouseLeave`,[`mouseout`,`mouseover`]),Xt(`onPointerEnter`,[`pointerout`,`pointerover`]),Xt(`onPointerLeave`,[`pointerout`,`pointerover`]),Yt(`onChange`,`change click focusin focusout input keydown keyup selectionchange`.split(` `)),Yt(`onSelect`,`focusout contextmenu dragend focusin keydown keyup mousedown mouseup selectionchange`.split(` `)),Yt(`onBeforeInput`,[`compositionend`,`keypress`,`textInput`,`paste`]),Yt(`onCompositionEnd`,`compositionend focusout keydown keypress keyup mousedown`.split(` `)),Yt(`onCompositionStart`,`compositionstart focusout keydown keypress keyup mousedown`.split(` `)),Yt(`onCompositionUpdate`,`compositionupdate focusout keydown keypress keyup mousedown`.split(` `));var zf=`abort canplay canplaythrough durationchange emptied encrypted ended error loadeddata loadedmetadata loadstart pause play playing progress ratechange resize seeked seeking stalled suspend timeupdate volumechange waiting`.split(` `),Bf=new Set(`beforetoggle cancel close invalid load scroll scrollend toggle`.split(` `).concat(zf));function Vf(e,t){t=!!(t&4);for(var n=0;n<e.length;n++){var r=e[n],i=r.event;r=r.listeners;a:{var a=void 0;if(t)for(var o=r.length-1;0<=o;o--){var s=r[o],c=s.instance,l=s.currentTarget;if(s=s.listener,c!==a&&i.isPropagationStopped())break a;a=s,i.currentTarget=l;try{a(i)}catch(e){Ti(e)}i.currentTarget=null,a=c}else for(o=0;o<r.length;o++){if(s=r[o],c=s.instance,l=s.currentTarget,s=s.listener,c!==a&&i.isPropagationStopped())break a;a=s,i.currentTarget=l;try{a(i)}catch(e){Ti(e)}i.currentTarget=null,a=c}}}}function Q(e,t){var n=t[Pt];n===void 0&&(n=t[Pt]=new Set);var r=e+`__bubble`;n.has(r)||(Gf(t,e,2,!1),n.add(r))}function Hf(e,t,n){var r=0;t&&(r|=4),Gf(n,e,r,t)}var Uf=`_reactListening`+Math.random().toString(36).slice(2);function Wf(e){if(!e[Uf]){e[Uf]=!0,qt.forEach(function(t){t!==`selectionchange`&&(Bf.has(t)||Hf(t,!1,e),Hf(t,!0,e))});var t=e.nodeType===9?e:e.ownerDocument;t===null||t[Uf]||(t[Uf]=!0,Hf(`selectionchange`,!1,t))}}function Gf(e,t,n,r){switch(Ch(t)){case 2:var i=_h;break;case 8:i=vh;break;default:i=yh}n=i.bind(null,t,n,e),i=void 0,!Ln||t!==`touchstart`&&t!==`touchmove`&&t!==`wheel`||(i=!0),r?i===void 0?e.addEventListener(t,n,!0):e.addEventListener(t,n,{capture:!0,passive:i}):i===void 0?e.addEventListener(t,n,!1):e.addEventListener(t,n,{passive:i})}function Kf(e,t,n,r,i){var a=r;if(!(t&1)&&!(t&2)&&r!==null)a:for(;;){if(r===null)return;var o=r.tag;if(o===3||o===4){var s=r.stateNode.containerInfo;if(s===i)break;if(o===4)for(o=r.return;o!==null;){var l=o.tag;if((l===3||l===4)&&o.stateNode.containerInfo===i)return;o=o.return}for(;s!==null;){if(o=Vt(s),o===null)return;if(l=o.tag,l===5||l===6||l===26||l===27){r=a=o;continue a}s=s.parentNode}}r=r.return}Pn(function(){var r=a,i=kn(n),o=[];a:{var s=vi.get(e);if(s!==void 0){var l=Jn,u=e;switch(e){case`keypress`:if(Un(n)===0)break a;case`keydown`:case`keyup`:l=dr;break;case`focusin`:u=`focus`,l=rr;break;case`focusout`:u=`blur`,l=rr;break;case`beforeblur`:case`afterblur`:l=rr;break;case`click`:if(n.button===2)break a;case`auxclick`:case`dblclick`:case`mousedown`:case`mousemove`:case`mouseup`:case`mouseout`:case`mouseover`:case`contextmenu`:l=tr;break;case`drag`:case`dragend`:case`dragenter`:case`dragexit`:case`dragleave`:case`dragover`:case`dragstart`:case`drop`:l=nr;break;case`touchcancel`:case`touchend`:case`touchmove`:case`touchstart`:l=mr;break;case di:case fi:case pi:l=ir;break;case _i:l=M;break;case`scroll`:case`scrollend`:l=Xn;break;case`wheel`:l=hr;break;case`copy`:case`cut`:case`paste`:l=ar;break;case`gotpointercapture`:case`lostpointercapture`:case`pointercancel`:case`pointerdown`:case`pointermove`:case`pointerout`:case`pointerover`:case`pointerup`:l=fr;break;case`submit`:l=pr;break;case`toggle`:case`beforetoggle`:l=gr}var d=!!(t&4),f=!d&&(e===`scroll`||e===`scrollend`),p=d?s===null?null:s+`Capture`:s;d=[];for(var m=r,h;m!==null;){var g=m;if(h=g.stateNode,g=g.tag,g!==5&&g!==26&&g!==27||h===null||p===null||(g=Fn(m,p),g!=null&&d.push(qf(m,g,h))),f)break;m=m.return}0<d.length&&(s=new l(s,u,null,n,i),o.push({event:s,listeners:d}))}}if(!(t&7)){a:{if(l=e===`mouseover`||e===`pointerover`,s=e===`mouseout`||e===`pointerout`,l&&n!==On&&(u=n.relatedTarget||n.fromElement)&&(Vt(u)||u[Nt]))break a;(s||l)&&(u=i.window===i?i:(l=i.ownerDocument)?l.defaultView||l.parentWindow:window,s?(l=n.relatedTarget||n.toElement,s=r,l=l?Vt(l):null,l!==null&&(f=c(l),d=l.tag,l!==f||d!==5&&d!==27&&d!==6)&&(l=null)):(s=null,l=r),s!==l&&(d=tr,g=`onMouseLeave`,p=`onMouseEnter`,m=`mouse`,(e===`pointerout`||e===`pointerover`)&&(d=fr,g=`onPointerLeave`,p=`onPointerEnter`,m=`pointer`),f=s==null?u:Ut(s),h=l==null?u:Ut(l),u=new d(g,m+`leave`,s,n,i),u.target=f,u.relatedTarget=h,g=null,Vt(i)===r&&(d=new d(p,m+`enter`,l,n,i),d.target=h,d.relatedTarget=f,g=d),f=g,d=s&&l?ie(s,l,Yf):null,s!==null&&Xf(o,u,s,d,!1),l!==null&&f!==null&&Xf(o,f,l,d,!0)))}a:{if(s=r?Ut(r):window,l=s.nodeName&&s.nodeName.toLowerCase(),l===`select`||l===`input`&&s.type===`file`)var _=Pr;else if(Or(s)){if(Fr)_=Wr;else{_=Hr;var v=Vr}}else l=s.nodeName,!l||l.toLowerCase()!==`input`||s.type!==`checkbox`&&s.type!==`radio`?r&&Cn(r.elementType)&&(_=Pr):_=Ur;if(_&&=_(e,r)){kr(o,_,n,i);break a}v&&v(e,s,r)}switch(v=r?Ut(r):window,e){case`focusin`:(Or(v)||v.contentEditable===`true`)&&(ti=v,ni=r,ri=null);break;case`focusout`:ri=ni=ti=null;break;case`mousedown`:ii=!0;break;case`contextmenu`:case`mouseup`:case`dragend`:ii=!1,ai(o,n,i);break;case`selectionchange`:if(ei)break;case`keydown`:case`keyup`:ai(o,n,i)}var y;if(vr)b:{switch(e){case`compositionstart`:var b=`onCompositionStart`;break b;case`compositionend`:b=`onCompositionEnd`;break b;case`compositionupdate`:b=`onCompositionUpdate`;break b}b=void 0}else Tr?wr(e,n)&&(b=`onCompositionEnd`):e===`keydown`&&n.keyCode===229&&(b=`onCompositionStart`);b&&(xr&&n.locale!==`ko`&&(Tr||b!==`onCompositionStart`?b===`onCompositionEnd`&&Tr&&(y=Hn()):(zn=i,Bn=`value`in zn?zn.value:zn.textContent,Tr=!0)),v=Jf(r,b),0<v.length&&(b=new or(b,e,null,n,i),o.push({event:b,listeners:v}),y?b.data=y:(y=N(n),y!==null&&(b.data=y)))),(y=br?Er(e,n):Dr(e,n))&&(b=Jf(r,`onBeforeInput`),0<b.length&&(v=new or(`onBeforeInput`,`beforeinput`,null,n,i),o.push({event:v,listeners:b}),v.data=y)),If(o,e,r,n,i)}Vf(o,t)})}function qf(e,t,n){return{instance:e,listener:t,currentTarget:n}}function Jf(e,t){for(var n=t+`Capture`,r=[];e!==null;){var i=e,a=i.stateNode;if(i=i.tag,i!==5&&i!==26&&i!==27||a===null||(i=Fn(e,n),i!=null&&r.unshift(qf(e,i,a)),i=Fn(e,t),i!=null&&r.push(qf(e,i,a))),e.tag===3)return r;e=e.return}return[]}function Yf(e){if(e===null)return null;do e=e.return;while(e&&e.tag!==5&&e.tag!==27);return e||null}function Xf(e,t,n,r,i){for(var a=t._reactName,o=[];n!==null&&n!==r;){var s=n,c=s.alternate,l=s.stateNode;if(s=s.tag,c!==null&&c===r)break;s!==5&&s!==26&&s!==27||l===null||(c=l,i?(l=Fn(n,a),l!=null&&o.unshift(qf(n,l,c))):i||(l=Fn(n,a),l!=null&&o.push(qf(n,l,c)))),n=n.return}o.length!==0&&e.push({event:t,listeners:o})}var Zf=/\r\n?/g,Qf=/\u0000|\uFFFD/g;function $f(e){return(typeof e==`string`?e:``+e).replace(Zf,`
 `).replace(Qf,``)}function ep(e,t){return t=$f(t),$f(e)===t}function $(e,t,n,r,i,a){switch(n){case`children`:if(typeof r==`string`)t===`body`||t===`textarea`&&r===``||yn(e,r);else if(typeof r==`number`||typeof r==`bigint`)t!==`body`&&yn(e,``+r);else return;break;case`className`:rn(e,`class`,r);break;case`tabIndex`:rn(e,`tabindex`,r);break;case`dir`:case`role`:case`viewBox`:case`width`:case`height`:rn(e,n,r);break;case`style`:Sn(e,r,a);return;case`data`:if(t!==`object`){rn(e,`data`,r);break}case`src`:case`href`:if(r===``&&(t!==`a`||n!==`href`)||r==null||typeof r==`function`||typeof r==`symbol`||typeof r==`boolean`){e.removeAttribute(n);break}r=En(r),e.setAttribute(n,r);break;case`action`:case`formAction`:if(typeof r==`function`){e.setAttribute(n,`javascript:throw new Error('A React form was unexpectedly submitted. If you called form.submit() manually, consider using form.requestSubmit() instead. If you\\'re trying to use event.stopPropagation() in a submit event handler, consider also calling event.preventDefault().')`);break}if(typeof a==`function`&&(n===`formAction`?(t!==`input`&&$(e,t,`name`,i.name,i,null),$(e,t,`formEncType`,i.formEncType,i,null),$(e,t,`formMethod`,i.formMethod,i,null),$(e,t,`formTarget`,i.formTarget,i,null)):($(e,t,`encType`,i.encType,i,null),$(e,t,`method`,i.method,i,null),$(e,t,`target`,i.target,i,null))),r==null||typeof r==`symbol`||typeof r==`boolean`){e.removeAttribute(n);break}r=En(r),e.setAttribute(n,r);break;case`onClick`:r!=null&&(e.onclick=Dn);return;case`onScroll`:r!=null&&Q(`scroll`,e);return;case`onScrollEnd`:r!=null&&Q(`scrollend`,e);return;case`dangerouslySetInnerHTML`:if(r!=null){if(typeof r!=`object`||!(`__html`in r))throw Error(o(61));if(n=r.__html,n!=null){if(i.children!=null)throw Error(o(60));a?.__html!==n&&(e.innerHTML=n)}}break;case`multiple`:e.multiple=r&&typeof r!=`function`&&typeof r!=`symbol`;break;case`muted`:e.muted=r&&typeof r!=`function`&&typeof r!=`symbol`;break;case`suppressContentEditableWarning`:case`suppressHydrationWarning`:case`defaultValue`:case`defaultChecked`:case`innerHTML`:case`ref`:break;case`autoFocus`:break;case`xlinkHref`:if(r==null||typeof r==`function`||typeof r==`boolean`||typeof r==`symbol`){e.removeAttribute(`xlink:href`);break}n=En(r),e.setAttributeNS(`http://www.w3.org/1999/xlink`,`xlink:href`,n);break;case`contentEditable`:case`spellCheck`:case`draggable`:case`value`:case`autoReverse`:case`externalResourcesRequired`:case`focusable`:case`preserveAlpha`:r!=null&&typeof r!=`function`&&typeof r!=`symbol`?e.setAttribute(n,r):e.removeAttribute(n);break;case`inert`:case`allowFullScreen`:case`async`:case`autoPlay`:case`controls`:case`credentialless`:case`default`:case`defer`:case`disabled`:case`disablePictureInPicture`:case`disableRemotePlayback`:case`formNoValidate`:case`hidden`:case`loop`:case`noModule`:case`noValidate`:case`open`:case`playsInline`:case`readOnly`:case`required`:case`reversed`:case`scoped`:case`seamless`:case`itemScope`:r&&typeof r!=`function`&&typeof r!=`symbol`?e.setAttribute(n,``):e.removeAttribute(n);break;case`capture`:case`download`:!0===r?e.setAttribute(n,``):!1!==r&&r!=null&&typeof r!=`function`&&typeof r!=`symbol`?e.setAttribute(n,r):e.removeAttribute(n);break;case`cols`:case`rows`:case`size`:case`span`:r!=null&&typeof r!=`function`&&typeof r!=`symbol`&&!isNaN(r)&&1<=r?e.setAttribute(n,r):e.removeAttribute(n);break;case`rowSpan`:case`start`:r==null||typeof r==`function`||typeof r==`symbol`||isNaN(r)?e.removeAttribute(n):e.setAttribute(n,r);break;case`popover`:Q(`beforetoggle`,e),Q(`toggle`,e),nn(e,`popover`,r);break;case`xlinkActuate`:an(e,`http://www.w3.org/1999/xlink`,`xlink:actuate`,r);break;case`xlinkArcrole`:an(e,`http://www.w3.org/1999/xlink`,`xlink:arcrole`,r);break;case`xlinkRole`:an(e,`http://www.w3.org/1999/xlink`,`xlink:role`,r);break;case`xlinkShow`:an(e,`http://www.w3.org/1999/xlink`,`xlink:show`,r);break;case`xlinkTitle`:an(e,`http://www.w3.org/1999/xlink`,`xlink:title`,r);break;case`xlinkType`:an(e,`http://www.w3.org/1999/xlink`,`xlink:type`,r);break;case`xmlBase`:an(e,`http://www.w3.org/XML/1998/namespace`,`xml:base`,r);break;case`xmlLang`:an(e,`http://www.w3.org/XML/1998/namespace`,`xml:lang`,r);break;case`xmlSpace`:an(e,`http://www.w3.org/XML/1998/namespace`,`xml:space`,r);break;case`is`:nn(e,`is`,r);break;case`innerText`:case`textContent`:return;default:if(!(2<n.length)||n[0]!==`o`&&n[0]!==`O`||n[1]!==`n`&&n[1]!==`N`)n=wn.get(n)||n,nn(e,n,r);else return}A=!0}function tp(e,t,n,r,i,a){switch(n){case`style`:Sn(e,r,a);return;case`dangerouslySetInnerHTML`:if(r!=null){if(typeof r!=`object`||!(`__html`in r))throw Error(o(61));if(n=r.__html,n!=null){if(i.children!=null)throw Error(o(60));a?.__html!==n&&(e.innerHTML=n)}}break;case`children`:if(typeof r==`string`)yn(e,r);else if(typeof r==`number`||typeof r==`bigint`)yn(e,``+r);else return;break;case`onScroll`:r!=null&&Q(`scroll`,e);return;case`onScrollEnd`:r!=null&&Q(`scrollend`,e);return;case`onClick`:r!=null&&(e.onclick=Dn);return;case`suppressContentEditableWarning`:case`suppressHydrationWarning`:case`innerHTML`:case`ref`:return;case`innerText`:case`textContent`:return;default:if(!Jt.hasOwnProperty(n))a:{if(n[0]===`o`&&n[1]===`n`&&(i=n.endsWith(`Capture`),a=n.slice(2,i?n.length-7:void 0),t=e[Mt]||null,t=t==null?null:t[n],typeof t==`function`&&e.removeEventListener(a,t,i),typeof r==`function`)){typeof t!=`function`&&t!==null&&(n in e?e[n]=null:e.hasAttribute(n)&&e.removeAttribute(n)),e.addEventListener(a,r,i);break a}A=!0,n in e?e[n]=r:!0===r?e.setAttribute(n,``):nn(e,n,r)}return}A=!0}function np(e,t,n){switch(t){case`div`:case`span`:case`svg`:case`path`:case`a`:case`g`:case`p`:case`li`:break;case`img`:Q(`error`,e),Q(`load`,e);var r=!1,i=!1,a;for(a in n)if(n.hasOwnProperty(a)){var s=n[a];if(s!=null)switch(a){case`src`:r=!0;break;case`srcSet`:i=!0;break;case`children`:case`dangerouslySetInnerHTML`:throw Error(o(137,t));default:$(e,t,a,s,n,null)}}i&&$(e,t,`srcSet`,n.srcSet,n,null),r&&$(e,t,`src`,n.src,n,null);return;case`input`:Q(`invalid`,e);var c=a=s=i=null,l=null,u=null;for(r in n)if(n.hasOwnProperty(r)){var d=n[r];if(d!=null)switch(r){case`name`:i=d;break;case`type`:s=d;break;case`checked`:l=d;break;case`defaultChecked`:u=d;break;case`value`:a=d;break;case`defaultValue`:c=d;break;case`children`:case`dangerouslySetInnerHTML`:if(d!=null)throw Error(o(137,t));break;default:$(e,t,r,d,n,null)}}mn(e,a,c,l,u,s,i,!1);return;case`select`:for(i in Q(`invalid`,e),r=s=a=null,n)if(n.hasOwnProperty(i)&&(c=n[i],c!=null))switch(i){case`value`:a=c;break;case`defaultValue`:s=c;break;case`multiple`:r=c;default:$(e,t,i,c,n,null)}t=a,n=s,e.multiple=!!r,t==null?n!=null&&gn(e,!!r,n,!0):gn(e,!!r,t,!1);return;case`textarea`:for(s in Q(`invalid`,e),a=i=r=null,n)if(n.hasOwnProperty(s)&&(c=n[s],c!=null))switch(s){case`value`:r=c;break;case`defaultValue`:i=c;break;case`children`:a=c;break;case`dangerouslySetInnerHTML`:if(c!=null)throw Error(o(91));break;default:$(e,t,s,c,n,null)}vn(e,r,i,a);return;case`option`:for(l in n)if(n.hasOwnProperty(l)&&(r=n[l],r!=null))switch(l){case`selected`:e.selected=r&&typeof r!=`function`&&typeof r!=`symbol`;break;default:$(e,t,l,r,n,null)}return;case`dialog`:Q(`beforetoggle`,e),Q(`toggle`,e),Q(`cancel`,e),Q(`close`,e);break;case`iframe`:case`object`:Q(`load`,e);break;case`video`:case`audio`:for(r=0;r<zf.length;r++)Q(zf[r],e);break;case`image`:Q(`error`,e),Q(`load`,e);break;case`details`:Q(`toggle`,e);break;case`embed`:case`source`:case`link`:Q(`error`,e),Q(`load`,e);case`area`:case`base`:case`br`:case`col`:case`hr`:case`keygen`:case`meta`:case`param`:case`track`:case`wbr`:case`menuitem`:for(u in n)if(n.hasOwnProperty(u)&&(r=n[u],r!=null))switch(u){case`children`:case`dangerouslySetInnerHTML`:throw Error(o(137,t));default:$(e,t,u,r,n,null)}return;default:if(Cn(t)){for(d in n)n.hasOwnProperty(d)&&(r=n[d],r!==void 0&&tp(e,t,d,r,n,void 0));return}}for(c in n)n.hasOwnProperty(c)&&(r=n[c],r!=null&&$(e,t,c,r,n,null))}var rp={};function ip(e,t,n,r){switch(t){case`div`:case`span`:case`svg`:case`path`:case`a`:case`g`:case`p`:case`li`:break;case`input`:var i=null,a=null,s=null,c=null,l=null,u=null,d=null;for(m in n){var f=n[m];if(n.hasOwnProperty(m)&&f!=null)switch(m){case`checked`:break;case`value`:break;case`defaultValue`:l=f;default:r.hasOwnProperty(m)||$(e,t,m,null,r,f)}}for(var p in r){var m=r[p];if(f=n[p],r.hasOwnProperty(p)&&(m!=null||f!=null))switch(p){case`type`:m!==f&&(A=!0),a=m;break;case`name`:m!==f&&(A=!0),i=m;break;case`checked`:m!==f&&(A=!0),u=m;break;case`defaultChecked`:m!==f&&(A=!0),d=m;break;case`value`:m!==f&&(A=!0),s=m;break;case`defaultValue`:m!==f&&(A=!0),c=m;break;case`children`:case`dangerouslySetInnerHTML`:if(m!=null)throw Error(o(137,t));break;default:m!==f&&$(e,t,p,m,r,f)}}pn(e,s,c,l,u,d,a,i);return;case`select`:for(a in m=s=c=p=null,n)if(l=n[a],n.hasOwnProperty(a)&&l!=null)switch(a){case`value`:break;case`multiple`:m=l;default:r.hasOwnProperty(a)||$(e,t,a,null,r,l)}for(i in r)if(a=r[i],l=n[i],r.hasOwnProperty(i)&&(a!=null||l!=null))switch(i){case`value`:a!==l&&(A=!0),p=a;break;case`defaultValue`:a!==l&&(A=!0),c=a;break;case`multiple`:a!==l&&(A=!0),s=a;default:a!==l&&$(e,t,i,a,r,l)}t=c,n=s,r=m,p==null?!!r!=!!n&&(t==null?gn(e,!!n,n?[]:``,!1):gn(e,!!n,t,!0)):gn(e,!!n,p,!1);return;case`textarea`:for(c in m=p=null,n)if(i=n[c],n.hasOwnProperty(c)&&i!=null&&!r.hasOwnProperty(c))switch(c){case`value`:break;case`children`:break;default:$(e,t,c,null,r,i)}for(s in r)if(i=r[s],a=n[s],r.hasOwnProperty(s)&&(i!=null||a!=null))switch(s){case`value`:i!==a&&(A=!0),p=i;break;case`defaultValue`:i!==a&&(A=!0),m=i;break;case`children`:break;case`dangerouslySetInnerHTML`:if(i!=null)throw Error(o(91));break;default:i!==a&&$(e,t,s,i,r,a)}_n(e,p,m);return;case`option`:for(var h in n)if(p=n[h],n.hasOwnProperty(h)&&p!=null&&!r.hasOwnProperty(h))switch(h){case`selected`:e.selected=!1;break;default:$(e,t,h,null,r,p)}for(l in r)if(p=r[l],m=n[l],r.hasOwnProperty(l)&&p!==m&&(p!=null||m!=null))switch(l){case`selected`:p!==m&&(A=!0),e.selected=p&&typeof p!=`function`&&typeof p!=`symbol`;break;default:$(e,t,l,p,r,m)}return;case`img`:case`link`:case`area`:case`base`:case`br`:case`col`:case`embed`:case`hr`:case`keygen`:case`meta`:case`param`:case`source`:case`track`:case`wbr`:case`menuitem`:for(var g in n)p=n[g],n.hasOwnProperty(g)&&p!=null&&!r.hasOwnProperty(g)&&$(e,t,g,null,r,p);for(u in r)if(p=r[u],m=n[u],r.hasOwnProperty(u)&&p!==m&&(p!=null||m!=null))switch(u){case`children`:case`dangerouslySetInnerHTML`:if(p!=null)throw Error(o(137,t));break;default:$(e,t,u,p,r,m)}return;default:if(Cn(t)){for(var _ in n)p=n[_],n.hasOwnProperty(_)&&p!==void 0&&!r.hasOwnProperty(_)&&tp(e,t,_,void 0,r,p);for(d in r)p=r[d],m=n[d],!r.hasOwnProperty(d)||p===m||p===void 0&&m===void 0||tp(e,t,d,p,r,m);return}}for(var v in n)p=n[v],n.hasOwnProperty(v)&&p!=null&&!r.hasOwnProperty(v)&&$(e,t,v,null,r,p);for(f in r)p=r[f],m=n[f],!r.hasOwnProperty(f)||p===m||p==null&&m==null||$(e,t,f,p,r,m)}function ap(e){switch(e){case`css`:case`script`:case`font`:case`img`:case`image`:case`input`:case`link`:return!0;default:return!1}}function op(){if(typeof performance.getEntriesByType==`function`){for(var e=0,t=0,n=performance.getEntriesByType(`resource`),r=0;r<n.length;r++){var i=n[r],a=i.transferSize,o=i.initiatorType,s=i.duration;if(a&&s&&ap(o)){for(o=0,s=i.responseEnd,r+=1;r<n.length;r++){var c=n[r],l=c.startTime;if(l>s)break;var u=c.transferSize,d=c.initiatorType;u&&ap(d)&&(c=c.responseEnd,o+=u*(c<s?1:(s-l)/(c-l)))}if(--r,t+=8*(a+o)/(i.duration/1e3),e++,10<e)break}}if(0<e)return t/e/1e6}return navigator.connection&&(e=navigator.connection.downlink,typeof e==`number`)?e:5}var sp=null,cp=null;function lp(e){return e.nodeType===9?e:e.ownerDocument}function up(e){switch(e){case`http://www.w3.org/2000/svg`:return 1;case`http://www.w3.org/1998/Math/MathML`:return 2;default:return 0}}function dp(e,t){if(e===0)switch(t){case`svg`:return 1;case`math`:return 2;default:return 0}return e===1&&t===`foreignObject`?0:e}function fp(e,t,n,r){return n=lp(n).createElement(e),n[k]=r,n[Mt]=t,np(n,e,t),Gt(n),n}function pp(e,t){return e===`textarea`||e===`noscript`||typeof t.children==`string`||typeof t.children==`number`||typeof t.children==`bigint`||typeof t.dangerouslySetInnerHTML==`object`&&t.dangerouslySetInnerHTML!==null&&t.dangerouslySetInnerHTML.__html!=null}var mp=null;function hp(){var e=window.event;return e&&e.type===`popstate`?e!==mp&&(mp=e,!0):(mp=null,!1)}var gp=typeof setTimeout==`function`?setTimeout:void 0,_p=typeof clearTimeout==`function`?clearTimeout:void 0,vp=typeof Promise==`function`?Promise:void 0,yp=typeof requestAnimationFrame==`function`?requestAnimationFrame:gp,bp=typeof queueMicrotask==`function`?queueMicrotask:vp===void 0?gp:function(e){return vp.resolve(null).then(e).catch(xp)};function xp(e){setTimeout(function(){throw e})}function Sp(e){return e===`head`}function Cp(e,t){var n=t,r=0;do{var i=n.nextSibling;if(e.removeChild(n),i&&i.nodeType===8){if(n=i.data,n===`/$`||n===`/&`){if(r===0){e.removeChild(i),Hh(t);return}r--}else if(n===`$`||n===`$?`||n===`$~`||n===`$!`||n===`&`)r++;else if(n===`html`)_m(e.ownerDocument.documentElement);else if(n===`head`){n=e.ownerDocument.head,_m(n);for(var a=n.firstChild;a;){var o=a.nextSibling,s=a.nodeName;a[Rt]||s===`SCRIPT`||s===`STYLE`||s===`LINK`&&a.rel.toLowerCase()===`stylesheet`||n.removeChild(a),a=o}}else n===`body`&&_m(e.ownerDocument.body)}n=i}while(n);Hh(t)}function wp(e,t){var n=e;e=0;do{var r=n.nextSibling;if(n.nodeType===1?t?(n._stashedDisplay=n.style.display,n.style.display=`none`):(n.style.display=n._stashedDisplay||``,n.getAttribute(`style`)===``&&n.removeAttribute(`style`)):n.nodeType===3&&(t?(n._stashedText=n.nodeValue,n.nodeValue=``):n.nodeValue=n._stashedText||``),r&&r.nodeType===8){if(n=r.data,n===`/$`){if(e===0)break;e--}else n!==`$`&&n!==`$?`&&n!==`$~`&&n!==`$!`||e++}n=r}while(n)}function Tp(e,t,n){if(t=CSS.escape(t)===t?t:`r-`+btoa(t).replace(/=/g,``),e.style.viewTransitionName=t,n!=null&&(e.style.viewTransitionClass=n),n=getComputedStyle(e),n.display===`inline`){if(t=e.getClientRects(),t.length===1)var r=1;else for(var i=r=0;i<t.length;i++){var a=t[i];0<a.width&&0<a.height&&r++}r===1&&(e=e.style,e.display=t.length===1?`inline-block`:`block`,e.marginTop=`-`+n.paddingTop,e.marginBottom=`-`+n.paddingBottom)}}function Ep(e,t){e=e.style,t=t.style;var n=t==null?null:t.hasOwnProperty(`viewTransitionName`)?t.viewTransitionName:t.hasOwnProperty(`view-transition-name`)?t[`view-transition-name`]:null;e.viewTransitionName=n==null||typeof n==`boolean`?``:(``+n).trim(),n=t==null?null:t.hasOwnProperty(`viewTransitionClass`)?t.viewTransitionClass:t.hasOwnProperty(`view-transition-class`)?t[`view-transition-class`]:null,e.viewTransitionClass=n==null||typeof n==`boolean`?``:(``+n).trim(),e.display===`inline-block`&&(t==null?e.display=e.margin=``:(n=t.display,e.display=n==null||typeof n==`boolean`?``:n,n=t.margin,n==null?(n=t.hasOwnProperty(`marginTop`)?t.marginTop:t[`margin-top`],e.marginTop=n==null||typeof n==`boolean`?``:n,t=t.hasOwnProperty(`marginBottom`)?t.marginBottom:t[`margin-bottom`],e.marginBottom=t==null||typeof t==`boolean`?``:t):e.margin=n))}function Dp(e,t,n){return n=n.ownerDocument.defaultView,{rect:e,abs:t.position===`absolute`||t.position===`fixed`,clip:t.clipPath!==`none`||t.overflow!==`visible`||t.filter!==`none`||t.mask!==`none`||t.mask!==`none`||t.borderRadius!==`0px`,view:0<=e.bottom&&0<=e.right&&e.top<=n.innerHeight&&e.left<=n.innerWidth}}function Op(e){return Dp(e.getBoundingClientRect(),getComputedStyle(e),e)}function kp(e){var t=e.getBoundingClientRect();t=new DOMRect(t.x+2e4,t.y+2e4,t.width,t.height);var n=getComputedStyle(e);return Dp(t,n,e)}function Ap(e){return e.documentElement.clientHeight}function jp(e){this.addEventListener(`load`,e),this.addEventListener(`error`,e)}function Mp(e,t,n,r,i,a,o,s,c){var l=t.nodeType===9?t:t.ownerDocument;try{var u=l.startViewTransition({update:function(){var t=l.defaultView,n=t.navigation&&t.navigation.transition,o=l.fonts.status;r();var s=[];if(o===`loaded`&&(Ap(l),l.fonts.status===`loading`&&s.push(l.fonts.ready)),o=s.length,e!==null)for(var c=e.suspenseyImages,u=0,d=0;d<c.length;d++){var f=c[d];if(!f.complete){var p=f.getBoundingClientRect();if(0<p.bottom&&0<p.right&&p.top<t.innerHeight&&p.left<t.innerWidth){if(u+=Xm(f),u>$m){s.length=o;break}f=new Promise(jp.bind(f)),s.push(f)}}}if(0<s.length)return t=Promise.race([Promise.all(s),new Promise(function(e){return setTimeout(e,500)})]).then(i,i),(n?Promise.allSettled([n.finished,t]):t).then(a,a);if(i(),n)return n.finished.then(a,a);a()},types:n});l.__reactViewTransition=u;var d=[];return u.ready.then(function(){for(var e=l.documentElement.getAnimations({subtree:!0}),t=0;t<e.length;t++){var n=e[t],r=n.effect,i=r.pseudoElement;if(i!=null&&i.startsWith(`::view-transition`)){d.push(n),n=r.getKeyframes();for(var a=i=void 0,s=!0,c=0;c<n.length;c++){var u=n[c],f=u.width;if(i===void 0)i=f;else if(i!==f){s=!1;break}if(f=u.height,a===void 0)a=f;else if(a!==f){s=!1;break}delete u.width,delete u.height,u.transform===`none`&&delete u.transform}s&&i!==void 0&&a!==void 0&&(r.setKeyframes(n),s=getComputedStyle(r.target,r.pseudoElement),s.width!==i||s.height!==a)&&(s=n[0],s.width=i,s.height=a,s=n[n.length-1],s.width=i,s.height=a,r.setKeyframes(n))}}o()},function(e){l.__reactViewTransition===u&&(l.__reactViewTransition=null);try{if(typeof e==`object`&&e)switch(e.name){case`InvalidStateError`:(e.message===`View transition was skipped because document visibility state is hidden.`||e.message===`Skipping view transition because document visibility state has become hidden.`||e.message===`Skipping view transition because viewport size changed.`||e.message===`Transition was aborted because of invalid state`)&&(e=null)}e!==null&&c(e)}finally{r(),i(),o()}}),u.finished.finally(function(){for(var e=0;e<d.length;e++)d[e].cancel();l.__reactViewTransition===u&&(l.__reactViewTransition=null),s()}),u}catch{return r(),i(),o(),null}}function Np(e,t){this._scope=document.documentElement,this._selector=`::view-transition-`+e+`(`+t+`)`}Np.prototype.animate=function(e,t){return t=typeof t==`number`?{duration:t}:x({},t),t.pseudoElement=this._selector,this._scope.animate(e,t)},Np.prototype.getAnimations=function(){for(var e=this._scope,t=this._selector,n=e.getAnimations({subtree:!0}),r=[],i=0;i<n.length;i++){var a=n[i].effect;a!==null&&a.target===e&&a.pseudoElement===t&&r.push(n[i])}return r},Np.prototype.getComputedStyle=function(){return getComputedStyle(this._scope,this._selector)};function Pp(e){return{name:e,group:new Np(`group`,e),imagePair:new Np(`image-pair`,e),old:new Np(`old`,e),new:new Np(`new`,e)}}function Fp(e){this._fragmentFiber=e,this._observers=this._eventListeners=null}Fp.prototype.addEventListener=function(e,t,n){var r=null,i=null;if(!(n!=null&&typeof n!=`boolean`&&(r=n.signal||null,r!==null&&r.aborted))){this._eventListeners===null&&(this._eventListeners=[]);var a=this._eventListeners;if(Bp(a,e,t,n)===-1){var o=this,s=t;n!=null&&typeof n!=`boolean`&&!0===n.once&&(s=function(r){o.removeEventListener(e,t,n),typeof t==`function`?t.call(this,r):t.handleEvent(r)}),r!==null&&(i=o.removeEventListener.bind(o,e,t,n),r.addEventListener(`abort`,i,{once:!0}),i=r.removeEventListener.bind(r,`abort`,i)),r=Rp(n),a.push({type:e,listener:t,optionsOrUseCapture:n,attachedListener:s,cleanup:i}),m(this._fragmentFiber.child,!1,Ip,e,s,r)}this._eventListeners=a}};function Ip(e,t,n,r){return y(e).addEventListener(t,n,r),!1}Fp.prototype.removeEventListener=function(e,t,n){var r=this._eventListeners;if(r!==null&&(t=Bp(r,e,t,n),t!==-1)){var i=r[t];n=i.attachedListener;var a=i.cleanup;i=Rp(i.optionsOrUseCapture),m(this._fragmentFiber.child,!1,Lp,e,n,i),r.splice(t,1),a!==null&&a()}};function Lp(e,t,n,r){return y(e).removeEventListener(t,n,r),!1}function Rp(e){return e!=null&&typeof e!=`boolean`&&(!0===e.once||e.signal instanceof AbortSignal)?{capture:e.capture,passive:e.passive}:e}function zp(e){return e==null?`c=0`:typeof e==`boolean`?`c=`+(e?`1`:`0`):`c=`+(e.capture?`1`:`0`)}function Bp(e,t,n,r){if(e.length===0)return-1;r=zp(r);for(var i=0;i<e.length;i++){var a=e[i];if(a.type===t&&a.listener===n&&zp(a.optionsOrUseCapture)===r)return i}return-1}Fp.prototype.dispatchEvent=function(e){var t=h(this._fragmentFiber);if(t===null)return!0;t=y(t);var n=this._eventListeners;if(n!==null&&0<n.length||!e.bubbles){var r=t.nodeType===9?t.createComment(``):document.createTextNode(``);if(n)for(var i=0;i<n.length;i++){var a=n[i];r.addEventListener(a.type,a.attachedListener,Rp(a.optionsOrUseCapture))}if(t.appendChild(r),e=r.dispatchEvent(e),n)for(i=0;i<n.length;i++)a=n[i],r.removeEventListener(a.type,a.attachedListener,Rp(a.optionsOrUseCapture));return t.removeChild(r),e}return t.dispatchEvent(e)},Fp.prototype.focus=function(e){m(this._fragmentFiber.child,!0,Vp,e,void 0,void 0)};function Vp(e,t){return e.tag!==6&&(e=y(e),pm(e,t))}Fp.prototype.focusLast=function(e){var t=[];m(this._fragmentFiber.child,!0,Hp,t,void 0,void 0);for(var n=t.length-1;0<=n&&!Vp(t[n],e);n--);};function Hp(e,t){return t.push(e),!1}Fp.prototype.blur=function(){var e=h(this._fragmentFiber);e!==null&&(e=y(e),e=lp(e).activeElement,e!==null&&m(this._fragmentFiber.child,!1,Up,e,void 0,void 0))};function Up(e,t){return e.tag!==6&&(e=y(e),e===t||e.contains(t)?(t.blur(),!0):!1)}Fp.prototype.observeUsing=function(e){this._observers===null&&(this._observers=new Set),this._observers.add(e),m(this._fragmentFiber.child,!1,Wp,e,void 0,void 0)};function Wp(e,t){return e.tag===6||(e=y(e),t.observe(e)),!1}Fp.prototype.unobserveUsing=function(e){var t=this._observers;if(t!==null&&t.has(e)){t.delete(e),m(this._fragmentFiber.child,!1,Gp,e,void 0,void 0);for(var n=t=0;n<Kp.length;n++){var r=Kp[n];r.fragmentInstance===this&&r.observer===e?e.unobserve(r.instance):Kp[t++]=r}Kp.length=t}};function Gp(e,t){return e.tag===6||(e=y(e),t.unobserve(e)),!1}var Kp=[],qp=!1;function Jp(e,t,n){Kp.push({fragmentInstance:e,observer:t,instance:n}),qp||(qp=!0,mm(function(){qp=!1;var e=Kp;Kp=[];for(var t=0;t<e.length;t++){var n=e[t];n.observer.unobserve(n.instance)}}))}Fp.prototype.getClientRects=function(){var e=[];return m(this._fragmentFiber.child,!1,Yp,e,void 0,void 0),e};function Yp(e,t){if(e.tag===6){e=e.stateNode;var n=e.ownerDocument.createRange();n.selectNodeContents(e),t.push.apply(t,n.getClientRects())}else e=y(e),t.push.apply(t,e.getClientRects());return!1}Fp.prototype.getRootNode=function(e){var t=h(this._fragmentFiber);return t===null?this:y(t).getRootNode(e)},Fp.prototype.compareDocumentPosition=function(e){var t=h(this._fragmentFiber);if(t===null)return Node.DOCUMENT_POSITION_DISCONNECTED;var n=[];m(this._fragmentFiber.child,!1,Hp,n,void 0,void 0);var r=y(t);if(n.length===0){if(n=r,g(this._fragmentFiber)){a:{for(t=this._fragmentFiber.return;t!==null;){if(t.tag===4){t=t.stateNode.containerInfo;break a}if(t.tag===3||t.tag===5||t.tag===27)break;t=t.return}t=null}t!=null&&(n=t)}t=this._fragmentFiber;var i=r=n.compareDocumentPosition(e);return n===e?i=Node.DOCUMENT_POSITION_CONTAINS:r&Node.DOCUMENT_POSITION_CONTAINED_BY&&(n=_(t)[1],n===null?i=Node.DOCUMENT_POSITION_PRECEDING:(e=y(n).compareDocumentPosition(e),i=e===0||e&Node.DOCUMENT_POSITION_FOLLOWING?Node.DOCUMENT_POSITION_FOLLOWING:Node.DOCUMENT_POSITION_PRECEDING)),i|=Node.DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC}t=y(n[0]),i=y(n[n.length-1]);var a=g(this._fragmentFiber)?t.parentElement:r;if(a==null)return Node.DOCUMENT_POSITION_DISCONNECTED;r=a.compareDocumentPosition(t)&Node.DOCUMENT_POSITION_CONTAINED_BY,a=a.compareDocumentPosition(i)&Node.DOCUMENT_POSITION_CONTAINED_BY;var o=t.compareDocumentPosition(e),s=i.compareDocumentPosition(e),c=o&Node.DOCUMENT_POSITION_CONTAINED_BY||s&Node.DOCUMENT_POSITION_CONTAINED_BY;return s=r&&a&&o&Node.DOCUMENT_POSITION_FOLLOWING&&s&Node.DOCUMENT_POSITION_PRECEDING,t=r&&t===e||a&&i===e||c||s?Node.DOCUMENT_POSITION_CONTAINED_BY:!r&&t===e||!a&&i===e?Node.DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC:o,t&Node.DOCUMENT_POSITION_DISCONNECTED||t&Node.DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC||Xp(t,this._fragmentFiber,n[0],n[n.length-1],e)?t:Node.DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC};function Xp(e,t,n,r,i){var a=Vt(i);if(e&Node.DOCUMENT_POSITION_CONTAINED_BY){if(n=!!a)a:{for(;a!==null;){if(a.tag===7&&(a===t||a.alternate===t)){n=!0;break a}a=a.return}n=!1}return n}if(e&Node.DOCUMENT_POSITION_CONTAINS){if(a===null)return a=i.ownerDocument,i===a||i===a.documentElement||i===a.body;a:{for(a=t,t=h(t);a!==null;){if(!(a.tag!==5&&a.tag!==3&&a.tag!==27||a!==t&&a.alternate!==t)){a=!0;break a}a=a.return}a=!1}return a}return e&Node.DOCUMENT_POSITION_PRECEDING?((t=!!a)&&!(t=a===n)&&(t=ie(n,a,re),t===null?t=!1:(m(t,!0,te,a,n),a=b,b=null,t=a!==null)),t):e&Node.DOCUMENT_POSITION_FOLLOWING?((t=!!a)&&!(t=a===r)&&(t=ie(r,a,re),t===null?t=!1:(m(t,!0,ne,a,r),a=b,ee=b=null,t=a!==null)),t):!1}function Zp(e,t){var n=e.ownerDocument.createRange();n.selectNodeContents(e),e=n.getBoundingClientRect(),window.scrollTo(window.scrollX+e.left,t?window.scrollY+e.top:window.scrollY+e.bottom-window.innerHeight)}Fp.prototype.scrollIntoView=function(e){if(typeof e==`object`)throw Error(o(566));var t=[];m(this._fragmentFiber.child,!1,Hp,t,void 0,void 0);var n=!1!==e;if(t.length===0){var r=_(this._fragmentFiber);if(r=n?r[1]||r[0]||h(this._fragmentFiber):r[0]||r[1],r===null)return;if(r.tag===6){e=y(r),Zp(e,n);return}if(r=y(r),r.nodeType!==9){if(r.nodeType===11){n=`host`in r?r.host:null,n!==null&&n.scrollIntoView(e);return}r.scrollIntoView(e)}}for(r=n?t.length-1:0;r!==(n?-1:t.length);){var i=t[r];i.tag===6?(i=y(i),Zp(i,n)):y(i).scrollIntoView(e),r+=n?-1:1}};function Qp(e,t){return e=y(e),$p(e,t),!1}function $p(e,t){e.reactFragments??=new Set,e.reactFragments.add(t)}function em(e,t){var n=t._eventListeners;if(n!==null)for(var r=0;r<n.length;r++){var i=n[r];e.addEventListener(i.type,i.attachedListener,Rp(i.optionsOrUseCapture))}e.nodeType!==3&&(n=t._observers,n!==null&&n.forEach(function(n){for(var r=0,i=0;i<Kp.length;i++){var a=Kp[i];(a.fragmentInstance!==t||a.observer!==n||a.instance!==e)&&(Kp[r++]=a)}Kp.length=r,n.observe(e)}),$p(e,t))}function tm(e,t){var n=t._eventListeners;if(n!==null)for(var r=0;r<n.length;r++){var i=n[r];e.removeEventListener(i.type,i.attachedListener,Rp(i.optionsOrUseCapture))}e.nodeType!==3&&(n=t._observers,n!==null&&n.forEach(function(n){typeof n.rootMargin==`string`?Jp(t,n,e):n.unobserve(e)}),e.reactFragments!=null&&e.reactFragments.delete(t))}function nm(e){var t=e.firstChild;for(t&&t.nodeType===10&&(t=t.nextSibling);t;){var n=t;switch(t=t.nextSibling,n.nodeName){case`HTML`:case`HEAD`:case`BODY`:nm(n),Bt(n);continue;case`SCRIPT`:case`STYLE`:continue;case`LINK`:if(n.rel.toLowerCase()===`stylesheet`)continue}e.removeChild(n)}}function rm(e,t,n,r){for(;e.nodeType===1;){var i=n;if(e.nodeName.toLowerCase()!==t.toLowerCase()){if(!r&&(e.nodeName!==`INPUT`||e.type!==`hidden`))break}else if(!r){if(t===`input`&&e.type===`hidden`){var a=i.name==null?null:``+i.name;if(i.type===`hidden`&&e.getAttribute(`name`)===a)return e}else return e}else if(!e[Rt])switch(t){case`meta`:if(!e.hasAttribute(`itemprop`))break;return e;case`link`:if(a=e.getAttribute(`rel`),a===`stylesheet`&&e.hasAttribute(`data-precedence`)||a!==i.rel||e.getAttribute(`href`)!==(i.href==null||i.href===``?null:i.href)||e.getAttribute(`crossorigin`)!==(i.crossOrigin==null?null:i.crossOrigin)||e.getAttribute(`title`)!==(i.title==null?null:i.title))break;return e;case`style`:if(e.hasAttribute(`data-precedence`))break;return e;case`script`:if(a=e.getAttribute(`src`),(a!==(i.src==null?null:i.src)||e.getAttribute(`type`)!==(i.type==null?null:i.type)||e.getAttribute(`crossorigin`)!==(i.crossOrigin==null?null:i.crossOrigin))&&a&&e.hasAttribute(`async`)&&!e.hasAttribute(`itemprop`))break;return e;default:return e}if(e=lm(e.nextSibling),e===null)break}return null}function im(e,t,n){if(t===``)return null;for(;e.nodeType!==3;)if((e.nodeType!==1||e.nodeName!==`INPUT`||e.type!==`hidden`)&&!n||(e=lm(e.nextSibling),e===null))return null;return e}function am(e,t){for(;e.nodeType!==8;)if((e.nodeType!==1||e.nodeName!==`INPUT`||e.type!==`hidden`)&&!t||(e=lm(e.nextSibling),e===null))return null;return e}function om(e){return e.data===`$?`||e.data===`$~`}function sm(e){return e.data===`$!`||e.data===`$?`&&e.ownerDocument.readyState!==`loading`}function cm(e,t){var n=e.ownerDocument;if(e.data===`$~`)e._reactRetry=t;else if(e.data!==`$?`||n.readyState!==`loading`)t();else{var r=function(){t(),n.removeEventListener(`DOMContentLoaded`,r)};n.addEventListener(`DOMContentLoaded`,r),e._reactRetry=r}}function lm(e){for(;e!=null;e=e.nextSibling){var t=e.nodeType;if(t===1||t===3)break;if(t===8){if(t=e.data,t===`$`||t===`$!`||t===`$?`||t===`$~`||t===`&`||t===`F!`||t===`F`)break;if(t===`/$`||t===`/&`)return null}}return e}var um=null;function dm(e){e=e.nextSibling;for(var t=0;e;){if(e.nodeType===8){var n=e.data;if(n===`/$`||n===`/&`){if(t===0)return lm(e.nextSibling);t--}else n!==`$`&&n!==`$!`&&n!==`$?`&&n!==`$~`&&n!==`&`||t++}e=e.nextSibling}return null}function fm(e){e=e.previousSibling;for(var t=0;e;){if(e.nodeType===8){var n=e.data;if(n===`$`||n===`$!`||n===`$?`||n===`$~`||n===`&`){if(t===0)return e;t--}else n!==`/$`&&n!==`/&`||t++}e=e.previousSibling}return null}function pm(e,t){function n(){r=!0}if(e.ownerDocument.activeElement===e)return!0;var r=!1;try{e.ownerDocument.addEventListener(`focus`,n,!0),(e.focus||HTMLElement.prototype.focus).call(e,t)}finally{e.ownerDocument.removeEventListener(`focus`,n,!0)}return r}function mm(e){yp(function(){yp(function(t){return e(t)})})}function hm(e,t,n){switch(t=lp(n),e){case`html`:if(e=t.documentElement,!e)throw Error(o(452));return e;case`head`:if(e=t.head,!e)throw Error(o(453));return e;case`body`:if(e=t.body,!e)throw Error(o(454));return e;default:throw Error(o(451))}}function gm(e,t,n){for(var r in n){var i=n[r];n.hasOwnProperty(r)&&i!=null&&$(e,t,r,null,rp,i)}n.dangerouslySetInnerHTML!=null&&(e.textContent=``),e.onclick===Dn&&(e.onclick=null),Bt(e)}function _m(e){for(var t=e.attributes;t.length;)e.removeAttributeNode(t[0]);Bt(e)}var vm=new Map,ym=new Set;function bm(e){if(typeof e.getRootNode==`function`){var t=e.getRootNode();if(t.nodeType===9||t.nodeType===11)return t}return e.nodeType===9?e:e.ownerDocument}var xm=E.d;E.d={f:Sm,r:Cm,D:Em,C:Dm,L:Om,m:km,X:jm,S:Am,M:Mm};function Sm(){var e=xm.f(),t=zd();return e||t}function Cm(e){var t=Ht(e);t!==null&&t.tag===5&&t.type===`form`?ac(t):xm.r(e)}var wm=typeof document>`u`?null:document;function Tm(e,t,n){var r=wm;if(r&&typeof t==`string`&&t){var i=fn(t);i=`link[rel="`+e+`"][href="`+i+`"]`,typeof n==`string`&&(i+=`[crossorigin="`+n+`"]`),ym.has(i)||(ym.add(i),e={rel:e,crossOrigin:n,href:t},r.querySelector(i)===null&&(t=r.createElement(`link`),np(t,`link`,e),Gt(t),r.head.appendChild(t)))}}function Em(e){xm.D(e),Tm(`dns-prefetch`,e,null)}function Dm(e,t){xm.C(e,t),Tm(`preconnect`,e,t)}function Om(e,t,n){xm.L(e,t,n);var r=wm;if(r&&e&&t){var i=`link[rel="preload"][as="`+fn(t)+`"]`;t===`image`&&n&&n.imageSrcSet?(i+=`[imagesrcset="`+fn(n.imageSrcSet)+`"]`,typeof n.imageSizes==`string`&&(i+=`[imagesizes="`+fn(n.imageSizes)+`"]`)):i+=`[href="`+fn(e)+`"]`;var a=i;switch(t){case`style`:a=Pm(e);break;case`script`:a=Rm(e)}if(!(vm.has(a)||(e=x({rel:`preload`,href:t===`image`&&n&&n.imageSrcSet?void 0:e,as:t},n),vm.set(a,e),r.querySelector(i)!==null||t===`style`&&r.querySelector(Fm(a))||t===`script`&&r.querySelector(zm(a))))){var o=r.createElement(`link`);np(o,`link`,e),t===`style`&&(o[zt]=!0,o.onload=o.onerror=function(){Kt(o)}),Gt(o),r.head.appendChild(o)}}}function km(e,t){xm.m(e,t);var n=wm;if(n&&e){var r=t&&typeof t.as==`string`?t.as:`script`,i=`link[rel="modulepreload"][as="`+fn(r)+`"][href="`+fn(e)+`"]`,a=i;switch(r){case`audioworklet`:case`paintworklet`:case`serviceworker`:case`sharedworker`:case`worker`:case`script`:a=Rm(e)}if(!vm.has(a)&&(e=x({rel:`modulepreload`,href:e},t),vm.set(a,e),n.querySelector(i)===null)){switch(r){case`audioworklet`:case`paintworklet`:case`serviceworker`:case`sharedworker`:case`worker`:case`script`:if(n.querySelector(zm(a)))return}r=n.createElement(`link`),np(r,`link`,e),Gt(r),n.head.appendChild(r)}}}function Am(e,t,n){xm.S(e,t,n);var r=wm;if(r&&e){var i=Wt(r).hoistableStyles,a=Pm(e);t||=`default`;var o=i.get(a);if(!o){var s={loading:0,preload:null};if(o=r.querySelector(Fm(a)))s.loading=5;else{e=x({rel:`stylesheet`,href:e,"data-precedence":t},n),(n=vm.get(a))&&Hm(e,n);var c=o=r.createElement(`link`);Gt(c),np(c,`link`,e),c._p=new Promise(function(e,t){c.onload=e,c.onerror=t}),c.addEventListener(`load`,function(){s.loading|=1}),c.addEventListener(`error`,function(){s.loading|=2}),s.loading|=4,Vm(o,t,r)}o={type:`stylesheet`,instance:o,count:1,state:s},i.set(a,o)}}}function jm(e,t){xm.X(e,t);var n=wm;if(n&&e){var r=Wt(n).hoistableScripts,i=Rm(e),a=r.get(i);a||(a=n.querySelector(zm(i)),a||(e=x({src:e,async:!0},t),(t=vm.get(i))&&Um(e,t),a=n.createElement(`script`),Gt(a),np(a,`link`,e),n.head.appendChild(a)),a={type:`script`,instance:a,count:1,state:null},r.set(i,a))}}function Mm(e,t){xm.M(e,t);var n=wm;if(n&&e){var r=Wt(n).hoistableScripts,i=Rm(e),a=r.get(i);a||(a=n.querySelector(zm(i)),a||(e=x({src:e,async:!0,type:`module`},t),(t=vm.get(i))&&Um(e,t),a=n.createElement(`script`),Gt(a),np(a,`link`,e),n.head.appendChild(a)),a={type:`script`,instance:a,count:1,state:null},r.set(i,a))}}function Nm(e,t,n,r){var i=(i=Ne.current)?bm(i):null;if(!i)throw Error(o(446));switch(e){case`meta`:case`title`:return null;case`style`:return typeof n.precedence==`string`&&typeof n.href==`string`?(n=Pm(n.href),t=Wt(i).hoistableStyles,r=t.get(n),r||(r={type:`style`,instance:null,count:0,state:null},t.set(n,r)),r):{type:`void`,instance:null,count:0,state:null};case`link`:if(n.rel===`stylesheet`&&typeof n.href==`string`&&typeof n.precedence==`string`){e=Pm(n.href);var a=Wt(i).hoistableStyles,s=a.get(e);if(s||(i=i.ownerDocument||i,s={type:`stylesheet`,instance:null,count:0,state:{loading:0,preload:null}},a.set(e,s),(a=i.querySelector(Fm(e)))?a._p||(s.instance=a,s.state.loading=5):(a=vm.get(e),a||(a={rel:`preload`,as:`style`,href:n.href,crossOrigin:n.crossOrigin,integrity:n.integrity,media:n.media,hrefLang:n.hrefLang,referrerPolicy:n.referrerPolicy},vm.set(e,a)),Lm(i,e,a,s.state))),t&&r===null)throw Error(o(528,``));return s}if(t&&r!==null)throw Error(o(529,``));return null;case`script`:return t=n.async,n=n.src,typeof n==`string`&&t&&typeof t!=`function`&&typeof t!=`symbol`?(n=Rm(n),t=Wt(i).hoistableScripts,r=t.get(n),r||(r={type:`script`,instance:null,count:0,state:null},t.set(n,r)),r):{type:`void`,instance:null,count:0,state:null};default:throw Error(o(444,e))}}function Pm(e){return`href="`+fn(e)+`"`}function Fm(e){return`link[rel="stylesheet"][`+e+`]`}function Im(e){return x({},e,{"data-precedence":e.precedence,precedence:null})}function Lm(e,t,n,r){if(t=e.querySelector(`link[rel="preload"][as="style"][`+t+`]`)){if(!0!==t[zt]){r.loading=1;return}}else t=e.createElement(`link`),t[zt]=!0,t.onload=t.onerror=Kt.bind(null,t),np(t,`link`,n),Gt(t),e.head.appendChild(t);r.preload=t,t.addEventListener(`load`,function(){return r.loading|=1}),t.addEventListener(`error`,function(){return r.loading|=2})}function Rm(e){return`[src="`+fn(e)+`"]`}function zm(e){return`script[async]`+e}function Bm(e,t,n){if(t.count++,t.instance===null)switch(t.type){case`style`:var r=e.querySelector(`style[data-href~="`+fn(n.href)+`"]`);if(r)return t.instance=r,Gt(r),r;var i=x({},n,{"data-href":n.href,"data-precedence":n.precedence,href:null,precedence:null});return r=(e.ownerDocument||e).createElement(`style`),Gt(r),np(r,`style`,i),Vm(r,n.precedence,e),t.instance=r;case`stylesheet`:i=Pm(n.href);var a=e.querySelector(Fm(i));if(a)return t.state.loading|=4,t.instance=a,Gt(a),a;r=Im(n),(i=vm.get(i))&&Hm(r,i),a=(e.ownerDocument||e).createElement(`link`),Gt(a);var s=a;return s._p=new Promise(function(e,t){s.onload=e,s.onerror=t}),np(a,`link`,r),t.state.loading|=4,Vm(a,n.precedence,e),t.instance=a;case`script`:return a=Rm(n.src),(i=e.querySelector(zm(a)))?(t.instance=i,Gt(i),i):(r=n,(i=vm.get(a))&&(r=x({},n),Um(r,i)),e=e.ownerDocument||e,i=e.createElement(`script`),Gt(i),np(i,`link`,r),e.head.appendChild(i),t.instance=i);case`void`:return null;default:throw Error(o(443,t.type))}else t.type===`stylesheet`&&!(t.state.loading&4)&&(r=t.instance,t.state.loading|=4,Vm(r,n.precedence,e));return t.instance}function Vm(e,t,n){for(var r=n.querySelectorAll(`link[rel="stylesheet"][data-precedence],style[data-precedence]`),i=r.length?r[r.length-1]:null,a=i,o=0;o<r.length;o++){var s=r[o];if(s.dataset.precedence===t)a=s;else if(a!==i)break}a?a.parentNode.insertBefore(e,a.nextSibling):(t=n.nodeType===9?n.head:n,t.insertBefore(e,t.firstChild))}function Hm(e,t){e.crossOrigin??=t.crossOrigin,e.referrerPolicy??=t.referrerPolicy,e.title??=t.title}function Um(e,t){e.crossOrigin??=t.crossOrigin,e.referrerPolicy??=t.referrerPolicy,e.integrity??=t.integrity}var Wm=null;function Gm(e,t,n){if(Wm===null){var r=new Map,i=Wm=new Map;i.set(n,r)}else i=Wm,r=i.get(n),r||(r=new Map,i.set(n,r));if(r.has(e))return r;for(r.set(e,null),n=n.getElementsByTagName(e),i=0;i<n.length;i++){var a=n[i];if(!(a[Rt]||a[k]||e===`link`&&a.getAttribute(`rel`)===`stylesheet`)&&a.namespaceURI!==`http://www.w3.org/2000/svg`){var o=a.getAttribute(t)||``;o=e+o;var s=r.get(o);s?s.push(a):r.set(o,[a])}}return r}function Km(e,t,n){e=e.ownerDocument||e,e.head.insertBefore(n,t===`title`?e.querySelector(`head > title`):null)}function qm(e,t,n){if(n===1||t.itemProp!=null)return!1;switch(e){case`meta`:case`title`:return!0;case`style`:if(typeof t.precedence!=`string`||typeof t.href!=`string`||t.href===``)break;return!0;case`link`:if(typeof t.rel!=`string`||typeof t.href!=`string`||t.href===``||t.onLoad||t.onError)break;switch(t.rel){case`stylesheet`:return e=t.disabled,typeof t.precedence==`string`&&e==null;default:return!0}case`script`:if(t.async&&typeof t.async!=`function`&&typeof t.async!=`symbol`&&!t.onLoad&&!t.onError&&t.src&&typeof t.src==`string`)return!0}return!1}function Jm(e,t){return e===`img`&&t.src!=null&&t.src!==``&&t.onLoad==null&&t.loading!==`lazy`}function Ym(e){return!(e.type===`stylesheet`&&!(e.state.loading&3))}function Xm(e){return(e.width||100)*(e.height||100)*(typeof devicePixelRatio==`number`?devicePixelRatio:1)*.25}function Zm(e,t){typeof t.decode==`function`&&(e.imgCount++,t.complete||(e.imgBytes+=Xm(t),e.suspenseyImages.push(t)),e=rh.bind(e),t.decode().then(e,e))}function Qm(e,t,n,r){if(n.type===`stylesheet`&&(typeof r.media!=`string`||!1!==matchMedia(r.media).matches)&&!(n.state.loading&4)){if(n.instance===null){var i=Pm(r.href),a=t.querySelector(Fm(i));if(a){t=a._p,typeof t==`object`&&t&&typeof t.then==`function`&&(e.count++,e=nh.bind(e),t.then(e,e)),n.state.loading|=4,n.instance=a,Gt(a);return}a=t.ownerDocument||t,r=Im(r),(i=vm.get(i))&&Hm(r,i),a=a.createElement(`link`),Gt(a);var o=a;o._p=new Promise(function(e,t){o.onload=e,o.onerror=t}),np(a,`link`,r),n.instance=a}e.stylesheets===null&&(e.stylesheets=new Map),e.stylesheets.set(n,t),(t=n.state.preload)&&!(n.state.loading&3)&&(e.count++,n=nh.bind(e),t.addEventListener(`load`,n),t.addEventListener(`error`,n))}}var $m=0;function eh(e,t){return e.stylesheets&&e.count===0&&ah(e,e.stylesheets),0<e.count||0<e.imgCount?function(n){var r=setTimeout(function(){if(e.stylesheets&&ah(e,e.stylesheets),e.unsuspend){var t=e.unsuspend;e.unsuspend=null,t()}},6e4+t);0<e.imgBytes&&$m===0&&($m=62500*op());var i=setTimeout(function(){if(e.waitingForImages=!1,e.count===0&&(e.stylesheets&&ah(e,e.stylesheets),e.unsuspend)){var t=e.unsuspend;e.unsuspend=null,t()}},(e.imgBytes>$m?50:800)+t);return e.unsuspend=n,function(){e.unsuspend=null,clearTimeout(r),clearTimeout(i)}}:null}function th(e){if(e.count===0&&(e.imgCount===0||!e.waitingForImages)){if(e.stylesheets)ah(e,e.stylesheets);else if(e.unsuspend){var t=e.unsuspend;e.unsuspend=null,t()}}}function nh(){this.count--,th(this)}function rh(){this.imgCount--,th(this)}var ih=null;function ah(e,t){e.stylesheets=null,e.unsuspend!==null&&(e.count++,ih=new Map,t.forEach(oh,e),ih=null,nh.call(e))}function oh(e,t){if(!(t.state.loading&4)){var n=ih.get(e);if(n)var r=n.get(null);else{n=new Map,ih.set(e,n);for(var i=e.querySelectorAll(`link[data-precedence],style[data-precedence]`),a=0;a<i.length;a++){var o=i[a];(o.nodeName===`LINK`||o.getAttribute(`media`)!==`not all`)&&(n.set(o.dataset.precedence,o),r=o)}r&&n.set(null,r)}i=t.instance,o=i.getAttribute(`data-precedence`),a=n.get(o)||r,a===r&&n.set(null,i),n.set(o,i),this.count++,r=nh.bind(this),i.addEventListener(`load`,r),i.addEventListener(`error`,r),a?a.parentNode.insertBefore(i,a.nextSibling):(e=e.nodeType===9?e.head:e,e.insertBefore(i,e.firstChild)),t.state.loading|=4}}var sh={$$typeof:de,Provider:null,Consumer:null,_currentValue:Ee,_currentValue2:Ee,_threadCount:0};function ch(e,t,n,r,i,a,o,s,c){this.tag=1,this.containerInfo=e,this.pingCache=this.current=this.pendingChildren=null,this.timeoutHandle=-1,this.callbackNode=this.next=this.pendingContext=this.context=this.cancelPendingCommit=null,this.callbackPriority=0,this.expirationTimes=xt(-1),this.entangledLanes=this.shellSuspendCounter=this.errorRecoveryDisabledLanes=this.expiredLanes=this.warmLanes=this.pingedLanes=this.suspendedLanes=this.pendingLanes=0,this.entanglements=xt(0),this.hiddenUpdates=xt(null),this.identifierPrefix=r,this.onUncaughtError=i,this.onCaughtError=a,this.onRecoverableError=o,this.pooledCache=null,this.pooledCacheLanes=0,this.formState=c,this.transitionTypes=null,this.incompleteTransitions=new Map}function lh(e,t,n,r,i,a,o,s,c,l,u,d){return e=new ch(e,t,n,o,c,l,u,d,s),t=1,!0===a&&(t|=24),a=Li(3,null,null,t),e.current=a,a.stateNode=e,t=Ia(),t.refCount++,e.pooledCache=t,t.refCount++,a.memoizedState={element:r,isDehydrated:n,cache:t},yo(a),e}function uh(e){return e?(e=Fi,e):Fi}function dh(e,t,n,r,i,a){i=uh(i),r.context===null?r.context=i:r.pendingContext=i,r=xo(t),r.payload={element:n},a=a===void 0?null:a,a!==null&&(r.callback=a),n=So(e,r,t),n!==null&&(Pd(n,e,t),Co(n,e,t))}function fh(e,t){if(e=e.memoizedState,e!==null&&e.dehydrated!==null){var n=e.retryLane;e.retryLane=n!==0&&n<t?n:t}}function ph(e,t){fh(e,t),(e=e.alternate)&&fh(e,t)}function mh(e){if(e.tag===13||e.tag===31){var t=Mi(e,67108864);t!==null&&Pd(t,e,67108864),ph(e,67108864)}}function hh(e){if(e.tag===13||e.tag===31){var t=jd();t=Dt(t);var n=Mi(e,t);n!==null&&Pd(n,e,t),ph(e,t)}}var gh=!0;function _h(e,t,n,r){var i=T.T;T.T=null;var a=E.p;try{E.p=2,yh(e,t,n,r)}finally{E.p=a,T.T=i}}function vh(e,t,n,r){var i=T.T;T.T=null;var a=E.p;try{E.p=8,yh(e,t,n,r)}finally{E.p=a,T.T=i}}function yh(e,t,n,r){if(gh){var i=bh(r);if(i===null)Kf(e,t,r,xh,n),Mh(e,r);else if(Ph(i,e,t,n,r))r.stopPropagation();else if(Mh(e,r),t&4&&-1<jh.indexOf(e)){for(;i!==null;){var a=Ht(i);if(a!==null)switch(a.tag){case 3:if(a=a.stateNode,a.current.memoizedState.isDehydrated){var o=ht(a.pendingLanes);if(o!==0){var s=a;for(s.pendingLanes|=2,s.entangledLanes|=2;o;){var c=1<<31-ct(o);s.entanglements[1]|=c,o&=~c}Ef(a),!(W&6)&&(_d=Xe()+500,Df(0,!1))}}break;case 31:case 13:s=Mi(a,2),s!==null&&Pd(s,a,2),zd(),ph(a,2)}if(a=bh(r),a===null&&Kf(e,t,r,xh,n),a===i)break;i=a}i!==null&&r.stopPropagation()}else Kf(e,t,r,null,n)}}function bh(e){return e=kn(e),Sh(e)}var xh=null;function Sh(e){if(xh=null,e=Vt(e),e!==null){var t=c(e);if(t===null)e=null;else{var n=t.tag;if(n===13){if(e=l(t),e!==null)return e;e=null}else if(n===31){if(e=u(t),e!==null)return e;e=null}else if(n===3){if(t.stateNode.current.memoizedState.isDehydrated)return t.tag===3?t.stateNode.containerInfo:null;e=null}else t!==e&&(e=null)}}return xh=e,null}function Ch(e){switch(e){case`beforetoggle`:case`cancel`:case`click`:case`close`:case`contextmenu`:case`copy`:case`cut`:case`auxclick`:case`dblclick`:case`dragend`:case`dragstart`:case`drop`:case`focusin`:case`focusout`:case`input`:case`invalid`:case`keydown`:case`keypress`:case`keyup`:case`mousedown`:case`mouseup`:case`paste`:case`pause`:case`play`:case`pointercancel`:case`pointerdown`:case`pointerup`:case`ratechange`:case`reset`:case`seeked`:case`submit`:case`toggle`:case`touchcancel`:case`touchend`:case`touchstart`:case`volumechange`:case`change`:case`selectionchange`:case`textInput`:case`compositionstart`:case`compositionend`:case`compositionupdate`:case`beforeblur`:case`afterblur`:case`beforeinput`:case`blur`:case`fullscreenchange`:case`fullscreenerror`:case`focus`:case`hashchange`:case`popstate`:case`select`:case`selectstart`:return 2;case`drag`:case`dragenter`:case`dragexit`:case`dragleave`:case`dragover`:case`mousemove`:case`mouseout`:case`mouseover`:case`pointermove`:case`pointerout`:case`pointerover`:case`resize`:case`scroll`:case`touchmove`:case`wheel`:case`mouseenter`:case`mouseleave`:case`pointerenter`:case`pointerleave`:return 8;case`message`:switch(Ze()){case Qe:return 2;case $e:return 8;case et:case tt:return 32;case nt:return 268435456;default:return 32}default:return 32}}var wh=!1,Th=null,Eh=null,Dh=null,Oh=new Map,kh=new Map,Ah=[],jh=`mousedown mouseup touchcancel touchend touchstart auxclick dblclick pointercancel pointerdown pointerup dragend dragstart drop compositionend compositionstart keydown keypress keyup input textInput copy cut paste click change contextmenu reset`.split(` `);function Mh(e,t){switch(e){case`focusin`:case`focusout`:Th=null;break;case`dragenter`:case`dragleave`:Eh=null;break;case`mouseover`:case`mouseout`:Dh=null;break;case`pointerover`:case`pointerout`:Oh.delete(t.pointerId);break;case`gotpointercapture`:case`lostpointercapture`:kh.delete(t.pointerId)}}function Nh(e,t,n,r,i,a){return e===null||e.nativeEvent!==a?(e={blockedOn:t,domEventName:n,eventSystemFlags:r,nativeEvent:a,targetContainers:[i]},t!==null&&(t=Ht(t),t!==null&&mh(t)),e):(e.eventSystemFlags|=r,t=e.targetContainers,i!==null&&t.indexOf(i)===-1&&t.push(i),e)}function Ph(e,t,n,r,i){switch(t){case`focusin`:return Th=Nh(Th,e,t,n,r,i),!0;case`dragenter`:return Eh=Nh(Eh,e,t,n,r,i),!0;case`mouseover`:return Dh=Nh(Dh,e,t,n,r,i),!0;case`pointerover`:var a=i.pointerId;return Oh.set(a,Nh(Oh.get(a)||null,e,t,n,r,i)),!0;case`gotpointercapture`:return a=i.pointerId,kh.set(a,Nh(kh.get(a)||null,e,t,n,r,i)),!0}return!1}function Fh(e){var t=Vt(e.target);if(t!==null){var n=c(t);if(n!==null){if(t=n.tag,t===13){if(t=l(n),t!==null){e.blockedOn=t,At(e.priority,function(){hh(n)});return}}else if(t===31){if(t=u(n),t!==null){e.blockedOn=t,At(e.priority,function(){hh(n)});return}}else if(t===3&&n.stateNode.current.memoizedState.isDehydrated){e.blockedOn=n.tag===3?n.stateNode.containerInfo:null;return}}}e.blockedOn=null}function Ih(e){if(e.blockedOn!==null)return!1;for(var t=e.targetContainers;0<t.length;){var n=bh(e.nativeEvent);if(n===null){n=e.nativeEvent;var r=new n.constructor(n.type,n);On=r,n.target.dispatchEvent(r),On=null}else return t=Ht(n),t!==null&&mh(t),e.blockedOn=n,!1;t.shift()}return!0}function Lh(e,t,n){Ih(e)&&n.delete(t)}function Rh(){wh=!1,Th!==null&&Ih(Th)&&(Th=null),Eh!==null&&Ih(Eh)&&(Eh=null),Dh!==null&&Ih(Dh)&&(Dh=null),Oh.forEach(Lh),kh.forEach(Lh)}function zh(e,n){e.blockedOn===n&&(e.blockedOn=null,wh||(wh=!0,t.unstable_scheduleCallback(t.unstable_NormalPriority,Rh)))}var Bh=null;function Vh(e){Bh!==e&&(Bh=e,t.unstable_scheduleCallback(t.unstable_NormalPriority,function(){Bh===e&&(Bh=null);for(var t=0;t<e.length;t+=3){var n=e[t],r=e[t+1],i=e[t+2];if(typeof r!=`function`){if(Sh(r||n)===null)continue;break}var a=Ht(n);a!==null&&(e.splice(t,3),t-=3,rc(a,{pending:!0,data:i,method:n.method,action:r},r,i))}}))}function Hh(e){function t(t){return zh(t,e)}Th!==null&&zh(Th,e),Eh!==null&&zh(Eh,e),Dh!==null&&zh(Dh,e),Oh.forEach(t),kh.forEach(t);for(var n=0;n<Ah.length;n++){var r=Ah[n];r.blockedOn===e&&(r.blockedOn=null)}for(;0<Ah.length&&(n=Ah[0],n.blockedOn===null);)Fh(n),n.blockedOn===null&&Ah.shift();if(n=(e.ownerDocument||e).$$reactFormReplay,n!=null)for(r=0;r<n.length;r+=3){var i=n[r],a=n[r+1],o=i[Mt]||null;if(typeof a==`function`)o||Vh(n);else if(o){var s=null;if(a&&a.hasAttribute(`formAction`)){if(i=a,o=a[Mt]||null)s=o.formAction;else if(Sh(i)!==null)continue}else s=o.action;typeof s==`function`?n[r+1]=s:(n.splice(r,3),r-=3),Vh(n)}}}function Uh(){function e(e){e.canIntercept&&e.info===`react-transition`&&e.intercept({handler:function(){return new Promise(function(e){return i=e})},focusReset:`manual`,scroll:`manual`})}function t(){i!==null&&(i(),i=null),r||setTimeout(n,20)}function n(){if(!r&&!navigation.transition){var e=navigation.currentEntry;e&&e.url!=null&&navigation.navigate(e.url,{state:e.getState(),info:`react-transition`,history:`replace`})}}if(typeof navigation==`object`){var r=!1,i=null;return navigation.addEventListener(`navigate`,e),navigation.addEventListener(`navigatesuccess`,t),navigation.addEventListener(`navigateerror`,t),setTimeout(n,100),function(){r=!0,navigation.removeEventListener(`navigate`,e),navigation.removeEventListener(`navigatesuccess`,t),navigation.removeEventListener(`navigateerror`,t),i!==null&&(i(),i=null)}}}function Wh(e){this._internalRoot=e}Gh.prototype.render=Wh.prototype.render=function(e){var t=this._internalRoot;if(t===null)throw Error(o(409));var n=t.current;dh(n,jd(),e,t,null,null)},Gh.prototype.unmount=Wh.prototype.unmount=function(){var e=this._internalRoot;if(e!==null){this._internalRoot=null;var t=e.containerInfo;dh(e.current,2,null,e,null,null),zd(),t[Nt]=null}};function Gh(e){this._internalRoot=e}Gh.prototype.unstable_scheduleHydration=function(e){if(e){var t=kt();e={blockedOn:null,target:e,priority:t};for(var n=0;n<Ah.length&&t!==0&&t<Ah[n].priority;n++);Ah.splice(n,0,e),n===0&&Fh(e)}};var Kh=r.version;if(Kh!==`19.3.1`)throw Error(o(527,Kh,`19.3.1`));E.findDOMNode=function(e){var t=e._reactInternals;if(t===void 0)throw typeof e.render==`function`?Error(o(188)):(e=Object.keys(e).join(`,`),Error(o(268,e)));return e=f(t),e=e===null?null:p(e),e=e===null?null:e.stateNode,e};var qh={bundleType:0,version:`19.3.1`,rendererPackageName:`react-dom`,currentDispatcherRef:T,reconcilerVersion:`19.3.1`};if(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__<`u`){var Jh=__REACT_DEVTOOLS_GLOBAL_HOOK__;if(!Jh.isDisabled&&Jh.supportsFiber)try{at=Jh.inject(qh),ot=Jh}catch{}}e.createRoot=function(e,t){if(!s(e))throw Error(o(299));var n=!1,r=``,i=Ec,a=Dc,c=Oc;return t!=null&&(!0===t.unstable_strictMode&&(n=!0),t.identifierPrefix!==void 0&&(r=t.identifierPrefix),t.onUncaughtError!==void 0&&(i=t.onUncaughtError),t.onCaughtError!==void 0&&(a=t.onCaughtError),t.onRecoverableError!==void 0&&(c=t.onRecoverableError)),t=lh(e,1,!1,null,null,n,r,null,i,a,c,Uh),e[Nt]=t.current,Wf(e),new Wh(t)}})),le=t(((e,t)=>{function n(){if(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__<`u`&&typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE==`function`)try{__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(n)}catch(e){console.error(e)}}n(),t.exports=ce()})),S=e(n(),1),C=r(),ue=S.createContext(void 0),de=e=>{let t=S.useContext(ue);if(e)return e;if(!t)throw Error(`No QueryClient set, use QueryClientProvider to set one`);return t},fe=({client:e,children:t})=>(S.useEffect(()=>(e.mount(),()=>{e.unmount()}),[e]),(0,C.jsx)(ue.Provider,{value:e,children:t})),pe={setTimeout:(e,t)=>setTimeout(e,t),clearTimeout:e=>clearTimeout(e),setInterval:(e,t)=>setInterval(e,t),clearInterval:e=>clearInterval(e)},me=new class{#e=pe;setTimeoutProvider(e){this.#e=e}setTimeout(e,t){return this.#e.setTimeout(e,t)}clearTimeout(e){this.#e.clearTimeout(e)}setInterval(e,t){return this.#e.setInterval(e,t)}clearInterval(e){this.#e.clearInterval(e)}};function he(e){setTimeout(e,0)}var ge=typeof window>`u`||`Deno`in globalThis;function _e(){}function ve(e,t){return typeof e==`function`?e(t):e}function ye(e){return typeof e==`number`&&e>=0&&e!==1/0}function be(e,t){return Math.max(e+(t||0)-Date.now(),0)}function w(e,t){return typeof e==`function`?e(t):e}function xe(e,t){let{type:n=`all`,exact:r,fetchStatus:i,predicate:a,queryKey:o,stale:s}=e;if(o){if(r){if(t.queryHash!==Ce(o,t.options))return!1}else if(!Te(t.queryKey,o))return!1}if(n!==`all`){let e=t.isActive();if(n===`active`&&!e||n===`inactive`&&e)return!1}return!(typeof s==`boolean`&&t.isStale()!==s||i&&i!==t.state.fetchStatus||a&&!a(t))}function Se(e,t){let{exact:n,status:r,predicate:i,mutationKey:a}=e;if(a){if(!t.options.mutationKey)return!1;if(n){if(we(t.options.mutationKey)!==we(a))return!1}else if(!Te(t.options.mutationKey,a))return!1}return!(r&&t.state.status!==r||i&&!i(t))}function Ce(e,t){return(t?.queryKeyHashFn||we)(e)}function we(e){return JSON.stringify(e,(e,t)=>Oe(t)?Object.keys(t).sort().reduce((e,n)=>(e[n]=t[n],e),{}):t)}function Te(e,t){if(e===t)return!0;if(typeof e!=typeof t)return!1;if(e&&t&&typeof e==`object`&&typeof t==`object`){if(Array.isArray(e)&&Array.isArray(t)){if(t.length>e.length)return!1;for(let n=0;n<t.length;n++)if(!Te(e[n],t[n]))return!1;return!0}let n=Object.keys(t);for(let r of n)if(!Te(e[r],t[r]))return!1;return!0}return!1}var T=Object.prototype.hasOwnProperty;function E(e,t,n=0){if(e===t)return e;if(n>500)return t;let r=De(e)&&De(t);if(!r&&!(Oe(e)&&Oe(t)))return t;let i=(r?e:Object.keys(e)).length,a=r?t:Object.keys(t),o=a.length,s=r?Array(o):{},c=0;for(let l=0;l<o;l++){let o=r?l:a[l],u=e[o],d=t[o];if(u===d){s[o]=u,(r?l<i:T.call(e,o))&&c++;continue}if(u===null||d===null||typeof u!=`object`||typeof d!=`object`){s[o]=d;continue}let f=E(u,d,n+1);s[o]=f,f===u&&c++}return i===o&&c===i?e:s}function Ee(e,t){if(!t||Object.keys(e).length!==Object.keys(t).length)return!1;for(let n in e)if(e[n]!==t[n])return!1;return!0}function De(e){return Array.isArray(e)&&e.length===Object.keys(e).length}function Oe(e){if(!ke(e))return!1;let t=Object.getPrototypeOf(e),n=t?.constructor;if(n===void 0)return!0;if(typeof n!=`function`)return!1;let r=n.prototype;return!(!ke(r)||!r.hasOwnProperty(`isPrototypeOf`)||t!==Object.prototype)}function ke(e){return Object.prototype.toString.call(e)===`[object Object]`}function Ae(e){return new Promise(t=>{me.setTimeout(t,e)})}function D(e,t,n){return typeof n.structuralSharing==`function`?n.structuralSharing(e,t):n.structuralSharing===!1?t:E(e,t)}function je(e,t,n=0){let r=[...e,t];return n&&r.length>n?r.slice(1):r}function Me(e,t,n=0){let r=[t,...e];return n&&r.length>n?r.slice(0,-1):r}var Ne=Symbol();function Pe(e,t){return!e.queryFn&&t?.initialPromise?()=>t.initialPromise:!e.queryFn||e.queryFn===Ne?()=>Promise.reject(Error(`Missing queryFn: '${e.queryHash}'`)):e.queryFn}function Fe(e,t){return typeof e==`function`?e(...t):!!e}function Ie(e,t,n){let r=!1,i;return Object.defineProperty(e,"signal",{enumerable:!0,get:()=>(i??=t(),r||(r=!0,i.aborted?n():i.addEventListener(`abort`,n,{once:!0})),i)}),e}var Le=()=>ge,Re=()=>Le(),ze=class{constructor(){this.listeners=new Set,this.subscribe=this.subscribe.bind(this)}subscribe(e){return this.listeners.add(e),this.onSubscribe(),()=>{this.listeners.delete(e),this.onUnsubscribe()}}hasListeners(){return this.listeners.size>0}onSubscribe(){}onUnsubscribe(){}},Be=new class extends ze{#e;#t;#n;constructor(){super(),this.#n=e=>{if(typeof window<`u`&&window.addEventListener){let t=()=>e();return window.addEventListener(`visibilitychange`,t,!1),()=>{window.removeEventListener(`visibilitychange`,t)}}}}onSubscribe(){this.#t||this.setEventListener(this.#n)}onUnsubscribe(){this.hasListeners()||(this.#t?.(),this.#t=void 0)}setEventListener(e){this.#n=e,this.#t?.(),this.#t=e(e=>{typeof e==`boolean`?this.setFocused(e):this.onFocus()})}setFocused(e){this.#e!==e&&(this.#e=e,this.onFocus())}onFocus(){let e=this.isFocused();this.listeners.forEach(t=>{t(e)})}isFocused(){return typeof this.#e==`boolean`?this.#e:globalThis.document?.visibilityState!==`hidden`}},Ve=he;function He(){let e=[],t=0,n=e=>{e()},r=e=>{e()},i=Ve,a=r=>{t?e.push(r):i(()=>{n(r)})},o=()=>{let t=e;e=[],t.length&&i(()=>{r(()=>{t.forEach(e=>{n(e)})})})};return{batch:e=>{let n;t++;try{n=e()}finally{t--,t||o()}return n},batchCalls:e=>(...t)=>{a(()=>{e(...t)})},schedule:a,setNotifyFunction:e=>{n=e},setBatchNotifyFunction:e=>{r=e},setScheduler:e=>{i=e}}}var O=He(),Ue=new class extends ze{#e=!0;#t;#n;constructor(){super(),this.#n=e=>{if(typeof window<`u`&&window.addEventListener){let t=()=>e(!0),n=()=>e(!1);return window.addEventListener(`online`,t,!1),window.addEventListener(`offline`,n,!1),()=>{window.removeEventListener(`online`,t),window.removeEventListener(`offline`,n)}}}}onSubscribe(){this.#t||this.setEventListener(this.#n)}onUnsubscribe(){this.hasListeners()||(this.#t?.(),this.#t=void 0)}setEventListener(e){this.#n=e,this.#t?.(),this.#t=e(this.setOnline.bind(this))}setOnline(e){this.#e!==e&&(this.#e=e,this.listeners.forEach(t=>{t(e)}))}isOnline(){return this.#e}};function We(e){return Math.min(1e3*2**e,3e4)}function Ge(e){return(e??`online`)!==`online`||Ue.isOnline()}var Ke=class extends Error{constructor(e){super(`CancelledError`),this.revert=e?.revert,this.silent=e?.silent}};function qe(e){let t=!1,n=0,r,i=`pending`,a,o,s=new Promise((e,t)=>{a=e,o=t});s.catch(_e);let c=()=>i!==`pending`,l=t=>{if(!c()){let n=new Ke(t);h(n),e.onCancel?.(n)}},u=()=>{t=!0},d=()=>{t=!1},f=()=>Be.isFocused()&&(e.networkMode===`always`||Ue.isOnline())&&e.canRun(),p=()=>Ge(e.networkMode)&&e.canRun(),m=e=>{c()||(r?.(),i=`resolved`,a(e))},h=e=>{c()||(r?.(),i=`rejected`,o(e))},g=t=>new Promise(n=>{r=e=>{(c()||t())&&n(e)},e.onPause?.()}).then(()=>{r=void 0,c()||e.onContinue?.()}),_=()=>{if(c())return;let r,i=n===0?e.initialPromise:void 0;try{r=i??e.fn()}catch(e){r=Promise.reject(e)}Promise.resolve(r).then(m).catch(r=>{if(c())return;let i=e.retry??(Re()?0:3),a=e.retryDelay??We,o=typeof a==`function`?a(n,r):a,s=i===!0||typeof i==`number`&&n<i||typeof i==`function`&&i(n,r);t||!s?h(r):(n++,e.onFail?.(n,r),Ae(o).then(()=>f()?void 0:g(f)).then(()=>{t?h(r):_()}))})};return{promise:s,status:()=>i,cancel:l,continue:()=>(r?.(),s),cancelRetry:u,continueRetry:d,canStart:p,start:()=>(p()?_():g(p).then(_),s)}}var Je=class{#e;destroy(){this.clearGcTimeout()}scheduleGc(){this.clearGcTimeout(),ye(this.gcTime)&&(this.#e=me.setTimeout(()=>{this.optionalRemove()},this.gcTime))}updateGcTime(e){this.gcTime=Math.max(this.gcTime||0,e??(Re()?1/0:3e5))}clearGcTimeout(){this.#e!==void 0&&(me.clearTimeout(this.#e),this.#e=void 0)}};function Ye(e){return{onFetch:(t,n)=>{let r=t.options,i=t.fetchOptions?.meta?.fetchMore?.direction,a=t.state.data?.pages||[],o=t.state.data?.pageParams||[],s={pages:[],pageParams:[]},c=0,l=async()=>{let n=!1,l=e=>{Ie(e,()=>t.signal,()=>n=!0)},u=Pe(t.options,t.fetchOptions),d=async(e,r,i)=>{if(n)return Promise.reject(t.signal.reason);if(r==null&&e.pages.length)return Promise.resolve(e);let a=(()=>{let e={client:t.client,queryKey:t.queryKey,pageParam:r,direction:i?`backward`:`forward`,meta:t.options.meta};return l(e),e})(),o=await u(a),{maxPages:s}=t.options,c=i?Me:je;return{pages:c(e.pages,o,s),pageParams:c(e.pageParams,r,s)}};if(i&&a.length){let e=i===`backward`,t=e?Ze:Xe,n={pages:a,pageParams:o};s=await d(n,t(r,n),e)}else{let t=e??a.length;do{let e=c===0?o[0]===void 0?r.initialPageParam:o[0]:Xe(r,s);if(c>0&&e==null)break;s=await d(s,e),c++}while(c<t)}return s};t.fetchFn=t.options.persister?()=>t.options.persister?.(l,{client:t.client,queryKey:t.queryKey,meta:t.options.meta,signal:t.signal},n):l}}}function Xe(e,{pages:t,pageParams:n}){let r=t.length-1;return t.length>0?e.getNextPageParam(t[r],t,n[r],n):void 0}function Ze(e,{pages:t,pageParams:n}){return t.length>0?e.getPreviousPageParam?.(t[0],t,n[0],n):void 0}var Qe=class extends Je{#e;#t;#n;#r;#i;#a;#o;#s;constructor(e){super(),this.#s=!1,this.#o=e.defaultOptions,this.setOptions(e.options),this.observers=[],this.#i=e.client,this.#r=this.#i.getQueryCache(),this.queryKey=e.queryKey,this.queryHash=e.queryHash,this.#t=tt(this.options),this.state=e.state??this.#t,this.scheduleGc()}get meta(){return this.options.meta}get queryType(){return this.#e}get promise(){return this.#a?.promise}setOptions(e){if(this.options={...this.#o,...e},e?._type&&(this.#e=e._type),this.updateGcTime(this.options.gcTime),this.state&&this.state.data===void 0){let e=tt(this.options);e.data!==void 0&&(this.setState(et(e.data,e.dataUpdatedAt)),this.#t=e)}}optionalRemove(){!this.observers.length&&this.state.fetchStatus===`idle`&&this.#r.remove(this)}setData(e,t){let n=D(this.state.data,e,this.options);return this.#c({data:n,type:`success`,dataUpdatedAt:t?.updatedAt,manual:t?.manual}),n}setState(e){this.#c({type:`setState`,state:e})}cancel(e){let t=this.#a?.promise;return this.#a?.cancel(e),t?t.then(_e).catch(_e):Promise.resolve()}destroy(){super.destroy(),this.cancel({silent:!0})}get resetState(){return this.#t}reset(){this.destroy(),this.setState(this.resetState)}isActive(){return this.observers.some(e=>w(e.options.enabled,this)!==!1)}isDisabled(){return this.getObserversCount()>0?!this.isActive():this.options.queryFn===Ne||!this.isFetched()}isFetched(){return this.state.dataUpdateCount+this.state.errorUpdateCount>0}isStatic(){return this.getObserversCount()>0&&this.observers.some(e=>w(e.options.staleTime,this)===`static`)}isStale(){return this.getObserversCount()>0?this.observers.some(e=>e.getCurrentResult().isStale):this.state.data===void 0||this.state.isInvalidated}isStaleByTime(e=0){return this.state.data===void 0?!0:e===`static`?!1:this.state.isInvalidated?!0:!be(this.state.dataUpdatedAt,e)}onFocus(){this.observers.find(e=>e.shouldFetchOnWindowFocus())?.refetch({cancelRefetch:!1}),this.#a?.continue()}onOnline(){this.observers.find(e=>e.shouldFetchOnReconnect())?.refetch({cancelRefetch:!1}),this.#a?.continue()}addObserver(e){this.observers.includes(e)||(this.observers.push(e),this.clearGcTimeout(),this.#r.notify({type:`observerAdded`,query:this,observer:e}))}removeObserver(e){let t=this.observers.indexOf(e);t!==-1&&(this.observers.splice(t,1),this.observers.length||(this.#a&&(this.#s||this.state.fetchStatus===`paused`&&this.state.status===`pending`?this.#a.cancel({revert:!0}):this.#a.cancelRetry()),this.scheduleGc()),this.#r.notify({type:`observerRemoved`,query:this,observer:e}))}getObserversCount(){return this.observers.length}invalidate(){this.state.isInvalidated||this.#c({type:`invalidate`})}async fetch(e,t){if(this.state.fetchStatus!==`idle`&&this.#a?.status()!==`rejected`){if(this.state.data!==void 0&&t?.cancelRefetch)this.cancel({silent:!0});else if(this.#a)return this.#a.continueRetry(),this.#a.promise}if(e&&this.setOptions(e),!this.options.queryFn){let e=this.observers.find(e=>e.options.queryFn);e&&this.setOptions(e.options)}let n=new AbortController,r=e=>{Object.defineProperty(e,"signal",{enumerable:!0,get:()=>(this.#s=!0,n.signal)})},i=()=>{let e=Pe(this.options,t),n=(()=>{let e={client:this.#i,queryKey:this.queryKey,meta:this.meta};return r(e),e})();return this.#s=!1,this.options.persister?this.options.persister(e,n,this):e(n)},a=(()=>{let e={fetchOptions:t,options:this.options,queryKey:this.queryKey,client:this.#i,state:this.state,fetchFn:i};return r(e),e})();(this.#e===`infinite`?Ye(this.options.pages):this.options.behavior)?.onFetch(a,this),this.#n=this.state,(this.state.fetchStatus===`idle`||this.state.fetchMeta!==a.fetchOptions?.meta)&&this.#c({type:`fetch`,meta:a.fetchOptions?.meta});let o=this.#a=qe({initialPromise:t?.initialPromise,fn:a.fetchFn,onCancel:e=>{e instanceof Ke&&e.revert&&this.setState({...this.#n,fetchStatus:`idle`}),n.abort()},onFail:(e,t)=>{this.#c({type:`failed`,failureCount:e,error:t})},onPause:()=>{this.#c({type:`pause`})},onContinue:()=>{this.#c({type:`continue`})},retry:a.options.retry,retryDelay:a.options.retryDelay,networkMode:a.options.networkMode,canRun:()=>!0});try{let e=await o.start();if(e===void 0)throw Error(`${this.queryHash} data is undefined`);return this.setData(e),this.#r.config.onSuccess?.(e,this),this.#r.config.onSettled?.(e,this.state.error,this),e}catch(e){if(e instanceof Ke){if(e.silent)return this.#a.promise;if(e.revert){if(this.state.data===void 0)throw e;return this.state.data}}throw this.#c({type:`error`,error:e}),this.#r.config.onError?.(e,this),this.#r.config.onSettled?.(this.state.data,e,this),e}finally{this.#a===o&&(this.#a=void 0),this.scheduleGc()}}#c(e){let t=t=>{switch(e.type){case`failed`:return{...t,fetchFailureCount:e.failureCount,fetchFailureReason:e.error};case`pause`:return{...t,fetchStatus:`paused`};case`continue`:return{...t,fetchStatus:`fetching`};case`fetch`:return{...t,...$e(t.data,this.options),fetchMeta:e.meta??null};case`success`:let n={...t,...et(e.data,e.dataUpdatedAt),dataUpdateCount:t.dataUpdateCount+1,...!e.manual&&{fetchStatus:`idle`,fetchFailureCount:0,fetchFailureReason:null}};return this.#n=e.manual?n:void 0,n;case`error`:let r=e.error;return{...t,error:r,errorUpdateCount:t.errorUpdateCount+1,errorUpdatedAt:Date.now(),fetchFailureCount:t.fetchFailureCount+1,fetchFailureReason:r,fetchStatus:`idle`,status:`error`,isInvalidated:!0};case`invalidate`:return{...t,isInvalidated:!0};case`setState`:return{...t,...e.state}}};this.state=t(this.state),O.batch(()=>{this.observers.slice().forEach(e=>{e.onQueryUpdate()}),this.#r.notify({query:this,type:`updated`,action:e})})}};function $e(e,t){return{fetchFailureCount:0,fetchFailureReason:null,fetchStatus:Ge(t.networkMode)?`fetching`:`paused`,...e===void 0&&{error:null,status:`pending`}}}function et(e,t){return{data:e,dataUpdatedAt:t??Date.now(),error:null,isInvalidated:!1,status:`success`}}function tt(e){let t=typeof e.initialData==`function`?e.initialData():e.initialData,n=t!==void 0,r=n?typeof e.initialDataUpdatedAt==`function`?e.initialDataUpdatedAt():e.initialDataUpdatedAt:0;return{data:t,dataUpdateCount:0,dataUpdatedAt:n?r??Date.now():0,error:null,errorUpdateCount:0,errorUpdatedAt:0,fetchFailureCount:0,fetchFailureReason:null,fetchMeta:null,isInvalidated:!1,status:n?`success`:`pending`,fetchStatus:`idle`}}var nt=class extends ze{#e;#t=void 0;#n=void 0;#r=void 0;#i;#a;#o;#s;#c;#l;#u;#d;#f;#p=new Set;constructor(e,t){super(),this.options=t,this.#e=e,this.#o=null,this.bindMethods(),this.setOptions(t)}bindMethods(){this.refetch=this.refetch.bind(this)}onSubscribe(){this.listeners.size===1&&(this.#t.addObserver(this),it(this.#t,this.options)?this.#m():this.updateResult(),this.#y())}onUnsubscribe(){this.hasListeners()||this.destroy()}shouldFetchOnReconnect(){return at(this.#t,this.options,this.options.refetchOnReconnect)}shouldFetchOnWindowFocus(){return at(this.#t,this.options,this.options.refetchOnWindowFocus)}destroy(){this.listeners=new Set,this.#b(),this.#x(),this.#t.removeObserver(this)}setOptions(e){let t=this.options,n=this.#t;if(this.options=this.#e.defaultQueryOptions(e),this.options.enabled!==void 0&&typeof this.options.enabled!=`boolean`&&typeof this.options.enabled!=`function`&&typeof w(this.options.enabled,this.#t)!=`boolean`)throw Error(`Expected enabled to be a boolean or a callback that returns a boolean`);this.#S(),this.#t.setOptions(this.options),t._defaulted&&!Ee(this.options,t)&&this.#e.getQueryCache().notify({type:`observerOptionsUpdated`,query:this.#t,observer:this});let r=this.hasListeners();r&&ot(this.#t,n,this.options,t)&&this.#m(),this.updateResult(),r&&(this.#t!==n||w(this.options.enabled,this.#t)!==w(t.enabled,this.#t)||w(this.options.staleTime,this.#t)!==w(t.staleTime,this.#t))&&this.#g();let i=this.#_();r&&(this.#t!==n||w(this.options.enabled,this.#t)!==w(t.enabled,this.#t)||i!==this.#f)&&this.#v(i)}getOptimisticResult(e){let t=this.#e.getQueryCache().build(this.#e,e),n=this.createResult(t,e);return Ee(this.getCurrentResult(),n)||(this.#r=n,this.#a=this.options,this.#i=this.#t.state),n}getCurrentResult(){return this.#r}trackResult(e,t){return new Proxy(e,{get:(e,n)=>(this.trackProp(n),t?.(n),Reflect.get(e,n))})}trackProp(e){this.#p.add(e)}getCurrentQuery(){return this.#t}refetch({...e}={}){return this.fetch({...e})}fetchOptimistic(e){let t=this.#e.defaultQueryOptions(e),n=this.#e.getQueryCache().build(this.#e,t),r=()=>{},i,a=new Promise(e=>{i=e,r=this.#e.getQueryCache().subscribe(i=>{i.type===`updated`&&i.query.queryHash===n.queryHash&&n.state.data!==void 0&&(r(),e(this.createResult(n,t)))})});return Promise.race([n.fetch().then(()=>{let e=this.createResult(n,t);return i?.(e),e}).finally(()=>{r()}),a])}fetch(e){return this.#m({...e,cancelRefetch:e.cancelRefetch??!0}).then(()=>(this.updateResult(),this.#r))}#m(e){this.#S();let t=this.#t.fetch(this.options,e);return e?.throwOnError||(t=t.catch(_e)),t}#h(e){return!Re()&&w(this.options.enabled,this.#t)!==!1&&ye(e)}#g(){this.#b();let e=w(this.options.staleTime,this.#t);if(this.#r.isStale||!this.#h(e))return;let t=be(this.#r.dataUpdatedAt,e)+1;this.#u=me.setTimeout(()=>{this.#r.isStale||this.updateResult()},t)}#_(){return w(this.options.refetchInterval,this.#t)??!1}#v(e){this.#x(),this.#f=e,this.#f!==0&&this.#h(this.#f)&&(this.#d=me.setInterval(()=>{(this.options.refetchIntervalInBackground||Be.isFocused())&&this.#m()},this.#f))}#y(){this.#g(),this.#v(this.#_())}#b(){this.#u!==void 0&&(me.clearTimeout(this.#u),this.#u=void 0)}#x(){this.#d!==void 0&&(me.clearInterval(this.#d),this.#d=void 0)}createResult(e,t){let n=this.#t,r=this.options,i=this.#r,a=this.#i,o=this.#a,s=e===n?this.#n:e.state,{state:c}=e,l={...c},u=!1,d;if(t._optimisticResults){let i=this.hasListeners(),a=!i&&it(e,t),o=i&&ot(e,n,t,r);(a||o)&&(l={...l,...$e(c.data,e.options)}),t._optimisticResults===`isRestoring`&&(l.fetchStatus=`idle`)}let{error:f,errorUpdatedAt:p,status:m}=l;d=l.data;let h=!1;if(t.placeholderData!==void 0&&d===void 0&&m===`pending`){let e;i?.isPlaceholderData&&t.placeholderData===o?.placeholderData?(e=i.data,h=!0):e=typeof t.placeholderData==`function`?t.placeholderData(this.#l?.state.data,this.#l):t.placeholderData,e!==void 0&&(m=`success`,d=D(i?.data,e,t),u=!0)}if(t.select&&d!==void 0&&!h){if(i&&d===a?.data&&t.select===this.#s)d=this.#c;else try{this.#s=t.select,d=t.select(d),d=D(i?.data,d,t),this.#c=d,this.#o=null}catch(e){this.#o=e}}else d===void 0&&(this.#o=null);this.#o&&(f=this.#o,d=this.#c,p=Date.now(),m=`error`,u=!1);let g=l.fetchStatus===`fetching`,_=m===`pending`,v=m===`error`,y=_&&g,b=d!==void 0;return{status:m,fetchStatus:l.fetchStatus,isPending:_,isSuccess:m===`success`,isError:v,isInitialLoading:y,isLoading:y,data:d,dataUpdatedAt:l.dataUpdatedAt,error:f,errorUpdatedAt:p,failureCount:l.fetchFailureCount,failureReason:l.fetchFailureReason,errorUpdateCount:l.errorUpdateCount,isFetched:e.isFetched(),isFetchedAfterMount:l.dataUpdateCount>s.dataUpdateCount||l.errorUpdateCount>s.errorUpdateCount,isFetching:g,isRefetching:g&&!_,isLoadingError:v&&!b,isPaused:l.fetchStatus===`paused`,isPlaceholderData:u,isRefetchError:v&&b,isStale:st(e,t),refetch:this.refetch,isEnabled:w(t.enabled,e)!==!1}}updateResult(){let e=this.#r,t=this.createResult(this.#t,this.options);if(this.#i=this.#t.state,this.#a=this.options,this.#i.data!==void 0&&(this.#l=this.#t),Ee(t,e))return;this.#r=t;let n=(()=>{if(!e)return!0;let{notifyOnChangeProps:t}=this.options,n=typeof t==`function`?t():t;if(n===`all`||!n&&!this.#p.size)return!0;let r=new Set(n??this.#p);return this.options.throwOnError&&r.add(`error`),Object.keys(this.#r).some(t=>{let n=t;return this.#r[n]!==e[n]&&r.has(n)})})();O.batch(()=>{n&&this.listeners.forEach(e=>{e(this.#r)}),this.#e.getQueryCache().notify({query:this.#t,type:`observerResultsUpdated`})})}#S(){let e=this.#e.getQueryCache().build(this.#e,this.options);if(e===this.#t)return;let t=this.#t;this.#t=e,this.#n=e.state,this.hasListeners()&&(t?.removeObserver(this),e.addObserver(this))}onQueryUpdate(){this.updateResult(),this.hasListeners()&&this.#y()}};function rt(e,t){return w(t.enabled,e)!==!1&&e.state.data===void 0&&(e.state.status!==`error`||w(t.retryOnMount,e)!==!1)}function it(e,t){return rt(e,t)||e.state.data!==void 0&&at(e,t,t.refetchOnMount)}function at(e,t,n){if(w(t.enabled,e)!==!1&&w(t.staleTime,e)!==`static`){let r=w(n,e);return r===`always`||r!==!1&&st(e,t)}return!1}function ot(e,t,n,r){return(e!==t||w(r.enabled,e)===!1)&&(!n.suspense||e.state.status!==`error`)&&st(e,n)}function st(e,t){return w(t.enabled,e)!==!1&&e.isStaleByTime(w(t.staleTime,e))}var ct=class extends Je{#e;#t;#n;#r;constructor(e){super(),this.#e=e.client,this.mutationId=e.mutationId,this.#n=e.mutationCache,this.#t=[],this.state=e.state||lt(),this.setOptions(e.options),this.scheduleGc()}setOptions(e){this.options=e,this.updateGcTime(this.options.gcTime)}get meta(){return this.options.meta}addObserver(e){this.#t.includes(e)||(this.#t.push(e),this.clearGcTimeout(),this.#n.notify({type:`observerAdded`,mutation:this,observer:e}))}removeObserver(e){this.#t=this.#t.filter(t=>t!==e),this.scheduleGc(),this.#n.notify({type:`observerRemoved`,mutation:this,observer:e})}optionalRemove(){this.#t.length||(this.state.status===`pending`?this.scheduleGc():this.#n.remove(this))}continue(){return this.#r?.continue()??(this.state.status===`pending`?this.execute(this.state.variables):Promise.resolve())}async execute(e){let t=()=>{this.#i({type:`continue`})},n={client:this.#e,meta:this.options.meta,mutationKey:this.options.mutationKey},r=this.#r=qe({fn:()=>this.options.mutationFn?this.options.mutationFn(e,n):Promise.reject(Error(`No mutationFn found`)),onFail:(e,t)=>{this.#i({type:`failed`,failureCount:e,error:t})},onPause:()=>{this.#i({type:`pause`})},onContinue:t,retry:this.options.retry??0,retryDelay:this.options.retryDelay,networkMode:this.options.networkMode,canRun:()=>this.#n.canRun(this)}),i=this.state.status===`pending`,a=!r.canStart();try{if(i)t();else{this.#i({type:`pending`,variables:e,isPaused:a}),this.#n.config.onMutate&&await this.#n.config.onMutate(e,this,n);let t=await this.options.onMutate?.(e,n);t!==this.state.context&&this.#i({type:`pending`,context:t,variables:e,isPaused:a})}let o=await r.start();return await this.#n.config.onSuccess?.(o,e,this.state.context,this,n),await this.options.onSuccess?.(o,e,this.state.context,n),await this.#n.config.onSettled?.(o,null,this.state.variables,this.state.context,this,n),await this.options.onSettled?.(o,null,e,this.state.context,n),this.#i({type:`success`,data:o}),o}catch(t){try{await this.#n.config.onError?.(t,e,this.state.context,this,n)}catch(e){Promise.reject(e)}try{await this.options.onError?.(t,e,this.state.context,n)}catch(e){Promise.reject(e)}try{await this.#n.config.onSettled?.(void 0,t,this.state.variables,this.state.context,this,n)}catch(e){Promise.reject(e)}try{await this.options.onSettled?.(void 0,t,e,this.state.context,n)}catch(e){Promise.reject(e)}throw this.#i({type:`error`,error:t}),t}finally{this.#r===r&&(this.#r=void 0),this.#n.runNext(this)}}#i(e){let t=t=>{switch(e.type){case`failed`:return{...t,failureCount:e.failureCount,failureReason:e.error};case`pause`:return{...t,isPaused:!0};case`continue`:return{...t,isPaused:!1};case`pending`:return{...t,context:e.context,data:void 0,failureCount:0,failureReason:null,error:null,isPaused:e.isPaused,status:`pending`,variables:e.variables,submittedAt:Date.now()};case`success`:return{...t,data:e.data,failureCount:0,failureReason:null,error:null,status:`success`,isPaused:!1};case`error`:return{...t,data:void 0,error:e.error,failureCount:t.failureCount+1,failureReason:e.error,isPaused:!1,status:`error`}}};this.state=t(this.state),O.batch(()=>{this.#t.forEach(t=>{t.onMutationUpdate(e)}),this.#n.notify({mutation:this,type:`updated`,action:e})})}};function lt(){return{context:void 0,data:void 0,error:null,failureCount:0,failureReason:null,isPaused:!1,status:`idle`,variables:void 0,submittedAt:0}}var ut=class extends ze{#e;#t;#n;constructor(e={}){super(),this.config=e,this.#e=new Set,this.#t=new Map,this.#n=0}build(e,t,n){let r=new ct({client:e,mutationCache:this,mutationId:++this.#n,options:e.defaultMutationOptions(t),state:n});return this.add(r),r}add(e){this.#e.add(e);let t=dt(e);if(typeof t==`string`){let n=this.#t.get(t);n?n.push(e):this.#t.set(t,[e])}this.notify({type:`added`,mutation:e})}remove(e){if(this.#e.delete(e)){let t=dt(e);if(typeof t==`string`){let n=this.#t.get(t);if(n){if(n.length>1){let t=n.indexOf(e);t!==-1&&n.splice(t,1)}else n[0]===e&&this.#t.delete(t)}}}this.notify({type:`removed`,mutation:e})}canRun(e){let t=dt(e);if(typeof t==`string`){let n=this.#t.get(t)?.find(e=>e.state.status===`pending`);return!n||n===e}return!0}runNext(e){let t=dt(e);return typeof t==`string`?(this.#t.get(t)?.find(t=>t!==e&&t.state.isPaused))?.continue()??Promise.resolve():Promise.resolve()}clear(){O.batch(()=>{let e=this.getAll();this.#e.clear(),this.#t.clear(),e.forEach(e=>{this.notify({type:`removed`,mutation:e})})})}getAll(){return Array.from(this.#e)}find(e){let t={exact:!0,...e};return this.getAll().find(e=>Se(t,e))}findAll(e={}){return this.getAll().filter(t=>Se(e,t))}notify(e){O.batch(()=>{this.listeners.forEach(t=>{t(e)})})}resumePausedMutations(){let e=this.getAll().filter(e=>e.state.isPaused);return O.batch(()=>Promise.all(e.map(e=>e.continue().catch(_e))))}};function dt(e){return e.options.scope?.id}var ft=class extends ze{#e;#t=void 0;#n;#r;constructor(e,t){super(),this.#e=e,this.setOptions(t),this.bindMethods(),this.#i()}bindMethods(){this.mutate=this.mutate.bind(this),this.reset=this.reset.bind(this)}setOptions(e){let t=this.options;this.options=this.#e.defaultMutationOptions(e),Ee(this.options,t)||this.#e.getMutationCache().notify({type:`observerOptionsUpdated`,mutation:this.#n,observer:this}),t?.mutationKey&&this.options.mutationKey&&we(t.mutationKey)!==we(this.options.mutationKey)?this.reset():this.#n?.state.status===`pending`&&this.#n.setOptions(this.options)}onSubscribe(){this.listeners.size===1&&this.#n&&(this.#n.addObserver(this),this.#i())}onUnsubscribe(){this.hasListeners()||this.#n?.removeObserver(this)}onMutationUpdate(e){this.#i(),this.#a(e)}getCurrentResult(){return this.#t}reset(){this.#n?.removeObserver(this),this.#n=void 0,this.#i(),this.#a()}mutate(e,t){return this.#r=t,this.#n?.removeObserver(this),this.#n=this.#e.getMutationCache().build(this.#e,this.options),this.#n.addObserver(this),this.#n.execute(e)}#i(){let e=this.#n?.state??lt();this.#t={...e,isPending:e.status===`pending`,isSuccess:e.status===`success`,isError:e.status===`error`,isIdle:e.status===`idle`,mutate:this.mutate,reset:this.reset}}#a(e){O.batch(()=>{let t=this.#r;if(t&&this.hasListeners()){let n=this.#t.variables,r=this.#t.context,i={client:this.#e,meta:this.options.meta,mutationKey:this.options.mutationKey};if(e?.type===`success`){try{t.onSuccess?.(e.data,n,r,i)}catch(e){Promise.reject(e)}try{t.onSettled?.(e.data,null,n,r,i)}catch(e){Promise.reject(e)}}else if(e?.type===`error`){try{t.onError?.(e.error,n,r,i)}catch(e){Promise.reject(e)}try{t.onSettled?.(void 0,e.error,n,r,i)}catch(e){Promise.reject(e)}}}this.listeners.forEach(e=>{e(this.#t)})})}},pt=class extends ze{#e;constructor(e={}){super(),this.config=e,this.#e=new Map}build(e,t,n){let r=t.queryKey,i=t.queryHash??Ce(r,t),a=this.get(i);return a||(a=new Qe({client:e,queryKey:r,queryHash:i,options:e.defaultQueryOptions(t),state:n,defaultOptions:e.getQueryDefaults(r)}),this.add(a)),a}add(e){this.#e.has(e.queryHash)||(this.#e.set(e.queryHash,e),this.notify({type:`added`,query:e}))}remove(e){this.#e.get(e.queryHash)===e&&(e.destroy(),this.#e.delete(e.queryHash),this.notify({type:`removed`,query:e}))}clear(){O.batch(()=>{this.getAll().forEach(e=>{this.remove(e)})})}get(e){return this.#e.get(e)}getAll(){return[...this.#e.values()]}find(e){let t={exact:!0,...e};return this.getAll().find(e=>xe(t,e))}findAll(e={}){let t=this.getAll();return Object.keys(e).length>0?t.filter(t=>xe(e,t)):t}notify(e){O.batch(()=>{this.listeners.forEach(t=>{t(e)})})}onFocus(){O.batch(()=>{this.getAll().forEach(e=>{e.onFocus()})})}onOnline(){O.batch(()=>{this.getAll().forEach(e=>{e.onOnline()})})}},mt=class{#e;#t;#n;#r;#i;#a;#o;#s;constructor(e={}){this.#e=e.queryCache||new pt,this.#t=e.mutationCache||new ut,this.#n=e.defaultOptions||{},this.#r=new Map,this.#i=new Map,this.#a=0}mount(){this.#a++,this.#a===1&&(this.#o=Be.subscribe(async e=>{e&&(await this.resumePausedMutations(),this.#e.onFocus())}),this.#s=Ue.subscribe(async e=>{e&&(await this.resumePausedMutations(),this.#e.onOnline())}))}unmount(){this.#a--,this.#a===0&&(this.#o?.(),this.#o=void 0,this.#s?.(),this.#s=void 0)}isFetching(e){return this.#e.findAll({...e,fetchStatus:`fetching`}).length}isMutating(e){return this.#t.findAll({...e,status:`pending`}).length}getQueryData(e){let t=this.defaultQueryOptions({queryKey:e});return this.#e.get(t.queryHash)?.state.data}ensureQueryData(e){let t=this.defaultQueryOptions(e),n=this.#e.build(this,t),r=n.state.data;return r===void 0?this.fetchQuery(e):(e.revalidateIfStale&&n.isStaleByTime(w(t.staleTime,n))&&this.prefetchQuery(t),Promise.resolve(r))}getQueriesData(e){return this.#e.findAll(e).map(({queryKey:e,state:t})=>[e,t.data])}setQueryData(e,t,n){let r=this.defaultQueryOptions({queryKey:e}),i=this.#e.get(r.queryHash)?.state.data,a=ve(t,i);if(a!==void 0)return this.#e.build(this,r).setData(a,{...n,manual:!0})}setQueriesData(e,t,n){return O.batch(()=>this.#e.findAll(e).map(({queryKey:e})=>[e,this.setQueryData(e,t,n)]))}getQueryState(e){let t=this.defaultQueryOptions({queryKey:e});return this.#e.get(t.queryHash)?.state}removeQueries(e){let t=this.#e;O.batch(()=>{t.findAll(e).forEach(e=>{t.remove(e)})})}resetQueries(e,t){let n=this.#e;return O.batch(()=>{let r=n.findAll(e),i=new Set(r);return r.forEach(e=>{e.reset()}),this.refetchQueries({type:`active`,predicate:e=>i.has(e)},t)})}cancelQueries(e,t={}){let n={revert:!0,...t},r=O.batch(()=>this.#e.findAll(e).map(e=>e.cancel(n)));return Promise.all(r).then(_e).catch(_e)}invalidateQueries(e,t={}){return O.batch(()=>(this.#e.findAll(e).forEach(e=>{e.invalidate()}),e?.refetchType===`none`?Promise.resolve():this.refetchQueries({...e,type:e?.refetchType??e?.type??`active`},t)))}refetchQueries(e,t={}){let n={...t,cancelRefetch:t.cancelRefetch??!0},r=O.batch(()=>this.#e.findAll(e).filter(e=>!e.isDisabled()&&!e.isStatic()).map(e=>{let t=e.fetch(void 0,n);return n.throwOnError||(t=t.catch(_e)),e.state.fetchStatus===`paused`?Promise.resolve():t}));return Promise.all(r).then(_e)}async query(e){let t=this.defaultQueryOptions(e);t.retry===void 0&&(t.retry=!1);let n=this.#e.build(this,t),r=n.isStaleByTime(w(t.staleTime,n))?await n.fetch(t):n.state.data,i=t.select;return i?i(r):r}fetchQuery(e){let t=this.defaultQueryOptions(e);t.retry===void 0&&(t.retry=!1);let n=this.#e.build(this,t);return n.isStaleByTime(w(t.staleTime,n))?n.fetch(t):Promise.resolve(n.state.data)}prefetchQuery(e){return this.fetchQuery(e).then(_e).catch(_e)}infiniteQuery(e){return e._type=`infinite`,this.query(e)}fetchInfiniteQuery(e){return e._type=`infinite`,this.fetchQuery(e)}prefetchInfiniteQuery(e){return this.fetchInfiniteQuery(e).then(_e).catch(_e)}ensureInfiniteQueryData(e){return e._type=`infinite`,this.ensureQueryData(e)}resumePausedMutations(){return Ue.isOnline()?this.#t.resumePausedMutations():Promise.resolve()}getQueryCache(){return this.#e}getMutationCache(){return this.#t}getDefaultOptions(){return this.#n}setDefaultOptions(e){this.#n=e}setQueryDefaults(e,t){this.#r.set(we(e),{queryKey:e,defaultOptions:t})}getQueryDefaults(e){let t=[...this.#r.values()],n={};return t.forEach(t=>{Te(e,t.queryKey)&&Object.assign(n,t.defaultOptions)}),n}setMutationDefaults(e,t){this.#i.set(we(e),{mutationKey:e,defaultOptions:t})}getMutationDefaults(e){let t=[...this.#i.values()],n={};return t.forEach(t=>{Te(e,t.mutationKey)&&Object.assign(n,t.defaultOptions)}),n}defaultQueryOptions(e){if(e._defaulted)return e;let t={...this.#n.queries,...this.getQueryDefaults(e.queryKey),...e,_defaulted:!0};return t.queryHash||=Ce(t.queryKey,t),t.refetchOnReconnect===void 0&&(t.refetchOnReconnect=t.networkMode!==`always`),t.throwOnError===void 0&&(t.throwOnError=!!t.suspense),!t.networkMode&&t.persister&&(t.networkMode=`offlineFirst`),t.queryFn===Ne&&(t.enabled=!1),t}defaultMutationOptions(e){return e?._defaulted?e:{...this.#n.mutations,...e?.mutationKey&&this.getMutationDefaults(e.mutationKey),...e,_defaulted:!0}}clear(){this.#e.clear(),this.#t.clear()}},ht=S.createContext(!1),gt=()=>S.useContext(ht);ht.Provider;function _t(){let e=!1;return{clearReset:()=>{e=!1},reset:()=>{e=!0},isReset:()=>e}}var vt=S.createContext(_t()),yt=()=>S.useContext(vt),bt=(e,t,n)=>{let r=n?.state.status===`error`&&typeof e.throwOnError==`function`?Fe(e.throwOnError,[n.state.error,n]):e.throwOnError;(e.suspense||r)&&(t.isReset()||(e.retryOnMount=!1))},xt=e=>{S.useEffect(()=>{e.clearReset()},[e])},St=({result:e,errorResetBoundary:t,throwOnError:n,query:r,suspense:i})=>e.isError&&!t.isReset()&&!e.isFetching&&r&&(i&&e.data===void 0||Fe(n,[e.error,r])),Ct=e=>{if(e.suspense){let t=1e3,n=e=>e===`static`?e:Math.max(e??t,t),r=e.staleTime;e.staleTime=typeof r==`function`?(...e)=>n(r(...e)):n(r),typeof e.gcTime==`number`&&(e.gcTime=Math.max(e.gcTime,t))}},wt=(e,t)=>e?.suspense&&t.isPending,Tt=(e,t,n)=>t.fetchOptimistic(e).catch(()=>{n.clearReset()});function Et(e,t,n){let r=gt(),i=yt(),a=de(n),o=a.defaultQueryOptions(e),s=a.getQueryCache().get(o.queryHash),c=e.subscribed!==!1;o._optimisticResults=r?`isRestoring`:c?`optimistic`:void 0,Ct(o),bt(o,i,s),xt(i);let[l]=S.useState(()=>new t(a,o)),u=l.getOptimisticResult(o),d=!r&&c;if(S.useSyncExternalStore(S.useCallback(e=>{let t=d?l.subscribe(O.batchCalls(e)):_e;return l.updateResult(),t},[l,d]),()=>l.getCurrentResult(),()=>l.getCurrentResult()),S.useEffect(()=>{l.setOptions(o)},[o,l]),wt(o,u))throw Tt(o,l,i);if(St({result:u,errorResetBoundary:i,throwOnError:o.throwOnError,query:s,suspense:o.suspense}))throw u.error;return o.notifyOnChangeProps?u:l.trackResult(u)}function Dt(e,t){return Et(e,nt,t)}function Ot(e,t){let n=de(t),[r]=S.useState(()=>new ft(n,e));S.useEffect(()=>{r.setOptions(e)},[r,e]);let i=S.useSyncExternalStore(S.useCallback(e=>r.subscribe(O.batchCalls(e)),[r]),()=>r.getCurrentResult(),()=>r.getCurrentResult()),a=S.useCallback((...e)=>{r.mutate(e[0],e[1]).catch(_e)},[r]);if(i.error&&Fe(r.options.throwOnError,[i.error]))throw i.error;return{...i,mutate:a,mutateAsync:i.mutate}}var kt=`3.6.5`,At=()=>`@wagmi/core@${kt}`,jt=function(e,t,n,r){if(n===`a`&&!r)throw TypeError(`Private accessor was defined without a getter`);if(typeof t==`function`?e!==t||!r:!t.has(e))throw TypeError(`Cannot read private member from an object whose class did not declare it`);return n===`m`?r:n===`a`?r.call(e):r?r.value:t.get(e)},k,Mt,Nt=class e extends Error{get docsBaseUrl(){return`https://wagmi.sh/core`}get version(){return At()}constructor(t,n={}){super(),k.add(this),Object.defineProperty(this,"details",{enumerable:!0,configurable:!0,writable:!0,value:void 0}),Object.defineProperty(this,"docsPath",{enumerable:!0,configurable:!0,writable:!0,value:void 0}),Object.defineProperty(this,"metaMessages",{enumerable:!0,configurable:!0,writable:!0,value:void 0}),Object.defineProperty(this,"shortMessage",{enumerable:!0,configurable:!0,writable:!0,value:void 0}),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`WagmiCoreError`});let r=n.cause instanceof e?n.cause.details:n.cause?.message?n.cause.message:n.details,i=n.cause instanceof e&&n.cause.docsPath||n.docsPath;this.message=[t||`An error occurred.`,``,...n.metaMessages?[...n.metaMessages,``]:[],...i?[`Docs: ${this.docsBaseUrl}${i}.html${n.docsSlug?`#${n.docsSlug}`:``}`]:[],...r?[`Details: ${r}`]:[],`Version: ${this.version}`].join(`
-`),n.cause&&(this.cause=n.cause),this.details=r,this.docsPath=i,this.metaMessages=n.metaMessages,this.shortMessage=t}walk(e){return jt(this,k,`m`,Mt).call(this,this,e)}};k=new WeakSet,Mt=function e(t,n){return n?.(t)?t:t.cause?jt(this,k,`m`,e).call(this,t.cause,n):t};var Pt=class extends Nt{constructor(){super(`Chain not configured.`),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`ChainNotConfiguredError`})}},Ft=class extends Nt{constructor(){super(`Connector already connected.`),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`ConnectorAlreadyConnectedError`})}},It=class extends Nt{constructor(){super(`Connector not connected.`),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`ConnectorNotConnectedError`})}},Lt=class extends Nt{constructor({address:e,connector:t}){super(`Account "${e}" not found for connector "${t.name}".`),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`ConnectorAccountNotFoundError`})}},Rt=class extends Nt{constructor({connectionChainId:e,connectorChainId:t}){super(`The current chain of the connector (id: ${t}) does not match the connection's chain (id: ${e}).`,{metaMessages:[`Current Chain ID:  ${t}`,`Expected Chain ID: ${e}`]}),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`ConnectorChainMismatchError`})}},zt=class extends Nt{constructor({connector:e}){super(`Connector "${e.name}" unavailable while reconnecting.`,{details:["During the reconnection step, the only connector methods guaranteed to be available are: `id`, `name`, `type`, `uid`.",`All other methods are not guaranteed to be available until reconnection completes and connectors are fully restored.`,`This error commonly occurs for connectors that asynchronously inject after reconnection has already started.`].join(` `)}),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`ConnectorUnavailableReconnectingError`})}};async function Bt(e,t){let n;if(n=typeof t.connector==`function`?e._internal.connectors.setup(t.connector):t.connector,n.uid===e.state.current)throw new Ft;try{e.setState(e=>({...e,status:`connecting`})),n.emitter.emit(`message`,{type:`connecting`});let{connector:r,...i}=t,a=await n.connect(i);return n.emitter.off(`connect`,e._internal.events.connect),n.emitter.on(`change`,e._internal.events.change),n.emitter.on(`disconnect`,e._internal.events.disconnect),await e.storage?.setItem(`recentConnectorId`,n.id),e.setState(e=>({...e,connections:new Map(e.connections).set(n.uid,{accounts:i.withCapabilities?a.accounts.map(e=>typeof e==`object`?e.address:e):a.accounts,chainId:a.chainId,connector:n}),current:n.uid,status:`connected`})),{accounts:i.withCapabilities?a.accounts.map(e=>typeof e==`object`?e:{address:e,capabilities:{}}):a.accounts,chainId:a.chainId}}catch(t){throw e.setState(e=>({...e,status:e.current?`connected`:`disconnected`})),t}}async function Vt(e,t={}){let{assertChainId:n=!0}=t,r;if(t.connector){let{connector:n}=t;if(e.state.status===`reconnecting`&&!n.getAccounts&&!n.getChainId)throw new zt({connector:n});let[i,a]=await Promise.all([n.getAccounts().catch(e=>{if(t.account===null)return[];throw e}),n.getChainId()]);r={accounts:i,chainId:a,connector:n}}else r=e.state.connections.get(e.state.current);if(!r)throw new It;let i=t.chainId??r.chainId,a=await r.connector.getChainId();if(n&&a!==i)throw new Rt({connectionChainId:i,connectorChainId:a});let s=r.connector;if(s.getClient)return s.getClient({chainId:i});let c=o(t.account??r.accounts[0]);if(c&&(c.address=f(c.address)),t.account&&!r.accounts.some(e=>e.toLowerCase()===c.address.toLowerCase()))throw new Lt({address:c.address,connector:s});let l=e.chains.find(e=>e.id===i),u=await r.connector.getProvider({chainId:i});return ee({account:c,chain:l,name:`Connector Client`,transport:e=>ie(u)({...e,retryCount:0})})}async function Ht(e,t={}){let n;if(t.connector)n=t.connector;else{let{connections:t,current:r}=e.state;n=t.get(r)?.connector}let r=e.state.connections;n&&(await n.disconnect(),n.emitter.off(`change`,e._internal.events.change),n.emitter.off(`disconnect`,e._internal.events.disconnect),n.emitter.on(`connect`,e._internal.events.connect),r.delete(n.uid)),e.setState(e=>{if(r.size===0)return{...e,connections:new Map,current:null,status:`disconnected`};let t=r.values().next().value;return{...e,connections:new Map(r),current:t.connector.uid}});{let t=e.state.current;if(!t)return;let n=e.state.connections.get(t)?.connector;if(!n)return;await e.storage?.setItem(`recentConnectorId`,n.id)}}function Ut(e){return e.state.chainId}function Wt(e,t){if(e===t)return!0;if(e&&t&&typeof e==`object`&&typeof t==`object`){if(e.constructor!==t.constructor)return!1;let n,r;if(Array.isArray(e)&&Array.isArray(t)){if(n=e.length,n!==t.length)return!1;for(r=n;r--!==0;)if(!Wt(e[r],t[r]))return!1;return!0}if(typeof e.valueOf==`function`&&e.valueOf!==Object.prototype.valueOf)return e.valueOf()===t.valueOf();if(typeof e.toString==`function`&&e.toString!==Object.prototype.toString)return e.toString()===t.toString();let i=Object.keys(e);if(n=i.length,n!==Object.keys(t).length)return!1;for(r=n;r--!==0;)if(!Object.hasOwn(t,i[r]))return!1;for(r=n;r--!==0;){let n=i[r];if(n&&!Wt(e[n],t[n]))return!1}return!0}return e!==e&&t!==t}function Gt(e){let t=e.state.current,n=e.state.connections.get(t),r=n?.accounts,i=r?.[0],a=e.chains.find(e=>e.id===n?.chainId),o=e.state.status;switch(o){case`connected`:return{address:i,addresses:r,chain:a,chainId:n?.chainId,connector:n?.connector,isConnected:!0,isConnecting:!1,isDisconnected:!1,isReconnecting:!1,status:o};case`reconnecting`:return{address:i,addresses:r,chain:a,chainId:n?.chainId,connector:n?.connector,isConnected:!!i,isConnecting:!1,isDisconnected:!1,isReconnecting:!0,status:o};case`connecting`:return{address:i,addresses:r,chain:a,chainId:n?.chainId,connector:n?.connector,isConnected:!1,isConnecting:!0,isDisconnected:!1,isReconnecting:!1,status:o};case`disconnected`:return{address:void 0,addresses:void 0,chain:void 0,chainId:void 0,connector:void 0,isConnected:!1,isConnecting:!1,isDisconnected:!0,isReconnecting:!1,status:o}}}var Kt=[];function qt(e){let t=[...e.state.connections.values()];return e.state.status===`reconnecting`||Wt(Kt,t)?Kt:(Kt=t,t)}var Jt=[];function Yt(e){let t=e.connectors;return Jt.length===t.length&&Jt.every((e,n)=>e===t[n])?Jt:(Jt=t,t)}async function Xt(e,t={}){return(await Vt(e,t)).extend(re)}var Zt=!1;async function Qt(e,t={}){if(Zt)return[];Zt=!0,e.setState(e=>({...e,status:e.current?`reconnecting`:`connecting`}));let n=[];if(t.connectors?.length)for(let r of t.connectors){let t;t=typeof r==`function`?e._internal.connectors.setup(r):r,n.push(t)}else n.push(...e.connectors);let r;try{r=await e.storage?.getItem(`recentConnectorId`)}catch{}let i={};for(let[,t]of e.state.connections)i[t.connector.id]=1;r&&(i[r]=0);let a=Object.keys(i).length>0?[...n].sort((e,t)=>(i[e.id]??10)-(i[t.id]??10)):n,o=!1,s=[],c=[];for(let t of a){let n=await t.getProvider().catch(()=>void 0);if(!n||c.some(e=>e===n)||!await t.isAuthorized())continue;let r=await t.connect({isReconnecting:!0}).catch(()=>null);r&&(t.emitter.off(`connect`,e._internal.events.connect),t.emitter.on(`change`,e._internal.events.change),t.emitter.on(`disconnect`,e._internal.events.disconnect),e.setState(e=>{let n=new Map(o?e.connections:new Map).set(t.uid,{accounts:r.accounts,chainId:r.chainId,connector:t});return{...e,current:o?e.current:t.uid,connections:n}}),s.push({accounts:r.accounts,chainId:r.chainId,connector:t}),c.push(n),o=!0)}return(e.state.status===`reconnecting`||e.state.status===`connecting`)&&(o?e.setState(e=>({...e,status:`connected`})):e.setState(e=>({...e,connections:new Map,current:null,status:`disconnected`}))),Zt=!1,s}var $t=class extends Nt{constructor(){super(`Provider not found.`),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`ProviderNotFoundError`})}};function en(e,t){let{onChange:n}=t;return e.subscribe(e=>e.chainId,n)}function A(e,t){let{onChange:n}=t;return e.subscribe(()=>Gt(e),n,{equalityFn(e,t){let{connector:n,...r}=e,{connector:i,...a}=t;return Wt(r,a)&&n?.id===i?.id&&n?.uid===i?.uid}})}function tn(e,t){let{onChange:n}=t;return e.subscribe(()=>qt(e),n,{equalityFn:Wt})}function nn(e,t){let{onChange:n}=t;return e._internal.connectors.subscribe((e,t)=>{n(Object.values(e),t)})}function rn(e){return e}an.type=`injected`;function an(e={}){let{shimDisconnect:t=!0,unstable_shimAsyncInject:n}=e;function r(){let t=e.target;if(typeof t==`function`){let e=t();if(e)return e}return typeof t==`object`?t:typeof t==`string`?{...on[t]??{id:t,name:`${t[0].toUpperCase()}${t.slice(1)}`,provider:`is${t[0].toUpperCase()}${t.slice(1)}`}}:{id:`injected`,name:`Injected`,provider(e){return e?.ethereum}}}let i,a,o,s;return rn(c=>({get icon(){return r().icon},get id(){return r().id},get name(){return r().name},type:an.type,async setup(){let t=await this.getProvider();t?.on&&e.target&&(o||(o=this.onConnect.bind(this),t.on(`connect`,o)),i||(i=this.onAccountsChanged.bind(this),t.on(`accountsChanged`,i)))},async connect({chainId:n,isReconnecting:r,withCapabilities:l}={}){let u=await this.getProvider();if(!u)throw new $t;let d=[];if(r)d=await this.getAccounts().catch(()=>[]);else if(t)try{d=(await u.request({method:`wallet_requestPermissions`,params:[{eth_accounts:{}}]}))[0]?.caveats?.[0]?.value?.map(e=>f(e)),d.length>0&&(d=await this.getAccounts())}catch(e){let t=e;if(t.code===g.code)throw new g(t);if(t.code===p.code)throw t}try{!d?.length&&!r&&(d=(await u.request({method:`eth_requestAccounts`})).map(e=>f(e))),o&&=(u.removeListener(`connect`,o),void 0),i||(i=this.onAccountsChanged.bind(this),u.on(`accountsChanged`,i)),a||(a=this.onChainChanged.bind(this),u.on(`chainChanged`,a)),s||(s=this.onDisconnect.bind(this),u.on(`disconnect`,s));let p=await this.getChainId();return n&&p!==n&&(p=(await this.switchChain({chainId:n}).catch(e=>{if(e.code===g.code)throw e;return{id:p}}))?.id??p),t&&await c.storage?.removeItem(`${this.id}.disconnected`),e.target||await c.storage?.setItem(`injected.connected`,!0),{accounts:l?d.map(e=>({address:e,capabilities:{}})):d,chainId:p}}catch(e){let t=e;throw t.code===g.code?new g(t):t.code===p.code?new p(t):t}},async disconnect(){let n=await this.getProvider();if(!n)throw new $t;a&&=(n.removeListener(`chainChanged`,a),void 0),s&&=(n.removeListener(`disconnect`,s),void 0),o||(o=this.onConnect.bind(this),n.on(`connect`,o));try{await ne(()=>n.request({method:`wallet_revokePermissions`,params:[{eth_accounts:{}}]}),{timeout:100})}catch{}t&&await c.storage?.setItem(`${this.id}.disconnected`,!0),e.target||await c.storage?.removeItem(`injected.connected`)},async getAccounts(){let e=await this.getProvider();if(!e)throw new $t;return(await e.request({method:`eth_accounts`})).map(e=>f(e))},async getChainId(){let e=await this.getProvider();if(!e)throw new $t;let t=await e.request({method:`eth_chainId`});return Number(t)},async getProvider(){if(typeof window>`u`)return;let e,t=r();return e=typeof t.provider==`function`?t.provider(window):typeof t.provider==`string`?sn(window,t.provider):t.provider,e&&!e.removeListener&&(`off`in e&&typeof e.off==`function`?e.removeListener=e.off:e.removeListener=()=>{}),e},async isAuthorized(){try{if(t&&await c.storage?.getItem(`${this.id}.disconnected`)||!e.target&&!await c.storage?.getItem(`injected.connected`))return!1;if(!await this.getProvider()){if(n!==void 0&&n!==!1){let e=async()=>(typeof window<`u`&&window.removeEventListener(`ethereum#initialized`,e),!!await this.getProvider()),t=typeof n==`number`?n:1e3;if(await Promise.race([...typeof window<`u`?[new Promise(t=>window.addEventListener(`ethereum#initialized`,()=>t(e()),{once:!0}))]:[],new Promise(n=>setTimeout(()=>n(e()),t))]))return!0}throw new $t}return!!(await te(()=>this.getAccounts())).length}catch{return!1}},async switchChain({addEthereumChainParameter:e,chainId:t}){let n=await this.getProvider();if(!n)throw new $t;let r=c.chains.find(e=>e.id===t);if(!r)throw new h(new Pt);let i=new Promise(e=>{let n=(r=>{`chainId`in r&&r.chainId===t&&(c.emitter.off(`change`,n),e())});c.emitter.on(`change`,n)});try{return await Promise.all([n.request({method:`wallet_switchEthereumChain`,params:[{chainId:d(t)}]}).then(async()=>{await this.getChainId()===t&&c.emitter.emit(`change`,{chainId:t})}),i]),r}catch(a){let o=a;if(o.code===4902||o?.data?.originalError?.code===4902)try{let{default:a,...o}=r.blockExplorers??{},s;e?.blockExplorerUrls?s=e.blockExplorerUrls:a&&(s=[a.url,...Object.values(o).map(e=>e.url)]);let l;l=e?.rpcUrls?.length?e.rpcUrls:[r.rpcUrls.default?.http[0]??``];let u={blockExplorerUrls:s,chainId:d(t),chainName:e?.chainName??r.name,iconUrls:e?.iconUrls,nativeCurrency:e?.nativeCurrency??r.nativeCurrency,rpcUrls:l};return await Promise.all([n.request({method:`wallet_addEthereumChain`,params:[u]}).then(async()=>{if(await this.getChainId()===t)c.emitter.emit(`change`,{chainId:t});else throw new g(Error(`User rejected switch after adding network.`))}),i]),r}catch(e){throw new g(e)}throw o.code===g.code?new g(o):new h(o)}},async onAccountsChanged(e){if(e.length===0)this.onDisconnect();else if(c.emitter.listenerCount(`connect`)){let e=(await this.getChainId()).toString();this.onConnect({chainId:e}),t&&await c.storage?.removeItem(`${this.id}.disconnected`)}else c.emitter.emit(`change`,{accounts:e.map(e=>f(e))})},onChainChanged(e){let t=Number(e);c.emitter.emit(`change`,{chainId:t})},async onConnect(e){let t=await this.getAccounts();if(t.length===0)return;let n=Number(e.chainId);c.emitter.emit(`connect`,{accounts:t,chainId:n});let r=await this.getProvider();r&&(o&&=(r.removeListener(`connect`,o),void 0),i||(i=this.onAccountsChanged.bind(this),r.on(`accountsChanged`,i)),a||(a=this.onChainChanged.bind(this),r.on(`chainChanged`,a)),s||(s=this.onDisconnect.bind(this),r.on(`disconnect`,s)))},async onDisconnect(e){let t=await this.getProvider();e&&e.code===1013&&t&&(await this.getAccounts()).length||(c.emitter.emit(`disconnect`),t&&(a&&=(t.removeListener(`chainChanged`,a),void 0),s&&=(t.removeListener(`disconnect`,s),void 0),o||(o=this.onConnect.bind(this),t.on(`connect`,o))))}}))}var on={coinbaseWallet:{id:`coinbaseWallet`,name:`Coinbase Wallet`,provider(e){return e?.coinbaseWalletExtension?e.coinbaseWalletExtension:sn(e,`isCoinbaseWallet`)}},metaMask:{id:`metaMask`,name:`MetaMask`,provider(e){return sn(e,e=>{if(!e.isMetaMask||e.isBraveWallet&&!e._events&&!e._state)return!1;for(let t of[`isApexWallet`,`isAvalanche`,`isBitKeep`,`isBlockWallet`,`isKuCoinWallet`,`isMathWallet`,`isOkxWallet`,`isOKExWallet`,`isOneInchIOSWallet`,`isOneInchAndroidWallet`,`isOpera`,`isPhantom`,`isPortal`,`isRabby`,`isTokenPocket`,`isTokenary`,`isUniswapWallet`,`isZerion`])if(e[t])return!1;return!0})}},phantom:{id:`phantom`,name:`Phantom`,provider(e){return e?.phantom?.ethereum?e.phantom?.ethereum:sn(e,`isPhantom`)}}};function sn(e,t){function n(e){return typeof t==`function`?t(e):typeof t!=`string`||e[t]}let r=e.ethereum;if(r?.providers)return r.providers.find(e=>n(e));if(r&&n(r))return r}var cn=e=>(t,n,r)=>{let i=r.subscribe;return r.subscribe=(e,t,n)=>{let a=e;if(t){let i=n?.equalityFn||Object.is,o=e(r.getState());a=n=>{let r=e(n);if(!i(o,r)){let e=o;t(o=r,e)}},n?.fireImmediately&&t(o,o)}return i(a)},e(t,n,r)};function ln(e,t){let n;try{n=e()}catch{return}return{getItem:e=>{let r=e=>e===null?null:JSON.parse(e,t?.reviver),i=n.getItem(e)??null;return i instanceof Promise?i.then(r):r(i)},setItem:(e,r)=>n.setItem(e,JSON.stringify(r,t?.replacer)),removeItem:e=>n.removeItem(e)}}var un=e=>t=>{try{let n=e(t);return n instanceof Promise?n:{then(e){return un(e)(n)},catch(e){return this}}}catch(e){return{then(e){return this},catch(t){return un(t)(e)}}}},dn=(e,t)=>(n,r,i)=>{let a={storage:ln(()=>localStorage),partialize:e=>e,version:0,merge:(e,t)=>({...t,...e}),...t},o=!1,s=new Set,c=new Set,l=a.storage;if(!l)return e((...e)=>{console.warn(`[zustand persist middleware] Unable to update item '${a.name}', the given storage is currently unavailable.`),n(...e)},r,i);let u=()=>{let e=a.partialize({...r()});return l.setItem(a.name,{state:e,version:a.version})},d=i.setState;i.setState=(e,t)=>{d(e,t),u()};let f=e((...e)=>{n(...e),u()},r,i);i.getInitialState=()=>f;let p,m=()=>{if(!l)return;o=!1,s.forEach(e=>e(r()??f));let e=a.onRehydrateStorage?.call(a,r()??f)||void 0;return un(l.getItem.bind(l))(a.name).then(e=>{if(e){if(typeof e.version==`number`&&e.version!==a.version){if(a.migrate)return[!0,a.migrate(e.state,e.version)];console.error(`State loaded from storage couldn't be migrated since no migrate function was provided`)}else return[!1,e.state]}return[!1,void 0]}).then(e=>{let[t,i]=e;if(p=a.merge(i,r()??f),n(p,!0),t)return u()}).then(()=>{e?.(p,void 0),p=r(),o=!0,c.forEach(e=>e(p))}).catch(t=>{e?.(void 0,t)})};return i.persist={setOptions:e=>{a={...a,...e},e.storage&&(l=e.storage)},clearStorage:()=>{l?.removeItem(a.name)},getOptions:()=>a,rehydrate:()=>m(),hasHydrated:()=>o,onHydrate:e=>(s.add(e),()=>{s.delete(e)}),onFinishHydration:e=>(c.add(e),()=>{c.delete(e)})},a.skipHydration||m(),p||f},fn=e=>{let t,n=new Set,r=(e,r)=>{let i=typeof e==`function`?e(t):e;if(!Object.is(i,t)){let e=t;t=r??(typeof i!=`object`||!i)?i:Object.assign({},t,i),n.forEach(n=>n(t,e))}},i=()=>t,a={setState:r,getState:i,getInitialState:()=>o,subscribe:e=>(n.add(e),()=>n.delete(e))},o=t=e(r,i,a);return a},pn=e=>e?fn(e):fn,mn=e(t(((e,t)=>{var n=Object.prototype.hasOwnProperty,r=`~`;function i(){}Object.create&&(i.prototype=Object.create(null),new i().__proto__||(r=!1));function a(e,t,n){this.fn=e,this.context=t,this.once=n||!1}function o(e,t,n,i,o){if(typeof n!=`function`)throw TypeError(`The listener must be a function`);var s=new a(n,i||e,o),c=r?r+t:t;return e._events[c]?e._events[c].fn?e._events[c]=[e._events[c],s]:e._events[c].push(s):(e._events[c]=s,e._eventsCount++),e}function s(e,t){--e._eventsCount===0?e._events=new i:delete e._events[t]}function c(){this._events=new i,this._eventsCount=0}c.prototype.eventNames=function(){var e=[],t,i;if(this._eventsCount===0)return e;for(i in t=this._events)n.call(t,i)&&e.push(r?i.slice(1):i);return Object.getOwnPropertySymbols?e.concat(Object.getOwnPropertySymbols(t)):e},c.prototype.listeners=function(e){var t=r?r+e:e,n=this._events[t];if(!n)return[];if(n.fn)return[n.fn];for(var i=0,a=n.length,o=Array(a);i<a;i++)o[i]=n[i].fn;return o},c.prototype.listenerCount=function(e){var t=r?r+e:e,n=this._events[t];return n?n.fn?1:n.length:0},c.prototype.emit=function(e,t,n,i,a,o){var s=r?r+e:e;if(!this._events[s])return!1;var c=this._events[s],l=arguments.length,u,d;if(c.fn){switch(c.once&&this.removeListener(e,c.fn,void 0,!0),l){case 1:return c.fn.call(c.context),!0;case 2:return c.fn.call(c.context,t),!0;case 3:return c.fn.call(c.context,t,n),!0;case 4:return c.fn.call(c.context,t,n,i),!0;case 5:return c.fn.call(c.context,t,n,i,a),!0;case 6:return c.fn.call(c.context,t,n,i,a,o),!0}for(d=1,u=Array(l-1);d<l;d++)u[d-1]=arguments[d];c.fn.apply(c.context,u)}else{var f=c.length,p;for(d=0;d<f;d++)switch(c[d].once&&this.removeListener(e,c[d].fn,void 0,!0),l){case 1:c[d].fn.call(c[d].context);break;case 2:c[d].fn.call(c[d].context,t);break;case 3:c[d].fn.call(c[d].context,t,n);break;case 4:c[d].fn.call(c[d].context,t,n,i);break;default:if(!u)for(p=1,u=Array(l-1);p<l;p++)u[p-1]=arguments[p];c[d].fn.apply(c[d].context,u)}}return!0},c.prototype.on=function(e,t,n){return o(this,e,t,n,!1)},c.prototype.once=function(e,t,n){return o(this,e,t,n,!0)},c.prototype.removeListener=function(e,t,n,i){var a=r?r+e:e;if(!this._events[a])return this;if(!t)return s(this,a),this;var o=this._events[a];if(o.fn)o.fn===t&&(!i||o.once)&&(!n||o.context===n)&&s(this,a);else{for(var c=0,l=[],u=o.length;c<u;c++)(o[c].fn!==t||i&&!o[c].once||n&&o[c].context!==n)&&l.push(o[c]);l.length?this._events[a]=l.length===1?l[0]:l:s(this,a)}return this},c.prototype.removeAllListeners=function(e){var t;return e?(t=r?r+e:e,this._events[t]&&s(this,t)):(this._events=new i,this._eventsCount=0),this},c.prototype.off=c.prototype.removeListener,c.prototype.addListener=c.prototype.on,c.prefixed=r,c.EventEmitter=c,t!==void 0&&(t.exports=c)}))(),1),hn=class{constructor(e){Object.defineProperty(this,"uid",{enumerable:!0,configurable:!0,writable:!0,value:e}),Object.defineProperty(this,"_emitter",{enumerable:!0,configurable:!0,writable:!0,value:new mn.default})}on(e,t){this._emitter.on(e,t)}once(e,t){this._emitter.once(e,t)}off(e,t){this._emitter.off(e,t)}emit(e,...t){let n=t[0];this._emitter.emit(e,{uid:this.uid,...n})}listenerCount(e){return this._emitter.listenerCount(e)}};function gn(e){return new hn(e)}function _n(e,t){return JSON.parse(e,(e,n)=>{let r=n;return r?.__type===`bigint`&&(r=BigInt(r.value)),r?.__type===`Map`&&(r=new Map(r.value)),t?.(e,r)??r})}function vn(e,t){return e.slice(0,t).join(`.`)||`.`}function yn(e,t){let{length:n}=e;for(let r=0;r<n;++r)if(e[r]===t)return r+1;return 0}function bn(e,t){let n=typeof e==`function`,r=typeof t==`function`,i=[],a=[];return function(o,s){if(typeof s==`object`){if(i.length){let e=yn(i,this);e===0?i[i.length]=this:(i.splice(e),a.splice(e)),a[a.length]=o;let n=yn(i,s);if(n!==0)return r?t.call(this,o,s,vn(a,n)):`[ref=${vn(a,n)}]`}else i[0]=s,a[0]=o}return n?e.call(this,o,s):s}}function xn(e,t,n,r){return JSON.stringify(e,bn((e,n)=>{let r=n;return typeof r==`bigint`&&(r={__type:`bigint`,value:n.toString()}),r instanceof Map&&(r={__type:`Map`,value:Array.from(n.entries())}),t?.(e,r)??r},r),n??void 0)}function Sn(e){let{deserialize:t=_n,key:n=`wagmi`,serialize:r=xn,storage:i=Cn}=e;function a(e){return e instanceof Promise?e.then(e=>e).catch(()=>null):e}return{...i,key:n,async getItem(e,r){let o=await a(i.getItem(`${n}.${e}`));return o?t(o)??null:r??null},async setItem(e,t){let o=`${n}.${e}`;t===null?await a(i.removeItem(o)):await a(i.setItem(o,r(t)))},async removeItem(e){await a(i.removeItem(`${n}.${e}`))}}}var Cn={getItem:()=>null,setItem:()=>{},removeItem:()=>{}};function wn(){let e=typeof window<`u`&&window.localStorage?window.localStorage:Cn;return{getItem(t){return e.getItem(t)},removeItem(t){e.removeItem(t)},setItem(t,n){try{e.setItem(t,n)}catch{}}}}var Tn=256,En=Tn,Dn;function On(e=11){if(!Dn||En+e>Tn*2){Dn=``,En=0;for(let e=0;e<Tn;e++)Dn+=(256+Math.random()*256|0).toString(16).substring(1)}return Dn.substring(En,En+++e)}function kn(e){let{multiInjectedProviderDiscovery:t=!0,storage:n=Sn({storage:wn()}),syncConnectedChain:r=!0,ssr:i=!1,...a}=e,o=typeof window<`u`&&t?ae():void 0,s=pn(()=>a.chains),c=pn(()=>{let e=[],t=new Set;for(let n of a.connectors??[]){let r=l(n);if(e.push(r),!i&&r.rdns){let e=typeof r.rdns==`string`?[r.rdns]:r.rdns;for(let n of e)t.add(n)}}if(!i&&o){let n=o.getProviders();for(let r of n)t.has(r.info.rdns)||e.push(l(u(r)))}return e});function l(e){let t=gn(On()),r,i={...e({emitter:t,chains:s.getState(),get providers(){if(!o||!r)return[];let e=typeof r==`string`?[r]:r,t=o.getProviders();return e.flatMap(e=>t.filter(t=>t.info.rdns===e))},storage:n,transports:a.transports}),emitter:t,uid:t.uid};return r=i.rdns,t.on(`connect`,y),i.setup?.(),i}function u(e){let{info:t}=e,n=e.provider;return an({target:{...t,id:t.rdns,provider:n}})}let d=new Map;function f(e={}){let t=e.chainId??g.getState().chainId,n=s.getState().find(e=>e.id===t);if(e.chainId&&!n)throw new Pt;{let e=d.get(g.getState().chainId);if(e&&!n)return e;if(!n)throw new Pt}{let e=d.get(t);if(e)return e}let r;if(a.client)r=a.client({chain:n});else{let e=n.id,t=s.getState().map(e=>e.id),i={},o=Object.entries(a);for(let[n,r]of o)if(n!==`chains`&&n!==`client`&&n!==`connectors`&&n!==`transports`){if(typeof r==`object`){if(e in r)i[n]=r[e];else{if(t.some(e=>e in r))continue;i[n]=r}}else i[n]=r}r=ee({...i,chain:n,batch:i.batch??{multicall:!0},transport:t=>a.transports[e]({...t,connectors:c})})}return d.set(t,r),r}function p(){return{chainId:s.getState()[0].id,connections:new Map,current:null,status:`disconnected`}}let m,h=`0.0.0-canary-`;m=`3.6.5`.startsWith(h)?Number.parseInt(kt.replace(h,``),10):Number.parseInt(`3.6.5`.split(`.`)[0]??`0`,10);let g=pn(cn(n?dn(p,{migrate(e,t){if(t===m)return e;let n=p(),r=_(e,n.chainId);return{...n,chainId:r}},name:`store`,partialize(e){return{connections:{__type:`Map`,value:Array.from(e.connections.entries()).map(([e,t])=>{let{id:n,name:r,type:i,uid:a}=t.connector,o={id:n,name:r,type:i,uid:a};return[e,{...t,connector:o}]})},chainId:e.chainId,current:e.current}},merge(e,t){typeof e==`object`&&e&&`status`in e&&delete e.status;let n=_(e,t.chainId);return{...t,...e,chainId:n}},skipHydration:i,storage:n,version:m}):p));g.setState(p());function _(e,t){return e&&typeof e==`object`&&`chainId`in e&&typeof e.chainId==`number`&&s.getState().some(t=>t.id===e.chainId)?e.chainId:t}r&&g.subscribe(({connections:e,current:t})=>t?e.get(t)?.chainId:void 0,e=>{if(s.getState().some(t=>t.id===e))return g.setState(t=>({...t,chainId:e??t.chainId}))}),o?.subscribe(e=>{let t=new Set,r=new Set;for(let e of c.getState())if(t.add(e.id),e.rdns){let t=typeof e.rdns==`string`?[e.rdns]:e.rdns;for(let e of t)r.add(e)}let i=[];for(let n of e){if(r.has(n.info.rdns))continue;let e=l(u(n));t.has(e.id)||i.push(e)}(!n||g.persist.hasHydrated())&&c.setState(e=>[...e,...i],!0)});function v(e){g.setState(t=>{let n=t.connections.get(e.uid);return n?{...t,connections:new Map(t.connections).set(e.uid,{accounts:e.accounts??n.accounts,chainId:e.chainId??n.chainId,connector:n.connector})}:t})}function y(e){g.getState().status!==`connecting`&&g.getState().status!==`reconnecting`&&g.setState(t=>{let n=c.getState().find(t=>t.uid===e.uid);return n?(n.emitter.listenerCount(`connect`)&&n.emitter.off(`connect`,v),n.emitter.listenerCount(`change`)||n.emitter.on(`change`,v),n.emitter.listenerCount(`disconnect`)||n.emitter.on(`disconnect`,b),{...t,connections:new Map(t.connections).set(e.uid,{accounts:e.accounts,chainId:e.chainId,connector:n}),current:e.uid,status:`connected`}):t})}function b(e){g.setState(t=>{let n=t.connections.get(e.uid);if(n){let e=n.connector;e.emitter.listenerCount(`change`)&&n.connector.emitter.off(`change`,v),e.emitter.listenerCount(`disconnect`)&&n.connector.emitter.off(`disconnect`,b),e.emitter.listenerCount(`connect`)||n.connector.emitter.on(`connect`,y)}if(t.connections.delete(e.uid),t.connections.size===0)return{...t,connections:new Map,current:null,status:`disconnected`};let r=t.connections.values().next().value;return{...t,connections:new Map(t.connections),current:r.connector.uid}})}return{get chains(){return s.getState()},get connectors(){return c.getState()},storage:n,getClient:f,get state(){return g.getState()},setState(e){let t;t=typeof e==`function`?e(g.getState()):e;let n=p();typeof t!=`object`&&(t=n),Object.keys(n).some(e=>!(e in t))&&(t=n),g.setState(t,!0)},subscribe(e,t,n){return g.subscribe(e,t,n?{...n,fireImmediately:n.emitImmediately}:void 0)},_internal:{mipd:o,async revalidate(){let e=g.getState(),t=e.connections,n=e.current;for(let[,e]of t){let r=e.connector;r.isAuthorized&&await r.isAuthorized()||(t.delete(r.uid),n===r.uid&&(n=null))}g.setState(e=>({...e,connections:t,current:n}))},store:g,ssr:!!i,syncConnectedChain:r,transports:a.transports,chains:{setState(e){let t=typeof e==`function`?e(s.getState()):e;if(t.length!==0)return s.setState(t,!0)},subscribe(e){return s.subscribe(e)}},connectors:{providerDetailToConnector:u,setup:l,setState(e){return c.setState(typeof e==`function`?e(c.getState()):e,!0)},subscribe(e){return c.subscribe(e)}},events:{change:v,connect:y,disconnect:b}}}}function An(e,t){let{initialState:n,reconnectOnMount:r}=t;return n&&!e._internal.store.persist.hasHydrated()&&e.setState({...n,chainId:e.chains.some(e=>e.id===n.chainId)?n.chainId:e.chains[0].id,connections:r?n.connections:new Map,status:r?`reconnecting`:`disconnected`}),{async onMount(){e._internal.ssr&&(await e._internal.store.persist.rehydrate(),e._internal.mipd&&e._internal.connectors.setState(t=>{let n=new Set;for(let e of t??[])if(e.rdns){let t=Array.isArray(e.rdns)?e.rdns:[e.rdns];for(let e of t)n.add(e)}let r=[],i=e._internal.mipd?.getProviders()??[];for(let t of i){if(n.has(t.info.rdns))continue;let i=e._internal.connectors.providerDetailToConnector(t),a=e._internal.connectors.setup(i);r.push(a)}return[...t,...r]})),r?Qt(e):e.storage&&e.setState(e=>({...e,connections:new Map}))}}}function jn(e){let{children:t,config:n,initialState:r,reconnectOnMount:i=!0}=e,{onMount:a}=An(n,{initialState:r,reconnectOnMount:i});n._internal.ssr||a();let o=(0,S.useRef)(!0);return(0,S.useEffect)(()=>{if(o.current&&n._internal.ssr)return a(),()=>{o.current=!1}},[]),t}var Mn=(0,S.createContext)(void 0);function Nn(e){let{children:t,config:n}=e,r={value:n};return(0,S.createElement)(jn,e,(0,S.createElement)(Mn.Provider,r,t))}var Pn=`3.7.7`,Fn=()=>`wagmi@${Pn}`,In=class extends Nt{constructor(){super(...arguments),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`WagmiError`})}get docsBaseUrl(){return`https://wagmi.sh/react`}get version(){return Fn()}},Ln=class extends In{constructor(){super("`useConfig` must be used within `WagmiProvider`.",{docsPath:`/api/WagmiProvider`}),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`WagmiProviderNotFoundError`})}};function Rn(e){return JSON.stringify(e,(e,t)=>zn(t)?Object.keys(t).sort().reduce((e,n)=>(e[n]=t[n],e),{}):typeof t==`bigint`?t.toString():t)}function zn(e){if(!Bn(e))return!1;let t=e.constructor;if(t===void 0)return!0;let n=t.prototype;return!(!Bn(n)||!n.hasOwnProperty(`isPrototypeOf`))}function Bn(e){return Object.prototype.toString.call(e)===`[object Object]`}function Vn(e){let{_defaulted:t,behavior:n,gcTime:r,initialData:i,initialDataUpdatedAt:a,maxPages:o,meta:s,networkMode:c,queryFn:l,queryHash:u,queryKey:d,queryKeyHashFn:f,retry:p,retryDelay:m,structuralSharing:h,getPreviousPageParam:g,getNextPageParam:_,initialPageParam:v,_optimisticResults:y,enabled:b,notifyOnChangeProps:ee,placeholderData:te,refetchInterval:ne,refetchIntervalInBackground:re,refetchOnMount:ie,refetchOnReconnect:x,refetchOnWindowFocus:ae,retryOnMount:oe,select:se,staleTime:ce,suspense:le,throwOnError:S,abi:C,config:ue,connector:de,query:fe,watch:pe,...me}=e;return de?{connectorUid:de?.uid,...me}:me}function Hn(e,t={}){return{...t.mutation,mutationFn:async t=>Bt(e,t),mutationKey:[`connect`]}}function Un(e,t={}){return{...t.mutation,mutationFn:async t=>Ht(e,t),mutationKey:[`disconnect`]}}function Wn(e,t={}){return{...t.query,enabled:!!(t.connector?.getProvider&&(t.query?.enabled??!0)),gcTime:0,queryFn:async n=>{if(!t.connector?.getProvider)throw Error(`connector is required`);let[,{connectorUid:r,scopeKey:i,...a}]=n.queryKey;return Xt(e,{...a,connector:t.connector})},queryKey:Gn(t),staleTime:1/0}}function Gn(e={}){return[`walletClient`,Vn(e)]}function Kn(e){let t=Dt({...e,queryKeyHashFn:Rn});return t.queryKey=e.queryKey,t}function qn(e={}){let t=e.config??(0,S.useContext)(Mn);if(!t)throw new Ln;return t}function Jn(e={}){let t=qn(e);return(0,S.useSyncExternalStore)(e=>en(t,{onChange:e}),()=>Ut(t),()=>Ut(t))}var Yn=t((e=>{var t=n();function r(e,t){return e===t&&(e!==0||1/e==1/t)||e!==e&&t!==t}var i=typeof Object.is==`function`?Object.is:r,a=t.useState,o=t.useEffect,s=t.useLayoutEffect,c=t.useDebugValue;function l(e,t){var n=t(),r=a({inst:{value:n,getSnapshot:t}}),i=r[0].inst,l=r[1];return s(function(){i.value=n,i.getSnapshot=t,u(i)&&l({inst:i})},[e,n,t]),o(function(){return u(i)&&l({inst:i}),e(function(){u(i)&&l({inst:i})})},[e]),c(n),n}function u(e){var t=e.getSnapshot;e=e.value;try{var n=t();return!i(e,n)}catch{return!0}}function d(e,t){return t()}var f=typeof window>`u`||window.document===void 0||window.document.createElement===void 0?d:l;e.useSyncExternalStore=t.useSyncExternalStore===void 0?f:t.useSyncExternalStore})),Xn=t(((e,t)=>{t.exports=Yn()})),Zn=t((e=>{var t=n(),r=Xn();function i(e,t){return e===t&&(e!==0||1/e==1/t)||e!==e&&t!==t}var a=typeof Object.is==`function`?Object.is:i,o=r.useSyncExternalStore,s=t.useRef,c=t.useEffect,l=t.useMemo,u=t.useDebugValue;e.useSyncExternalStoreWithSelector=function(e,t,n,r,i){var d=s(null);if(d.current===null){var f={hasValue:!1,value:null};d.current=f}else f=d.current;d=l(function(){function e(e){if(!o){if(o=!0,s=e,e=r(e),i!==void 0&&f.hasValue){var t=f.value;if(i(t,e))return c=t}return c=e}if(t=c,a(s,e))return t;var n=r(e);return i!==void 0&&i(t,n)?(s=e,t):(s=e,c=n)}var o=!1,s,c,l=n===void 0?null:n;return[function(){return e(t())},l===null?void 0:function(){return e(l())}]},[t,n,r,i]);var p=o(e,d[0],d[1]);return c(function(){f.hasValue=!0,f.value=p},[p]),u(p),p}})),Qn=t(((e,t)=>{t.exports=Zn()}))(),$n=e=>typeof e==`object`&&!Array.isArray(e);function er(e,t,n=t,r=Wt){let i=(0,S.useRef)([]),a=(0,Qn.useSyncExternalStoreWithSelector)(e,t,n,e=>e,(e,t)=>{if($n(e)&&$n(t)&&i.current.length){for(let n of i.current)if(!r(e[n],t[n]))return!1;return!0}return r(e,t)});return(0,S.useMemo)(()=>{if($n(a)){let e={...a},t={};for(let[n,r]of Object.entries(e))t={...t,[n]:{configurable:!1,enumerable:!0,get:()=>(i.current.includes(n)||i.current.push(n),r)}};return Object.defineProperties(e,t),e}return a},[a])}function tr(e={}){let t=qn(e);return er(e=>A(t,{onChange:e}),()=>Gt(t))}function nr(e={}){let t=qn(e);return(0,S.useSyncExternalStore)(e=>nn(t,{onChange:e}),()=>Yt(t),()=>Yt(t))}function rr(e={}){let t=qn(e),n=Ot(Hn(t,e));return(0,S.useEffect)(()=>t.subscribe(({status:e})=>e,(e,t)=>{t===`connected`&&e===`disconnected`&&n.reset()}),[t,n.reset]),{...n,connect:n.mutate,connectAsync:n.mutateAsync,connectors:nr({config:t})}}function ir(e={}){let t=qn(e);return(0,S.useSyncExternalStore)(e=>tn(t,{onChange:e}),()=>qt(t),()=>qt(t))}function ar(e={}){let t=qn(e),n=Ot(Un(t,e));return{...n,connectors:ir({config:t}).map(e=>e.connector),disconnect:n.mutate,disconnectAsync:n.mutateAsync}}function or(e={}){let t=qn(e),n=Jn({config:t}),{address:r,connector:i}=tr({config:t}),a=Wn(t,{...e,chainId:e.chainId??n,connector:e.connector??i,query:e.query}),o=(0,S.useRef)(r),s=de();return(0,S.useEffect)(()=>{let e=o.current;!r&&e?(s.removeQueries({queryKey:a.queryKey}),o.current=void 0):r!==e&&(s.invalidateQueries({queryKey:a.queryKey}),o.current=r)},[r,s]),Kn(a)}sr.type=`coinbaseWallet`;function sr(e={}){let t,n,r,i;return rn(a=>({id:`coinbaseWalletSDK`,name:`Coinbase Wallet`,rdns:`com.coinbase.wallet`,type:sr.type,async connect({chainId:e,withCapabilities:t,...a}={}){try{let o=await this.getProvider(),s=(await o.request({method:`eth_requestAccounts`,params:`instantOnboarding`in a&&a.instantOnboarding?[{onboarding:`instant`}]:[]})).map(e=>f(e));n||(n=this.onAccountsChanged.bind(this),o.on(`accountsChanged`,n)),r||(r=this.onChainChanged.bind(this),o.on(`chainChanged`,r)),i||(i=this.onDisconnect.bind(this),o.on(`disconnect`,i));let c=await this.getChainId();return e&&c!==e&&(c=(await this.switchChain({chainId:e}).catch(e=>{if(e.code===g.code)throw e;return{id:c}}))?.id??c),{accounts:t?s.map(e=>({address:e,capabilities:{}})):s,chainId:c}}catch(e){throw/(user closed modal|accounts received is empty|user denied account|request rejected)/i.test(e.message)?new g(e):e}},async disconnect(){let e=await this.getProvider();n&&=(e.removeListener(`accountsChanged`,n),void 0),r&&=(e.removeListener(`chainChanged`,r),void 0),i&&=(e.removeListener(`disconnect`,i),void 0),e.disconnect(),e.close?.()},async getAccounts(){return(await(await this.getProvider()).request({method:`eth_accounts`})).map(e=>f(e))},async getChainId(){let e=await(await this.getProvider()).request({method:`eth_chainId`});return Number(e)},async getProvider(){if(!t)try{let{createCoinbaseWalletSDK:n}=await s(async()=>{let{createCoinbaseWalletSDK:e}=await import(`./dist-CloxERI8.js`);return{createCoinbaseWalletSDK:e}},__vite__mapDeps([0,1,2,3]),import.meta.url);t=n({...e,appChainIds:a.chains.map(e=>e.id),preference:{options:`all`,...e.preference??{}}}).getProvider()}catch(e){throw e}return t},async isAuthorized(){try{return!!(await this.getAccounts()).length}catch{return!1}},async switchChain({addEthereumChainParameter:e,chainId:t}){let n=a.chains.find(e=>e.id===t);if(!n)throw new h(new Pt);let r=await this.getProvider();try{return await r.request({method:`wallet_switchEthereumChain`,params:[{chainId:d(n.id)}]}),n}catch(i){if(i.code===4902)try{let i;i=e?.blockExplorerUrls?e.blockExplorerUrls:n.blockExplorers?.default.url?[n.blockExplorers?.default.url]:[];let a;a=e?.rpcUrls?.length?e.rpcUrls:[n.rpcUrls.default?.http[0]??``];let o={blockExplorerUrls:i,chainId:d(t),chainName:e?.chainName??n.name,iconUrls:e?.iconUrls,nativeCurrency:e?.nativeCurrency??n.nativeCurrency,rpcUrls:a};return await r.request({method:`wallet_addEthereumChain`,params:[o]}),n}catch(e){throw new g(e)}throw new h(i)}},onAccountsChanged(e){e.length===0?this.onDisconnect():a.emitter.emit(`change`,{accounts:e.map(e=>f(e))})},onChainChanged(e){let t=Number(e);a.emitter.emit(`change`,{chainId:t})},async onDisconnect(e){a.emitter.emit(`disconnect`);let t=await this.getProvider();n&&=(t.removeListener(`accountsChanged`,n),void 0),r&&=(t.removeListener(`chainChanged`,r),void 0),i&&=(t.removeListener(`disconnect`,i),void 0)}}))}var cr=le(),j=`${deployment.contract}`,lr=`0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7`,ur=BigInt(deployment.deploymentBlock),dr=`https://etherscan.io`,fr=[`https://ethereum-rpc.publicnode.com`,`https://eth.drpc.org`],pr=v({id:1,name:`Ethereum`,nativeCurrency:{name:`Ether`,symbol:`ETH`,decimals:18},rpcUrls:{default:{http:fr}},blockExplorers:{default:{name:`Etherscan`,url:dr}}}),mr=()=>x(fr.map(e=>b(e,{timeout:12e3,retryCount:1})),{rank:!1}),M=y({chain:pr,transport:mr(),batch:{multicall:!1}}),hr=kn({chains:[pr],multiInjectedProviderDiscovery:!0,connectors:[an(),sr({appName:`IMDPot`,preference:{options:`all`}})],transports:{[pr.id]:mr()}});async function gr(){let e=await fetch(`./site-config.json`,{cache:`no-cache`});if(!e.ok)throw Error(`Could not load sign-in settings. Browser wallets are still available.`);let t=await e.json();if(!t||typeof t!=`object`||!(`privyAppId`in t)||typeof t.privyAppId!=`string`)throw Error(`Invalid sign-in settings. Browser wallets are still available.`);return{privyAppId:t.privyAppId.trim()}}var _r=roundClock,vr=parseTicketCount;function yr(e,t,n,r){if(!t)return`Entries open after the owner configures IMD.`;if(n)return`Entries are paused. Claims and eligible refunds remain available.`;if(e.status===2)return`The draw is in progress. Entries reopen in the next round.`;if(e.status===1&&r>=Number(e.endTime))return`Tickets are closed. Anyone can finalize this round.`;if(e.status>2)return`This round has ended. Refresh to load the next round.`}function br(e,t,n){return drawState(e,t)}var xr=(e,t)=>!!e&&!!t&&e.toLowerCase()===t.toLowerCase();function Sr(e,t=18,n=4){if(e===void 0)return`—`;let[r,i=``]=_(e,t).split(`.`),a=r.replace(/\B(?=(\d{3})+(?!\d))/g,`,`),o=i.slice(0,n).replace(/0+$/,``);return e>0n&&r===`0`&&!o?`< ${n===0?`1`:`0.${`0`.repeat(n-1)}1`}`:`${a}${o?`.${o}`:``}`}var Cr=(e,t=18)=>_(e,t),wr=e=>`${e.slice(0,6)}…${e.slice(-4)}`,N=e=>e===void 0?`—`:e.toLocaleString(`en-US`),Tr=e=>e===void 0?`—`:`${Number(10000n+e)/1e4}×`;function Er(e){let t=e instanceof Error?e.message:String(e);return/reject|denied|4001/i.test(t)?`Request declined in your wallet. You can try again.`:/insufficient funds/i.test(t)?`Not enough ETH for network gas. Add ETH to your wallet and try again.`:/insufficient.*balance|exceeds balance/i.test(t)?`Not enough IMD for this purchase. Choose fewer tickets.`:/RoundClosed|RoundNotEnded|UnexpectedRound/i.test(t)?`The round changed while you were here. Refresh and try again.`:/DrawNotReady/i.test(t)?`The target block is not ready. Wait for the next Ethereum blocks and refresh.`:/DrawExpired/i.test(t)?`The draw expired. Use Round tools to cancel it and claim a refund.`:/OwnableUnauthorizedAccount/i.test(t)?`Only the current contract owner can do this. Reconnect the owner wallet.`:/TokenNotConfigured|VrfNotConfigured/i.test(t)?`The game owner still needs to configure IMD.`:/EnforcedPause/i.test(t)?`The game is paused. Try again after the owner resumes entries.`:/timeout|fetch|network|HTTP|RPC/i.test(t)?`Ethereum could not be reached. Check your connection and try again.`:/revert/i.test(t)?`The contract did not accept this action. Refresh the round and check your balance before trying again.`:t.length>190?`The wallet could not complete this request. Refresh and try again.`:t}var Dr={jackpot:(0,C.jsxs)(C.Fragment,{children:[(0,C.jsx)(`path`,{d:`m12 3 3 5 6 1-4 5 1 6-6-3-6 3 1-6-4-5 6-1Z`}),(0,C.jsx)(`path`,{d:`m10 11 2 3 2-3`})]}),dashboard:(0,C.jsxs)(C.Fragment,{children:[(0,C.jsx)(`rect`,{x:`3`,y:`3`,width:`7`,height:`7`,rx:`1.5`}),(0,C.jsx)(`rect`,{x:`14`,y:`3`,width:`7`,height:`7`,rx:`1.5`}),(0,C.jsx)(`rect`,{x:`3`,y:`14`,width:`7`,height:`7`,rx:`1.5`}),(0,C.jsx)(`rect`,{x:`14`,y:`14`,width:`7`,height:`7`,rx:`1.5`})]}),activity:(0,C.jsx)(C.Fragment,{children:(0,C.jsx)(`path`,{d:`M3 12h4l3-8 4 16 3-8h4`})}),help:(0,C.jsxs)(C.Fragment,{children:[(0,C.jsx)(`circle`,{cx:`12`,cy:`12`,r:`9`}),(0,C.jsx)(`path`,{d:`M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2-3 4m.1 3h.01`})]}),arrow:(0,C.jsx)(C.Fragment,{children:(0,C.jsx)(`path`,{d:`M4 12h15m-6-6 6 6-6 6`})}),external:(0,C.jsx)(C.Fragment,{children:(0,C.jsx)(`path`,{d:`M14 4h6v6m0-6L10 14m0-10H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5`})}),wallet:(0,C.jsxs)(C.Fragment,{children:[(0,C.jsx)(`path`,{d:`M20 8V5a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15v12H5a2 2 0 0 1-2-2V6m17 6h-5v4h5`}),(0,C.jsx)(`path`,{d:`M17 14h.01`})]}),ticket:(0,C.jsxs)(C.Fragment,{children:[(0,C.jsx)(`path`,{d:`m3 8 5-5 3 3a3 3 0 0 0 4 4l6 6-5 5-6-6a3 3 0 0 0-4-4Z`}),(0,C.jsx)(`path`,{d:`m12 10 2 2m2 2 2 2`})]}),clock:(0,C.jsxs)(C.Fragment,{children:[(0,C.jsx)(`circle`,{cx:`12`,cy:`12`,r:`9`}),(0,C.jsx)(`path`,{d:`M12 7v5l3 2`})]}),flame:(0,C.jsx)(`path`,{d:`M12 3c2 5-3 6 0 10 2-1 3-3 3-5 4 4 5 7 3 10-3 4-10 4-13-1-2-4 1-7 3-9-1 4 0 5 1 6 3-3 2-7 3-11Z`}),shield:(0,C.jsxs)(C.Fragment,{children:[(0,C.jsx)(`path`,{d:`m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6Z`}),(0,C.jsx)(`path`,{d:`m8 12 3 3 5-6`})]}),trophy:(0,C.jsx)(C.Fragment,{children:(0,C.jsx)(`path`,{d:`M7 3h10v7a5 5 0 0 1-10 0Zm5 12v6m-4 0h8M7 5H3v3a4 4 0 0 0 4 4m10-7h4v3a4 4 0 0 1-4 4`})}),people:(0,C.jsxs)(C.Fragment,{children:[(0,C.jsx)(`circle`,{cx:`9`,cy:`8`,r:`3`}),(0,C.jsx)(`path`,{d:`M3 21v-3a6 6 0 0 1 12 0v3m2-16a3 3 0 0 1 0 6m1 4a5 5 0 0 1 3 4v2`})]}),refresh:(0,C.jsx)(C.Fragment,{children:(0,C.jsx)(`path`,{d:`M20 7v5h-5M4 17v-5h5m-4-4a8 8 0 0 1 13-3l2 3M4 16l2 3a8 8 0 0 0 13-3`})}),chevron:(0,C.jsx)(`path`,{d:`m8 10 4 4 4-4`}),close:(0,C.jsx)(`path`,{d:`m6 6 12 12M6 18 18 6`}),check:(0,C.jsx)(`path`,{d:`m5 12 4 4L19 6`}),lock:(0,C.jsxs)(C.Fragment,{children:[(0,C.jsx)(`rect`,{x:`5`,y:`10`,width:`14`,height:`11`,rx:`2`}),(0,C.jsx)(`path`,{d:`M8 10V7a4 4 0 0 1 8 0v3m-4 4v3`})]}),bolt:(0,C.jsx)(`path`,{d:`m13 2-9 12h7l-1 8 10-13h-8Z`}),minus:(0,C.jsx)(`path`,{d:`M5 12h14`}),plus:(0,C.jsx)(`path`,{d:`M5 12h14M12 5v14`}),ethereum:(0,C.jsx)(C.Fragment,{children:(0,C.jsx)(`path`,{d:`m12 2 6 10-6 4-6-4 6-10Zm-6 12 6 8 6-8m-6-12v14`})}),info:(0,C.jsxs)(C.Fragment,{children:[(0,C.jsx)(`circle`,{cx:`12`,cy:`12`,r:`9`}),(0,C.jsx)(`path`,{d:`M12 11v6m0-10h.01`})]}),coin:(0,C.jsxs)(C.Fragment,{children:[(0,C.jsx)(`circle`,{cx:`12`,cy:`12`,r:`9`}),(0,C.jsx)(`path`,{d:`M9 8h6m-6 8h6m-3-8v8`})]})};function P({name:e,size:t=20,className:n=``,style:r}){return(0,C.jsx)(`svg`,{width:t,height:t,viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:`1.7`,strokeLinecap:`round`,strokeLinejoin:`round`,"aria-hidden":`true`,className:n,style:r,children:Dr[e]})}function Or({className:e=``}){return(0,C.jsxs)(`svg`,{viewBox:`0 0 64 64`,fill:`none`,"aria-hidden":`true`,className:`chip ${e}`,children:[(0,C.jsx)(`circle`,{cx:`32`,cy:`32`,r:`30`,fill:`currentColor`}),(0,C.jsx)(`circle`,{cx:`32`,cy:`32`,r:`25`,stroke:`#172015`,strokeWidth:`5`,strokeDasharray:`11 8.635`}),(0,C.jsx)(`circle`,{cx:`32`,cy:`32`,r:`18`,stroke:`#172015`,strokeWidth:`1.5`}),(0,C.jsx)(`path`,{d:`m32 19 4 8 9 1-6.5 6.5L40 44l-8-4-8 4 1.5-9.5L19 28l9-1Z`,fill:`#172015`})]})}function kr({title:e,onClose:t,children:n,className:r=``}){let i=(0,S.useRef)(null),a=(0,S.useId)();return(0,S.useEffect)(()=>{let e=document.activeElement,t=i.current;return t.showModal(),()=>{t.close(),e?.focus()}},[]),(0,C.jsx)(`dialog`,{className:`modal ${r}`,ref:i,"aria-labelledby":a,onCancel:e=>{e.preventDefault(),t()},onClick:e=>{e.target===e.currentTarget&&t()},children:(0,C.jsxs)(`div`,{className:`modal-inner`,children:[(0,C.jsxs)(`div`,{className:`modal-head`,children:[(0,C.jsx)(`h2`,{id:a,children:e}),(0,C.jsx)(`button`,{type:`button`,className:`icon-button`,"aria-label":`Close dialog`,onClick:t,children:(0,C.jsx)(P,{name:`close`})})]}),n]})})}var Ar=[{id:`metamask`,name:`MetaMask`,href:e=>`https://link.metamask.io/dapp/${e.replace(/^https?:\/\//,``)}`},{id:`coinbase`,name:`Coinbase Wallet`,href:e=>`https://go.cb-w.com/dapp?cb_url=${encodeURIComponent(e)}`},{id:`rabby`,name:`Rabby`,href:e=>`https://go.rabby.io/mobile/?_cmd=open-dapp&dapp=${encodeURIComponent(e)}`},{id:`phantom`,name:`Phantom`,href:e=>`https://phantom.app/ul/browse/${encodeURIComponent(e)}?ref=${encodeURIComponent(new URL(e).origin)}`}],jr=()=>/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)&&!(`ethereum`in window),Mr=(0,S.lazy)(()=>s(()=>import(`./PrivySession-CJcUIFVa.js`),__vite__mapDeps([4,1,5,6,7,8,9,10,11,12,13,14,15,16,17,3,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48]),import.meta.url)),Nr=`imdpot:privy-session`;function Pr(){try{return sessionStorage.getItem(Nr)===`active`}catch{return!1}}function Fr(e){try{e?sessionStorage.setItem(Nr,`active`):sessionStorage.removeItem(Nr)}catch{}}var Ir=class extends S.Component{state={failed:!1};static getDerivedStateFromError(){return{failed:!0}}componentDidCatch(){this.props.onError(`Privy sign-in could not load. Try again or choose a browser wallet.`)}render(){return this.state.failed?null:this.props.children}},Lr=()=>{let e=tr(),t=or();return{...e,client:t.data}},Rr=(0,S.createContext)(null),zr=()=>(0,S.useContext)(Rr);function Br({id:e,icon:t}){let n=t||`./wallets/${e===`coinbaseWalletSDK`?`coinbase`:e}.svg`;return e===`injected`&&!t?(0,C.jsx)(`span`,{className:`wallet-mark browser-mark`,children:(0,C.jsx)(P,{name:`wallet`,size:24})}):(0,C.jsx)(`img`,{className:`wallet-mark`,src:n,width:`28`,height:`28`,alt:``})}function Vr({children:e}){let t=Lr(),n=rr(),r=nr(),i=ar(),[a,o]=(0,S.useState)(!1),[s,c]=(0,S.useState)(``),[l,u]=(0,S.useState)(),[d,p]=(0,S.useState)(Pr),m=(0,S.useRef)(void 0),h=(0,S.useCallback)(e=>{m.current=e},[]),g=(0,S.useCallback)(e=>{Fr(!1),c(e),o(!0),p(!1)},[]),[_,v]=(0,S.useState)(0),y=Dt({queryKey:[`site-config`],queryFn:gr,staleTime:1/0,retry:1}),b=jr(),ee=r.some(e=>e.type===`injected`&&e.id!==`injected`),te=[...r.filter(e=>e.type===`injected`),...r.filter(e=>e.type!==`injected`)].filter(e=>!(e.id===`injected`&&ee)&&(!b||e.type!==`injected`)),ne=async()=>{if(t.connector){c(``),u(`switch`);try{let e=await t.connector.getProvider();try{await e.request({method:`wallet_switchEthereumChain`,params:[{chainId:`0x1`}]})}catch(t){if(t.code!==4902)throw t;await e.request({method:`wallet_addEthereumChain`,params:[{chainId:`0x1`,chainName:pr.name,nativeCurrency:pr.nativeCurrency,rpcUrls:[...pr.rpcUrls.default.http],blockExplorerUrls:[dr]}]}),await e.request({method:`wallet_switchEthereumChain`,params:[{chainId:`0x1`}]})}}catch(e){c(Er(e)),o(!0)}finally{u(void 0)}}};async function re(e){u(e.uid),c(``);try{await n.mutateAsync({connector:e}),o(!1)}catch(e){c(Er(e))}finally{u(void 0)}}async function ie(e){await n.mutateAsync({connector:an({target:{id:`privy`,name:`Privy`,provider:e}})}),o(!1)}return(0,C.jsxs)(Rr.Provider,{value:{...t,openWallet:()=>{c(``),o(!0),y.isError&&y.refetch()},switchNetwork:ne},children:[e,a&&(0,C.jsxs)(kr,{title:t.isConnected?`Your wallet`:`Connect a wallet`,onClose:()=>o(!1),className:`wallet-modal`,children:[t.isConnected&&t.address?(0,C.jsxs)(C.Fragment,{children:[(0,C.jsxs)(`p`,{className:`muted`,children:[`Connected on `,t.chainId===1?`Ethereum`:`chain ${t.chainId}`,`.`]}),(0,C.jsxs)(`a`,{className:`address-link`,href:`https://etherscan.io/address/${t.address}`,target:`_blank`,rel:`noreferrer`,children:[f(t.address),(0,C.jsx)(P,{name:`external`,size:16})]}),t.chainId!==1&&(0,C.jsx)(`button`,{className:`button primary full`,onClick:()=>void ne(),disabled:!!l,children:l===`switch`?`Switching…`:`Switch to Ethereum`}),(0,C.jsx)(`button`,{className:`button secondary full`,onClick:async()=>{try{t.connector?.id===`privy`&&await m.current?.(),await i.mutateAsync({}),Fr(!1),p(!1),o(!1)}catch(e){c(Er(e))}},children:`Disconnect wallet`})]}):(0,C.jsxs)(C.Fragment,{children:[(0,C.jsx)(`p`,{className:`muted wallet-intro`,children:`Choose how to enter the jackpot room.`}),(0,C.jsxs)(`div`,{className:`wallet-rows`,children:[b&&Ar.map(e=>(0,C.jsxs)(`a`,{className:`wallet-row`,href:e.href(location.href),children:[(0,C.jsx)(Br,{id:e.id}),(0,C.jsxs)(`span`,{children:[`Open in `,e.name]}),(0,C.jsx)(P,{name:`external`,size:16})]},e.id)),te.map(e=>(0,C.jsxs)(`button`,{className:`wallet-row`,onClick:()=>void re(e),disabled:!!l,children:[(0,C.jsx)(Br,{id:e.id,icon:e.icon}),(0,C.jsxs)(`span`,{children:[e.id===`injected`?`Browser wallet`:e.id===`coinbaseWalletSDK`&&b?`Coinbase Smart Wallet`:e.name,l===e.uid?` · opening…`:``]}),(0,C.jsx)(P,{name:`arrow`,size:16})]},e.uid)),(0,C.jsxs)(`button`,{className:`wallet-row`,disabled:!y.data?.privyAppId||!!l,onClick:()=>{Fr(!0),o(!1),v(e=>e+1),p(!0)},children:[(0,C.jsx)(`span`,{className:`wallet-mark privy-mark`,children:(0,C.jsx)(P,{name:`lock`,size:22})}),(0,C.jsxs)(`span`,{children:[`Continue with Privy`,(0,C.jsx)(`small`,{children:`Email sign-in`})]}),(0,C.jsx)(P,{name:`arrow`,size:16})]})]}),!y.data?.privyAppId&&(0,C.jsx)(`p`,{className:`small muted`,children:y.isError?`Sign-in settings could not be loaded. Close and reopen to try again.`:`Loading Privy sign-in settings…`}),(0,C.jsx)(`p`,{className:`small muted`,children:`Wallet connection is free. Transactions require ETH for network gas.`})]}),(0,C.jsx)(`p`,{className:`inline-error`,role:`alert`,children:s})]}),d&&y.data?.privyAppId&&(0,C.jsx)(Ir,{onError:g,children:(0,C.jsx)(S.Suspense,{fallback:(0,C.jsx)(`div`,{className:`connection-status`,role:`status`,children:`Loading Privy sign-in…`}),children:(0,C.jsx)(Mr,{appId:y.data.privyAppId,onConnect:ie,onError:g,onLogoutReady:h},_)})})]})}function Hr(){let e=zr(),t=e.isConnected&&e.chainId!==1;return(0,C.jsxs)(`button`,{className:`button wallet-button`,onClick:t?()=>void e.switchNetwork():e.openWallet,children:[(0,C.jsx)(P,{name:`wallet`,size:18}),(0,C.jsx)(`span`,{children:t?`Switch to Ethereum`:e.address?wr(f(e.address)):`Connect wallet`}),e.address&&(0,C.jsx)(P,{name:`chevron`,size:16})]})}var Ur=gameAbi,Wr=gameAbi;async function Gr(){await verifyGame(M,deployment,u);return `future-blockhash`}var Kr=e=>e===`future-blockhash`?Wr:Ur;async function qr(e,t,n){return t===`future-blockhash`?M.readContract({address:j,abi:Wr,functionName:`getRound`,args:[e],blockNumber:n}):M.readContract({address:j,abi:Ur,functionName:`getRound`,args:[e],blockNumber:n})}async function Jr(){let e=await Gr(),t=await M.getBlock(),n=e=>M.readContract({address:j,abi:Ur,functionName:e,blockNumber:t.number}),[r,i,a,o,s,u,d,p,h,g,_,v,y]=await Promise.all([n(`currentRoundId`),n(`isConfigured`),n(`paused`),n(`token`),n(`ticketPrice`),n(`totalLocked`),n(`pendingBurn`),n(`pendingTreasury`),n(`DEAD_ADDRESS`),n(`TREASURY`),n(`owner`),n(`pendingOwner`),n(`totalObligations`)]),b=await qr(r,e,t.number),ee=!c(o,m),te=ee?await M.readContract({address:o,abi:l,functionName:`decimals`,blockNumber:t.number}):18;return{roundId:r,configured:i,paused:a,token:ee?f(o):void 0,ticketPrice:s,locked:u,pendingBurn:d,pendingTreasury:p,burnAddress:h,treasury:g,owner:_,pendingOwner:v,obligations:y,mode:e,round:b,decimals:te,block:t.number,chainTime:Number(t.timestamp),fetchedAt:Date.now(),verified:!0}}function Yr(){return Dt({queryKey:[`game`],queryFn:Jr,refetchInterval:15e3,retry:1,staleTime:1e4})}async function Xr(e,t){let[n,r,i,a,o,s]=await Promise.all([M.readContract({address:j,abi:Ur,functionName:`getPlayer`,args:[e]}),M.readContract({address:j,abi:Ur,functionName:`ticketsOf`,args:[t.roundId,e]}),M.readContract({address:j,abi:Ur,functionName:`roundBoostBps`,args:[t.roundId,e]}),M.readContract({address:j,abi:Ur,functionName:`claimable`,args:[e]}),t.token?M.readContract({address:t.token,abi:l,functionName:`balanceOf`,args:[e]}):void 0,t.token?M.readContract({address:t.token,abi:l,functionName:`allowance`,args:[e,j]}):void 0]);return{points:n[0],roundsPlayed:n[1],pendingBoost:n[2],canRedeem:n[3],tickets:r,boost:i,claimable:a,balance:o,allowance:s}}function Zr(e,t){return Dt({queryKey:[`player`,e,t?.roundId.toString()],queryFn:()=>Xr(e,t),enabled:!!e&&!!t,retry:1,staleTime:1e4,refetchInterval:15e3})}function Qr(e){return Dt({queryKey:[`recent-rounds`,e?.roundId.toString()],enabled:!!e,queryFn:async()=>{let t=Number(e.roundId>10n?10n:e.roundId-1n);return Promise.all(Array.from({length:t},async(t,n)=>{let r=e.roundId-1n-BigInt(n);return{id:r,round:await qr(r,e.mode)}}))},staleTime:3e4,retry:1})}var $r=2000n;async function ei(e){let t=e-2000n+1n>ur?e-$r+1n:ur,n=[];for(let r=t;r<=e;r+=500n)n.push({fromBlock:r,toBlock:r+499n<e?r+499n:e});return{fromBlock:t,toBlock:e,events:(await Promise.all(n.map(async e=>{let[t,n]=await Promise.all([M.getContractEvents({address:j,abi:Ur,eventName:`FeeTransferred`,...e}),M.getContractEvents({address:j,abi:Ur,eventName:`FeeTransferDeferred`,...e})]);return[...t.map(e=>({...e,deferred:!1})),...n.map(e=>({...e,deferred:!0}))]}))).flat().filter(e=>e.args.to&&e.args.amount!==void 0&&!e.removed).sort((e,t)=>e.blockNumber===t.blockNumber?t.logIndex-e.logIndex:e.blockNumber>t.blockNumber?-1:1)}}function ti(){let e=zr(),t=de(),n=(0,S.useRef)(!1),[r,i]=(0,S.useState)(!1),[o,s]=(0,S.useState)(),[u,d]=(0,S.useState)(!1);async function f(r,o){if(n.current)return;if(!e.address){e.openWallet();return}if(e.chainId!==1){await e.switchNetwork();return}if(!e.client){e.openWallet();return}let l=e.address,u=e.client;n.current=!0,i(!0),d(!0);let f=[],p=e=>s({title:r,phase:`pending`,message:e,hashes:[...f]});p(`Checking the contract and your wallet…`);let m=async(e,t,n,i=[],o=r)=>{await Gr();let[s,d]=await Promise.all([u.getChainId(),u.getAddresses()]);if(s!==1||!d[0]||!c(d[0],l))throw Error(`Your wallet account or network changed. Reconnect and review the action again.`);let m=a({abi:t,functionName:n,args:i});p(`${o}: checking the transaction…`),await M.call({account:l,to:e,data:m}),p(`${o}: confirm in your wallet.`);let h=await u.sendTransaction({account:l,chain:pr,to:e,data:m});f.push(h),p(`${o}: waiting for Ethereum confirmation…`);let g=!1,_=await M.waitForTransactionReceipt({hash:h,confirmations:1,timeout:18e4,onReplaced:e=>{e.reason!==`repriced`&&(g=!0),f[f.length-1]=e.transactionReceipt.transactionHash,p(`${o}: waiting for Ethereum confirmation…`)}});if(g)throw Error(`The transaction was replaced or cancelled in your wallet. Refresh and review before trying again.`);if(_.status!==`success`)throw Error(`The transaction reverted on Ethereum. Refresh the round and try again.`)};try{let e=await o(m);s({title:r,phase:`success`,message:e,hashes:[...f]})}catch(e){s({title:r,phase:`error`,message:Er(e),hashes:[...f]})}finally{n.current=!1,i(!1),await t.invalidateQueries({predicate:e=>[`game`,`player`,`recent-rounds`,`fees`,`refund`].includes(String(e.queryKey[0]))})}}function p(t,n,r) {
-  return f(`Buy tickets`, async submit => buyReviewedTickets({
-    count:t, roundId:n, cost:r, loadGame:Jr,
-    loadBalance:asset=>M.readContract({address:asset,abi:l,functionName:`balanceOf`,args:[e.address]}),
-    loadAllowance:asset=>M.readContract({address:asset,abi:l,functionName:`allowance`,args:[e.address,j]}),
-    approve:(asset,amount)=>submit(asset,l,`approve`,[j,amount],`Approve IMD`),
-    buy:(roundId,count)=>submit(j,Ur,`buyTicketsForRound`,[roundId,count],`Buy tickets`)
-  }));
-}function m(e,t,n,r=[],i){return f(t,async t=>{let a=await Jr();if(e===`finalizeRound`&&a.mode!==`future-blockhash`)throw Error(`This deployment cannot use future-blockhash draws. The contract update must be deployed first.`);if(e===`finalizeRound`&&i!==void 0&&a.roundId!==i)throw Error(`The round has changed. Refresh and review the draw again.`);if(e===`cancelRound`&&a.mode===`legacy-vrf`&&a.round.status===1&&!a.paused)throw Error(`An active round on the previous contract must be paused before cancellation.`);return await t(j,Kr(a.mode),e,r),e===`finalizeRound`?a.round.status===2?`The draw is settled. Winners can claim their prizes and the next round is open.`:`The future block is committed. Return after the target block is mined and select Settle winners.`:n})}function h(t){return f(t===`setToken`?`Configure IMD`:t===`pause`?`Pause entries`:`Resume entries`,async n=>{let r=await Jr();if(!e.address||!c(r.owner,e.address))throw Error(`Only the current contract owner can change settings. Reconnect the owner wallet.`);if(t===`setToken`&&(r.token||r.mode!==`future-blockhash`))throw Error(`Token setup is available once on the future-blockhash contract. Refresh the settings.`);return await n(j,Kr(r.mode),t,t===`setToken`?[lr]:[]),t===`setToken`?`IMD is configured. The game needs no randomness subscription.`:t===`pause`?`Entries are paused. Claims and refunds remain available.`:`Entries are unpaused. The game status has been refreshed.`})}return{busy:r,state:o,visible:u,setVisible:d,buy:p,action:m,admin:h}}function ni({icon:e,title:t,children:n}){return(0,C.jsxs)(`div`,{className:`empty-state`,children:[(0,C.jsx)(`span`,{className:`empty-icon`,children:(0,C.jsx)(P,{name:e,size:25})}),(0,C.jsx)(`h3`,{children:t}),(0,C.jsx)(`p`,{children:n})]})}function ri({game:e}){let[t,n]=(0,S.useState)(`all`),[r,i]=(0,S.useState)(),a=Dt({queryKey:[`fees`,r?.toString()],enabled:!!e,queryFn:async()=>ei(r??await M.getBlockNumber({cacheTime:0})),staleTime:3e4,refetchInterval:!r&&3e4,retry:1}),o=a.data?.events.filter(n=>t===`all`||(t===`burn`?c(n.args.to,e.burnAddress):c(n.args.to,e.treasury)));return(0,C.jsxs)(`section`,{className:`panel activity-panel`,id:`activity`,"aria-labelledby":`activity-title`,children:[(0,C.jsxs)(`div`,{className:`section-head`,children:[(0,C.jsx)(`h2`,{id:`activity-title`,children:`Onchain activity`}),(0,C.jsxs)(`a`,{className:`text-link`,href:`${dr}/address/${j}#events`,target:`_blank`,rel:`noreferrer`,children:[`Etherscan`,(0,C.jsx)(P,{name:`external`,size:15})]})]}),(0,C.jsx)(`div`,{className:`filter-group`,"aria-label":`Filter transactions`,children:[`all`,`burn`,`house`].map(e=>(0,C.jsx)(`button`,{"aria-pressed":t===e,onClick:()=>n(e),children:e===`all`?`All transfers`:e===`burn`?`Burns`:`House fees`},e))}),a.isPending?(0,C.jsx)(`p`,{className:`loading-row`,role:`status`,children:`Reading recent transfers…`}):a.isError?(0,C.jsxs)(`div`,{className:`error-state`,children:[(0,C.jsx)(`p`,{children:`Recent transfers could not be loaded.`}),(0,C.jsx)(`button`,{className:`button secondary`,onClick:()=>void a.refetch(),children:`Retry transfers`})]}):o?.length?(0,C.jsx)(`ul`,{className:`activity-list`,children:o.slice(0,20).map(t=>{let n=c(t.args.to,e.burnAddress);return(0,C.jsxs)(`li`,{children:[(0,C.jsx)(`span`,{className:`event-icon ${n?`burn`:`house`}`,children:(0,C.jsx)(P,{name:n?`flame`:`wallet`,size:20})}),(0,C.jsxs)(`div`,{className:`event-description`,children:[(0,C.jsxs)(`strong`,{children:[n?`IMD burn`:`House fee`,t.deferred?` deferred`:` sent`]}),(0,C.jsxs)(`a`,{href:`${dr}/tx/${t.transactionHash}`,target:`_blank`,rel:`noreferrer`,children:[`Block `,N(t.blockNumber),(0,C.jsx)(P,{name:`external`,size:13})]})]}),(0,C.jsxs)(`span`,{className:`event-amount`,title:Cr(t.args.amount,e?.decimals),children:[Sr(t.args.amount,e?.decimals),` IMD`]})]},`${t.transactionHash}-${t.logIndex}`)})}):(0,C.jsx)(ni,{icon:t===`house`?`wallet`:`flame`,title:t===`burn`?`No burns in this window`:t===`house`?`No house fees in this window`:`The table is quiet`,children:`Burns and house fees appear here when rounds settle.`}),a.data&&(0,C.jsxs)(`div`,{className:`history-footer`,children:[(0,C.jsxs)(`span`,{className:`small muted`,children:[`Blocks `,N(a.data.fromBlock),`–`,N(a.data.toBlock),o&&o.length>20?` · showing 20 newest`:``]}),(0,C.jsxs)(`div`,{className:`history-actions`,children:[r&&(0,C.jsx)(`button`,{onClick:()=>i(void 0),children:`Latest`}),(0,C.jsxs)(`button`,{disabled:a.data.fromBlock<=26219034n||a.isFetching,onClick:()=>i(a.data.fromBlock-1n),children:[`Earlier blocks`,(0,C.jsx)(P,{name:`arrow`,size:14})]})]})]}),(0,C.jsx)(`p`,{className:`small muted activity-note`,children:`Deferred transfers are owed by the contract; they have not been sent.`})]})}function ii({game:e}){let t=Qr(e),n=t.data?.filter(e=>e.round.status===3).slice(0,3);return(0,C.jsxs)(`section`,{className:`panel winners-panel`,"aria-labelledby":`winners-heading`,children:[(0,C.jsxs)(`div`,{className:`section-head`,children:[(0,C.jsx)(`h2`,{id:`winners-heading`,children:`Recent winners`}),(0,C.jsx)(`span`,{className:`small muted`,children:`40 / 20 / 10%`})]}),t.isPending?(0,C.jsx)(`p`,{className:`loading-row`,children:`Reading past rounds…`}):t.isError?(0,C.jsxs)(`div`,{className:`error-state`,children:[(0,C.jsx)(`p`,{children:`Past rounds could not be loaded.`}),(0,C.jsx)(`button`,{className:`button secondary`,onClick:()=>void t.refetch(),children:`Retry winners`})]}):n?.length?(0,C.jsx)(`div`,{className:`winner-rounds`,children:n.map(t=>(0,C.jsxs)(`div`,{className:`winner-round`,children:[(0,C.jsxs)(`h3`,{children:[`Round #`,N(t.id)]}),(0,C.jsx)(`ol`,{children:t.round.winners.map((n,r)=>!c(n,`0x0000000000000000000000000000000000000000`)&&(0,C.jsxs)(`li`,{children:[(0,C.jsx)(`span`,{className:`podium ${[`first`,`second`,`third`][r]}`,children:r+1}),(0,C.jsxs)(`a`,{href:`https://etherscan.io/address/${n}`,target:`_blank`,rel:`noreferrer`,title:n,children:[wr(n),(0,C.jsx)(P,{name:`external`,size:13})]}),(0,C.jsxs)(`strong`,{title:Cr(t.round.prizes[r],e?.decimals),children:[Sr(t.round.prizes[r],e?.decimals),` IMD`]})]},r))})]},t.id.toString()))}):(0,C.jsx)(ni,{icon:`trophy`,title:`The podium is waiting`,children:`Winning tickets appear after the first round settles.`}),(0,C.jsx)(`p`,{className:`small muted history-note`,children:`Up to 10 recent rounds. A player can win more than one place.`})]})}function ai({game:e,now:t,disabled:n,tx:r}){let i=zr(),[a,o]=(0,S.useState)(``),[s,c]=(0,S.useState)(),[l,u]=(0,S.useState)(``),d=e?.round.status===2,f=e?.mode===`future-blockhash`,p=e&&br(e.round,e.block,e.mode).expired,m=e&&(f?p||e.round.status===1&&e.paused&&t>=Number(e.round.endTime)+86400:[1,2].includes(e.round.status)&&t>=Number(e.round.endTime)+86400&&(d?t>=Number(e.round.randomnessRequestedAt??0n)+86400:e.paused)),h=Dt({queryKey:[`refund`,s?.toString(),i.address,e?.block.toString()],enabled:!!s&&!!i.address&&!!e,queryFn:async()=>{let[t,n]=await Promise.all([qr(s,e.mode),M.readContract({address:j,abi:Ur,functionName:`ticketsOf`,args:[s,i.address]})]);return{status:t.status,tickets:n}},retry:1});return(0,C.jsx)(`section`,{className:`tools-section`,children:(0,C.jsxs)(`details`,{children:[(0,C.jsxs)(`summary`,{children:[`Round tools & refunds`,(0,C.jsx)(P,{name:`chevron`,size:18})]}),(0,C.jsxs)(`div`,{className:`tools-content`,children:[(0,C.jsx)(`p`,{className:`muted`,children:f?`A draw must settle after its target block, within 256 blocks. If that window expires, anyone can cancel the round for full refunds. A round paused before commitment can be cancelled 24 hours after its scheduled end. The target block cannot be changed or re-rolled.`:`This is the previous deployment. A drawing round can be cancelled 24 hours after both its scheduled end and its latest randomness request. A paused active round can be cancelled 24 hours after its end. Claims and refunds do not need a new draw.`}),(0,C.jsxs)(`div`,{className:`tool-buttons`,children:[(0,C.jsx)(`button`,{className:`button secondary`,disabled:!m||n,onClick:()=>void r.action(`cancelRound`,`Cancel round for refunds`,`The round is cancelled. Participants can check this round number below to claim their IMD back.`),children:`Cancel round for refunds`}),(0,C.jsx)(`button`,{className:`button secondary`,disabled:!e||e.pendingBurn+e.pendingTreasury===0n||n,onClick:()=>void r.action(`flushPendingFees`,`Send pending fees`,`The fee flush is confirmed. Refresh the pending totals to see whether each transfer was sent.`),children:`Send pending fees`})]}),(0,C.jsxs)(`p`,{className:`small muted`,children:[`Pending burn: `,Sr(e?.pendingBurn,e?.decimals),` IMD · Pending house fee: `,Sr(e?.pendingTreasury,e?.decimals),` IMD · Locked forever: `,Sr(e?.locked,e?.decimals),` IMD`]}),(0,C.jsxs)(`form`,{className:`refund-form`,onSubmit:t=>{t.preventDefault(),i.address?!/^\d+$/.test(a)||BigInt(a)<1n||!e||BigInt(a)>=e.roundId?u(`Enter a past round number, starting at 1.`):(u(``),c(BigInt(a))):i.openWallet()},children:[(0,C.jsx)(`label`,{htmlFor:`refund-round`,children:`Check a cancelled round for a refund`}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`input`,{id:`refund-round`,name:`refundRound`,inputMode:`numeric`,type:`text`,placeholder:`Round number`,value:a,onChange:e=>{o(e.target.value),u(``),c(void 0)},"aria-describedby":`refund-error`,"aria-invalid":!!l}),(0,C.jsx)(`button`,{className:`button secondary`,type:`submit`,disabled:h.isFetching||!e,children:`Check refund`})]}),(0,C.jsx)(`p`,{id:`refund-error`,className:`inline-error`,role:`alert`,children:l})]}),s&&(0,C.jsx)(`div`,{className:`refund-result`,role:`status`,children:h.isPending?`Checking your tickets…`:h.isError?(0,C.jsxs)(C.Fragment,{children:[(0,C.jsx)(`span`,{children:`Refund check failed.`}),(0,C.jsx)(`button`,{className:`button secondary`,onClick:()=>void h.refetch(),children:`Retry refund check`})]}):h.data?.status===4&&h.data.tickets>0n?(0,C.jsxs)(C.Fragment,{children:[(0,C.jsxs)(`span`,{children:[`Round #`,N(s),`: `,Sr(h.data.tickets*(e?.ticketPrice??0n),e?.decimals),` IMD refundable.`]}),(0,C.jsx)(`button`,{className:`button secondary`,disabled:n,onClick:()=>void r.action(`refund`,`Claim refund`,`Your refund is confirmed. Your IMD has been returned.`,[s]),children:`Claim refund`})]}):`No refund available for your wallet in round #${N(s)}.`})]})]})})}function oi({game:e,disabled:t,tx:n}){let r=zr(),[i,a]=(0,S.useState)();if(!e||!r.isConnected||!xr(r.address,e.owner))return null;let o=e.mode===`future-blockhash`,s=i===`setToken`?`Configure IMD permanently`:i===`pause`?`Pause new entries`:`Resume new entries`,c=e=>(0,C.jsxs)(`a`,{href:`${dr}/address/${e}`,target:`_blank`,rel:`noreferrer`,title:f(e),children:[wr(f(e)),(0,C.jsx)(P,{name:`external`,size:14})]});return(0,C.jsxs)(`section`,{className:`panel owner-panel`,id:`owner`,"aria-labelledby":`owner-heading`,children:[(0,C.jsxs)(`div`,{className:`section-head`,children:[(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`h2`,{id:`owner-heading`,children:`Owner controls`}),(0,C.jsx)(`p`,{className:`small muted`,children:`Connected as the current contract owner.`})]}),(0,C.jsx)(P,{name:`shield`,size:22})]}),(0,C.jsxs)(`div`,{className:`owner-status`,children:[(0,C.jsxs)(`span`,{className:`status-label`,children:[(0,C.jsx)(`span`,{className:`status-dot`}),e.paused?`Entries paused`:`Entries unpaused`]}),(0,C.jsx)(`button`,{className:`button secondary`,disabled:t,onClick:()=>a(e.paused?`unpause`:`pause`),children:e.paused?`Unpause contract`:`Pause contract`})]}),(0,C.jsxs)(`dl`,{className:`owner-settings`,children:[(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Owner`}),(0,C.jsx)(`dd`,{children:c(e.owner)})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Game contract`}),(0,C.jsx)(`dd`,{children:c(j)})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`IMD token`}),(0,C.jsx)(`dd`,{children:e.token?c(e.token):`Not configured`})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Ticket price`}),(0,C.jsx)(`dd`,{children:e.token?`${Sr(e.ticketPrice,e.decimals)} IMD`:`0.1 IMD after setup`})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Round duration`}),(0,C.jsx)(`dd`,{children:`15 minutes after first ticket`})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`House fee`}),(0,C.jsxs)(`dd`,{children:[`5% · `,c(e.treasury)]})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Randomness`}),(0,C.jsx)(`dd`,{children:o?`Future blockhash · 3 blocks ahead`:`Previous contract · update required`})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Settlement window`}),(0,C.jsx)(`dd`,{children:o?`256 blocks after target`:`Unavailable in this version`})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Game obligations`}),(0,C.jsxs)(`dd`,{children:[Sr(e.obligations,e.decimals),` IMD`]})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Permanently locked`}),(0,C.jsxs)(`dd`,{children:[Sr(e.locked,e.decimals),` IMD`]})]})]}),o?(0,C.jsxs)(`div`,{className:`owner-setup`,children:[(0,C.jsx)(`h3`,{children:e.token?`Game setup is complete`:`Set the IMD token`}),(0,C.jsx)(`p`,{className:`small muted`,children:e.token?`No oracle, LINK or subscription is needed. Fees and the draw delay are fixed in the contract.`:`Set the verified Ethereum IMD token once. This setting cannot be changed.`}),!e.token&&(0,C.jsxs)(C.Fragment,{children:[(0,C.jsx)(`p`,{className:`owner-token-address`,children:f(`0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7`)}),(0,C.jsxs)(`button`,{className:`button primary`,disabled:t,onClick:()=>a(`setToken`),children:[`Configure IMD token`,(0,C.jsx)(P,{name:`arrow`,size:16})]})]})]}):(0,C.jsxs)(`div`,{className:`owner-setup`,children:[(0,C.jsx)(`h3`,{children:`Future-blockhash deployment required`}),(0,C.jsx)(`p`,{className:`small muted`,children:`The live contract cannot be upgraded. The replacement source is ready for a separate deployment; its verified deployment details must be connected before new play opens. Pause, claims and eligible refunds remain available here.`})]}),i&&(0,C.jsxs)(kr,{title:s,onClose:()=>a(void 0),children:[(0,C.jsx)(`p`,{className:`muted`,children:i===`setToken`?`This permanently selects the verified Ethereum IMD token for this game. Confirm only after reviewing the token and game addresses.`:i===`pause`?`New purchases and new draws will pause.${o?` A committed draw can still settle.`:``} Claims and eligible refunds remain available.`:`New purchases and draw commitments will resume once the game is configured.`}),(0,C.jsxs)(`dl`,{className:`review-details`,children:[(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Game`}),(0,C.jsx)(`dd`,{children:c(`${deployment.contract}`)})]}),i===`setToken`&&(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`IMD token`}),(0,C.jsx)(`dd`,{children:c(`0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7`)})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Network`}),(0,C.jsx)(`dd`,{children:`Ethereum`})]})]}),(0,C.jsx)(`button`,{className:`button primary full`,disabled:t,onClick:()=>{let e=i;a(void 0),n.admin(e)},children:i===`setToken`?`Set IMD token permanently`:i===`pause`?`Pause contract`:`Unpause contract`})]})]})}var si=[{href:`#jackpot`,label:`Jackpot`,icon:`jackpot`},{href:`#dashboard`,label:`My dashboard`,icon:`dashboard`},{href:`#activity`,label:`Activity`,icon:`activity`},{href:`#how-to-play`,label:`How to play`,icon:`help`}];function ci(){let e=zr(),t=Yr(),n=t.data,r=Zr(e.address,n),i=r.data,a=ti(),[o,s]=(0,S.useState)(Date.now()),[c,l]=(0,S.useState)(`1`),[u,d]=(0,S.useState)(``),[f,p]=(0,S.useState)(),[m,h]=(0,S.useState)(location.hash||`#jackpot`),g=(0,S.useRef)(null);(0,S.useEffect)(()=>{let e=setInterval(()=>s(Date.now()),1e3);return()=>clearInterval(e)},[]),(0,S.useEffect)(()=>{let e=()=>h(location.hash||`#jackpot`);return window.addEventListener(`hashchange`,e),()=>window.removeEventListener(`hashchange`,e)},[]);let _=n?n.chainTime+Math.max(0,Math.floor((o-n.fetchedAt)/1e3)):o/1e3,v=_r(n?.round,_),y=!n||t.isError||o-n.fetchedAt>6e4,b=!!e.address&&e.chainId!==1,ee=n?.mode===`legacy-vrf`,te=ee?`New entries require the future-blockhash contract deployment.`:!!n&&yr(n.round,n.configured,n.paused,_),ne=n?br(n.round,n.block,n.mode):void 0,re=vr(c),ie=re.count&&n?.ticketPrice?re.count*n.ticketPrice:void 0,x=n?.round.status===1&&v.seconds===0,ae=n?.round.status===1&&v.seconds>0,oe=n?.round.status===2,se=!!n&&!n.configured&&!ee,ce=a.busy||y||b,le=n?y?`Read unavailable`:ee?`Update required`:se?`Awaiting setup`:n.paused?`Entries paused`:oe?ne?.expired?`Draw expired`:ne?.ready?`Ready to settle`:`Awaiting target block`:x?`Ready to draw`:ae?`Round live`:`Table open`:`Connecting`,ue=!!i&&i.claimable>0n&&!ce,de=a.busy?`Transaction in progress…`:e.address?b?`Switch to Ethereum`:ee?`Contract update required`:se?`Awaiting game setup`:n?.paused?`Entries paused`:te?`Tickets closed`:`Buy tickets`:`Buy tickets`;function fe(t){t.preventDefault();let r=vr(c);if(r.error){d(r.error),g.current?.focus();return}if(d(``),!e.address){e.openWallet();return}if(b){e.switchNetwork();return}if(!n||y){d(`Live round data is unavailable. Refresh the round and try again.`);return}if(te){d(te);return}if(!i||i.balance===void 0){d(`Your IMD balance could not be read. Retry your balance below.`);return}let a=r.count*n.ticketPrice;i.balance<a?d(`Not enough IMD. Choose fewer tickets or add IMD to your wallet.`):p({count:r.count,cost:a,roundId:n.roundId})}let pe=e=>{l(e),d(``)},me=()=>{a.setVisible(!1),requestAnimationFrame(()=>document.querySelector(`.transaction-banner`)?.focus())};return(0,C.jsxs)(C.Fragment,{children:[(0,C.jsx)(`a`,{className:`skip-link`,href:`#main`,children:`Skip to content`}),(0,C.jsxs)(`aside`,{className:`sidebar`,children:[(0,C.jsxs)(`a`,{href:`#jackpot`,className:`brand`,"aria-label":`IMDPot home`,children:[(0,C.jsx)(Or,{}),(0,C.jsxs)(`span`,{children:[`IMD`,(0,C.jsx)(`span`,{className:`brand-light`,children:`Pot`}),(0,C.jsx)(`span`,{className:`brand-dot`,children:`.`})]})]}),(0,C.jsx)(`nav`,{"aria-label":`Main navigation`,children:si.map(e=>(0,C.jsxs)(`a`,{href:e.href,className:m===e.href?`active`:``,"aria-current":m===e.href?`location`:void 0,children:[(0,C.jsx)(P,{name:e.icon}),e.label,e.href===`#jackpot`&&(0,C.jsx)(`span`,{className:`nav-dot`})]},e.href))}),(0,C.jsxs)(`div`,{className:`sidebar-bottom`,children:[(0,C.jsxs)(`div`,{className:`casino-mark`,"aria-hidden":`true`,children:[(0,C.jsx)(Or,{}),(0,C.jsxs)(`span`,{children:[`Good luck`,(0,C.jsx)(`br`,{}),`at the table.`]})]}),(0,C.jsxs)(`a`,{href:`${dr}/address/${j}#code`,target:`_blank`,rel:`noreferrer`,children:[(0,C.jsx)(P,{name:`shield`,size:16}),`View contract`,(0,C.jsx)(P,{name:`external`,size:14})]})]})]}),(0,C.jsxs)(`div`,{className:`app-shell`,children:[(0,C.jsxs)(`header`,{className:`topbar`,children:[(0,C.jsxs)(`a`,{href:`#jackpot`,className:`brand mobile-brand`,"aria-label":`IMDPot home`,children:[(0,C.jsx)(Or,{}),(0,C.jsxs)(`span`,{children:[`IMDPot`,(0,C.jsx)(`span`,{className:`brand-dot`,children:`.`})]})]}),(0,C.jsxs)(`span`,{className:`room-label`,children:[(0,C.jsx)(`span`,{className:`status-dot`}),`The jackpot room`]}),(0,C.jsxs)(`div`,{className:`topbar-actions`,children:[(0,C.jsxs)(`span`,{className:`network`,children:[(0,C.jsx)(P,{name:`ethereum`,size:17}),`Ethereum`]}),(0,C.jsx)(Hr,{})]})]}),(0,C.jsx)(`nav`,{className:`mobile-nav`,"aria-label":`Section navigation`,children:si.map(e=>(0,C.jsx)(`a`,{href:e.href,"aria-current":m===e.href?`location`:void 0,children:e.href===`#dashboard`?`Dashboard`:e.label},e.href))}),(0,C.jsxs)(`main`,{id:`main`,children:[(0,C.jsxs)(`div`,{className:`page-heading`,id:`jackpot`,children:[(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`h1`,{children:`A little IMD. Big possibility.`}),(0,C.jsx)(`p`,{children:`15-minute jackpots. One ticket starts it all.`})]}),(0,C.jsxs)(`a`,{href:`#how-to-play`,className:`text-link`,children:[(0,C.jsx)(P,{name:`help`,size:17}),`How it works`]})]}),a.state&&!a.visible&&(0,C.jsxs)(`button`,{className:`transaction-banner ${a.state.phase}`,onClick:()=>a.setVisible(!0),children:[(0,C.jsx)(P,{name:a.state.phase===`success`?`check`:`info`}),(0,C.jsxs)(`span`,{children:[a.state.title,`: `,a.state.phase===`pending`?`in progress`:a.state.phase===`success`?`confirmed`:`needs attention`]}),(0,C.jsx)(P,{name:`arrow`,size:17})]}),(0,C.jsxs)(`div`,{className:`play-grid`,children:[(0,C.jsxs)(`section`,{className:`jackpot-panel panel`,"aria-labelledby":`round-heading`,children:[(0,C.jsxs)(`div`,{className:`round-heading`,children:[(0,C.jsxs)(`h2`,{id:`round-heading`,children:[`Round `,n?`#${N(n.roundId)}`:`…`]}),(0,C.jsxs)(`span`,{className:`status-label ${ae?`is-live`:``}`,children:[(0,C.jsx)(`span`,{className:`status-dot`}),le]})]}),(0,C.jsxs)(`div`,{className:`pool-display`,children:[(0,C.jsxs)(`div`,{className:`pool-data`,children:[(0,C.jsx)(`span`,{className:`pool-label`,children:`Total pool`}),(0,C.jsxs)(`div`,{className:`pool-amount`,children:[(0,C.jsx)(`span`,{title:n?Cr(n.round.pool,n.decimals):void 0,children:Sr(n?.round.pool,n?.decimals,2)}),(0,C.jsx)(`span`,{className:`pool-unit`,children:`IMD`})]}),(0,C.jsxs)(`span`,{className:`prize-caption`,children:[(0,C.jsx)(P,{name:`trophy`,size:16}),`70% goes to winning tickets`]})]}),(0,C.jsxs)(`div`,{className:`chip-art`,"aria-hidden":`true`,children:[(0,C.jsx)(`div`,{className:`orbit orbit-one`}),(0,C.jsx)(`div`,{className:`orbit orbit-two`}),(0,C.jsx)(Or,{className:`art-chip back-chip`}),(0,C.jsx)(Or,{className:`art-chip front-chip`}),(0,C.jsx)(`svg`,{className:`art-spark spark-one`,viewBox:`0 0 20 20`,children:(0,C.jsx)(`path`,{d:`m10 0 2 8 8 2-8 2-2 8-2-8-8-2 8-2Z`,fill:`currentColor`})}),(0,C.jsx)(`svg`,{className:`art-spark spark-two`,viewBox:`0 0 20 20`,children:(0,C.jsx)(`path`,{d:`m10 0 2 8 8 2-8 2-2 8-2-8-8-2 8-2Z`,fill:`currentColor`})})]})]}),(0,C.jsxs)(`div`,{className:`round-bottom`,children:[(0,C.jsxs)(`div`,{className:`timer-block`,children:[(0,C.jsx)(`span`,{className:`timer-icon`,children:(0,C.jsx)(P,{name:`clock`,size:22})}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`span`,{className:`countdown`,role:`timer`,"aria-label":`${v.text}, ${v.label}`,children:v.text}),(0,C.jsx)(`span`,{className:`small muted timer-label`,children:v.label})]})]}),(0,C.jsxs)(`dl`,{className:`round-stats`,children:[(0,C.jsxs)(`div`,{children:[(0,C.jsxs)(`dt`,{children:[(0,C.jsx)(P,{name:`ticket`,size:15}),`Tickets`]}),(0,C.jsx)(`dd`,{children:N(n?.round.totalTickets)})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsxs)(`dt`,{children:[(0,C.jsx)(P,{name:`people`,size:15}),`Players`]}),(0,C.jsx)(`dd`,{children:N(n?.round.participantCount)})]})]})]}),(0,C.jsx)(`div`,{className:`round-progress`,role:`progressbar`,"aria-label":`Round time remaining`,"aria-valuemin":0,"aria-valuemax":900,"aria-valuenow":v.seconds,"aria-valuetext":v.label,children:(0,C.jsx)(`span`,{style:{width:`${Math.min(v.seconds/900*100,100)}%`}})})]}),(0,C.jsxs)(`section`,{className:`ticket-panel panel`,"aria-labelledby":`ticket-heading`,children:[(0,C.jsxs)(`div`,{className:`section-head`,children:[(0,C.jsx)(`h2`,{id:`ticket-heading`,children:`Take your seat`}),(0,C.jsx)(P,{name:`ticket`,className:`muted`,size:22})]}),(0,C.jsxs)(`form`,{onSubmit:fe,noValidate:!0,children:[(0,C.jsxs)(`div`,{className:`field-label`,children:[(0,C.jsx)(`label`,{htmlFor:`ticket-quantity`,children:`Number of tickets`}),(0,C.jsx)(`span`,{className:`small muted`,children:`0.1 IMD each`})]}),(0,C.jsxs)(`div`,{className:`quantity-control ${u?`invalid`:``}`,children:[(0,C.jsx)(`button`,{type:`button`,"aria-label":`Remove one ticket`,disabled:!re.count||re.count<=1n||a.busy,onClick:()=>pe((re.count-1n).toString()),children:(0,C.jsx)(P,{name:`minus`,size:18})}),(0,C.jsx)(`input`,{ref:g,id:`ticket-quantity`,name:`tickets`,type:`text`,maxLength:12,inputMode:`numeric`,autoComplete:`off`,value:c,onChange:e=>pe(e.target.value),"aria-invalid":!!u,"aria-describedby":`quantity-hint ticket-error`,disabled:a.busy}),(0,C.jsx)(`button`,{type:`button`,"aria-label":`Add one ticket`,disabled:a.busy||!!re.count&&re.count>=1000000n,onClick:()=>pe((re.count?re.count+1n:1n).toString()),children:(0,C.jsx)(P,{name:`plus`,size:18})})]}),(0,C.jsx)(`div`,{className:`quick-picks`,"aria-label":`Ticket presets`,children:[1,10,50,100].map(e=>(0,C.jsx)(`button`,{type:`button`,"aria-pressed":c===String(e),"aria-label":`${e} ${e===1?`ticket`:`tickets`}`,onClick:()=>pe(String(e)),disabled:a.busy,children:e},e))}),(0,C.jsxs)(`div`,{className:`cost-row`,children:[(0,C.jsx)(`span`,{children:`Total entry`}),(0,C.jsxs)(`strong`,{title:ie===void 0?void 0:Cr(ie,n?.decimals),children:[ie===void 0?se?Sr((re.count??1n)*10n**17n):`—`:Sr(ie,n?.decimals),` `,(0,C.jsx)(`span`,{children:`IMD`})]})]}),(0,C.jsxs)(`button`,{className:`button primary buy-button`,type:`submit`,disabled:a.busy||!!e.address&&!b&&(!!te||y),children:[(0,C.jsx)(P,{name:`ticket`,size:18}),de,(0,C.jsx)(P,{name:`arrow`,size:18})]}),(0,C.jsx)(`p`,{id:`quantity-hint`,className:`small muted ticket-hint`,children:e.address?i?.balance===void 0?se?`IMD is not configured on the game yet.`:`Reading your IMD balance…`:`Balance: ${Sr(i.balance,n?.decimals)} IMD · ETH gas extra`:`Connect your wallet to play. Minimum 0.1 IMD.`}),(0,C.jsx)(`p`,{className:`small muted my-tickets`,children:e.address&&i?`Your tickets this round: ${N(i.tickets)}`:``}),(0,C.jsx)(`p`,{id:`ticket-error`,className:`inline-error`,role:`alert`,children:u}),e.address&&r.isError&&(0,C.jsx)(`button`,{type:`button`,className:`text-button`,onClick:()=>void r.refetch(),children:`Retry your balance`})]})]})]}),(t.isError||n&&y)&&(0,C.jsxs)(`div`,{className:`notice error-notice`,role:`alert`,children:[(0,C.jsx)(P,{name:`info`}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`strong`,{children:`Live reads are unavailable`}),(0,C.jsx)(`p`,{children:t.error?Er(t.error):`The last read is over a minute old. Transactions are disabled until data refreshes.`})]}),(0,C.jsx)(`button`,{className:`button secondary`,onClick:()=>void t.refetch(),disabled:t.isFetching,children:t.isFetching?`Retrying…`:`Retry connection`})]}),ee&&(0,C.jsxs)(`div`,{className:`deployment-note`,role:`status`,children:[(0,C.jsx)(`strong`,{children:`New game deployment required`}),(0,C.jsx)(`p`,{children:`This live contract uses the previous draw system and cannot be upgraded. New entries are closed until the future-blockhash version is deployed. Existing claims and eligible refunds remain available.`})]}),se&&(0,C.jsxs)(`div`,{className:`launch-note`,children:[(0,C.jsx)(P,{name:`info`,size:17}),(0,C.jsx)(`p`,{children:`The table is getting ready. Entries open once the owner configures IMD.`})]}),n?.paused&&(0,C.jsxs)(`div`,{className:`notice`,role:`status`,children:[(0,C.jsx)(P,{name:`info`}),(0,C.jsx)(`p`,{children:n.mode===`future-blockhash`?`New entries and draw commitments are paused. Committed draws, claims and eligible refunds remain available.`:`New entries and finalization are paused. Claims and eligible refunds remain available.`})]}),(0,C.jsxs)(`section`,{className:`payout-section`,"aria-label":`Pool distribution`,children:[(0,C.jsxs)(`div`,{className:`payout-title`,children:[(0,C.jsx)(P,{name:`trophy`,size:20}),(0,C.jsx)(`span`,{children:`Every IMD has a destination.`})]}),(0,C.jsxs)(`div`,{className:`payout-items`,children:[(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`span`,{className:`podium first`,children:`1`}),(0,C.jsxs)(`span`,{children:[`1st prize`,(0,C.jsx)(`strong`,{children:`40%`})]})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`span`,{className:`podium second`,children:`2`}),(0,C.jsxs)(`span`,{children:[`2nd prize`,(0,C.jsx)(`strong`,{children:`20%`})]})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`span`,{className:`podium third`,children:`3`}),(0,C.jsxs)(`span`,{children:[`3rd prize`,(0,C.jsx)(`strong`,{children:`10%`})]})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(P,{name:`flame`,className:`burn`}),(0,C.jsxs)(`span`,{children:[`Burned`,(0,C.jsx)(`strong`,{children:`10%`})]})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(P,{name:`lock`}),(0,C.jsxs)(`span`,{children:[`Locked`,(0,C.jsx)(`strong`,{children:`15%`})]})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(P,{name:`wallet`}),(0,C.jsxs)(`span`,{children:[`House`,(0,C.jsx)(`strong`,{children:`5%`})]})]})]})]}),(0,C.jsxs)(`section`,{className:`finalize-strip`,"aria-label":`Finalize the current round`,children:[(0,C.jsx)(`span`,{className:`finalize-icon`,children:(0,C.jsx)(P,{name:oe?`clock`:`shield`,size:23})}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`h2`,{children:ee?`A new draw system is ready`:oe?ne?.label:x?`Time’s up. Commit the draw.`:`Anyone can finalize a closed round`}),(0,C.jsx)(`p`,{children:ne?.detail??`Commit a future block, then settle after it is mined. Both calls are open to everyone.`})]}),(0,C.jsxs)(`button`,{className:`button secondary`,disabled:ee||!ne?.ready&&(!x||n?.paused)||ce,onClick:()=>void a.action(`finalizeRound`,oe?`Settle winners`:`Commit draw`,``,[],n?.roundId),children:[(0,C.jsx)(P,{name:`bolt`,size:17}),oe&&!ee?ne?.label:`Finalize round`]})]}),(0,C.jsx)(oi,{game:n,disabled:ce,tx:a}),(0,C.jsxs)(`div`,{className:`dashboard-grid`,id:`dashboard`,children:[(0,C.jsxs)(`section`,{className:`panel player-panel`,"aria-labelledby":`dashboard-heading`,children:[(0,C.jsxs)(`div`,{className:`section-head`,children:[(0,C.jsx)(`h2`,{id:`dashboard-heading`,children:`Your dashboard`}),(0,C.jsx)(`span`,{className:`small muted`,children:e.address?wr(e.address):`A seat with benefits`})]}),(0,C.jsxs)(`dl`,{className:`player-stats`,children:[(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Rounds played`}),(0,C.jsx)(`dd`,{children:N(i?.roundsPlayed)})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Loyalty points`}),(0,C.jsx)(`dd`,{children:N(i?.points)})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Active multiplier`}),(0,C.jsx)(`dd`,{children:Tr(i?i.tickets>0n?i.boost:0n:void 0)})]})]}),(0,C.jsxs)(`div`,{className:`loyalty-row`,children:[(0,C.jsx)(`span`,{className:`loyalty-icon`,children:(0,C.jsx)(P,{name:`bolt`,size:23})}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`h3`,{children:`Make your next round count`}),(0,C.jsx)(`p`,{children:e.address?`Queued multiplier: ${Tr(i?.pendingBoost)}. Redeem 100 points for +25% ticket weight.`:`Connect to see your points and multiplier.`})]})]}),(0,C.jsxs)(`div`,{className:`loyalty-footer`,children:[(0,C.jsx)(`span`,{className:`small muted`,children:`Unlocks after 10 settled rounds. Caps at 2×.`}),e.address?(0,C.jsxs)(`button`,{className:`button secondary`,disabled:!i?.canRedeem||ce,onClick:()=>void a.action(`redeemMultiplier`,`Redeem multiplier`,`100 loyalty points redeemed for +25% weight on the next round you enter.`),children:[`Redeem 100 points`,(0,C.jsx)(P,{name:`arrow`,size:15})]}):(0,C.jsxs)(`button`,{className:`button secondary`,onClick:e.openWallet,children:[`View my dashboard`,(0,C.jsx)(P,{name:`arrow`,size:15})]})]}),r.isError&&(0,C.jsxs)(`p`,{className:`inline-error`,role:`alert`,children:[`Your dashboard could not be loaded. `,(0,C.jsx)(`button`,{className:`text-button`,onClick:()=>void r.refetch(),children:`Retry dashboard`})]})]}),(0,C.jsxs)(`section`,{className:`panel claim-panel`,"aria-labelledby":`claim-heading`,children:[(0,C.jsxs)(`div`,{className:`section-head`,children:[(0,C.jsx)(`h2`,{id:`claim-heading`,children:`Your winnings`}),(0,C.jsx)(P,{name:`trophy`,size:22})]}),(0,C.jsx)(`p`,{className:`muted`,children:`Claimable prizes`}),(0,C.jsxs)(`div`,{className:`claim-amount`,title:i?Cr(i.claimable,n?.decimals):void 0,children:[Sr(i?.claimable,n?.decimals),(0,C.jsx)(`span`,{children:`IMD`})]}),(0,C.jsx)(`p`,{className:`small muted`,children:e.address?i&&i.claimable>0n?`A good day at the table. Your prize is ready.`:`All your unclaimed prizes appear here.`:`Connect your wallet to check your prizes.`}),(0,C.jsxs)(`button`,{className:`button secondary full`,onClick:e.address?()=>void a.action(`claim`,`Claim prizes`,`Your claim is confirmed. IMD has been sent to your wallet.`):e.openWallet,disabled:!!e.address&&!ue,children:[(0,C.jsx)(P,{name:`wallet`,size:17}),e.address?`Claim prizes`:`Check my winnings`,(0,C.jsx)(P,{name:`arrow`,size:16})]})]})]}),(0,C.jsxs)(`div`,{className:`history-grid`,children:[(0,C.jsx)(ii,{game:n}),(0,C.jsx)(ri,{game:n})]}),(0,C.jsxs)(`section`,{className:`how-section`,id:`how-to-play`,"aria-labelledby":`how-heading`,children:[(0,C.jsxs)(`div`,{className:`how-heading`,children:[(0,C.jsx)(`h2`,{id:`how-heading`,children:`How the game works`}),(0,C.jsx)(`span`,{children:`No crying in the casino.`})]}),(0,C.jsxs)(`div`,{className:`how-grid`,children:[(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`span`,{className:`step-number`,children:`01`}),(0,C.jsx)(`h3`,{children:`Bring your IMD`}),(0,C.jsx)(`p`,{children:`Each ticket costs 0.1 IMD. Buy whole tickets; the first purchase starts a 15-minute round. Later entries never reset the clock.`})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`span`,{className:`step-number`,children:`02`}),(0,C.jsx)(`h3`,{children:`Let the round play out`}),(0,C.jsx)(`p`,{children:`Once time is up, finalize to commit a block 3 blocks ahead. After it is mined, finalize again within 256 blocks to draw three winning tickets without replacement.`})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`span`,{className:`step-number`,children:`03`}),(0,C.jsx)(`h3`,{children:`Take your winnings`}),(0,C.jsx)(`p`,{children:`Winners claim 40%, 20% and 10% of the pool. With fewer than three tickets, unfilled prizes roll into first place. Every settled ticket earns one loyalty point.`})]})]}),(0,C.jsx)(`p`,{className:`game-note`,children:`Tickets remain in the contract until settlement or an eligible cancellation. The 15% locked share stays in the contract permanently. Block producers can influence blockhash randomness. No oracle subscription is needed; both finalize calls cost ETH gas.`})]}),(0,C.jsx)(ai,{game:n,now:_,disabled:ce,tx:a}),(0,C.jsxs)(`footer`,{children:[(0,C.jsxs)(`a`,{className:`footer-brand`,href:`#jackpot`,children:[(0,C.jsx)(Or,{}),`IMDPot.`]}),(0,C.jsx)(`span`,{className:`small muted`,children:n&&!y?`Read at Ethereum block ${N(n.block)}`:`Ethereum · live contract data`}),(0,C.jsxs)(`a`,{className:`text-link`,href:`${dr}/address/${j}`,target:`_blank`,rel:`noreferrer`,children:[`View game contract`,(0,C.jsx)(P,{name:`external`,size:14})]})]})]})]}),f&&(0,C.jsxs)(kr,{title:`Review your tickets`,onClose:()=>p(void 0),children:[(0,C.jsxs)(`p`,{className:`muted`,children:[`Round #`,N(f.roundId),` · Ethereum`]}),(0,C.jsxs)(`dl`,{className:`review-details`,children:[(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Tickets`}),(0,C.jsx)(`dd`,{children:N(f.count)})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Entry total`}),(0,C.jsxs)(`dd`,{children:[Cr(f.cost,n?.decimals),` IMD`]})]}),(0,C.jsxs)(`div`,{children:[(0,C.jsx)(`dt`,{children:`Game contract`}),(0,C.jsx)(`dd`,{children:(0,C.jsxs)(`a`,{href:`https://etherscan.io/address/${deployment.contract}`,target:`_blank`,rel:`noreferrer`,children:[wr(`${deployment.contract}`),(0,C.jsx)(P,{name:`external`,size:14})]})})]})]}),(0,C.jsxs)(`p`,{className:`small muted`,children:[i?.allowance!==void 0&&i.allowance>=f.cost?`Your IMD allowance covers this entry. Confirm one purchase transaction.`:`First approve this exact IMD amount, then confirm your ticket purchase. Approval alone does not enter the round.`,` ETH network gas is extra.`]}),(0,C.jsx)(`p`,{className:`small muted`,children:`70% funds prizes; 10% is burned, 5% goes to the house and 15% is locked forever. Tickets cannot be withdrawn during a round.`}),(0,C.jsxs)(`button`,{className:`button primary full`,disabled:a.busy||ce,onClick:()=>{let e=f;p(void 0),a.buy(e.count,e.roundId,e.cost)},children:[i?.allowance!==void 0&&i.allowance>=f.cost?`Buy tickets`:`Approve & buy tickets`,(0,C.jsx)(P,{name:`arrow`,size:18})]})]}),a.visible&&a.state&&(0,C.jsxs)(kr,{title:a.state.title,onClose:me,children:[(0,C.jsxs)(`div`,{className:`transaction-result ${a.state.phase}`,children:[(0,C.jsx)(`span`,{className:`result-icon`,children:(0,C.jsx)(P,{name:a.state.phase===`success`?`check`:a.state.phase===`error`?`info`:`clock`,size:28})}),(0,C.jsx)(`h3`,{children:a.state.phase===`pending`?`Your play is in progress`:a.state.phase===`success`?`Confirmed on Ethereum`:`Action not completed`}),(0,C.jsx)(`p`,{role:a.state.phase===`error`?`alert`:`status`,children:a.state.message})]}),a.state.hashes.map((e,t)=>(0,C.jsxs)(`a`,{className:`transaction-link`,href:`https://etherscan.io/tx/${e}`,target:`_blank`,rel:`noreferrer`,children:[`View transaction `,t+1,(0,C.jsx)(P,{name:`external`,size:16})]},`${e}-${t}`)),a.state.phase!==`pending`&&(0,C.jsx)(`button`,{className:`button secondary full`,onClick:me,children:`Back to the table`})]})]})}var li=class extends S.Component{state={failed:!1};static getDerivedStateFromError(){return{failed:!0}}componentDidCatch(e,t){console.error(`Dashboard could not render`,e,t.componentStack)}render(){return this.state.failed?(0,C.jsxs)(`main`,{className:`fatal-error`,children:[(0,C.jsx)(`h1`,{children:`The table could not load`}),(0,C.jsx)(`p`,{children:`Reload to try again. Your wallet and funds stay on Ethereum.`}),(0,C.jsx)(`button`,{className:`button primary`,onClick:()=>location.reload(),children:`Reload dashboard`})]}):this.props.children}},ui=new mt({defaultOptions:{queries:{retry:1,refetchOnWindowFocus:!0}}});(0,cr.createRoot)(document.getElementById(`root`)).render((0,C.jsx)(li,{children:(0,C.jsx)(Nn,{config:hr,children:(0,C.jsx)(fe,{client:ui,children:(0,C.jsx)(Vr,{children:(0,C.jsx)(ci,{})})})})}));export{pr as n,Er as t};
+`),n.cause&&(this.cause=n.cause),this.details=r,this.docsPath=i,this.metaMessages=n.metaMessages,this.shortMessage=t}walk(e){return jt(this,k,`m`,Mt).call(this,this,e)}};k=new WeakSet,Mt=function e(t,n){return n?.(t)?t:t.cause?jt(this,k,`m`,e).call(this,t.cause,n):t};var Pt=class extends Nt{constructor(){super(`Chain not configured.`),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`ChainNotConfiguredError`})}},Ft=class extends Nt{constructor(){super(`Connector already connected.`),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`ConnectorAlreadyConnectedError`})}},It=class extends Nt{constructor(){super(`Connector not connected.`),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`ConnectorNotConnectedError`})}},Lt=class extends Nt{constructor({address:e,connector:t}){super(`Account "${e}" not found for connector "${t.name}".`),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`ConnectorAccountNotFoundError`})}},Rt=class extends Nt{constructor({connectionChainId:e,connectorChainId:t}){super(`The current chain of the connector (id: ${t}) does not match the connection's chain (id: ${e}).`,{metaMessages:[`Current Chain ID:  ${t}`,`Expected Chain ID: ${e}`]}),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`ConnectorChainMismatchError`})}},zt=class extends Nt{constructor({connector:e}){super(`Connector "${e.name}" unavailable while reconnecting.`,{details:["During the reconnection step, the only connector methods guaranteed to be available are: `id`, `name`, `type`, `uid`.",`All other methods are not guaranteed to be available until reconnection completes and connectors are fully restored.`,`This error commonly occurs for connectors that asynchronously inject after reconnection has already started.`].join(` `)}),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`ConnectorUnavailableReconnectingError`})}};async function Bt(e,t){let n;if(n=typeof t.connector==`function`?e._internal.connectors.setup(t.connector):t.connector,n.uid===e.state.current)throw new Ft;try{e.setState(e=>({...e,status:`connecting`})),n.emitter.emit(`message`,{type:`connecting`});let{connector:r,...i}=t,a=await n.connect(i);return n.emitter.off(`connect`,e._internal.events.connect),n.emitter.on(`change`,e._internal.events.change),n.emitter.on(`disconnect`,e._internal.events.disconnect),await e.storage?.setItem(`recentConnectorId`,n.id),e.setState(e=>({...e,connections:new Map(e.connections).set(n.uid,{accounts:i.withCapabilities?a.accounts.map(e=>typeof e==`object`?e.address:e):a.accounts,chainId:a.chainId,connector:n}),current:n.uid,status:`connected`})),{accounts:i.withCapabilities?a.accounts.map(e=>typeof e==`object`?e:{address:e,capabilities:{}}):a.accounts,chainId:a.chainId}}catch(t){throw e.setState(e=>({...e,status:e.current?`connected`:`disconnected`})),t}}async function Vt(e,t={}){let{assertChainId:n=!0}=t,r;if(t.connector){let{connector:n}=t;if(e.state.status===`reconnecting`&&!n.getAccounts&&!n.getChainId)throw new zt({connector:n});let[i,a]=await Promise.all([n.getAccounts().catch(e=>{if(t.account===null)return[];throw e}),n.getChainId()]);r={accounts:i,chainId:a,connector:n}}else r=e.state.connections.get(e.state.current);if(!r)throw new It;let i=t.chainId??r.chainId,a=await r.connector.getChainId();if(n&&a!==i)throw new Rt({connectionChainId:i,connectorChainId:a});let s=r.connector;if(s.getClient)return s.getClient({chainId:i});let c=o(t.account??r.accounts[0]);if(c&&(c.address=f(c.address)),t.account&&!r.accounts.some(e=>e.toLowerCase()===c.address.toLowerCase()))throw new Lt({address:c.address,connector:s});let l=e.chains.find(e=>e.id===i),u=await r.connector.getProvider({chainId:i});return ee({account:c,chain:l,name:`Connector Client`,transport:e=>ie(u)({...e,retryCount:0})})}async function Ht(e,t={}){let n;if(t.connector)n=t.connector;else{let{connections:t,current:r}=e.state;n=t.get(r)?.connector}let r=e.state.connections;n&&(await n.disconnect(),n.emitter.off(`change`,e._internal.events.change),n.emitter.off(`disconnect`,e._internal.events.disconnect),n.emitter.on(`connect`,e._internal.events.connect),r.delete(n.uid)),e.setState(e=>{if(r.size===0)return{...e,connections:new Map,current:null,status:`disconnected`};let t=r.values().next().value;return{...e,connections:new Map(r),current:t.connector.uid}});{let t=e.state.current;if(!t)return;let n=e.state.connections.get(t)?.connector;if(!n)return;await e.storage?.setItem(`recentConnectorId`,n.id)}}function Ut(e){return e.state.chainId}function Wt(e,t){if(e===t)return!0;if(e&&t&&typeof e==`object`&&typeof t==`object`){if(e.constructor!==t.constructor)return!1;let n,r;if(Array.isArray(e)&&Array.isArray(t)){if(n=e.length,n!==t.length)return!1;for(r=n;r--!==0;)if(!Wt(e[r],t[r]))return!1;return!0}if(typeof e.valueOf==`function`&&e.valueOf!==Object.prototype.valueOf)return e.valueOf()===t.valueOf();if(typeof e.toString==`function`&&e.toString!==Object.prototype.toString)return e.toString()===t.toString();let i=Object.keys(e);if(n=i.length,n!==Object.keys(t).length)return!1;for(r=n;r--!==0;)if(!Object.hasOwn(t,i[r]))return!1;for(r=n;r--!==0;){let n=i[r];if(n&&!Wt(e[n],t[n]))return!1}return!0}return e!==e&&t!==t}function Gt(e){let t=e.state.current,n=e.state.connections.get(t),r=n?.accounts,i=r?.[0],a=e.chains.find(e=>e.id===n?.chainId),o=e.state.status;switch(o){case`connected`:return{address:i,addresses:r,chain:a,chainId:n?.chainId,connector:n?.connector,isConnected:!0,isConnecting:!1,isDisconnected:!1,isReconnecting:!1,status:o};case`reconnecting`:return{address:i,addresses:r,chain:a,chainId:n?.chainId,connector:n?.connector,isConnected:!!i,isConnecting:!1,isDisconnected:!1,isReconnecting:!0,status:o};case`connecting`:return{address:i,addresses:r,chain:a,chainId:n?.chainId,connector:n?.connector,isConnected:!1,isConnecting:!0,isDisconnected:!1,isReconnecting:!1,status:o};case`disconnected`:return{address:void 0,addresses:void 0,chain:void 0,chainId:void 0,connector:void 0,isConnected:!1,isConnecting:!1,isDisconnected:!0,isReconnecting:!1,status:o}}}var Kt=[];function qt(e){let t=[...e.state.connections.values()];return e.state.status===`reconnecting`||Wt(Kt,t)?Kt:(Kt=t,t)}var Jt=[];function Yt(e){let t=e.connectors;return Jt.length===t.length&&Jt.every((e,n)=>e===t[n])?Jt:(Jt=t,t)}async function Xt(e,t={}){return(await Vt(e,t)).extend(re)}var Zt=!1;async function Qt(e,t={}){if(Zt)return[];Zt=!0,e.setState(e=>({...e,status:e.current?`reconnecting`:`connecting`}));let n=[];if(t.connectors?.length)for(let r of t.connectors){let t;t=typeof r==`function`?e._internal.connectors.setup(r):r,n.push(t)}else n.push(...e.connectors);let r;try{r=await e.storage?.getItem(`recentConnectorId`)}catch{}let i={};for(let[,t]of e.state.connections)i[t.connector.id]=1;r&&(i[r]=0);let a=Object.keys(i).length>0?[...n].sort((e,t)=>(i[e.id]??10)-(i[t.id]??10)):n,o=!1,s=[],c=[];for(let t of a){let n=await t.getProvider().catch(()=>void 0);if(!n||c.some(e=>e===n)||!await t.isAuthorized())continue;let r=await t.connect({isReconnecting:!0}).catch(()=>null);r&&(t.emitter.off(`connect`,e._internal.events.connect),t.emitter.on(`change`,e._internal.events.change),t.emitter.on(`disconnect`,e._internal.events.disconnect),e.setState(e=>{let n=new Map(o?e.connections:new Map).set(t.uid,{accounts:r.accounts,chainId:r.chainId,connector:t});return{...e,current:o?e.current:t.uid,connections:n}}),s.push({accounts:r.accounts,chainId:r.chainId,connector:t}),c.push(n),o=!0)}return(e.state.status===`reconnecting`||e.state.status===`connecting`)&&(o?e.setState(e=>({...e,status:`connected`})):e.setState(e=>({...e,connections:new Map,current:null,status:`disconnected`}))),Zt=!1,s}var $t=class extends Nt{constructor(){super(`Provider not found.`),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`ProviderNotFoundError`})}};function en(e,t){let{onChange:n}=t;return e.subscribe(e=>e.chainId,n)}function A(e,t){let{onChange:n}=t;return e.subscribe(()=>Gt(e),n,{equalityFn(e,t){let{connector:n,...r}=e,{connector:i,...a}=t;return Wt(r,a)&&n?.id===i?.id&&n?.uid===i?.uid}})}function tn(e,t){let{onChange:n}=t;return e.subscribe(()=>qt(e),n,{equalityFn:Wt})}function nn(e,t){let{onChange:n}=t;return e._internal.connectors.subscribe((e,t)=>{n(Object.values(e),t)})}function rn(e){return e}an.type=`injected`;function an(e={}){let{shimDisconnect:t=!0,unstable_shimAsyncInject:n}=e;function r(){let t=e.target;if(typeof t==`function`){let e=t();if(e)return e}return typeof t==`object`?t:typeof t==`string`?{...on[t]??{id:t,name:`${t[0].toUpperCase()}${t.slice(1)}`,provider:`is${t[0].toUpperCase()}${t.slice(1)}`}}:{id:`injected`,name:`Injected`,provider(e){return e?.ethereum}}}let i,a,o,s;return rn(c=>({get icon(){return r().icon},get id(){return r().id},get name(){return r().name},type:an.type,async setup(){let t=await this.getProvider();t?.on&&e.target&&(o||(o=this.onConnect.bind(this),t.on(`connect`,o)),i||(i=this.onAccountsChanged.bind(this),t.on(`accountsChanged`,i)))},async connect({chainId:n,isReconnecting:r,withCapabilities:l}={}){let u=await this.getProvider();if(!u)throw new $t;let d=[];if(r)d=await this.getAccounts().catch(()=>[]);else if(t)try{d=(await u.request({method:`wallet_requestPermissions`,params:[{eth_accounts:{}}]}))[0]?.caveats?.[0]?.value?.map(e=>f(e)),d.length>0&&(d=await this.getAccounts())}catch(e){let t=e;if(t.code===g.code)throw new g(t);if(t.code===p.code)throw t}try{!d?.length&&!r&&(d=(await u.request({method:`eth_requestAccounts`})).map(e=>f(e))),o&&=(u.removeListener(`connect`,o),void 0),i||(i=this.onAccountsChanged.bind(this),u.on(`accountsChanged`,i)),a||(a=this.onChainChanged.bind(this),u.on(`chainChanged`,a)),s||(s=this.onDisconnect.bind(this),u.on(`disconnect`,s));let p=await this.getChainId();return n&&p!==n&&(p=(await this.switchChain({chainId:n}).catch(e=>{if(e.code===g.code)throw e;return{id:p}}))?.id??p),t&&await c.storage?.removeItem(`${this.id}.disconnected`),e.target||await c.storage?.setItem(`injected.connected`,!0),{accounts:l?d.map(e=>({address:e,capabilities:{}})):d,chainId:p}}catch(e){let t=e;throw t.code===g.code?new g(t):t.code===p.code?new p(t):t}},async disconnect(){let n=await this.getProvider();if(!n)throw new $t;a&&=(n.removeListener(`chainChanged`,a),void 0),s&&=(n.removeListener(`disconnect`,s),void 0),o||(o=this.onConnect.bind(this),n.on(`connect`,o));try{await ne(()=>n.request({method:`wallet_revokePermissions`,params:[{eth_accounts:{}}]}),{timeout:100})}catch{}t&&await c.storage?.setItem(`${this.id}.disconnected`,!0),e.target||await c.storage?.removeItem(`injected.connected`)},async getAccounts(){let e=await this.getProvider();if(!e)throw new $t;return(await e.request({method:`eth_accounts`})).map(e=>f(e))},async getChainId(){let e=await this.getProvider();if(!e)throw new $t;let t=await e.request({method:`eth_chainId`});return Number(t)},async getProvider(){if(typeof window>`u`)return;let e,t=r();return e=typeof t.provider==`function`?t.provider(window):typeof t.provider==`string`?sn(window,t.provider):t.provider,e&&!e.removeListener&&(`off`in e&&typeof e.off==`function`?e.removeListener=e.off:e.removeListener=()=>{}),e},async isAuthorized(){try{if(t&&await c.storage?.getItem(`${this.id}.disconnected`)||!e.target&&!await c.storage?.getItem(`injected.connected`))return!1;if(!await this.getProvider()){if(n!==void 0&&n!==!1){let e=async()=>(typeof window<`u`&&window.removeEventListener(`ethereum#initialized`,e),!!await this.getProvider()),t=typeof n==`number`?n:1e3;if(await Promise.race([...typeof window<`u`?[new Promise(t=>window.addEventListener(`ethereum#initialized`,()=>t(e()),{once:!0}))]:[],new Promise(n=>setTimeout(()=>n(e()),t))]))return!0}throw new $t}return!!(await te(()=>this.getAccounts())).length}catch{return!1}},async switchChain({addEthereumChainParameter:e,chainId:t}){let n=await this.getProvider();if(!n)throw new $t;let r=c.chains.find(e=>e.id===t);if(!r)throw new h(new Pt);let i=new Promise(e=>{let n=(r=>{`chainId`in r&&r.chainId===t&&(c.emitter.off(`change`,n),e())});c.emitter.on(`change`,n)});try{return await Promise.all([n.request({method:`wallet_switchEthereumChain`,params:[{chainId:d(t)}]}).then(async()=>{await this.getChainId()===t&&c.emitter.emit(`change`,{chainId:t})}),i]),r}catch(a){let o=a;if(o.code===4902||o?.data?.originalError?.code===4902)try{let{default:a,...o}=r.blockExplorers??{},s;e?.blockExplorerUrls?s=e.blockExplorerUrls:a&&(s=[a.url,...Object.values(o).map(e=>e.url)]);let l;l=e?.rpcUrls?.length?e.rpcUrls:[r.rpcUrls.default?.http[0]??``];let u={blockExplorerUrls:s,chainId:d(t),chainName:e?.chainName??r.name,iconUrls:e?.iconUrls,nativeCurrency:e?.nativeCurrency??r.nativeCurrency,rpcUrls:l};return await Promise.all([n.request({method:`wallet_addEthereumChain`,params:[u]}).then(async()=>{if(await this.getChainId()===t)c.emitter.emit(`change`,{chainId:t});else throw new g(Error(`User rejected switch after adding network.`))}),i]),r}catch(e){throw new g(e)}throw o.code===g.code?new g(o):new h(o)}},async onAccountsChanged(e){if(e.length===0)this.onDisconnect();else if(c.emitter.listenerCount(`connect`)){let e=(await this.getChainId()).toString();this.onConnect({chainId:e}),t&&await c.storage?.removeItem(`${this.id}.disconnected`)}else c.emitter.emit(`change`,{accounts:e.map(e=>f(e))})},onChainChanged(e){let t=Number(e);c.emitter.emit(`change`,{chainId:t})},async onConnect(e){let t=await this.getAccounts();if(t.length===0)return;let n=Number(e.chainId);c.emitter.emit(`connect`,{accounts:t,chainId:n});let r=await this.getProvider();r&&(o&&=(r.removeListener(`connect`,o),void 0),i||(i=this.onAccountsChanged.bind(this),r.on(`accountsChanged`,i)),a||(a=this.onChainChanged.bind(this),r.on(`chainChanged`,a)),s||(s=this.onDisconnect.bind(this),r.on(`disconnect`,s)))},async onDisconnect(e){let t=await this.getProvider();e&&e.code===1013&&t&&(await this.getAccounts()).length||(c.emitter.emit(`disconnect`),t&&(a&&=(t.removeListener(`chainChanged`,a),void 0),s&&=(t.removeListener(`disconnect`,s),void 0),o||(o=this.onConnect.bind(this),t.on(`connect`,o))))}}))}var on={coinbaseWallet:{id:`coinbaseWallet`,name:`Coinbase Wallet`,provider(e){return e?.coinbaseWalletExtension?e.coinbaseWalletExtension:sn(e,`isCoinbaseWallet`)}},metaMask:{id:`metaMask`,name:`MetaMask`,provider(e){return sn(e,e=>{if(!e.isMetaMask||e.isBraveWallet&&!e._events&&!e._state)return!1;for(let t of[`isApexWallet`,`isAvalanche`,`isBitKeep`,`isBlockWallet`,`isKuCoinWallet`,`isMathWallet`,`isOkxWallet`,`isOKExWallet`,`isOneInchIOSWallet`,`isOneInchAndroidWallet`,`isOpera`,`isPhantom`,`isPortal`,`isRabby`,`isTokenPocket`,`isTokenary`,`isUniswapWallet`,`isZerion`])if(e[t])return!1;return!0})}},phantom:{id:`phantom`,name:`Phantom`,provider(e){return e?.phantom?.ethereum?e.phantom?.ethereum:sn(e,`isPhantom`)}}};function sn(e,t){function n(e){return typeof t==`function`?t(e):typeof t!=`string`||e[t]}let r=e.ethereum;if(r?.providers)return r.providers.find(e=>n(e));if(r&&n(r))return r}var cn=e=>(t,n,r)=>{let i=r.subscribe;return r.subscribe=(e,t,n)=>{let a=e;if(t){let i=n?.equalityFn||Object.is,o=e(r.getState());a=n=>{let r=e(n);if(!i(o,r)){let e=o;t(o=r,e)}},n?.fireImmediately&&t(o,o)}return i(a)},e(t,n,r)};function ln(e,t){let n;try{n=e()}catch{return}return{getItem:e=>{let r=e=>e===null?null:JSON.parse(e,t?.reviver),i=n.getItem(e)??null;return i instanceof Promise?i.then(r):r(i)},setItem:(e,r)=>n.setItem(e,JSON.stringify(r,t?.replacer)),removeItem:e=>n.removeItem(e)}}var un=e=>t=>{try{let n=e(t);return n instanceof Promise?n:{then(e){return un(e)(n)},catch(e){return this}}}catch(e){return{then(e){return this},catch(t){return un(t)(e)}}}},dn=(e,t)=>(n,r,i)=>{let a={storage:ln(()=>localStorage),partialize:e=>e,version:0,merge:(e,t)=>({...t,...e}),...t},o=!1,s=new Set,c=new Set,l=a.storage;if(!l)return e((...e)=>{console.warn(`[zustand persist middleware] Unable to update item '${a.name}', the given storage is currently unavailable.`),n(...e)},r,i);let u=()=>{let e=a.partialize({...r()});return l.setItem(a.name,{state:e,version:a.version})},d=i.setState;i.setState=(e,t)=>{d(e,t),u()};let f=e((...e)=>{n(...e),u()},r,i);i.getInitialState=()=>f;let p,m=()=>{if(!l)return;o=!1,s.forEach(e=>e(r()??f));let e=a.onRehydrateStorage?.call(a,r()??f)||void 0;return un(l.getItem.bind(l))(a.name).then(e=>{if(e){if(typeof e.version==`number`&&e.version!==a.version){if(a.migrate)return[!0,a.migrate(e.state,e.version)];console.error(`State loaded from storage couldn't be migrated since no migrate function was provided`)}else return[!1,e.state]}return[!1,void 0]}).then(e=>{let[t,i]=e;if(p=a.merge(i,r()??f),n(p,!0),t)return u()}).then(()=>{e?.(p,void 0),p=r(),o=!0,c.forEach(e=>e(p))}).catch(t=>{e?.(void 0,t)})};return i.persist={setOptions:e=>{a={...a,...e},e.storage&&(l=e.storage)},clearStorage:()=>{l?.removeItem(a.name)},getOptions:()=>a,rehydrate:()=>m(),hasHydrated:()=>o,onHydrate:e=>(s.add(e),()=>{s.delete(e)}),onFinishHydration:e=>(c.add(e),()=>{c.delete(e)})},a.skipHydration||m(),p||f},fn=e=>{let t,n=new Set,r=(e,r)=>{let i=typeof e==`function`?e(t):e;if(!Object.is(i,t)){let e=t;t=r??(typeof i!=`object`||!i)?i:Object.assign({},t,i),n.forEach(n=>n(t,e))}},i=()=>t,a={setState:r,getState:i,getInitialState:()=>o,subscribe:e=>(n.add(e),()=>n.delete(e))},o=t=e(r,i,a);return a},pn=e=>e?fn(e):fn,mn=e(t(((e,t)=>{var n=Object.prototype.hasOwnProperty,r=`~`;function i(){}Object.create&&(i.prototype=Object.create(null),new i().__proto__||(r=!1));function a(e,t,n){this.fn=e,this.context=t,this.once=n||!1}function o(e,t,n,i,o){if(typeof n!=`function`)throw TypeError(`The listener must be a function`);var s=new a(n,i||e,o),c=r?r+t:t;return e._events[c]?e._events[c].fn?e._events[c]=[e._events[c],s]:e._events[c].push(s):(e._events[c]=s,e._eventsCount++),e}function s(e,t){--e._eventsCount===0?e._events=new i:delete e._events[t]}function c(){this._events=new i,this._eventsCount=0}c.prototype.eventNames=function(){var e=[],t,i;if(this._eventsCount===0)return e;for(i in t=this._events)n.call(t,i)&&e.push(r?i.slice(1):i);return Object.getOwnPropertySymbols?e.concat(Object.getOwnPropertySymbols(t)):e},c.prototype.listeners=function(e){var t=r?r+e:e,n=this._events[t];if(!n)return[];if(n.fn)return[n.fn];for(var i=0,a=n.length,o=Array(a);i<a;i++)o[i]=n[i].fn;return o},c.prototype.listenerCount=function(e){var t=r?r+e:e,n=this._events[t];return n?n.fn?1:n.length:0},c.prototype.emit=function(e,t,n,i,a,o){var s=r?r+e:e;if(!this._events[s])return!1;var c=this._events[s],l=arguments.length,u,d;if(c.fn){switch(c.once&&this.removeListener(e,c.fn,void 0,!0),l){case 1:return c.fn.call(c.context),!0;case 2:return c.fn.call(c.context,t),!0;case 3:return c.fn.call(c.context,t,n),!0;case 4:return c.fn.call(c.context,t,n,i),!0;case 5:return c.fn.call(c.context,t,n,i,a),!0;case 6:return c.fn.call(c.context,t,n,i,a,o),!0}for(d=1,u=Array(l-1);d<l;d++)u[d-1]=arguments[d];c.fn.apply(c.context,u)}else{var f=c.length,p;for(d=0;d<f;d++)switch(c[d].once&&this.removeListener(e,c[d].fn,void 0,!0),l){case 1:c[d].fn.call(c[d].context);break;case 2:c[d].fn.call(c[d].context,t);break;case 3:c[d].fn.call(c[d].context,t,n);break;case 4:c[d].fn.call(c[d].context,t,n,i);break;default:if(!u)for(p=1,u=Array(l-1);p<l;p++)u[p-1]=arguments[p];c[d].fn.apply(c[d].context,u)}}return!0},c.prototype.on=function(e,t,n){return o(this,e,t,n,!1)},c.prototype.once=function(e,t,n){return o(this,e,t,n,!0)},c.prototype.removeListener=function(e,t,n,i){var a=r?r+e:e;if(!this._events[a])return this;if(!t)return s(this,a),this;var o=this._events[a];if(o.fn)o.fn===t&&(!i||o.once)&&(!n||o.context===n)&&s(this,a);else{for(var c=0,l=[],u=o.length;c<u;c++)(o[c].fn!==t||i&&!o[c].once||n&&o[c].context!==n)&&l.push(o[c]);l.length?this._events[a]=l.length===1?l[0]:l:s(this,a)}return this},c.prototype.removeAllListeners=function(e){var t;return e?(t=r?r+e:e,this._events[t]&&s(this,t)):(this._events=new i,this._eventsCount=0),this},c.prototype.off=c.prototype.removeListener,c.prototype.addListener=c.prototype.on,c.prefixed=r,c.EventEmitter=c,t!==void 0&&(t.exports=c)}))(),1),hn=class{constructor(e){Object.defineProperty(this,"uid",{enumerable:!0,configurable:!0,writable:!0,value:e}),Object.defineProperty(this,"_emitter",{enumerable:!0,configurable:!0,writable:!0,value:new mn.default})}on(e,t){this._emitter.on(e,t)}once(e,t){this._emitter.once(e,t)}off(e,t){this._emitter.off(e,t)}emit(e,...t){let n=t[0];this._emitter.emit(e,{uid:this.uid,...n})}listenerCount(e){return this._emitter.listenerCount(e)}};function gn(e){return new hn(e)}function _n(e,t){return JSON.parse(e,(e,n)=>{let r=n;return r?.__type===`bigint`&&(r=BigInt(r.value)),r?.__type===`Map`&&(r=new Map(r.value)),t?.(e,r)??r})}function vn(e,t){return e.slice(0,t).join(`.`)||`.`}function yn(e,t){let{length:n}=e;for(let r=0;r<n;++r)if(e[r]===t)return r+1;return 0}function bn(e,t){let n=typeof e==`function`,r=typeof t==`function`,i=[],a=[];return function(o,s){if(typeof s==`object`){if(i.length){let e=yn(i,this);e===0?i[i.length]=this:(i.splice(e),a.splice(e)),a[a.length]=o;let n=yn(i,s);if(n!==0)return r?t.call(this,o,s,vn(a,n)):`[ref=${vn(a,n)}]`}else i[0]=s,a[0]=o}return n?e.call(this,o,s):s}}function xn(e,t,n,r){return JSON.stringify(e,bn((e,n)=>{let r=n;return typeof r==`bigint`&&(r={__type:`bigint`,value:n.toString()}),r instanceof Map&&(r={__type:`Map`,value:Array.from(n.entries())}),t?.(e,r)??r},r),n??void 0)}function Sn(e){let{deserialize:t=_n,key:n=`wagmi`,serialize:r=xn,storage:i=Cn}=e;function a(e){return e instanceof Promise?e.then(e=>e).catch(()=>null):e}return{...i,key:n,async getItem(e,r){let o=await a(i.getItem(`${n}.${e}`));return o?t(o)??null:r??null},async setItem(e,t){let o=`${n}.${e}`;t===null?await a(i.removeItem(o)):await a(i.setItem(o,r(t)))},async removeItem(e){await a(i.removeItem(`${n}.${e}`))}}}var Cn={getItem:()=>null,setItem:()=>{},removeItem:()=>{}};function wn(){let e=typeof window<`u`&&window.localStorage?window.localStorage:Cn;return{getItem(t){return e.getItem(t)},removeItem(t){e.removeItem(t)},setItem(t,n){try{e.setItem(t,n)}catch{}}}}var Tn=256,En=Tn,Dn;function On(e=11){if(!Dn||En+e>Tn*2){Dn=``,En=0;for(let e=0;e<Tn;e++)Dn+=(256+Math.random()*256|0).toString(16).substring(1)}return Dn.substring(En,En+++e)}function kn(e){let{multiInjectedProviderDiscovery:t=!0,storage:n=Sn({storage:wn()}),syncConnectedChain:r=!0,ssr:i=!1,...a}=e,o=typeof window<`u`&&t?ae():void 0,s=pn(()=>a.chains),c=pn(()=>{let e=[],t=new Set;for(let n of a.connectors??[]){let r=l(n);if(e.push(r),!i&&r.rdns){let e=typeof r.rdns==`string`?[r.rdns]:r.rdns;for(let n of e)t.add(n)}}if(!i&&o){let n=o.getProviders();for(let r of n)t.has(r.info.rdns)||e.push(l(u(r)))}return e});function l(e){let t=gn(On()),r,i={...e({emitter:t,chains:s.getState(),get providers(){if(!o||!r)return[];let e=typeof r==`string`?[r]:r,t=o.getProviders();return e.flatMap(e=>t.filter(t=>t.info.rdns===e))},storage:n,transports:a.transports}),emitter:t,uid:t.uid};return r=i.rdns,t.on(`connect`,y),i.setup?.(),i}function u(e){let{info:t}=e,n=e.provider;return an({target:{...t,id:t.rdns,provider:n}})}let d=new Map;function f(e={}){let t=e.chainId??g.getState().chainId,n=s.getState().find(e=>e.id===t);if(e.chainId&&!n)throw new Pt;{let e=d.get(g.getState().chainId);if(e&&!n)return e;if(!n)throw new Pt}{let e=d.get(t);if(e)return e}let r;if(a.client)r=a.client({chain:n});else{let e=n.id,t=s.getState().map(e=>e.id),i={},o=Object.entries(a);for(let[n,r]of o)if(n!==`chains`&&n!==`client`&&n!==`connectors`&&n!==`transports`){if(typeof r==`object`){if(e in r)i[n]=r[e];else{if(t.some(e=>e in r))continue;i[n]=r}}else i[n]=r}r=ee({...i,chain:n,batch:i.batch??{multicall:!0},transport:t=>a.transports[e]({...t,connectors:c})})}return d.set(t,r),r}function p(){return{chainId:s.getState()[0].id,connections:new Map,current:null,status:`disconnected`}}let m,h=`0.0.0-canary-`;m=`3.6.5`.startsWith(h)?Number.parseInt(kt.replace(h,``),10):Number.parseInt(`3.6.5`.split(`.`)[0]??`0`,10);let g=pn(cn(n?dn(p,{migrate(e,t){if(t===m)return e;let n=p(),r=_(e,n.chainId);return{...n,chainId:r}},name:`store`,partialize(e){return{connections:{__type:`Map`,value:Array.from(e.connections.entries()).map(([e,t])=>{let{id:n,name:r,type:i,uid:a}=t.connector,o={id:n,name:r,type:i,uid:a};return[e,{...t,connector:o}]})},chainId:e.chainId,current:e.current}},merge(e,t){typeof e==`object`&&e&&`status`in e&&delete e.status;let n=_(e,t.chainId);return{...t,...e,chainId:n}},skipHydration:i,storage:n,version:m}):p));g.setState(p());function _(e,t){return e&&typeof e==`object`&&`chainId`in e&&typeof e.chainId==`number`&&s.getState().some(t=>t.id===e.chainId)?e.chainId:t}r&&g.subscribe(({connections:e,current:t})=>t?e.get(t)?.chainId:void 0,e=>{if(s.getState().some(t=>t.id===e))return g.setState(t=>({...t,chainId:e??t.chainId}))}),o?.subscribe(e=>{let t=new Set,r=new Set;for(let e of c.getState())if(t.add(e.id),e.rdns){let t=typeof e.rdns==`string`?[e.rdns]:e.rdns;for(let e of t)r.add(e)}let i=[];for(let n of e){if(r.has(n.info.rdns))continue;let e=l(u(n));t.has(e.id)||i.push(e)}(!n||g.persist.hasHydrated())&&c.setState(e=>[...e,...i],!0)});function v(e){g.setState(t=>{let n=t.connections.get(e.uid);return n?{...t,connections:new Map(t.connections).set(e.uid,{accounts:e.accounts??n.accounts,chainId:e.chainId??n.chainId,connector:n.connector})}:t})}function y(e){g.getState().status!==`connecting`&&g.getState().status!==`reconnecting`&&g.setState(t=>{let n=c.getState().find(t=>t.uid===e.uid);return n?(n.emitter.listenerCount(`connect`)&&n.emitter.off(`connect`,v),n.emitter.listenerCount(`change`)||n.emitter.on(`change`,v),n.emitter.listenerCount(`disconnect`)||n.emitter.on(`disconnect`,b),{...t,connections:new Map(t.connections).set(e.uid,{accounts:e.accounts,chainId:e.chainId,connector:n}),current:e.uid,status:`connected`}):t})}function b(e){g.setState(t=>{let n=t.connections.get(e.uid);if(n){let e=n.connector;e.emitter.listenerCount(`change`)&&n.connector.emitter.off(`change`,v),e.emitter.listenerCount(`disconnect`)&&n.connector.emitter.off(`disconnect`,b),e.emitter.listenerCount(`connect`)||n.connector.emitter.on(`connect`,y)}if(t.connections.delete(e.uid),t.connections.size===0)return{...t,connections:new Map,current:null,status:`disconnected`};let r=t.connections.values().next().value;return{...t,connections:new Map(t.connections),current:r.connector.uid}})}return{get chains(){return s.getState()},get connectors(){return c.getState()},storage:n,getClient:f,get state(){return g.getState()},setState(e){let t;t=typeof e==`function`?e(g.getState()):e;let n=p();typeof t!=`object`&&(t=n),Object.keys(n).some(e=>!(e in t))&&(t=n),g.setState(t,!0)},subscribe(e,t,n){return g.subscribe(e,t,n?{...n,fireImmediately:n.emitImmediately}:void 0)},_internal:{mipd:o,async revalidate(){let e=g.getState(),t=e.connections,n=e.current;for(let[,e]of t){let r=e.connector;r.isAuthorized&&await r.isAuthorized()||(t.delete(r.uid),n===r.uid&&(n=null))}g.setState(e=>({...e,connections:t,current:n}))},store:g,ssr:!!i,syncConnectedChain:r,transports:a.transports,chains:{setState(e){let t=typeof e==`function`?e(s.getState()):e;if(t.length!==0)return s.setState(t,!0)},subscribe(e){return s.subscribe(e)}},connectors:{providerDetailToConnector:u,setup:l,setState(e){return c.setState(typeof e==`function`?e(c.getState()):e,!0)},subscribe(e){return c.subscribe(e)}},events:{change:v,connect:y,disconnect:b}}}}function An(e,t){let{initialState:n,reconnectOnMount:r}=t;return n&&!e._internal.store.persist.hasHydrated()&&e.setState({...n,chainId:e.chains.some(e=>e.id===n.chainId)?n.chainId:e.chains[0].id,connections:r?n.connections:new Map,status:r?`reconnecting`:`disconnected`}),{async onMount(){e._internal.ssr&&(await e._internal.store.persist.rehydrate(),e._internal.mipd&&e._internal.connectors.setState(t=>{let n=new Set;for(let e of t??[])if(e.rdns){let t=Array.isArray(e.rdns)?e.rdns:[e.rdns];for(let e of t)n.add(e)}let r=[],i=e._internal.mipd?.getProviders()??[];for(let t of i){if(n.has(t.info.rdns))continue;let i=e._internal.connectors.providerDetailToConnector(t),a=e._internal.connectors.setup(i);r.push(a)}return[...t,...r]})),r?Qt(e):e.storage&&e.setState(e=>({...e,connections:new Map}))}}}function jn(e){let{children:t,config:n,initialState:r,reconnectOnMount:i=!0}=e,{onMount:a}=An(n,{initialState:r,reconnectOnMount:i});n._internal.ssr||a();let o=(0,S.useRef)(!0);return(0,S.useEffect)(()=>{if(o.current&&n._internal.ssr)return a(),()=>{o.current=!1}},[]),t}var Mn=(0,S.createContext)(void 0);function Nn(e){let{children:t,config:n}=e,r={value:n};return(0,S.createElement)(jn,e,(0,S.createElement)(Mn.Provider,r,t))}var Pn=`3.7.7`,Fn=()=>`wagmi@${Pn}`,In=class extends Nt{constructor(){super(...arguments),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`WagmiError`})}get docsBaseUrl(){return`https://wagmi.sh/react`}get version(){return Fn()}},Ln=class extends In{constructor(){super("`useConfig` must be used within `WagmiProvider`.",{docsPath:`/api/WagmiProvider`}),Object.defineProperty(this,"name",{enumerable:!0,configurable:!0,writable:!0,value:`WagmiProviderNotFoundError`})}};function Rn(e){return JSON.stringify(e,(e,t)=>zn(t)?Object.keys(t).sort().reduce((e,n)=>(e[n]=t[n],e),{}):typeof t==`bigint`?t.toString():t)}function zn(e){if(!Bn(e))return!1;let t=e.constructor;if(t===void 0)return!0;let n=t.prototype;return!(!Bn(n)||!n.hasOwnProperty(`isPrototypeOf`))}function Bn(e){return Object.prototype.toString.call(e)===`[object Object]`}function Vn(e){let{_defaulted:t,behavior:n,gcTime:r,initialData:i,initialDataUpdatedAt:a,maxPages:o,meta:s,networkMode:c,queryFn:l,queryHash:u,queryKey:d,queryKeyHashFn:f,retry:p,retryDelay:m,structuralSharing:h,getPreviousPageParam:g,getNextPageParam:_,initialPageParam:v,_optimisticResults:y,enabled:b,notifyOnChangeProps:ee,placeholderData:te,refetchInterval:ne,refetchIntervalInBackground:re,refetchOnMount:ie,refetchOnReconnect:x,refetchOnWindowFocus:ae,retryOnMount:oe,select:se,staleTime:ce,suspense:le,throwOnError:S,abi:C,config:ue,connector:de,query:fe,watch:pe,...me}=e;return de?{connectorUid:de?.uid,...me}:me}function Hn(e,t={}){return{...t.mutation,mutationFn:async t=>Bt(e,t),mutationKey:[`connect`]}}function Un(e,t={}){return{...t.mutation,mutationFn:async t=>Ht(e,t),mutationKey:[`disconnect`]}}function Wn(e,t={}){return{...t.query,enabled:!!(t.connector?.getProvider&&(t.query?.enabled??!0)),gcTime:0,queryFn:async n=>{if(!t.connector?.getProvider)throw Error(`connector is required`);let[,{connectorUid:r,scopeKey:i,...a}]=n.queryKey;return Xt(e,{...a,connector:t.connector})},queryKey:Gn(t),staleTime:1/0}}function Gn(e={}){return[`walletClient`,Vn(e)]}function Kn(e){let t=Dt({...e,queryKeyHashFn:Rn});return t.queryKey=e.queryKey,t}function qn(e={}){let t=e.config??(0,S.useContext)(Mn);if(!t)throw new Ln;return t}function Jn(e={}){let t=qn(e);return(0,S.useSyncExternalStore)(e=>en(t,{onChange:e}),()=>Ut(t),()=>Ut(t))}var Yn=t((e=>{var t=n();function r(e,t){return e===t&&(e!==0||1/e==1/t)||e!==e&&t!==t}var i=typeof Object.is==`function`?Object.is:r,a=t.useState,o=t.useEffect,s=t.useLayoutEffect,c=t.useDebugValue;function l(e,t){var n=t(),r=a({inst:{value:n,getSnapshot:t}}),i=r[0].inst,l=r[1];return s(function(){i.value=n,i.getSnapshot=t,u(i)&&l({inst:i})},[e,n,t]),o(function(){return u(i)&&l({inst:i}),e(function(){u(i)&&l({inst:i})})},[e]),c(n),n}function u(e){var t=e.getSnapshot;e=e.value;try{var n=t();return!i(e,n)}catch{return!0}}function d(e,t){return t()}var f=typeof window>`u`||window.document===void 0||window.document.createElement===void 0?d:l;e.useSyncExternalStore=t.useSyncExternalStore===void 0?f:t.useSyncExternalStore})),Xn=t(((e,t)=>{t.exports=Yn()})),Zn=t((e=>{var t=n(),r=Xn();function i(e,t){return e===t&&(e!==0||1/e==1/t)||e!==e&&t!==t}var a=typeof Object.is==`function`?Object.is:i,o=r.useSyncExternalStore,s=t.useRef,c=t.useEffect,l=t.useMemo,u=t.useDebugValue;e.useSyncExternalStoreWithSelector=function(e,t,n,r,i){var d=s(null);if(d.current===null){var f={hasValue:!1,value:null};d.current=f}else f=d.current;d=l(function(){function e(e){if(!o){if(o=!0,s=e,e=r(e),i!==void 0&&f.hasValue){var t=f.value;if(i(t,e))return c=t}return c=e}if(t=c,a(s,e))return t;var n=r(e);return i!==void 0&&i(t,n)?(s=e,t):(s=e,c=n)}var o=!1,s,c,l=n===void 0?null:n;return[function(){return e(t())},l===null?void 0:function(){return e(l())}]},[t,n,r,i]);var p=o(e,d[0],d[1]);return c(function(){f.hasValue=!0,f.value=p},[p]),u(p),p}})),Qn=t(((e,t)=>{t.exports=Zn()}))(),$n=e=>typeof e==`object`&&!Array.isArray(e);function er(e,t,n=t,r=Wt){let i=(0,S.useRef)([]),a=(0,Qn.useSyncExternalStoreWithSelector)(e,t,n,e=>e,(e,t)=>{if($n(e)&&$n(t)&&i.current.length){for(let n of i.current)if(!r(e[n],t[n]))return!1;return!0}return r(e,t)});return(0,S.useMemo)(()=>{if($n(a)){let e={...a},t={};for(let[n,r]of Object.entries(e))t={...t,[n]:{configurable:!1,enumerable:!0,get:()=>(i.current.includes(n)||i.current.push(n),r)}};return Object.defineProperties(e,t),e}return a},[a])}function tr(e={}){let t=qn(e);return er(e=>A(t,{onChange:e}),()=>Gt(t))}function nr(e={}){let t=qn(e);return(0,S.useSyncExternalStore)(e=>nn(t,{onChange:e}),()=>Yt(t),()=>Yt(t))}function rr(e={}){let t=qn(e),n=Ot(Hn(t,e));return(0,S.useEffect)(()=>t.subscribe(({status:e})=>e,(e,t)=>{t===`connected`&&e===`disconnected`&&n.reset()}),[t,n.reset]),{...n,connect:n.mutate,connectAsync:n.mutateAsync,connectors:nr({config:t})}}function ir(e={}){let t=qn(e);return(0,S.useSyncExternalStore)(e=>tn(t,{onChange:e}),()=>qt(t),()=>qt(t))}function ar(e={}){let t=qn(e),n=Ot(Un(t,e));return{...n,connectors:ir({config:t}).map(e=>e.connector),disconnect:n.mutate,disconnectAsync:n.mutateAsync}}function or(e={}){let t=qn(e),n=Jn({config:t}),{address:r,connector:i}=tr({config:t}),a=Wn(t,{...e,chainId:e.chainId??n,connector:e.connector??i,query:e.query}),o=(0,S.useRef)(r),s=de();return(0,S.useEffect)(()=>{let e=o.current;!r&&e?(s.removeQueries({queryKey:a.queryKey}),o.current=void 0):r!==e&&(s.invalidateQueries({queryKey:a.queryKey}),o.current=r)},[r,s]),Kn(a)}sr.type=`coinbaseWallet`;function sr(e={}){let t,n,r,i;return rn(a=>({id:`coinbaseWalletSDK`,name:`Coinbase Wallet`,rdns:`com.coinbase.wallet`,type:sr.type,async connect({chainId:e,withCapabilities:t,...a}={}){try{let o=await this.getProvider(),s=(await o.request({method:`eth_requestAccounts`,params:`instantOnboarding`in a&&a.instantOnboarding?[{onboarding:`instant`}]:[]})).map(e=>f(e));n||(n=this.onAccountsChanged.bind(this),o.on(`accountsChanged`,n)),r||(r=this.onChainChanged.bind(this),o.on(`chainChanged`,r)),i||(i=this.onDisconnect.bind(this),o.on(`disconnect`,i));let c=await this.getChainId();return e&&c!==e&&(c=(await this.switchChain({chainId:e}).catch(e=>{if(e.code===g.code)throw e;return{id:c}}))?.id??c),{accounts:t?s.map(e=>({address:e,capabilities:{}})):s,chainId:c}}catch(e){throw/(user closed modal|accounts received is empty|user denied account|request rejected)/i.test(e.message)?new g(e):e}},async disconnect(){let e=await this.getProvider();n&&=(e.removeListener(`accountsChanged`,n),void 0),r&&=(e.removeListener(`chainChanged`,r),void 0),i&&=(e.removeListener(`disconnect`,i),void 0),e.disconnect(),e.close?.()},async getAccounts(){return(await(await this.getProvider()).request({method:`eth_accounts`})).map(e=>f(e))},async getChainId(){let e=await(await this.getProvider()).request({method:`eth_chainId`});return Number(e)},async getProvider(){if(!t)try{let{createCoinbaseWalletSDK:n}=await s(async()=>{let{createCoinbaseWalletSDK:e}=await import(`./dist-CloxERI8.js`);return{createCoinbaseWalletSDK:e}},__vite__mapDeps([0,1,2,3]),import.meta.url);t=n({...e,appChainIds:a.chains.map(e=>e.id),preference:{options:`all`,...e.preference??{}}}).getProvider()}catch(e){throw e}return t},async isAuthorized(){try{return!!(await this.getAccounts()).length}catch{return!1}},async switchChain({addEthereumChainParameter:e,chainId:t}){let n=a.chains.find(e=>e.id===t);if(!n)throw new h(new Pt);let r=await this.getProvider();try{return await r.request({method:`wallet_switchEthereumChain`,params:[{chainId:d(n.id)}]}),n}catch(i){if(i.code===4902)try{let i;i=e?.blockExplorerUrls?e.blockExplorerUrls:n.blockExplorers?.default.url?[n.blockExplorers?.default.url]:[];let a;a=e?.rpcUrls?.length?e.rpcUrls:[n.rpcUrls.default?.http[0]??``];let o={blockExplorerUrls:i,chainId:d(t),chainName:e?.chainName??n.name,iconUrls:e?.iconUrls,nativeCurrency:e?.nativeCurrency??n.nativeCurrency,rpcUrls:a};return await r.request({method:`wallet_addEthereumChain`,params:[o]}),n}catch(e){throw new g(e)}throw new h(i)}},onAccountsChanged(e){e.length===0?this.onDisconnect():a.emitter.emit(`change`,{accounts:e.map(e=>f(e))})},onChainChanged(e){let t=Number(e);a.emitter.emit(`change`,{chainId:t})},async onDisconnect(e){a.emitter.emit(`disconnect`);let t=await this.getProvider();n&&=(t.removeListener(`accountsChanged`,n),void 0),r&&=(t.removeListener(`chainChanged`,r),void 0),i&&=(t.removeListener(`disconnect`,i),void 0)}}))}
+
+// Existing application: configuration, wallet sheet, game reads, transactions and UI.
+var cr = le(),
+  j = `${deployment.contract}`,
+  lr = network.token,
+  ur = BigInt(deployment.deploymentBlock),
+  dr = network.explorer,
+  fr = network.rpcUrls,
+  pr = v({
+    id: 1,
+    name: `Ethereum`,
+    nativeCurrency: { name: `Ether`, symbol: `ETH`, decimals: 18 },
+    rpcUrls: { default: { http: fr } },
+    blockExplorers: { default: { name: `Etherscan`, url: dr } },
+  }),
+  mr = () =>
+    x(
+      fr.map((e) => b(e, { timeout: 12e3, retryCount: 1 })),
+      { rank: !1 },
+    ),
+  M = y({ chain: pr, transport: mr(), batch: { multicall: !1 } }),
+  hr = kn({
+    chains: [pr],
+    multiInjectedProviderDiscovery: !0,
+    connectors: [
+      an(),
+      sr({ appName: `IMDPot`, preference: { options: `all` } }),
+    ],
+    transports: { [pr.id]: mr() },
+  });
+async function gr() {
+  let e = await fetch(`./site-config.json`, { cache: `no-cache` });
+  if (!e.ok)
+    throw Error(
+      `Could not load sign-in settings. Browser wallets are still available.`,
+    );
+  let t = await e.json();
+  if (
+    !t ||
+    typeof t != `object` ||
+    !(`privyAppId` in t) ||
+    typeof t.privyAppId != `string`
+  )
+    throw Error(
+      `Invalid sign-in settings. Browser wallets are still available.`,
+    );
+  return { privyAppId: t.privyAppId.trim() };
+}
+var _r = roundClock,
+  vr = parseTicketCount;
+function yr(e, t, n, r) {
+  if (!t) return `Entries open after the owner configures IMD.`;
+  if (n)
+    return `Entries are paused. Claims and eligible refunds remain available.`;
+  if (e.status === 2)
+    return `The draw is in progress. Entries reopen in the next round.`;
+  if (e.status === 1 && r >= Number(e.endTime))
+    return `Tickets are closed. Anyone can finalize this round.`;
+  if (e.status > 2)
+    return `This round has ended. Refresh to load the next round.`;
+}
+function br(e, t, n) {
+  return drawState(e, t);
+}
+var xr = (e, t) => !!e && !!t && e.toLowerCase() === t.toLowerCase();
+function Sr(e, t = 18, n = 4) {
+  if (e === void 0) return `—`;
+  let [r, i = ``] = _(e, t).split(`.`),
+    a = r.replace(/\B(?=(\d{3})+(?!\d))/g, `,`),
+    o = i.slice(0, n).replace(/0+$/, ``);
+  return e > 0n && r === `0` && !o
+    ? `< ${n === 0 ? `1` : `0.${`0`.repeat(n - 1)}1`}`
+    : `${a}${o ? `.${o}` : ``}`;
+}
+var Cr = (e, t = 18) => _(e, t),
+  wr = (e) => `${e.slice(0, 6)}…${e.slice(-4)}`,
+  N = (e) => (e === void 0 ? `—` : e.toLocaleString(`en-US`)),
+  Tr = (e) => (e === void 0 ? `—` : `${Number(10000n + e) / 1e4}×`);
+function Er(e) {
+  let t = e instanceof Error ? e.message : String(e);
+  return /reject|denied|4001/i.test(t)
+    ? `Request declined in your wallet. You can try again.`
+    : /insufficient funds/i.test(t)
+      ? `Not enough ETH for network gas. Add ETH to your wallet and try again.`
+      : /insufficient.*balance|exceeds balance/i.test(t)
+        ? `Not enough IMD for this purchase. Choose fewer tickets.`
+        : /RoundClosed|RoundNotEnded|UnexpectedRound/i.test(t)
+          ? `The round changed while you were here. Refresh and try again.`
+          : /DrawNotReady/i.test(t)
+            ? `The target block is not ready. Wait for the next Ethereum blocks and refresh.`
+            : /DrawExpired/i.test(t)
+              ? `The draw expired. Use Round tools to cancel it and claim a refund.`
+              : /OwnableUnauthorizedAccount/i.test(t)
+                ? `Only the current contract owner can do this. Reconnect the owner wallet.`
+                : /TokenNotConfigured|VrfNotConfigured/i.test(t)
+                  ? `The game owner still needs to configure IMD.`
+                  : /EnforcedPause/i.test(t)
+                    ? `The game is paused. Try again after the owner resumes entries.`
+                    : /timeout|fetch|network|HTTP|RPC/i.test(t)
+                      ? `Ethereum could not be reached. Check your connection and try again.`
+                      : /revert/i.test(t)
+                        ? `The contract did not accept this action. Refresh the round and check your balance before trying again.`
+                        : t.length > 190
+                          ? `The wallet could not complete this request. Refresh and try again.`
+                          : t;
+}
+var Dr = {
+  jackpot: (0, C.jsxs)(C.Fragment, {
+    children: [
+      (0, C.jsx)(`path`, { d: `m12 3 3 5 6 1-4 5 1 6-6-3-6 3 1-6-4-5 6-1Z` }),
+      (0, C.jsx)(`path`, { d: `m10 11 2 3 2-3` }),
+    ],
+  }),
+  dashboard: (0, C.jsxs)(C.Fragment, {
+    children: [
+      (0, C.jsx)(`rect`, {
+        x: `3`,
+        y: `3`,
+        width: `7`,
+        height: `7`,
+        rx: `1.5`,
+      }),
+      (0, C.jsx)(`rect`, {
+        x: `14`,
+        y: `3`,
+        width: `7`,
+        height: `7`,
+        rx: `1.5`,
+      }),
+      (0, C.jsx)(`rect`, {
+        x: `3`,
+        y: `14`,
+        width: `7`,
+        height: `7`,
+        rx: `1.5`,
+      }),
+      (0, C.jsx)(`rect`, {
+        x: `14`,
+        y: `14`,
+        width: `7`,
+        height: `7`,
+        rx: `1.5`,
+      }),
+    ],
+  }),
+  activity: (0, C.jsx)(C.Fragment, {
+    children: (0, C.jsx)(`path`, { d: `M3 12h4l3-8 4 16 3-8h4` }),
+  }),
+  help: (0, C.jsxs)(C.Fragment, {
+    children: [
+      (0, C.jsx)(`circle`, { cx: `12`, cy: `12`, r: `9` }),
+      (0, C.jsx)(`path`, { d: `M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2-3 4m.1 3h.01` }),
+    ],
+  }),
+  arrow: (0, C.jsx)(C.Fragment, {
+    children: (0, C.jsx)(`path`, { d: `M4 12h15m-6-6 6 6-6 6` }),
+  }),
+  external: (0, C.jsx)(C.Fragment, {
+    children: (0, C.jsx)(`path`, {
+      d: `M14 4h6v6m0-6L10 14m0-10H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5`,
+    }),
+  }),
+  wallet: (0, C.jsxs)(C.Fragment, {
+    children: [
+      (0, C.jsx)(`path`, {
+        d: `M20 8V5a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15v12H5a2 2 0 0 1-2-2V6m17 6h-5v4h5`,
+      }),
+      (0, C.jsx)(`path`, { d: `M17 14h.01` }),
+    ],
+  }),
+  ticket: (0, C.jsxs)(C.Fragment, {
+    children: [
+      (0, C.jsx)(`path`, {
+        d: `m3 8 5-5 3 3a3 3 0 0 0 4 4l6 6-5 5-6-6a3 3 0 0 0-4-4Z`,
+      }),
+      (0, C.jsx)(`path`, { d: `m12 10 2 2m2 2 2 2` }),
+    ],
+  }),
+  clock: (0, C.jsxs)(C.Fragment, {
+    children: [
+      (0, C.jsx)(`circle`, { cx: `12`, cy: `12`, r: `9` }),
+      (0, C.jsx)(`path`, { d: `M12 7v5l3 2` }),
+    ],
+  }),
+  flame: (0, C.jsx)(`path`, {
+    d: `M12 3c2 5-3 6 0 10 2-1 3-3 3-5 4 4 5 7 3 10-3 4-10 4-13-1-2-4 1-7 3-9-1 4 0 5 1 6 3-3 2-7 3-11Z`,
+  }),
+  shield: (0, C.jsxs)(C.Fragment, {
+    children: [
+      (0, C.jsx)(`path`, { d: `m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6Z` }),
+      (0, C.jsx)(`path`, { d: `m8 12 3 3 5-6` }),
+    ],
+  }),
+  trophy: (0, C.jsx)(C.Fragment, {
+    children: (0, C.jsx)(`path`, {
+      d: `M7 3h10v7a5 5 0 0 1-10 0Zm5 12v6m-4 0h8M7 5H3v3a4 4 0 0 0 4 4m10-7h4v3a4 4 0 0 1-4 4`,
+    }),
+  }),
+  people: (0, C.jsxs)(C.Fragment, {
+    children: [
+      (0, C.jsx)(`circle`, { cx: `9`, cy: `8`, r: `3` }),
+      (0, C.jsx)(`path`, {
+        d: `M3 21v-3a6 6 0 0 1 12 0v3m2-16a3 3 0 0 1 0 6m1 4a5 5 0 0 1 3 4v2`,
+      }),
+    ],
+  }),
+  refresh: (0, C.jsx)(C.Fragment, {
+    children: (0, C.jsx)(`path`, {
+      d: `M20 7v5h-5M4 17v-5h5m-4-4a8 8 0 0 1 13-3l2 3M4 16l2 3a8 8 0 0 0 13-3`,
+    }),
+  }),
+  chevron: (0, C.jsx)(`path`, { d: `m8 10 4 4 4-4` }),
+  close: (0, C.jsx)(`path`, { d: `m6 6 12 12M6 18 18 6` }),
+  check: (0, C.jsx)(`path`, { d: `m5 12 4 4L19 6` }),
+  lock: (0, C.jsxs)(C.Fragment, {
+    children: [
+      (0, C.jsx)(`rect`, {
+        x: `5`,
+        y: `10`,
+        width: `14`,
+        height: `11`,
+        rx: `2`,
+      }),
+      (0, C.jsx)(`path`, { d: `M8 10V7a4 4 0 0 1 8 0v3m-4 4v3` }),
+    ],
+  }),
+  bolt: (0, C.jsx)(`path`, { d: `m13 2-9 12h7l-1 8 10-13h-8Z` }),
+  minus: (0, C.jsx)(`path`, { d: `M5 12h14` }),
+  plus: (0, C.jsx)(`path`, { d: `M5 12h14M12 5v14` }),
+  ethereum: (0, C.jsx)(C.Fragment, {
+    children: (0, C.jsx)(`path`, {
+      d: `m12 2 6 10-6 4-6-4 6-10Zm-6 12 6 8 6-8m-6-12v14`,
+    }),
+  }),
+  info: (0, C.jsxs)(C.Fragment, {
+    children: [
+      (0, C.jsx)(`circle`, { cx: `12`, cy: `12`, r: `9` }),
+      (0, C.jsx)(`path`, { d: `M12 11v6m0-10h.01` }),
+    ],
+  }),
+  coin: (0, C.jsxs)(C.Fragment, {
+    children: [
+      (0, C.jsx)(`circle`, { cx: `12`, cy: `12`, r: `9` }),
+      (0, C.jsx)(`path`, { d: `M9 8h6m-6 8h6m-3-8v8` }),
+    ],
+  }),
+};
+function P({ name: e, size: t = 20, className: n = ``, style: r }) {
+  return (0, C.jsx)(`svg`, {
+    width: t,
+    height: t,
+    viewBox: `0 0 24 24`,
+    fill: `none`,
+    stroke: `currentColor`,
+    strokeWidth: `1.7`,
+    strokeLinecap: `round`,
+    strokeLinejoin: `round`,
+    "aria-hidden": `true`,
+    className: n,
+    style: r,
+    children: Dr[e],
+  });
+}
+function Or({ className: e = `` }) {
+  return (0, C.jsxs)(`svg`, {
+    viewBox: `0 0 64 64`,
+    fill: `none`,
+    "aria-hidden": `true`,
+    className: `chip ${e}`,
+    children: [
+      (0, C.jsx)(`circle`, {
+        cx: `32`,
+        cy: `32`,
+        r: `30`,
+        fill: `currentColor`,
+      }),
+      (0, C.jsx)(`circle`, {
+        cx: `32`,
+        cy: `32`,
+        r: `25`,
+        stroke: `#172015`,
+        strokeWidth: `5`,
+        strokeDasharray: `11 8.635`,
+      }),
+      (0, C.jsx)(`circle`, {
+        cx: `32`,
+        cy: `32`,
+        r: `18`,
+        stroke: `#172015`,
+        strokeWidth: `1.5`,
+      }),
+      (0, C.jsx)(`path`, {
+        d: `m32 19 4 8 9 1-6.5 6.5L40 44l-8-4-8 4 1.5-9.5L19 28l9-1Z`,
+        fill: `#172015`,
+      }),
+    ],
+  });
+}
+function kr({ title: e, onClose: t, children: n, className: r = `` }) {
+  let i = (0, S.useRef)(null),
+    a = (0, S.useId)();
+  return (
+    (0, S.useEffect)(() => {
+      let e = document.activeElement,
+        t = i.current;
+      return (
+        t.showModal(),
+        () => {
+          (t.close(), e?.focus());
+        }
+      );
+    }, []),
+    (0, C.jsx)(`dialog`, {
+      className: `modal ${r}`,
+      ref: i,
+      "aria-labelledby": a,
+      onCancel: (e) => {
+        (e.preventDefault(), t());
+      },
+      onClick: (e) => {
+        e.target === e.currentTarget && t();
+      },
+      children: (0, C.jsxs)(`div`, {
+        className: `modal-inner`,
+        children: [
+          (0, C.jsxs)(`div`, {
+            className: `modal-head`,
+            children: [
+              (0, C.jsx)(`h2`, { id: a, children: e }),
+              (0, C.jsx)(`button`, {
+                type: `button`,
+                className: `icon-button`,
+                "aria-label": `Close dialog`,
+                onClick: t,
+                children: (0, C.jsx)(P, { name: `close` }),
+              }),
+            ],
+          }),
+          n,
+        ],
+      }),
+    })
+  );
+}
+var Ar = [
+    {
+      id: `metamask`,
+      name: `MetaMask`,
+      href: (e) =>
+        `https://link.metamask.io/dapp/${e.replace(/^https?:\/\//, ``)}`,
+    },
+    {
+      id: `coinbase`,
+      name: `Coinbase Wallet`,
+      href: (e) => `https://go.cb-w.com/dapp?cb_url=${encodeURIComponent(e)}`,
+    },
+    {
+      id: `rabby`,
+      name: `Rabby`,
+      href: (e) =>
+        `https://go.rabby.io/mobile/?_cmd=open-dapp&dapp=${encodeURIComponent(e)}`,
+    },
+    {
+      id: `phantom`,
+      name: `Phantom`,
+      href: (e) =>
+        `https://phantom.app/ul/browse/${encodeURIComponent(e)}?ref=${encodeURIComponent(new URL(e).origin)}`,
+    },
+  ],
+  jr = () =>
+    /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) &&
+    !(`ethereum` in window),
+  Mr = (0, S.lazy)(() =>
+    s(
+      () => import(`./PrivySession-CJcUIFVa.js`),
+      __vite__mapDeps([
+        4, 1, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 3, 18, 19, 20, 21,
+        22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
+        40, 41, 42, 43, 44, 45, 46, 47, 48,
+      ]),
+      import.meta.url,
+    ),
+  ),
+  Nr = `imdpot:privy-session`;
+function Pr() {
+  try {
+    return sessionStorage.getItem(Nr) === `active`;
+  } catch {
+    return !1;
+  }
+}
+function Fr(e) {
+  try {
+    e ? sessionStorage.setItem(Nr, `active`) : sessionStorage.removeItem(Nr);
+  } catch {}
+}
+var Ir = class extends S.Component {
+    state = { failed: !1 };
+    static getDerivedStateFromError() {
+      return { failed: !0 };
+    }
+    componentDidCatch() {
+      this.props.onError(
+        `Privy sign-in could not load. Try again or choose a browser wallet.`,
+      );
+    }
+    render() {
+      return this.state.failed ? null : this.props.children;
+    }
+  },
+  Lr = () => {
+    let e = tr(),
+      t = or();
+    return { ...e, client: t.data };
+  },
+  Rr = (0, S.createContext)(null),
+  zr = () => (0, S.useContext)(Rr);
+function Br({ id: e, icon: t }) {
+  let n = t || `./wallets/${e === `coinbaseWalletSDK` ? `coinbase` : e}.svg`;
+  return e === `injected` && !t
+    ? (0, C.jsx)(`span`, {
+        className: `wallet-mark browser-mark`,
+        children: (0, C.jsx)(P, { name: `wallet`, size: 24 }),
+      })
+    : (0, C.jsx)(`img`, {
+        className: `wallet-mark`,
+        src: n,
+        width: `28`,
+        height: `28`,
+        alt: ``,
+      });
+}
+function Vr({ children: e }) {
+  let t = Lr(),
+    n = rr(),
+    r = nr(),
+    i = ar(),
+    [a, o] = (0, S.useState)(!1),
+    [s, c] = (0, S.useState)(``),
+    [l, u] = (0, S.useState)(),
+    [d, p] = (0, S.useState)(Pr),
+    m = (0, S.useRef)(void 0),
+    h = (0, S.useCallback)((e) => {
+      m.current = e;
+    }, []),
+    g = (0, S.useCallback)((e) => {
+      (Fr(!1), c(e), o(!0), p(!1));
+    }, []),
+    [_, v] = (0, S.useState)(0),
+    y = Dt({
+      queryKey: [`site-config`],
+      queryFn: gr,
+      staleTime: 1 / 0,
+      retry: 1,
+    }),
+    b = jr(),
+    ee = r.some((e) => e.type === `injected` && e.id !== `injected`),
+    te = [
+      ...r.filter((e) => e.type === `injected`),
+      ...r.filter((e) => e.type !== `injected`),
+    ].filter(
+      (e) => !(e.id === `injected` && ee) && (!b || e.type !== `injected`),
+    ),
+    ne = async () => {
+      if (t.connector) {
+        (c(``), u(`switch`));
+        try {
+          let e = await t.connector.getProvider();
+          try {
+            await e.request({
+              method: `wallet_switchEthereumChain`,
+              params: [{ chainId: `0x1` }],
+            });
+          } catch (t) {
+            if (t.code !== 4902) throw t;
+            (await e.request({
+              method: `wallet_addEthereumChain`,
+              params: [
+                {
+                  chainId: `0x1`,
+                  chainName: pr.name,
+                  nativeCurrency: pr.nativeCurrency,
+                  rpcUrls: [...pr.rpcUrls.default.http],
+                  blockExplorerUrls: [dr],
+                },
+              ],
+            }),
+              await e.request({
+                method: `wallet_switchEthereumChain`,
+                params: [{ chainId: `0x1` }],
+              }));
+          }
+        } catch (e) {
+          (c(Er(e)), o(!0));
+        } finally {
+          u(void 0);
+        }
+      }
+    };
+  async function re(e) {
+    (u(e.uid), c(``));
+    try {
+      (await n.mutateAsync({ connector: e }), o(!1));
+    } catch (e) {
+      c(Er(e));
+    } finally {
+      u(void 0);
+    }
+  }
+  async function ie(e) {
+    (await n.mutateAsync({
+      connector: an({ target: { id: `privy`, name: `Privy`, provider: e } }),
+    }),
+      o(!1));
+  }
+  return (0, C.jsxs)(Rr.Provider, {
+    value: {
+      ...t,
+      openWallet: () => {
+        (c(``), o(!0), y.isError && y.refetch());
+      },
+      switchNetwork: ne,
+    },
+    children: [
+      e,
+      a &&
+        (0, C.jsxs)(kr, {
+          title: t.isConnected ? `Your wallet` : `Connect a wallet`,
+          onClose: () => o(!1),
+          className: `wallet-modal`,
+          children: [
+            t.isConnected && t.address
+              ? (0, C.jsxs)(C.Fragment, {
+                  children: [
+                    (0, C.jsxs)(`p`, {
+                      className: `muted`,
+                      children: [
+                        `Connected on `,
+                        t.chainId === 1 ? `Ethereum` : `chain ${t.chainId}`,
+                        `.`,
+                      ],
+                    }),
+                    (0, C.jsxs)(`a`, {
+                      className: `address-link`,
+                      href: `https://etherscan.io/address/${t.address}`,
+                      target: `_blank`,
+                      rel: `noreferrer`,
+                      children: [
+                        f(t.address),
+                        (0, C.jsx)(P, { name: `external`, size: 16 }),
+                      ],
+                    }),
+                    t.chainId !== 1 &&
+                      (0, C.jsx)(`button`, {
+                        className: `button primary full`,
+                        onClick: () => void ne(),
+                        disabled: !!l,
+                        children:
+                          l === `switch` ? `Switching…` : `Switch to Ethereum`,
+                      }),
+                    (0, C.jsx)(`button`, {
+                      className: `button secondary full`,
+                      onClick: async () => {
+                        try {
+                          (t.connector?.id === `privy` && (await m.current?.()),
+                            await i.mutateAsync({}),
+                            Fr(!1),
+                            p(!1),
+                            o(!1));
+                        } catch (e) {
+                          c(Er(e));
+                        }
+                      },
+                      children: `Disconnect wallet`,
+                    }),
+                  ],
+                })
+              : (0, C.jsxs)(C.Fragment, {
+                  children: [
+                    (0, C.jsx)(`p`, {
+                      className: `muted wallet-intro`,
+                      children: `Choose how to enter the jackpot room.`,
+                    }),
+                    (0, C.jsxs)(`div`, {
+                      className: `wallet-rows`,
+                      children: [
+                        b &&
+                          Ar.map((e) =>
+                            (0, C.jsxs)(
+                              `a`,
+                              {
+                                className: `wallet-row`,
+                                href: e.href(location.href),
+                                children: [
+                                  (0, C.jsx)(Br, { id: e.id }),
+                                  (0, C.jsxs)(`span`, {
+                                    children: [`Open in `, e.name],
+                                  }),
+                                  (0, C.jsx)(P, { name: `external`, size: 16 }),
+                                ],
+                              },
+                              e.id,
+                            ),
+                          ),
+                        te.map((e) =>
+                          (0, C.jsxs)(
+                            `button`,
+                            {
+                              className: `wallet-row`,
+                              onClick: () => void re(e),
+                              disabled: !!l,
+                              children: [
+                                (0, C.jsx)(Br, { id: e.id, icon: e.icon }),
+                                (0, C.jsxs)(`span`, {
+                                  children: [
+                                    e.id === `injected`
+                                      ? `Browser wallet`
+                                      : e.id === `coinbaseWalletSDK` && b
+                                        ? `Coinbase Smart Wallet`
+                                        : e.name,
+                                    l === e.uid ? ` · opening…` : ``,
+                                  ],
+                                }),
+                                (0, C.jsx)(P, { name: `arrow`, size: 16 }),
+                              ],
+                            },
+                            e.uid,
+                          ),
+                        ),
+                        (0, C.jsxs)(`button`, {
+                          className: `wallet-row`,
+                          disabled: !y.data?.privyAppId || !!l,
+                          onClick: () => {
+                            (Fr(!0), o(!1), v((e) => e + 1), p(!0));
+                          },
+                          children: [
+                            (0, C.jsx)(`span`, {
+                              className: `wallet-mark privy-mark`,
+                              children: (0, C.jsx)(P, {
+                                name: `lock`,
+                                size: 22,
+                              }),
+                            }),
+                            (0, C.jsxs)(`span`, {
+                              children: [
+                                `Continue with Privy`,
+                                (0, C.jsx)(`small`, {
+                                  children: `Email sign-in`,
+                                }),
+                              ],
+                            }),
+                            (0, C.jsx)(P, { name: `arrow`, size: 16 }),
+                          ],
+                        }),
+                      ],
+                    }),
+                    !y.data?.privyAppId &&
+                      (0, C.jsx)(`p`, {
+                        className: `small muted`,
+                        children: y.isError
+                          ? `Sign-in settings could not be loaded. Close and reopen to try again.`
+                          : `Loading Privy sign-in settings…`,
+                      }),
+                    (0, C.jsx)(`p`, {
+                      className: `small muted`,
+                      children: `Wallet connection is free. Transactions require ETH for network gas.`,
+                    }),
+                  ],
+                }),
+            (0, C.jsx)(`p`, {
+              className: `inline-error`,
+              role: `alert`,
+              children: s,
+            }),
+          ],
+        }),
+      d &&
+        y.data?.privyAppId &&
+        (0, C.jsx)(Ir, {
+          onError: g,
+          children: (0, C.jsx)(S.Suspense, {
+            fallback: (0, C.jsx)(`div`, {
+              className: `connection-status`,
+              role: `status`,
+              children: `Loading Privy sign-in…`,
+            }),
+            children: (0, C.jsx)(
+              Mr,
+              {
+                appId: y.data.privyAppId,
+                onConnect: ie,
+                onError: g,
+                onLogoutReady: h,
+              },
+              _,
+            ),
+          }),
+        }),
+    ],
+  });
+}
+function Hr() {
+  let e = zr(),
+    t = e.isConnected && e.chainId !== 1;
+  return (0, C.jsxs)(`button`, {
+    className: `button wallet-button`,
+    onClick: t ? () => void e.switchNetwork() : e.openWallet,
+    children: [
+      (0, C.jsx)(P, { name: `wallet`, size: 18 }),
+      (0, C.jsx)(`span`, {
+        children: t
+          ? `Switch to Ethereum`
+          : e.address
+            ? wr(f(e.address))
+            : `Connect wallet`,
+      }),
+      e.address && (0, C.jsx)(P, { name: `chevron`, size: 16 }),
+    ],
+  });
+}
+var Ur = gameAbi,
+  Wr = gameAbi;
+async function Gr() {
+  await verifyGame(M, deployment, u);
+  return `future-blockhash`;
+}
+var Kr = (e) => (e === `future-blockhash` ? Wr : Ur);
+async function qr(e, t, n) {
+  return t === `future-blockhash`
+    ? M.readContract({
+        address: j,
+        abi: Wr,
+        functionName: `getRound`,
+        args: [e],
+        blockNumber: n,
+      })
+    : M.readContract({
+        address: j,
+        abi: Ur,
+        functionName: `getRound`,
+        args: [e],
+        blockNumber: n,
+      });
+}
+async function Jr() {
+  let e = await Gr(),
+    t = await M.getBlock(),
+    n = (e) =>
+      M.readContract({
+        address: j,
+        abi: Ur,
+        functionName: e,
+        blockNumber: t.number,
+      }),
+    [r, i, a, o, s, u, d, p, h, g, _, v, y] = await Promise.all([
+      n(`currentRoundId`),
+      n(`isConfigured`),
+      n(`paused`),
+      n(`token`),
+      n(`ticketPrice`),
+      n(`totalLocked`),
+      n(`pendingBurn`),
+      n(`pendingTreasury`),
+      n(`DEAD_ADDRESS`),
+      n(`TREASURY`),
+      n(`owner`),
+      n(`pendingOwner`),
+      n(`totalObligations`),
+    ]),
+    b = await qr(r, e, t.number),
+    ee = !c(o, m),
+    te = ee
+      ? await M.readContract({
+          address: o,
+          abi: l,
+          functionName: `decimals`,
+          blockNumber: t.number,
+        })
+      : 18;
+  return {
+    roundId: r,
+    configured: i,
+    paused: a,
+    token: ee ? f(o) : void 0,
+    ticketPrice: s,
+    locked: u,
+    pendingBurn: d,
+    pendingTreasury: p,
+    burnAddress: h,
+    treasury: g,
+    owner: _,
+    pendingOwner: v,
+    obligations: y,
+    mode: e,
+    round: b,
+    decimals: te,
+    block: t.number,
+    chainTime: Number(t.timestamp),
+    fetchedAt: Date.now(),
+    verified: !0,
+  };
+}
+function Yr() {
+  return Dt({
+    queryKey: [`game`],
+    queryFn: Jr,
+    refetchInterval: 15e3,
+    retry: 1,
+    staleTime: 1e4,
+  });
+}
+async function Xr(e, t) {
+  let [n, r, i, a, o, s] = await Promise.all([
+    M.readContract({
+      address: j,
+      abi: Ur,
+      functionName: `getPlayer`,
+      args: [e],
+    }),
+    M.readContract({
+      address: j,
+      abi: Ur,
+      functionName: `ticketsOf`,
+      args: [t.roundId, e],
+    }),
+    M.readContract({
+      address: j,
+      abi: Ur,
+      functionName: `roundBoostBps`,
+      args: [t.roundId, e],
+    }),
+    M.readContract({
+      address: j,
+      abi: Ur,
+      functionName: `claimable`,
+      args: [e],
+    }),
+    t.token
+      ? M.readContract({
+          address: t.token,
+          abi: l,
+          functionName: `balanceOf`,
+          args: [e],
+        })
+      : void 0,
+    t.token
+      ? M.readContract({
+          address: t.token,
+          abi: l,
+          functionName: `allowance`,
+          args: [e, j],
+        })
+      : void 0,
+  ]);
+  return {
+    points: n[0],
+    roundsPlayed: n[1],
+    pendingBoost: n[2],
+    canRedeem: n[3],
+    tickets: r,
+    boost: i,
+    claimable: a,
+    balance: o,
+    allowance: s,
+  };
+}
+function Zr(e, t) {
+  return Dt({
+    queryKey: [`player`, e, t?.roundId.toString(), t?.token],
+    queryFn: () => Xr(e, t),
+    enabled: !!e && !!t,
+    retry: 1,
+    staleTime: 1e4,
+    refetchInterval: 15e3,
+  });
+}
+function Qr(e) {
+  return Dt({
+    queryKey: [`recent-rounds`, e?.roundId.toString()],
+    enabled: !!e,
+    queryFn: async () => {
+      let t = Number(e.roundId > 10n ? 10n : e.roundId - 1n);
+      return Promise.all(
+        Array.from({ length: t }, async (t, n) => {
+          let r = e.roundId - 1n - BigInt(n);
+          return { id: r, round: await qr(r, e.mode) };
+        }),
+      );
+    },
+    staleTime: 3e4,
+    retry: 1,
+  });
+}
+var $r = 2000n;
+async function ei(e) {
+  let t = e - 2000n + 1n > ur ? e - $r + 1n : ur,
+    n = [];
+  for (let r = t; r <= e; r += 500n)
+    n.push({ fromBlock: r, toBlock: r + 499n < e ? r + 499n : e });
+  return {
+    fromBlock: t,
+    toBlock: e,
+    events: (
+      await Promise.all(
+        n.map(async (e) => {
+          let [t, n] = await Promise.all([
+            M.getContractEvents({
+              address: j,
+              abi: Ur,
+              eventName: `FeeTransferred`,
+              ...e,
+            }),
+            M.getContractEvents({
+              address: j,
+              abi: Ur,
+              eventName: `FeeTransferDeferred`,
+              ...e,
+            }),
+          ]);
+          return [
+            ...t.map((e) => ({ ...e, deferred: !1 })),
+            ...n.map((e) => ({ ...e, deferred: !0 })),
+          ];
+        }),
+      )
+    )
+      .flat()
+      .filter((e) => e.args.to && e.args.amount !== void 0 && !e.removed)
+      .sort((e, t) =>
+        e.blockNumber === t.blockNumber
+          ? t.logIndex - e.logIndex
+          : e.blockNumber > t.blockNumber
+            ? -1
+            : 1,
+      ),
+  };
+}
+function ti() {
+  let e = zr(),
+    t = de(),
+    n = (0, S.useRef)(!1),
+    [r, i] = (0, S.useState)(!1),
+    [o, s] = (0, S.useState)(),
+    [u, d] = (0, S.useState)(!1);
+  async function f(r, o) {
+    if (n.current) return;
+    if (!e.address) {
+      e.openWallet();
+      return;
+    }
+    if (e.chainId !== 1) {
+      await e.switchNetwork();
+      return;
+    }
+    if (!e.client) {
+      e.openWallet();
+      return;
+    }
+    let l = e.address,
+      u = e.client;
+    ((n.current = !0), i(!0), d(!0));
+    let f = [],
+      p = (e) => s({ title: r, phase: `pending`, message: e, hashes: [...f] });
+    p(`Checking the contract and your wallet…`);
+    let m = async (e, t, n, i = [], o = r) => {
+      await Gr();
+      let [s, d] = await Promise.all([u.getChainId(), u.getAddresses()]);
+      if (s !== 1 || !d[0] || !c(d[0], l))
+        throw Error(
+          `Your wallet account or network changed. Reconnect and review the action again.`,
+        );
+      let m = a({ abi: t, functionName: n, args: i });
+      (p(`${o}: checking the transaction…`),
+        await M.call({ account: l, to: e, data: m }),
+        p(`${o}: confirm in your wallet.`));
+      let h = await u.sendTransaction({
+        account: l,
+        chain: pr,
+        to: e,
+        data: m,
+      });
+      (f.push(h), p(`${o}: waiting for Ethereum confirmation…`));
+      let g = !1,
+        _ = await M.waitForTransactionReceipt({
+          hash: h,
+          confirmations: 1,
+          timeout: 18e4,
+          onReplaced: (e) => {
+            (e.reason !== `repriced` && (g = !0),
+              (f[f.length - 1] = e.transactionReceipt.transactionHash),
+              p(`${o}: waiting for Ethereum confirmation…`));
+          },
+        });
+      if (g)
+        throw Error(
+          `The transaction was replaced or cancelled in your wallet. Refresh and review before trying again.`,
+        );
+      if (_.status !== `success`)
+        throw Error(
+          `The transaction reverted on Ethereum. Refresh the round and try again.`,
+        );
+    };
+    try {
+      let e = await o(m);
+      s({ title: r, phase: `success`, message: e, hashes: [...f] });
+    } catch (e) {
+      s({ title: r, phase: `error`, message: Er(e), hashes: [...f] });
+    } finally {
+      ((n.current = !1),
+        i(!1),
+        await t.invalidateQueries({
+          predicate: (e) =>
+            [`game`, `player`, `recent-rounds`, `fees`, `refund`].includes(
+              String(e.queryKey[0]),
+            ),
+        }));
+    }
+  }
+  function p(t, n, r) {
+    return f(`Buy tickets`, async (submit) =>
+      buyReviewedTickets({
+        count: t,
+        roundId: n,
+        cost: r,
+        loadGame: Jr,
+        loadBalance: (asset) =>
+          M.readContract({
+            address: asset,
+            abi: l,
+            functionName: `balanceOf`,
+            args: [e.address],
+          }),
+        loadAllowance: (asset) =>
+          M.readContract({
+            address: asset,
+            abi: l,
+            functionName: `allowance`,
+            args: [e.address, j],
+          }),
+        approve: (asset, amount) =>
+          submit(asset, l, `approve`, [j, amount], `Approve IMD`),
+        buy: (roundId, count) =>
+          submit(j, Ur, `buyTicketsForRound`, [roundId, count], `Buy tickets`),
+      }),
+    );
+  }
+  function m(e, t, n, r = [], i) {
+    return f(t, async (t) => {
+      let a = await Jr();
+      if (e === `finalizeRound` && a.mode !== `future-blockhash`)
+        throw Error(
+          `This deployment cannot use future-blockhash draws. The contract update must be deployed first.`,
+        );
+      if (e === `finalizeRound` && i !== void 0 && a.roundId !== i)
+        throw Error(
+          `The round has changed. Refresh and review the draw again.`,
+        );
+      if (
+        e === `cancelRound` &&
+        a.mode === `legacy-vrf` &&
+        a.round.status === 1 &&
+        !a.paused
+      )
+        throw Error(
+          `An active round on the previous contract must be paused before cancellation.`,
+        );
+      return (
+        await t(j, Kr(a.mode), e, r),
+        e === `finalizeRound`
+          ? a.round.status === 2
+            ? `The draw is settled. Winners can claim their prizes and the next round is open.`
+            : `The future block is committed. Return after the target block is mined and select Settle winners.`
+          : n
+      );
+    });
+  }
+  function h(t) {
+    return f(
+      t === `setToken`
+        ? `Configure IMD`
+        : t === `pause`
+          ? `Pause entries`
+          : `Resume entries`,
+      async (n) => {
+        let r = await Jr();
+        if (!e.address || !c(r.owner, e.address))
+          throw Error(
+            `Only the current contract owner can change settings. Reconnect the owner wallet.`,
+          );
+        if (t === `setToken` && (r.token || r.mode !== `future-blockhash`))
+          throw Error(
+            `Token setup is available once on the future-blockhash contract. Refresh the settings.`,
+          );
+        return (
+          await n(j, Kr(r.mode), t, t === `setToken` ? [lr] : []),
+          t === `setToken`
+            ? `IMD is configured. The game needs no randomness subscription.`
+            : t === `pause`
+              ? `Entries are paused. Claims and refunds remain available.`
+              : `Entries are unpaused. The game status has been refreshed.`
+        );
+      },
+    );
+  }
+  return {
+    busy: r,
+    state: o,
+    visible: u,
+    setVisible: d,
+    buy: p,
+    action: m,
+    admin: h,
+  };
+}
+function ni({ icon: e, title: t, children: n }) {
+  return (0, C.jsxs)(`div`, {
+    className: `empty-state`,
+    children: [
+      (0, C.jsx)(`span`, {
+        className: `empty-icon`,
+        children: (0, C.jsx)(P, { name: e, size: 25 }),
+      }),
+      (0, C.jsx)(`h3`, { children: t }),
+      (0, C.jsx)(`p`, { children: n }),
+    ],
+  });
+}
+function ri({ game: e }) {
+  let [t, n] = (0, S.useState)(`all`),
+    [r, i] = (0, S.useState)(),
+    a = Dt({
+      queryKey: [`fees`, r?.toString()],
+      enabled: !!e,
+      queryFn: async () => ei(r ?? (await M.getBlockNumber({ cacheTime: 0 }))),
+      staleTime: 3e4,
+      refetchInterval: !r && 3e4,
+      retry: 1,
+    }),
+    o = a.data?.events.filter(
+      (n) =>
+        t === `all` ||
+        (t === `burn` ? c(n.args.to, e.burnAddress) : c(n.args.to, e.treasury)),
+    );
+  return (0, C.jsxs)(`section`, {
+    className: `panel activity-panel`,
+    id: `activity`,
+    "aria-labelledby": `activity-title`,
+    children: [
+      (0, C.jsxs)(`div`, {
+        className: `section-head`,
+        children: [
+          (0, C.jsx)(`h2`, {
+            id: `activity-title`,
+            children: `Onchain activity`,
+          }),
+          (0, C.jsxs)(`a`, {
+            className: `text-link`,
+            href: `${dr}/address/${j}#events`,
+            target: `_blank`,
+            rel: `noreferrer`,
+            children: [
+              `Etherscan`,
+              (0, C.jsx)(P, { name: `external`, size: 15 }),
+            ],
+          }),
+        ],
+      }),
+      (0, C.jsx)(`div`, {
+        className: `filter-group`,
+        role: `group`,
+        "aria-label": `Filter transactions`,
+        children: [`all`, `burn`, `house`].map((e) =>
+          (0, C.jsx)(
+            `button`,
+            {
+              "aria-pressed": t === e,
+              onClick: () => n(e),
+              children:
+                e === `all`
+                  ? `All transfers`
+                  : e === `burn`
+                    ? `Burns`
+                    : `House fees`,
+            },
+            e,
+          ),
+        ),
+      }),
+      a.isPending
+        ? (0, C.jsx)(`p`, {
+            className: `loading-row`,
+            role: `status`,
+            children: `Reading recent transfers…`,
+          })
+        : a.isError
+          ? (0, C.jsxs)(`div`, {
+              className: `error-state`,
+              children: [
+                (0, C.jsx)(`p`, {
+                  children: `Recent transfers could not be loaded.`,
+                }),
+                (0, C.jsx)(`button`, {
+                  className: `button secondary`,
+                  onClick: () => void a.refetch(),
+                  children: `Retry transfers`,
+                }),
+              ],
+            })
+          : o?.length
+            ? (0, C.jsx)(`ul`, {
+                className: `activity-list`,
+                children: o.slice(0, 20).map((t) => {
+                  let n = c(t.args.to, e.burnAddress);
+                  return (0, C.jsxs)(
+                    `li`,
+                    {
+                      children: [
+                        (0, C.jsx)(`span`, {
+                          className: `event-icon ${n ? `burn` : `house`}`,
+                          children: (0, C.jsx)(P, {
+                            name: n ? `flame` : `wallet`,
+                            size: 20,
+                          }),
+                        }),
+                        (0, C.jsxs)(`div`, {
+                          className: `event-description`,
+                          children: [
+                            (0, C.jsxs)(`strong`, {
+                              children: [
+                                n ? `IMD burn` : `House fee`,
+                                t.deferred ? ` deferred` : ` sent`,
+                              ],
+                            }),
+                            (0, C.jsxs)(`a`, {
+                              href: `${dr}/tx/${t.transactionHash}`,
+                              target: `_blank`,
+                              rel: `noreferrer`,
+                              children: [
+                                `Block `,
+                                N(t.blockNumber),
+                                (0, C.jsx)(P, { name: `external`, size: 13 }),
+                              ],
+                            }),
+                          ],
+                        }),
+                        (0, C.jsxs)(`span`, {
+                          className: `event-amount`,
+                          title: Cr(t.args.amount, e?.decimals),
+                          children: [Sr(t.args.amount, e?.decimals), ` IMD`],
+                        }),
+                      ],
+                    },
+                    `${t.transactionHash}-${t.logIndex}`,
+                  );
+                }),
+              })
+            : (0, C.jsx)(ni, {
+                icon: t === `house` ? `wallet` : `flame`,
+                title:
+                  t === `burn`
+                    ? `No burns in this window`
+                    : t === `house`
+                      ? `No house fees in this window`
+                      : `The table is quiet`,
+                children: `Burns and house fees appear here when rounds settle.`,
+              }),
+      a.data &&
+        (0, C.jsxs)(`div`, {
+          className: `history-footer`,
+          children: [
+            (0, C.jsxs)(`span`, {
+              className: `small muted`,
+              children: [
+                `Blocks `,
+                N(a.data.fromBlock),
+                `–`,
+                N(a.data.toBlock),
+                o && o.length > 20 ? ` · showing 20 newest` : ``,
+              ],
+            }),
+            (0, C.jsxs)(`div`, {
+              className: `history-actions`,
+              children: [
+                r &&
+                  (0, C.jsx)(`button`, {
+                    onClick: () => i(void 0),
+                    children: `Latest`,
+                  }),
+                (0, C.jsxs)(`button`, {
+                  disabled: a.data.fromBlock <= 26219034n || a.isFetching,
+                  onClick: () => i(a.data.fromBlock - 1n),
+                  children: [
+                    `Earlier blocks`,
+                    (0, C.jsx)(P, { name: `arrow`, size: 14 }),
+                  ],
+                }),
+              ],
+            }),
+          ],
+        }),
+      (0, C.jsx)(`p`, {
+        className: `small muted activity-note`,
+        children: `Deferred transfers are owed by the contract; they have not been sent.`,
+      }),
+    ],
+  });
+}
+function ii({ game: e }) {
+  let t = Qr(e),
+    n = t.data?.filter((e) => e.round.status === 3).slice(0, 3);
+  return (0, C.jsxs)(`section`, {
+    className: `panel winners-panel`,
+    "aria-labelledby": `winners-heading`,
+    children: [
+      (0, C.jsxs)(`div`, {
+        className: `section-head`,
+        children: [
+          (0, C.jsx)(`h2`, {
+            id: `winners-heading`,
+            children: `Recent winners`,
+          }),
+          (0, C.jsx)(`span`, {
+            className: `small muted`,
+            children: `40 / 20 / 10%`,
+          }),
+        ],
+      }),
+      t.isPending
+        ? (0, C.jsx)(`p`, {
+            className: `loading-row`,
+            children: `Reading past rounds…`,
+          })
+        : t.isError
+          ? (0, C.jsxs)(`div`, {
+              className: `error-state`,
+              children: [
+                (0, C.jsx)(`p`, {
+                  children: `Past rounds could not be loaded.`,
+                }),
+                (0, C.jsx)(`button`, {
+                  className: `button secondary`,
+                  onClick: () => void t.refetch(),
+                  children: `Retry winners`,
+                }),
+              ],
+            })
+          : n?.length
+            ? (0, C.jsx)(`div`, {
+                className: `winner-rounds`,
+                children: n.map((t) =>
+                  (0, C.jsxs)(
+                    `div`,
+                    {
+                      className: `winner-round`,
+                      children: [
+                        (0, C.jsxs)(`h3`, { children: [`Round #`, N(t.id)] }),
+                        (0, C.jsx)(`ol`, {
+                          children: t.round.winners.map(
+                            (n, r) =>
+                              !c(
+                                n,
+                                `0x0000000000000000000000000000000000000000`,
+                              ) &&
+                              (0, C.jsxs)(
+                                `li`,
+                                {
+                                  children: [
+                                    (0, C.jsx)(`span`, {
+                                      className: `podium ${[`first`, `second`, `third`][r]}`,
+                                      children: r + 1,
+                                    }),
+                                    (0, C.jsxs)(`a`, {
+                                      href: `https://etherscan.io/address/${n}`,
+                                      target: `_blank`,
+                                      rel: `noreferrer`,
+                                      title: n,
+                                      children: [
+                                        wr(n),
+                                        (0, C.jsx)(P, {
+                                          name: `external`,
+                                          size: 13,
+                                        }),
+                                      ],
+                                    }),
+                                    (0, C.jsxs)(`strong`, {
+                                      title: Cr(t.round.prizes[r], e?.decimals),
+                                      children: [
+                                        Sr(t.round.prizes[r], e?.decimals),
+                                        ` IMD`,
+                                      ],
+                                    }),
+                                  ],
+                                },
+                                r,
+                              ),
+                          ),
+                        }),
+                      ],
+                    },
+                    t.id.toString(),
+                  ),
+                ),
+              })
+            : (0, C.jsx)(ni, {
+                icon: `trophy`,
+                title: `The podium is waiting`,
+                children: `Winning tickets appear after the first round settles.`,
+              }),
+      (0, C.jsx)(`p`, {
+        className: `small muted history-note`,
+        children: `Up to 10 recent rounds. A player can win more than one place.`,
+      }),
+    ],
+  });
+}
+function ai({ game: e, now: t, disabled: n, tx: r }) {
+  let i = zr(),
+    [a, o] = (0, S.useState)(``),
+    [s, c] = (0, S.useState)(),
+    [l, u] = (0, S.useState)(``),
+    d = e?.round.status === 2,
+    f = e?.mode === `future-blockhash`,
+    p = e && br(e.round, e.block, e.mode).expired,
+    m =
+      e &&
+      (f
+        ? p ||
+          (e.round.status === 1 &&
+            e.paused &&
+            t >= Number(e.round.endTime) + 86400)
+        : [1, 2].includes(e.round.status) &&
+          t >= Number(e.round.endTime) + 86400 &&
+          (d
+            ? t >= Number(e.round.randomnessRequestedAt ?? 0n) + 86400
+            : e.paused)),
+    h = Dt({
+      queryKey: [`refund`, s?.toString(), i.address, e?.block.toString()],
+      enabled: !!s && !!i.address && !!e,
+      queryFn: async () => {
+        let [t, n] = await Promise.all([
+          qr(s, e.mode),
+          M.readContract({
+            address: j,
+            abi: Ur,
+            functionName: `ticketsOf`,
+            args: [s, i.address],
+          }),
+        ]);
+        return { status: t.status, tickets: n };
+      },
+      retry: 1,
+    });
+  return (0, C.jsx)(`section`, {
+    className: `tools-section`,
+    children: (0, C.jsxs)(`details`, {
+      children: [
+        (0, C.jsxs)(`summary`, {
+          children: [
+            `Round tools & refunds`,
+            (0, C.jsx)(P, { name: `chevron`, size: 18 }),
+          ],
+        }),
+        (0, C.jsxs)(`div`, {
+          className: `tools-content`,
+          children: [
+            (0, C.jsx)(`p`, {
+              className: `muted`,
+              children: f
+                ? `A draw must settle after its target block, within 256 blocks. If that window expires, anyone can cancel the round for full refunds. A round paused before commitment can be cancelled 24 hours after its scheduled end. The target block cannot be changed or re-rolled.`
+                : `This is the previous deployment. A drawing round can be cancelled 24 hours after both its scheduled end and its latest randomness request. A paused active round can be cancelled 24 hours after its end. Claims and refunds do not need a new draw.`,
+            }),
+            (0, C.jsxs)(`div`, {
+              className: `tool-buttons`,
+              children: [
+                (0, C.jsx)(`button`, {
+                  className: `button secondary`,
+                  disabled: !m || n,
+                  onClick: () =>
+                    void r.action(
+                      `cancelRound`,
+                      `Cancel round for refunds`,
+                      `The round is cancelled. Participants can check this round number below to claim their IMD back.`,
+                    ),
+                  children: `Cancel round for refunds`,
+                }),
+                (0, C.jsx)(`button`, {
+                  className: `button secondary`,
+                  disabled: !e || e.pendingBurn + e.pendingTreasury === 0n || n,
+                  onClick: () =>
+                    void r.action(
+                      `flushPendingFees`,
+                      `Send pending fees`,
+                      `The fee flush is confirmed. Refresh the pending totals to see whether each transfer was sent.`,
+                    ),
+                  children: `Send pending fees`,
+                }),
+              ],
+            }),
+            (0, C.jsxs)(`p`, {
+              className: `small muted`,
+              children: [
+                `Pending burn: `,
+                Sr(e?.pendingBurn, e?.decimals),
+                ` IMD · Pending house fee: `,
+                Sr(e?.pendingTreasury, e?.decimals),
+                ` IMD · Locked forever: `,
+                Sr(e?.locked, e?.decimals),
+                ` IMD`,
+              ],
+            }),
+            (0, C.jsxs)(`form`, {
+              className: `refund-form`,
+              onSubmit: (t) => {
+                (t.preventDefault(),
+                  i.address
+                    ? !/^\d+$/.test(a) ||
+                      BigInt(a) < 1n ||
+                      !e ||
+                      BigInt(a) >= e.roundId
+                      ? u(`Enter a past round number, starting at 1.`)
+                      : (u(``), c(BigInt(a)))
+                    : i.openWallet());
+              },
+              children: [
+                (0, C.jsx)(`label`, {
+                  htmlFor: `refund-round`,
+                  children: `Check a cancelled round for a refund`,
+                }),
+                (0, C.jsxs)(`div`, {
+                  children: [
+                    (0, C.jsx)(`input`, {
+                      id: `refund-round`,
+                      name: `refundRound`,
+                      inputMode: `numeric`,
+                      type: `text`,
+                      placeholder: `Round number`,
+                      value: a,
+                      onChange: (e) => {
+                        (o(e.target.value), u(``), c(void 0));
+                      },
+                      "aria-describedby": `refund-error`,
+                      "aria-invalid": !!l,
+                    }),
+                    (0, C.jsx)(`button`, {
+                      className: `button secondary`,
+                      type: `submit`,
+                      disabled: h.isFetching || !e,
+                      children: `Check refund`,
+                    }),
+                  ],
+                }),
+                (0, C.jsx)(`p`, {
+                  id: `refund-error`,
+                  className: `inline-error`,
+                  role: `alert`,
+                  children: l,
+                }),
+              ],
+            }),
+            s &&
+              (0, C.jsx)(`div`, {
+                className: `refund-result`,
+                role: `status`,
+                children: h.isPending
+                  ? `Checking your tickets…`
+                  : h.isError
+                    ? (0, C.jsxs)(C.Fragment, {
+                        children: [
+                          (0, C.jsx)(`span`, {
+                            children: `Refund check failed.`,
+                          }),
+                          (0, C.jsx)(`button`, {
+                            className: `button secondary`,
+                            onClick: () => void h.refetch(),
+                            children: `Retry refund check`,
+                          }),
+                        ],
+                      })
+                    : h.data?.status === 4 && h.data.tickets > 0n
+                      ? (0, C.jsxs)(C.Fragment, {
+                          children: [
+                            (0, C.jsxs)(`span`, {
+                              children: [
+                                `Round #`,
+                                N(s),
+                                `: `,
+                                Sr(
+                                  h.data.tickets * (e?.ticketPrice ?? 0n),
+                                  e?.decimals,
+                                ),
+                                ` IMD refundable.`,
+                              ],
+                            }),
+                            (0, C.jsx)(`button`, {
+                              className: `button secondary`,
+                              disabled: n,
+                              onClick: () =>
+                                void r.action(
+                                  `refund`,
+                                  `Claim refund`,
+                                  `Your refund is confirmed. Your IMD has been returned.`,
+                                  [s],
+                                ),
+                              children: `Claim refund`,
+                            }),
+                          ],
+                        })
+                      : `No refund available for your wallet in round #${N(s)}.`,
+              }),
+          ],
+        }),
+      ],
+    }),
+  });
+}
+function oi({ game: e, disabled: t, tx: n }) {
+  let r = zr(),
+    [i, a] = (0, S.useState)();
+  if (!e || !r.isConnected || !xr(r.address, e.owner)) return null;
+  let o = e.mode === `future-blockhash`,
+    s =
+      i === `setToken`
+        ? `Configure IMD permanently`
+        : i === `pause`
+          ? `Pause new entries`
+          : `Resume new entries`,
+    c = (e) =>
+      (0, C.jsxs)(`a`, {
+        href: `${dr}/address/${e}`,
+        target: `_blank`,
+        rel: `noreferrer`,
+        title: f(e),
+        children: [f(e), (0, C.jsx)(P, { name: `external`, size: 14 })],
+      });
+  return (0, C.jsxs)(`section`, {
+    className: `panel owner-panel`,
+    id: `owner`,
+    "aria-labelledby": `owner-heading`,
+    children: [
+      (0, C.jsxs)(`div`, {
+        className: `section-head`,
+        children: [
+          (0, C.jsxs)(`div`, {
+            children: [
+              (0, C.jsx)(`h2`, {
+                id: `owner-heading`,
+                children: `Owner controls`,
+              }),
+              (0, C.jsx)(`p`, {
+                className: `small muted`,
+                children: `Connected as the current contract owner.`,
+              }),
+            ],
+          }),
+          (0, C.jsx)(P, { name: `shield`, size: 22 }),
+        ],
+      }),
+      (0, C.jsxs)(`div`, {
+        className: `owner-status`,
+        children: [
+          (0, C.jsxs)(`span`, {
+            className: `status-label`,
+            children: [
+              (0, C.jsx)(`span`, { className: `status-dot` }),
+              e.paused ? `Entries paused` : `Entries unpaused`,
+            ],
+          }),
+          (0, C.jsx)(`button`, {
+            className: `button secondary`,
+            disabled: t,
+            onClick: () => a(e.paused ? `unpause` : `pause`),
+            children: e.paused ? `Unpause contract` : `Pause contract`,
+          }),
+        ],
+      }),
+      (0, C.jsxs)(`dl`, {
+        className: `owner-settings`,
+        children: [
+          (0, C.jsxs)(`div`, {
+            children: [
+              (0, C.jsx)(`dt`, { children: `Owner` }),
+              (0, C.jsx)(`dd`, { children: c(e.owner) }),
+            ],
+          }),
+          (0, C.jsxs)(`div`, {
+            children: [
+              (0, C.jsx)(`dt`, { children: `Game contract` }),
+              (0, C.jsx)(`dd`, { children: c(j) }),
+            ],
+          }),
+          (0, C.jsxs)(`div`, {
+            children: [
+              (0, C.jsx)(`dt`, { children: `IMD token` }),
+              (0, C.jsx)(`dd`, {
+                children: e.token ? c(e.token) : `Not configured`,
+              }),
+            ],
+          }),
+          (0, C.jsxs)(`div`, {
+            children: [
+              (0, C.jsx)(`dt`, { children: `Ticket price` }),
+              (0, C.jsx)(`dd`, {
+                children: e.token
+                  ? `${Sr(e.ticketPrice, e.decimals)} IMD`
+                  : `0.1 IMD after setup`,
+              }),
+            ],
+          }),
+          (0, C.jsxs)(`div`, {
+            children: [
+              (0, C.jsx)(`dt`, { children: `Round duration` }),
+              (0, C.jsx)(`dd`, { children: `15 minutes after first ticket` }),
+            ],
+          }),
+          (0, C.jsxs)(`div`, {
+            children: [
+              (0, C.jsx)(`dt`, { children: `House fee` }),
+              (0, C.jsxs)(`dd`, { children: [`5% · `, c(e.treasury)] }),
+            ],
+          }),
+          (0, C.jsxs)(`div`, {
+            children: [
+              (0, C.jsx)(`dt`, { children: `Randomness` }),
+              (0, C.jsx)(`dd`, {
+                children: o
+                  ? `Future blockhash · 3 blocks ahead`
+                  : `Previous contract · update required`,
+              }),
+            ],
+          }),
+          (0, C.jsxs)(`div`, {
+            children: [
+              (0, C.jsx)(`dt`, { children: `Settlement window` }),
+              (0, C.jsx)(`dd`, {
+                children: o
+                  ? `256 blocks after target`
+                  : `Unavailable in this version`,
+              }),
+            ],
+          }),
+          (0, C.jsxs)(`div`, {
+            children: [
+              (0, C.jsx)(`dt`, { children: `Game obligations` }),
+              (0, C.jsxs)(`dd`, {
+                children: [Sr(e.obligations, e.decimals), ` IMD`],
+              }),
+            ],
+          }),
+          (0, C.jsxs)(`div`, {
+            children: [
+              (0, C.jsx)(`dt`, { children: `Permanently locked` }),
+              (0, C.jsxs)(`dd`, {
+                children: [Sr(e.locked, e.decimals), ` IMD`],
+              }),
+            ],
+          }),
+        ],
+      }),
+      o
+        ? (0, C.jsxs)(`div`, {
+            className: `owner-setup`,
+            children: [
+              (0, C.jsx)(`h3`, {
+                children: e.token
+                  ? `Game setup is complete`
+                  : `Set the IMD token`,
+              }),
+              (0, C.jsx)(`p`, {
+                className: `small muted`,
+                children: e.token
+                  ? `No oracle, LINK or subscription is needed. Fees and the draw delay are fixed in the contract.`
+                  : `Set the verified Ethereum IMD token once. This setting cannot be changed.`,
+              }),
+              !e.token &&
+                (0, C.jsxs)(C.Fragment, {
+                  children: [
+                    (0, C.jsx)(`p`, {
+                      className: `owner-token-address`,
+                      children: f(lr),
+                    }),
+                    (0, C.jsxs)(`button`, {
+                      className: `button primary`,
+                      disabled: t,
+                      onClick: () => a(`setToken`),
+                      children: [
+                        `Configure IMD token`,
+                        (0, C.jsx)(P, { name: `arrow`, size: 16 }),
+                      ],
+                    }),
+                  ],
+                }),
+            ],
+          })
+        : (0, C.jsxs)(`div`, {
+            className: `owner-setup`,
+            children: [
+              (0, C.jsx)(`h3`, {
+                children: `Future-blockhash deployment required`,
+              }),
+              (0, C.jsx)(`p`, {
+                className: `small muted`,
+                children: `The live contract cannot be upgraded. The replacement source is ready for a separate deployment; its verified deployment details must be connected before new play opens. Pause, claims and eligible refunds remain available here.`,
+              }),
+            ],
+          }),
+      i &&
+        (0, C.jsxs)(kr, {
+          title: s,
+          onClose: () => a(void 0),
+          children: [
+            (0, C.jsx)(`p`, {
+              className: `muted`,
+              children:
+                i === `setToken`
+                  ? `This permanently selects the verified Ethereum IMD token for this game. Confirm only after reviewing the token and game addresses.`
+                  : i === `pause`
+                    ? `New purchases and new draws will pause.${o ? ` A committed draw can still settle.` : ``} Claims and eligible refunds remain available.`
+                    : `New purchases and draw commitments will resume once the game is configured.`,
+            }),
+            (0, C.jsxs)(`dl`, {
+              className: `review-details`,
+              children: [
+                (0, C.jsxs)(`div`, {
+                  children: [
+                    (0, C.jsx)(`dt`, { children: `Game` }),
+                    (0, C.jsx)(`dd`, { children: c(`${deployment.contract}`) }),
+                  ],
+                }),
+                i === `setToken` &&
+                  (0, C.jsxs)(`div`, {
+                    children: [
+                      (0, C.jsx)(`dt`, { children: `IMD token` }),
+                      (0, C.jsx)(`dd`, {
+                        children: c(lr),
+                      }),
+                    ],
+                  }),
+                (0, C.jsxs)(`div`, {
+                  children: [
+                    (0, C.jsx)(`dt`, { children: `Network` }),
+                    (0, C.jsx)(`dd`, { children: `Ethereum` }),
+                  ],
+                }),
+              ],
+            }),
+            (0, C.jsx)(`button`, {
+              className: `button primary full`,
+              disabled: t,
+              onClick: () => {
+                let e = i;
+                (a(void 0), n.admin(e));
+              },
+              children:
+                i === `setToken`
+                  ? `Set IMD token permanently`
+                  : i === `pause`
+                    ? `Pause contract`
+                    : `Unpause contract`,
+            }),
+          ],
+        }),
+    ],
+  });
+}
+var si = [
+  { href: `#jackpot`, label: `Jackpot`, icon: `jackpot` },
+  { href: `#dashboard`, label: `My dashboard`, icon: `dashboard` },
+  { href: `#activity`, label: `Activity`, icon: `activity` },
+  { href: `#how-to-play`, label: `How to play`, icon: `help` },
+];
+function ci() {
+  let e = zr(),
+    t = Yr(),
+    n = t.data,
+    r = Zr(e.address, n),
+    i = r.data,
+    a = ti(),
+    [o, s] = (0, S.useState)(Date.now()),
+    [c, l] = (0, S.useState)(`1`),
+    [u, d] = (0, S.useState)(``),
+    [f, p] = (0, S.useState)(),
+    [m, h] = (0, S.useState)(location.hash || `#jackpot`),
+    g = (0, S.useRef)(null);
+  ((0, S.useEffect)(() => {
+    let e = setInterval(() => s(Date.now()), 1e3);
+    return () => clearInterval(e);
+  }, []),
+    (0, S.useEffect)(() => {
+      let e = () => h(location.hash || `#jackpot`);
+      return (
+        window.addEventListener(`hashchange`, e),
+        () => window.removeEventListener(`hashchange`, e)
+      );
+    }, []));
+  let _ = n
+      ? n.chainTime + Math.max(0, Math.floor((o - n.fetchedAt) / 1e3))
+      : o / 1e3,
+    v = _r(n?.round, _),
+    y = !n || t.isError || o - n.fetchedAt > 6e4,
+    b = !!e.address && e.chainId !== 1,
+    ee = n?.mode === `legacy-vrf`,
+    te = ee
+      ? `New entries require the future-blockhash contract deployment.`
+      : !!n && yr(n.round, n.configured, n.paused, _),
+    ne = n ? br(n.round, n.block, n.mode) : void 0,
+    re = vr(c),
+    ie = re.count && n?.ticketPrice ? re.count * n.ticketPrice : void 0,
+    x = n?.round.status === 1 && v.seconds === 0,
+    ae = n?.round.status === 1 && v.seconds > 0,
+    oe = n?.round.status === 2,
+    se = !!n && !n.configured && !ee,
+    ce = a.busy || y || b,
+    le = n
+      ? y
+        ? `Read unavailable`
+        : ee
+          ? `Update required`
+          : se
+            ? `Awaiting setup`
+            : n.paused
+              ? `Entries paused`
+              : oe
+                ? ne?.expired
+                  ? `Draw expired`
+                  : ne?.ready
+                    ? `Ready to settle`
+                    : `Awaiting target block`
+                : x
+                  ? `Ready to draw`
+                  : ae
+                    ? `Round live`
+                    : `Table open`
+      : `Connecting`,
+    ue = !!i && i.claimable > 0n && !ce,
+    de = a.busy
+      ? `Transaction in progress…`
+      : e.address
+        ? b
+          ? `Switch to Ethereum`
+          : ee
+            ? `Contract update required`
+            : se
+              ? `Awaiting game setup`
+              : n?.paused
+                ? `Entries paused`
+                : te
+                  ? `Tickets closed`
+                  : `Buy tickets`
+        : `Buy tickets`;
+  function fe(t) {
+    t.preventDefault();
+    let r = vr(c);
+    if (r.error) {
+      (d(r.error), g.current?.focus());
+      return;
+    }
+    if ((d(``), !e.address)) {
+      e.openWallet();
+      return;
+    }
+    if (b) {
+      e.switchNetwork();
+      return;
+    }
+    if (!n || y) {
+      d(`Live round data is unavailable. Refresh the round and try again.`);
+      return;
+    }
+    if (te) {
+      d(te);
+      return;
+    }
+    if (!i || i.balance === void 0) {
+      d(`Your IMD balance could not be read. Retry your balance below.`);
+      return;
+    }
+    let a = r.count * n.ticketPrice;
+    i.balance < a
+      ? d(`Not enough IMD. Choose fewer tickets or add IMD to your wallet.`)
+      : p({ count: r.count, cost: a, roundId: n.roundId });
+  }
+  let pe = (e) => {
+      (l(e), d(``));
+    },
+    me = () => {
+      (a.setVisible(!1),
+        requestAnimationFrame(() =>
+          document.querySelector(`.transaction-banner`)?.focus(),
+        ));
+    };
+  return (0, C.jsxs)(C.Fragment, {
+    children: [
+      (0, C.jsx)(`a`, {
+        className: `skip-link`,
+        href: `#main`,
+        children: `Skip to content`,
+      }),
+      (0, C.jsxs)(`aside`, {
+        className: `sidebar`,
+        children: [
+          (0, C.jsxs)(`a`, {
+            href: `#jackpot`,
+            className: `brand`,
+            "aria-label": `IMDPot home`,
+            children: [
+              (0, C.jsx)(Or, {}),
+              (0, C.jsxs)(`span`, {
+                children: [
+                  `IMD`,
+                  (0, C.jsx)(`span`, {
+                    className: `brand-light`,
+                    children: `Pot`,
+                  }),
+                  (0, C.jsx)(`span`, { className: `brand-dot`, children: `.` }),
+                ],
+              }),
+            ],
+          }),
+          (0, C.jsx)(`nav`, {
+            "aria-label": `Main navigation`,
+            children: si.map((e) =>
+              (0, C.jsxs)(
+                `a`,
+                {
+                  href: e.href,
+                  className: m === e.href ? `active` : ``,
+                  "aria-current": m === e.href ? `location` : void 0,
+                  children: [
+                    (0, C.jsx)(P, { name: e.icon }),
+                    e.label,
+                    e.href === `#jackpot` &&
+                      (0, C.jsx)(`span`, { className: `nav-dot` }),
+                  ],
+                },
+                e.href,
+              ),
+            ),
+          }),
+          (0, C.jsxs)(`div`, {
+            className: `sidebar-bottom`,
+            children: [
+              (0, C.jsxs)(`div`, {
+                className: `casino-mark`,
+                "aria-hidden": `true`,
+                children: [
+                  (0, C.jsx)(Or, {}),
+                  (0, C.jsxs)(`span`, {
+                    children: [
+                      `Good luck`,
+                      (0, C.jsx)(`br`, {}),
+                      `at the table.`,
+                    ],
+                  }),
+                ],
+              }),
+              (0, C.jsxs)(`a`, {
+                href: `${dr}/address/${j}#code`,
+                target: `_blank`,
+                rel: `noreferrer`,
+                children: [
+                  (0, C.jsx)(P, { name: `shield`, size: 16 }),
+                  `View contract`,
+                  (0, C.jsx)(P, { name: `external`, size: 14 }),
+                ],
+              }),
+            ],
+          }),
+        ],
+      }),
+      (0, C.jsxs)(`div`, {
+        className: `app-shell`,
+        children: [
+          (0, C.jsxs)(`header`, {
+            className: `topbar`,
+            children: [
+              (0, C.jsxs)(`a`, {
+                href: `#jackpot`,
+                className: `brand mobile-brand`,
+                "aria-label": `IMDPot home`,
+                children: [
+                  (0, C.jsx)(Or, {}),
+                  (0, C.jsxs)(`span`, {
+                    children: [
+                      `IMDPot`,
+                      (0, C.jsx)(`span`, {
+                        className: `brand-dot`,
+                        children: `.`,
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+              (0, C.jsxs)(`span`, {
+                className: `room-label`,
+                children: [
+                  (0, C.jsx)(`span`, { className: `status-dot` }),
+                  `The jackpot room`,
+                ],
+              }),
+              (0, C.jsxs)(`div`, {
+                className: `topbar-actions`,
+                children: [
+                  (0, C.jsxs)(`span`, {
+                    className: `network`,
+                    children: [
+                      (0, C.jsx)(P, { name: `ethereum`, size: 17 }),
+                      `Ethereum`,
+                    ],
+                  }),
+                  (0, C.jsx)(Hr, {}),
+                ],
+              }),
+            ],
+          }),
+          (0, C.jsx)(`nav`, {
+            className: `mobile-nav`,
+            "aria-label": `Section navigation`,
+            children: si.map((e) =>
+              (0, C.jsx)(
+                `a`,
+                {
+                  href: e.href,
+                  "aria-current": m === e.href ? `location` : void 0,
+                  children: e.href === `#dashboard` ? `Dashboard` : e.label,
+                },
+                e.href,
+              ),
+            ),
+          }),
+          (0, C.jsxs)(`main`, {
+            id: `main`,
+            children: [
+              (0, C.jsxs)(`div`, {
+                className: `page-heading`,
+                id: `jackpot`,
+                children: [
+                  (0, C.jsxs)(`div`, {
+                    children: [
+                      (0, C.jsx)(`h1`, {
+                        children: `A little IMD. Big possibility.`,
+                      }),
+                      (0, C.jsx)(`p`, {
+                        children: `15-minute jackpots. One ticket starts it all.`,
+                      }),
+                    ],
+                  }),
+                  (0, C.jsxs)(`a`, {
+                    href: `#how-to-play`,
+                    className: `text-link`,
+                    children: [
+                      (0, C.jsx)(P, { name: `help`, size: 17 }),
+                      `How it works`,
+                    ],
+                  }),
+                ],
+              }),
+              a.state &&
+                !a.visible &&
+                (0, C.jsxs)(`button`, {
+                  className: `transaction-banner ${a.state.phase}`,
+                  onClick: () => a.setVisible(!0),
+                  children: [
+                    (0, C.jsx)(P, {
+                      name: a.state.phase === `success` ? `check` : `info`,
+                    }),
+                    (0, C.jsxs)(`span`, {
+                      children: [
+                        a.state.title,
+                        `: `,
+                        a.state.phase === `pending`
+                          ? `in progress`
+                          : a.state.phase === `success`
+                            ? `confirmed`
+                            : `needs attention`,
+                      ],
+                    }),
+                    (0, C.jsx)(P, { name: `arrow`, size: 17 }),
+                  ],
+                }),
+              (0, C.jsxs)(`div`, {
+                className: `play-grid`,
+                children: [
+                  (0, C.jsxs)(`section`, {
+                    className: `jackpot-panel panel`,
+                    "aria-labelledby": `round-heading`,
+                    children: [
+                      (0, C.jsxs)(`div`, {
+                        className: `round-heading`,
+                        children: [
+                          (0, C.jsxs)(`h2`, {
+                            id: `round-heading`,
+                            children: [`Round `, n ? `#${N(n.roundId)}` : `…`],
+                          }),
+                          (0, C.jsxs)(`span`, {
+                            className: `status-label ${ae ? `is-live` : ``}`,
+                            children: [
+                              (0, C.jsx)(`span`, { className: `status-dot` }),
+                              le,
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, C.jsxs)(`div`, {
+                        className: `pool-display`,
+                        children: [
+                          (0, C.jsxs)(`div`, {
+                            className: `pool-data`,
+                            children: [
+                              (0, C.jsx)(`span`, {
+                                className: `pool-label`,
+                                children: `Total pool`,
+                              }),
+                              (0, C.jsxs)(`div`, {
+                                className: `pool-amount`,
+                                children: [
+                                  (0, C.jsx)(`span`, {
+                                    title: n
+                                      ? Cr(n.round.pool, n.decimals)
+                                      : void 0,
+                                    children: Sr(n?.round.pool, n?.decimals, 2),
+                                  }),
+                                  (0, C.jsx)(`span`, {
+                                    className: `pool-unit`,
+                                    children: `IMD`,
+                                  }),
+                                ],
+                              }),
+                              (0, C.jsxs)(`span`, {
+                                className: `prize-caption`,
+                                children: [
+                                  (0, C.jsx)(P, { name: `trophy`, size: 16 }),
+                                  `70% goes to winning tickets`,
+                                ],
+                              }),
+                            ],
+                          }),
+                          (0, C.jsxs)(`div`, {
+                            className: `chip-art`,
+                            "aria-hidden": `true`,
+                            children: [
+                              (0, C.jsx)(`div`, {
+                                className: `orbit orbit-one`,
+                              }),
+                              (0, C.jsx)(`div`, {
+                                className: `orbit orbit-two`,
+                              }),
+                              (0, C.jsx)(Or, {
+                                className: `art-chip back-chip`,
+                              }),
+                              (0, C.jsx)(Or, {
+                                className: `art-chip front-chip`,
+                              }),
+                              (0, C.jsx)(`svg`, {
+                                className: `art-spark spark-one`,
+                                viewBox: `0 0 20 20`,
+                                children: (0, C.jsx)(`path`, {
+                                  d: `m10 0 2 8 8 2-8 2-2 8-2-8-8-2 8-2Z`,
+                                  fill: `currentColor`,
+                                }),
+                              }),
+                              (0, C.jsx)(`svg`, {
+                                className: `art-spark spark-two`,
+                                viewBox: `0 0 20 20`,
+                                children: (0, C.jsx)(`path`, {
+                                  d: `m10 0 2 8 8 2-8 2-2 8-2-8-8-2 8-2Z`,
+                                  fill: `currentColor`,
+                                }),
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, C.jsxs)(`div`, {
+                        className: `round-bottom`,
+                        children: [
+                          (0, C.jsxs)(`div`, {
+                            className: `timer-block`,
+                            children: [
+                              (0, C.jsx)(`span`, {
+                                className: `timer-icon`,
+                                children: (0, C.jsx)(P, {
+                                  name: `clock`,
+                                  size: 22,
+                                }),
+                              }),
+                              (0, C.jsxs)(`div`, {
+                                children: [
+                                  (0, C.jsx)(`span`, {
+                                    className: `countdown`,
+                                    role: `timer`,
+                                    "aria-label": `${v.text}, ${v.label}`,
+                                    children: v.text,
+                                  }),
+                                  (0, C.jsx)(`span`, {
+                                    className: `small muted timer-label`,
+                                    children: v.label,
+                                  }),
+                                ],
+                              }),
+                            ],
+                          }),
+                          (0, C.jsxs)(`dl`, {
+                            className: `round-stats`,
+                            children: [
+                              (0, C.jsxs)(`div`, {
+                                children: [
+                                  (0, C.jsxs)(`dt`, {
+                                    children: [
+                                      (0, C.jsx)(P, {
+                                        name: `ticket`,
+                                        size: 15,
+                                      }),
+                                      `Tickets`,
+                                    ],
+                                  }),
+                                  (0, C.jsx)(`dd`, {
+                                    children: N(n?.round.totalTickets),
+                                  }),
+                                ],
+                              }),
+                              (0, C.jsxs)(`div`, {
+                                children: [
+                                  (0, C.jsxs)(`dt`, {
+                                    children: [
+                                      (0, C.jsx)(P, {
+                                        name: `people`,
+                                        size: 15,
+                                      }),
+                                      `Players`,
+                                    ],
+                                  }),
+                                  (0, C.jsx)(`dd`, {
+                                    children: N(n?.round.participantCount),
+                                  }),
+                                ],
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, C.jsx)(`div`, {
+                        className: `round-progress`,
+                        role: `progressbar`,
+                        "aria-label": `Round time remaining`,
+                        "aria-valuemin": 0,
+                        "aria-valuemax": 900,
+                        "aria-valuenow": v.seconds,
+                        "aria-valuetext": v.label,
+                        children: (0, C.jsx)(`span`, {
+                          style: {
+                            width: `${Math.min((v.seconds / 900) * 100, 100)}%`,
+                          },
+                        }),
+                      }),
+                    ],
+                  }),
+                  (0, C.jsxs)(`section`, {
+                    className: `ticket-panel panel`,
+                    "aria-labelledby": `ticket-heading`,
+                    children: [
+                      (0, C.jsxs)(`div`, {
+                        className: `section-head`,
+                        children: [
+                          (0, C.jsx)(`h2`, {
+                            id: `ticket-heading`,
+                            children: `Take your seat`,
+                          }),
+                          (0, C.jsx)(P, {
+                            name: `ticket`,
+                            className: `muted`,
+                            size: 22,
+                          }),
+                        ],
+                      }),
+                      (0, C.jsxs)(`form`, {
+                        onSubmit: fe,
+                        noValidate: !0,
+                        children: [
+                          (0, C.jsxs)(`div`, {
+                            className: `field-label`,
+                            children: [
+                              (0, C.jsx)(`label`, {
+                                htmlFor: `ticket-quantity`,
+                                children: `Number of tickets`,
+                              }),
+                              (0, C.jsx)(`span`, {
+                                className: `small muted`,
+                                children: `0.1 IMD each`,
+                              }),
+                            ],
+                          }),
+                          (0, C.jsxs)(`div`, {
+                            className: `quantity-control ${u ? `invalid` : ``}`,
+                            children: [
+                              (0, C.jsx)(`button`, {
+                                type: `button`,
+                                "aria-label": `Remove one ticket`,
+                                disabled: !re.count || re.count <= 1n || a.busy,
+                                onClick: () => pe((re.count - 1n).toString()),
+                                children: (0, C.jsx)(P, {
+                                  name: `minus`,
+                                  size: 18,
+                                }),
+                              }),
+                              (0, C.jsx)(`input`, {
+                                ref: g,
+                                id: `ticket-quantity`,
+                                name: `tickets`,
+                                type: `text`,
+                                maxLength: 12,
+                                inputMode: `numeric`,
+                                autoComplete: `off`,
+                                value: c,
+                                onChange: (e) => pe(e.target.value),
+                                "aria-invalid": !!u,
+                                "aria-describedby": `quantity-hint ticket-error`,
+                                disabled: a.busy,
+                              }),
+                              (0, C.jsx)(`button`, {
+                                type: `button`,
+                                "aria-label": `Add one ticket`,
+                                disabled:
+                                  a.busy ||
+                                  (!!re.count && re.count >= 1000000n),
+                                onClick: () =>
+                                  pe(
+                                    (re.count ? re.count + 1n : 1n).toString(),
+                                  ),
+                                children: (0, C.jsx)(P, {
+                                  name: `plus`,
+                                  size: 18,
+                                }),
+                              }),
+                            ],
+                          }),
+                          (0, C.jsx)(`div`, {
+                            className: `quick-picks`,
+                        role: `group`,
+                            "aria-label": `Ticket presets`,
+                            children: [1, 10, 50, 100].map((e) =>
+                              (0, C.jsx)(
+                                `button`,
+                                {
+                                  type: `button`,
+                                  "aria-pressed": c === String(e),
+                                  "aria-label": `${e} ${e === 1 ? `ticket` : `tickets`}`,
+                                  onClick: () => pe(String(e)),
+                                  disabled: a.busy,
+                                  children: e,
+                                },
+                                e,
+                              ),
+                            ),
+                          }),
+                          (0, C.jsxs)(`div`, {
+                            className: `cost-row`,
+                            children: [
+                              (0, C.jsx)(`span`, { children: `Total entry` }),
+                              (0, C.jsxs)(`strong`, {
+                                title:
+                                  ie === void 0 ? void 0 : Cr(ie, n?.decimals),
+                                children: [
+                                  ie === void 0
+                                    ? se
+                                      ? Sr((re.count ?? 1n) * 10n ** 17n)
+                                      : `—`
+                                    : Sr(ie, n?.decimals),
+                                  ` `,
+                                  (0, C.jsx)(`span`, { children: `IMD` }),
+                                ],
+                              }),
+                            ],
+                          }),
+                          (0, C.jsxs)(`button`, {
+                            className: `button primary buy-button`,
+                            type: `submit`,
+                            disabled:
+                              a.busy || (!!e.address && !b && (!!te || y)),
+                            children: [
+                              (0, C.jsx)(P, { name: `ticket`, size: 18 }),
+                              de,
+                              (0, C.jsx)(P, { name: `arrow`, size: 18 }),
+                            ],
+                          }),
+                          (0, C.jsx)(`p`, {
+                            id: `quantity-hint`,
+                            className: `small muted ticket-hint`,
+                            children: e.address
+                              ? i?.balance === void 0
+                                ? se
+                                  ? `IMD is not configured on the game yet.`
+                                  : `Reading your IMD balance…`
+                                : `Balance: ${Sr(i.balance, n?.decimals)} IMD · ETH gas extra`
+                              : `Connect your wallet to play. Minimum 0.1 IMD.`,
+                          }),
+                          (0, C.jsx)(`p`, {
+                            className: `small muted my-tickets`,
+                            children:
+                              e.address && i
+                                ? `Your tickets this round: ${N(i.tickets)}`
+                                : ``,
+                          }),
+                          (0, C.jsx)(`p`, {
+                            id: `ticket-error`,
+                            className: `inline-error`,
+                            role: `alert`,
+                            children: u,
+                          }),
+                          e.address &&
+                            r.isError &&
+                            (0, C.jsx)(`button`, {
+                              type: `button`,
+                              className: `text-button`,
+                              onClick: () => void r.refetch(),
+                              children: `Retry your balance`,
+                            }),
+                        ],
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+              (t.isError || (n && y)) &&
+                (0, C.jsxs)(`div`, {
+                  className: `notice error-notice`,
+                  role: `alert`,
+                  children: [
+                    (0, C.jsx)(P, { name: `info` }),
+                    (0, C.jsxs)(`div`, {
+                      children: [
+                        (0, C.jsx)(`strong`, {
+                          children: `Live reads are unavailable`,
+                        }),
+                        (0, C.jsx)(`p`, {
+                          children: t.error
+                            ? Er(t.error)
+                            : `The last read is over a minute old. Transactions are disabled until data refreshes.`,
+                        }),
+                      ],
+                    }),
+                    (0, C.jsx)(`button`, {
+                      className: `button secondary`,
+                      onClick: () => void t.refetch(),
+                      disabled: t.isFetching,
+                      children: t.isFetching ? `Retrying…` : `Retry connection`,
+                    }),
+                  ],
+                }),
+              ee &&
+                (0, C.jsxs)(`div`, {
+                  className: `deployment-note`,
+                  role: `status`,
+                  children: [
+                    (0, C.jsx)(`strong`, {
+                      children: `New game deployment required`,
+                    }),
+                    (0, C.jsx)(`p`, {
+                      children: `This live contract uses the previous draw system and cannot be upgraded. New entries are closed until the future-blockhash version is deployed. Existing claims and eligible refunds remain available.`,
+                    }),
+                  ],
+                }),
+              se &&
+                (0, C.jsxs)(`div`, {
+                  className: `launch-note`,
+                  children: [
+                    (0, C.jsx)(P, { name: `info`, size: 17 }),
+                    (0, C.jsx)(`p`, {
+                      children: `The table is getting ready. Entries open once the owner configures IMD.`,
+                    }),
+                  ],
+                }),
+              n?.paused &&
+                (0, C.jsxs)(`div`, {
+                  className: `notice`,
+                  role: `status`,
+                  children: [
+                    (0, C.jsx)(P, { name: `info` }),
+                    (0, C.jsx)(`p`, {
+                      children:
+                        n.mode === `future-blockhash`
+                          ? `New entries and draw commitments are paused. Committed draws, claims and eligible refunds remain available.`
+                          : `New entries and finalization are paused. Claims and eligible refunds remain available.`,
+                    }),
+                  ],
+                }),
+              (0, C.jsxs)(`section`, {
+                className: `payout-section`,
+                "aria-label": `Pool distribution`,
+                children: [
+                  (0, C.jsxs)(`div`, {
+                    className: `payout-title`,
+                    children: [
+                      (0, C.jsx)(P, { name: `trophy`, size: 20 }),
+                      (0, C.jsx)(`span`, {
+                        children: `Every IMD has a destination.`,
+                      }),
+                    ],
+                  }),
+                  (0, C.jsxs)(`div`, {
+                    className: `payout-items`,
+                    children: [
+                      (0, C.jsxs)(`div`, {
+                        children: [
+                          (0, C.jsx)(`span`, {
+                            className: `podium first`,
+                            children: `1`,
+                          }),
+                          (0, C.jsxs)(`span`, {
+                            children: [
+                              `1st prize`,
+                              (0, C.jsx)(`strong`, { children: `40%` }),
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, C.jsxs)(`div`, {
+                        children: [
+                          (0, C.jsx)(`span`, {
+                            className: `podium second`,
+                            children: `2`,
+                          }),
+                          (0, C.jsxs)(`span`, {
+                            children: [
+                              `2nd prize`,
+                              (0, C.jsx)(`strong`, { children: `20%` }),
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, C.jsxs)(`div`, {
+                        children: [
+                          (0, C.jsx)(`span`, {
+                            className: `podium third`,
+                            children: `3`,
+                          }),
+                          (0, C.jsxs)(`span`, {
+                            children: [
+                              `3rd prize`,
+                              (0, C.jsx)(`strong`, { children: `10%` }),
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, C.jsxs)(`div`, {
+                        children: [
+                          (0, C.jsx)(P, { name: `flame`, className: `burn` }),
+                          (0, C.jsxs)(`span`, {
+                            children: [
+                              `Burned`,
+                              (0, C.jsx)(`strong`, { children: `10%` }),
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, C.jsxs)(`div`, {
+                        children: [
+                          (0, C.jsx)(P, { name: `lock` }),
+                          (0, C.jsxs)(`span`, {
+                            children: [
+                              `Locked`,
+                              (0, C.jsx)(`strong`, { children: `15%` }),
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, C.jsxs)(`div`, {
+                        children: [
+                          (0, C.jsx)(P, { name: `wallet` }),
+                          (0, C.jsxs)(`span`, {
+                            children: [
+                              `House`,
+                              (0, C.jsx)(`strong`, { children: `5%` }),
+                            ],
+                          }),
+                        ],
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+              (0, C.jsxs)(`section`, {
+                className: `finalize-strip`,
+                "aria-label": `Finalize the current round`,
+                children: [
+                  (0, C.jsx)(`span`, {
+                    className: `finalize-icon`,
+                    children: (0, C.jsx)(P, {
+                      name: oe ? `clock` : `shield`,
+                      size: 23,
+                    }),
+                  }),
+                  (0, C.jsxs)(`div`, {
+                    children: [
+                      (0, C.jsx)(`h2`, {
+                        children: ee
+                          ? `A new draw system is ready`
+                          : oe
+                            ? ne?.label
+                            : x
+                              ? `Time’s up. Commit the draw.`
+                              : `Anyone can finalize a closed round`,
+                      }),
+                      (0, C.jsx)(`p`, {
+                        children:
+                          ne?.detail ??
+                          `Commit a future block, then settle after it is mined. Both calls are open to everyone.`,
+                      }),
+                    ],
+                  }),
+                  (0, C.jsxs)(`button`, {
+                    className: `button secondary`,
+                    disabled: ee || (!ne?.ready && (!x || n?.paused)) || ce,
+                    onClick: () =>
+                      void a.action(
+                        `finalizeRound`,
+                        oe ? `Settle winners` : `Commit draw`,
+                        ``,
+                        [],
+                        n?.roundId,
+                      ),
+                    children: [
+                      (0, C.jsx)(P, { name: `bolt`, size: 17 }),
+                      oe && !ee ? ne?.label : `Finalize round`,
+                    ],
+                  }),
+                ],
+              }),
+              (0, C.jsx)(oi, { game: n, disabled: ce, tx: a }),
+              (0, C.jsxs)(`div`, {
+                className: `dashboard-grid`,
+                id: `dashboard`,
+                children: [
+                  (0, C.jsxs)(`section`, {
+                    className: `panel player-panel`,
+                    "aria-labelledby": `dashboard-heading`,
+                    children: [
+                      (0, C.jsxs)(`div`, {
+                        className: `section-head`,
+                        children: [
+                          (0, C.jsx)(`h2`, {
+                            id: `dashboard-heading`,
+                            children: `Your dashboard`,
+                          }),
+                          (0, C.jsx)(`span`, {
+                            className: `small muted`,
+                            children: e.address
+                              ? wr(e.address)
+                              : `A seat with benefits`,
+                          }),
+                        ],
+                      }),
+                      (0, C.jsxs)(`dl`, {
+                        className: `player-stats`,
+                        children: [
+                          (0, C.jsxs)(`div`, {
+                            children: [
+                              (0, C.jsx)(`dt`, { children: `Rounds played` }),
+                              (0, C.jsx)(`dd`, {
+                                children: N(i?.roundsPlayed),
+                              }),
+                            ],
+                          }),
+                          (0, C.jsxs)(`div`, {
+                            children: [
+                              (0, C.jsx)(`dt`, { children: `Loyalty points` }),
+                              (0, C.jsx)(`dd`, { children: N(i?.points) }),
+                            ],
+                          }),
+                          (0, C.jsxs)(`div`, {
+                            children: [
+                              (0, C.jsx)(`dt`, {
+                                children: `Active multiplier`,
+                              }),
+                              (0, C.jsx)(`dd`, {
+                                children: Tr(
+                                  i ? (i.tickets > 0n ? i.boost : 0n) : void 0,
+                                ),
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, C.jsxs)(`div`, {
+                        className: `loyalty-row`,
+                        children: [
+                          (0, C.jsx)(`span`, {
+                            className: `loyalty-icon`,
+                            children: (0, C.jsx)(P, { name: `bolt`, size: 23 }),
+                          }),
+                          (0, C.jsxs)(`div`, {
+                            children: [
+                              (0, C.jsx)(`h3`, {
+                                children: `Make your next round count`,
+                              }),
+                              (0, C.jsx)(`p`, {
+                                children: e.address
+                                  ? `Queued multiplier: ${Tr(i?.pendingBoost)}. Redeem 100 points for +25% ticket weight.`
+                                  : `Connect to see your points and multiplier.`,
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, C.jsxs)(`div`, {
+                        className: `loyalty-footer`,
+                        children: [
+                          (0, C.jsx)(`span`, {
+                            className: `small muted`,
+                            children: `Unlocks after 10 settled rounds. Caps at 2×.`,
+                          }),
+                          e.address
+                            ? (0, C.jsxs)(`button`, {
+                                className: `button secondary`,
+                                disabled: !i?.canRedeem || ce,
+                                onClick: () =>
+                                  void a.action(
+                                    `redeemMultiplier`,
+                                    `Redeem multiplier`,
+                                    `100 loyalty points redeemed for +25% weight on the next round you enter.`,
+                                  ),
+                                children: [
+                                  `Redeem 100 points`,
+                                  (0, C.jsx)(P, { name: `arrow`, size: 15 }),
+                                ],
+                              })
+                            : (0, C.jsxs)(`button`, {
+                                className: `button secondary`,
+                                onClick: e.openWallet,
+                                children: [
+                                  `View my dashboard`,
+                                  (0, C.jsx)(P, { name: `arrow`, size: 15 }),
+                                ],
+                              }),
+                        ],
+                      }),
+                      r.isError &&
+                        (0, C.jsxs)(`p`, {
+                          className: `inline-error`,
+                          role: `alert`,
+                          children: [
+                            `Your dashboard could not be loaded. `,
+                            (0, C.jsx)(`button`, {
+                              className: `text-button`,
+                              onClick: () => void r.refetch(),
+                              children: `Retry dashboard`,
+                            }),
+                          ],
+                        }),
+                    ],
+                  }),
+                  (0, C.jsxs)(`section`, {
+                    className: `panel claim-panel`,
+                    "aria-labelledby": `claim-heading`,
+                    children: [
+                      (0, C.jsxs)(`div`, {
+                        className: `section-head`,
+                        children: [
+                          (0, C.jsx)(`h2`, {
+                            id: `claim-heading`,
+                            children: `Your winnings`,
+                          }),
+                          (0, C.jsx)(P, { name: `trophy`, size: 22 }),
+                        ],
+                      }),
+                      (0, C.jsx)(`p`, {
+                        className: `muted`,
+                        children: `Claimable prizes`,
+                      }),
+                      (0, C.jsxs)(`div`, {
+                        className: `claim-amount`,
+                        title: i ? Cr(i.claimable, n?.decimals) : void 0,
+                        children: [
+                          Sr(i?.claimable, n?.decimals),
+                          (0, C.jsx)(`span`, { children: `IMD` }),
+                        ],
+                      }),
+                      (0, C.jsx)(`p`, {
+                        className: `small muted`,
+                        children: e.address
+                          ? i && i.claimable > 0n
+                            ? `A good day at the table. Your prize is ready.`
+                            : `All your unclaimed prizes appear here.`
+                          : `Connect your wallet to check your prizes.`,
+                      }),
+                      (0, C.jsxs)(`button`, {
+                        className: `button secondary full`,
+                        onClick: e.address
+                          ? () =>
+                              void a.action(
+                                `claim`,
+                                `Claim prizes`,
+                                `Your claim is confirmed. IMD has been sent to your wallet.`,
+                              )
+                          : e.openWallet,
+                        disabled: !!e.address && !ue,
+                        children: [
+                          (0, C.jsx)(P, { name: `wallet`, size: 17 }),
+                          e.address ? `Claim prizes` : `Check my winnings`,
+                          (0, C.jsx)(P, { name: `arrow`, size: 16 }),
+                        ],
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+              (0, C.jsxs)(`div`, {
+                className: `history-grid`,
+                children: [
+                  (0, C.jsx)(ii, { game: n }),
+                  (0, C.jsx)(ri, { game: n }),
+                ],
+              }),
+              (0, C.jsxs)(`section`, {
+                className: `how-section`,
+                id: `how-to-play`,
+                "aria-labelledby": `how-heading`,
+                children: [
+                  (0, C.jsxs)(`div`, {
+                    className: `how-heading`,
+                    children: [
+                      (0, C.jsx)(`h2`, {
+                        id: `how-heading`,
+                        children: `How the game works`,
+                      }),
+                      (0, C.jsx)(`span`, {
+                        children: `No crying in the casino.`,
+                      }),
+                    ],
+                  }),
+                  (0, C.jsxs)(`div`, {
+                    className: `how-grid`,
+                    children: [
+                      (0, C.jsxs)(`div`, {
+                        children: [
+                          (0, C.jsx)(`span`, {
+                            className: `step-number`,
+                            children: `01`,
+                          }),
+                          (0, C.jsx)(`h3`, { children: `Bring your IMD` }),
+                          (0, C.jsx)(`p`, {
+                            children: `Each ticket costs 0.1 IMD. Buy whole tickets; the first purchase starts a 15-minute round. Later entries never reset the clock.`,
+                          }),
+                        ],
+                      }),
+                      (0, C.jsxs)(`div`, {
+                        children: [
+                          (0, C.jsx)(`span`, {
+                            className: `step-number`,
+                            children: `02`,
+                          }),
+                          (0, C.jsx)(`h3`, {
+                            children: `Let the round play out`,
+                          }),
+                          (0, C.jsx)(`p`, {
+                            children: `Once time is up, finalize to commit a block 3 blocks ahead. After it is mined, finalize again within 256 blocks to draw three winning tickets without replacement.`,
+                          }),
+                        ],
+                      }),
+                      (0, C.jsxs)(`div`, {
+                        children: [
+                          (0, C.jsx)(`span`, {
+                            className: `step-number`,
+                            children: `03`,
+                          }),
+                          (0, C.jsx)(`h3`, { children: `Take your winnings` }),
+                          (0, C.jsx)(`p`, {
+                            children: `Winners claim 40%, 20% and 10% of the pool. With fewer than three tickets, unfilled prizes roll into first place. Every settled ticket earns one loyalty point.`,
+                          }),
+                        ],
+                      }),
+                    ],
+                  }),
+                  (0, C.jsx)(`p`, {
+                    className: `game-note`,
+                    children: `Tickets remain in the contract until settlement or an eligible cancellation. The 15% locked share stays in the contract permanently. Block producers can influence blockhash randomness. No oracle subscription is needed; both finalize calls cost ETH gas.`,
+                  }),
+                ],
+              }),
+              (0, C.jsx)(ai, { game: n, now: _, disabled: ce, tx: a }),
+              (0, C.jsxs)(`footer`, {
+                children: [
+                  (0, C.jsxs)(`a`, {
+                    className: `footer-brand`,
+                    href: `#jackpot`,
+                    children: [(0, C.jsx)(Or, {}), `IMDPot.`],
+                  }),
+                  (0, C.jsx)(`span`, {
+                    className: `small muted`,
+                    children:
+                      n && !y
+                        ? `Read at Ethereum block ${N(n.block)}`
+                        : `Ethereum · live contract data`,
+                  }),
+                  (0, C.jsxs)(`a`, {
+                    className: `text-link`,
+                    href: `${dr}/address/${j}`,
+                    target: `_blank`,
+                    rel: `noreferrer`,
+                    children: [
+                      `View game contract`,
+                      (0, C.jsx)(P, { name: `external`, size: 14 }),
+                    ],
+                  }),
+                ],
+              }),
+            ],
+          }),
+        ],
+      }),
+      f &&
+        (0, C.jsxs)(kr, {
+          title: `Review your tickets`,
+          onClose: () => p(void 0),
+          children: [
+            (0, C.jsxs)(`p`, {
+              className: `muted`,
+              children: [`Round #`, N(f.roundId), ` · Ethereum`],
+            }),
+            (0, C.jsxs)(`dl`, {
+              className: `review-details`,
+              children: [
+                (0, C.jsxs)(`div`, {
+                  children: [
+                    (0, C.jsx)(`dt`, { children: `Tickets` }),
+                    (0, C.jsx)(`dd`, { children: N(f.count) }),
+                  ],
+                }),
+                (0, C.jsxs)(`div`, {
+                  children: [
+                    (0, C.jsx)(`dt`, { children: `Entry total` }),
+                    (0, C.jsxs)(`dd`, {
+                      children: [Cr(f.cost, n?.decimals), ` IMD`],
+                    }),
+                  ],
+                }),
+                (0, C.jsxs)(`div`, {
+                  children: [
+                    (0, C.jsx)(`dt`, { children: `Game contract` }),
+                    (0, C.jsx)(`dd`, {
+                      children: (0, C.jsxs)(`a`, {
+                        href: `https://etherscan.io/address/${deployment.contract}`,
+                        target: `_blank`,
+                        rel: `noreferrer`,
+                        children: [
+                          deployment.contract,
+                          (0, C.jsx)(P, { name: `external`, size: 14 }),
+                        ],
+                      }),
+                    }),
+                  ],
+                }),
+              ],
+            }),
+            (0, C.jsxs)(`p`, {
+              className: `small muted`,
+              children: [
+                i?.allowance !== void 0 && i.allowance >= f.cost
+                  ? `Your IMD allowance covers this entry. Confirm one purchase transaction.`
+                  : `First approve this exact IMD amount, then confirm your ticket purchase. Approval alone does not enter the round.`,
+                ` ETH network gas is extra.`,
+              ],
+            }),
+            (0, C.jsx)(`p`, {
+              className: `small muted`,
+              children: `70% funds prizes; 10% is burned, 5% goes to the house and 15% is locked forever. Tickets cannot be withdrawn during a round.`,
+            }),
+            (0, C.jsxs)(`button`, {
+              className: `button primary full`,
+              disabled: a.busy || ce,
+              onClick: () => {
+                let e = f;
+                (p(void 0), a.buy(e.count, e.roundId, e.cost));
+              },
+              children: [
+                i?.allowance !== void 0 && i.allowance >= f.cost
+                  ? `Buy tickets`
+                  : `Approve & buy tickets`,
+                (0, C.jsx)(P, { name: `arrow`, size: 18 }),
+              ],
+            }),
+          ],
+        }),
+      a.visible &&
+        a.state &&
+        (0, C.jsxs)(kr, {
+          title: a.state.title,
+          onClose: me,
+          children: [
+            (0, C.jsxs)(`div`, {
+              className: `transaction-result ${a.state.phase}`,
+              children: [
+                (0, C.jsx)(`span`, {
+                  className: `result-icon`,
+                  children: (0, C.jsx)(P, {
+                    name:
+                      a.state.phase === `success`
+                        ? `check`
+                        : a.state.phase === `error`
+                          ? `info`
+                          : `clock`,
+                    size: 28,
+                  }),
+                }),
+                (0, C.jsx)(`h3`, {
+                  children:
+                    a.state.phase === `pending`
+                      ? `Your play is in progress`
+                      : a.state.phase === `success`
+                        ? `Confirmed on Ethereum`
+                        : `Action not completed`,
+                }),
+                (0, C.jsx)(`p`, {
+                  role: a.state.phase === `error` ? `alert` : `status`,
+                  children: a.state.message,
+                }),
+              ],
+            }),
+            a.state.hashes.map((e, t) =>
+              (0, C.jsxs)(
+                `a`,
+                {
+                  className: `transaction-link`,
+                  href: `https://etherscan.io/tx/${e}`,
+                  target: `_blank`,
+                  rel: `noreferrer`,
+                  children: [
+                    `View transaction `,
+                    t + 1,
+                    (0, C.jsx)(P, { name: `external`, size: 16 }),
+                  ],
+                },
+                `${e}-${t}`,
+              ),
+            ),
+            a.state.phase !== `pending` &&
+              (0, C.jsx)(`button`, {
+                className: `button secondary full`,
+                onClick: me,
+                children: `Back to the table`,
+              }),
+          ],
+        }),
+    ],
+  });
+}
+var li = class extends S.Component {
+    state = { failed: !1 };
+    static getDerivedStateFromError() {
+      return { failed: !0 };
+    }
+    componentDidCatch(e, t) {
+      console.error(`Dashboard could not render`, e, t.componentStack);
+    }
+    render() {
+      return this.state.failed
+        ? (0, C.jsxs)(`main`, {
+            className: `fatal-error`,
+            children: [
+              (0, C.jsx)(`h1`, { children: `The table could not load` }),
+              (0, C.jsx)(`p`, {
+                children: `Reload to try again. Your wallet and funds stay on Ethereum.`,
+              }),
+              (0, C.jsx)(`button`, {
+                className: `button primary`,
+                onClick: () => location.reload(),
+                children: `Reload dashboard`,
+              }),
+            ],
+          })
+        : this.props.children;
+    }
+  },
+  ui = new mt({
+    defaultOptions: { queries: { retry: 1, refetchOnWindowFocus: !0 } },
+  });
+(0, cr.createRoot)(document.getElementById(`root`)).render(
+  (0, C.jsx)(li, {
+    children: (0, C.jsx)(Nn, {
+      config: hr,
+      children: (0, C.jsx)(fe, {
+        client: ui,
+        children: (0, C.jsx)(Vr, { children: (0, C.jsx)(ci, {}) }),
+      }),
+    }),
+  }),
+);
+export { pr as n, Er as t };

@@ -1,0 +1,25 @@
+{
+  "address": "0xa5ee8a1f2aa98f08755f80bb278528d789f1e8f3",
+  "head": "0x1902d23",
+  "state": {
+    "isConfigured()": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "token()": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "currentRoundId()": "0x0000000000000000000000000000000000000000000000000000000000000001",
+    "paused()": "0x0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "observedDate": "2026-10-19",
+  "headDecimal": 26225955,
+  "passedChecks": [
+    "canonical ABI hash against pinned handoff",
+    "ABI equality with compiled source",
+    "compiled runtime hash against release",
+    "live chain ID",
+    "latest runtime hash",
+    "matching runtime at deployment block",
+    "no code before deployment block",
+    "successful factory receipt at deployment block with game events"
+  ],
+  "abiHash": "a27f9c231b09f0748e8915b14da5af392b2bdccde463016cb7900609269a96fb",
+  "runtimeCodeHash": "0x0b0d26863084dbb5b501b676d1630b99fd16317800bc938b3e4a3080286ae6b2",
+  "transactionPolicy": "Read-only verification. No mainnet transaction sent."
+}
